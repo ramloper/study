@@ -48,7 +48,8 @@ mac:
         - x64
 
 dmg:
-  title: Study Alarm
+  # Avoid space + shared mount name when building multiple arch DMGs
+  title: StudyAlarm
 
 win:
   icon: assets/icon.png

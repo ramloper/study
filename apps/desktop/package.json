@@ -19,7 +19,7 @@
     "dist:mac": "pnpm run build && electron-builder --mac dmg zip --config electron-builder.yml",
     "dist:win": "pnpm run build && electron-builder --win nsis --config electron-builder.yml",
     "dist": "pnpm run build && electron-builder --mac dmg zip --win nsis --config electron-builder.yml",
-    "dist:mac:ci": "pnpm run build && electron-builder --mac dmg zip --arm64 --x64 --config electron-builder.yml --publish never",
+    "dist:mac:ci": "pnpm run build && electron-builder --mac dmg zip --arm64 --config electron-builder.yml --publish never && electron-builder --mac dmg zip --x64 --config electron-builder.yml --publish never",
     "dist:win:ci": "pnpm run build && electron-builder --win nsis --config electron-builder.yml --publish never",
     "start": "electron .",
     "start:app": "node scripts/run-packaged.mjs"
