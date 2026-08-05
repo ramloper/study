@@ -177,13 +177,19 @@ export function SettingsView() {
         return;
       }
       // Always attempt; if OS blocks, user simply won't see a banner
-      const hint =
-        osPlatform === "win32"
-          ? "안 보이면 Windows 설정 → 시스템 → 알림 에서 Study Alarm 을 확인해 주세요."
-          : osPlatform === "darwin"
-            ? "안 보이면 macOS 시스템 설정 → 알림 → Study Alarm 을 확인해 주세요."
-            : "안 보이면 OS 알림 설정에서 Study Alarm 허용을 확인해 주세요.";
-      toast.success(`테스트 알림을 요청했어요. ${hint}`);
+      if (osPlatform === "win32") {
+        toast.success(
+          "테스트 알림을 보냈어요. 화면 오른쪽 아래를 봐 주세요. 놓치면 Win+N 알림 센터에도 있어요."
+        );
+      } else if (osPlatform === "darwin") {
+        toast.success(
+          "테스트 알림을 요청했어요. 안 보이면 macOS 시스템 설정 → 알림 → Study Alarm 을 확인해 주세요."
+        );
+      } else {
+        toast.success(
+          "테스트 알림을 요청했어요. 안 보이면 OS 알림 설정에서 Study Alarm 허용을 확인해 주세요."
+        );
+      }
     } catch (e) {
       toast.error(e instanceof Error ? e.message : "테스트 실패");
     } finally {
@@ -321,42 +327,93 @@ export function SettingsView() {
               )을 실행해야 울려요.
             </p>
           </div>
+        ) : osPlatform === "win32" ? (
+          <div className="rounded-xl border border-sky-500/30 bg-sky-500/10 px-4 py-3.5 text-[13px] leading-relaxed">
+            <p className="text-[14px] font-extrabold text-foreground">
+              Windows에서 알림이 뜨는 곳
+            </p>
+            <p className="mt-1.5 text-muted-foreground">
+              카카오톡처럼 화면{" "}
+              <strong className="text-foreground">오른쪽 아래</strong>에 잠깐
+              뜹니다. mac 알림과는 위치가 달라요.
+            </p>
+            <ol className="mt-2.5 list-decimal space-y-1.5 pl-4 text-muted-foreground">
+              <li>
+                아래{" "}
+                <strong className="text-foreground">지금 테스트 알림</strong>을
+                눌러 보세요.
+              </li>
+              <li>
+                바로{" "}
+                <strong className="text-foreground">화면 오른쪽 아래</strong>를
+                봐 주세요. (2~5초 정도 보여요)
+              </li>
+              <li>
+                놓쳤다면{" "}
+                <strong className="text-foreground">Win + N</strong> 을 누르거나
+                시계 옆 알림 아이콘을 열어{" "}
+                <strong className="text-foreground">알림 센터</strong>를 확인해
+                주세요. “한 문제 타임” 이 쌓여 있을 수 있어요.
+              </li>
+            </ol>
+            <div className="mt-3 rounded-lg border border-border/80 bg-background/70 px-3 py-2.5">
+              <p className="font-bold text-foreground">그래도 안 보이면</p>
+              <ul className="mt-1.5 list-disc space-y-1 pl-4 text-muted-foreground">
+                <li>
+                  <strong className="text-foreground">
+                    설정 → 시스템 → 알림
+                  </strong>
+                  에서 Study Alarm 이{" "}
+                  <strong className="text-foreground">켜짐</strong>인지
+                </li>
+                <li>
+                  <strong className="text-foreground">집중 지원 / 방해 금지</strong>가
+                  꺼져 있는지 (켜져 있으면 배너가 안 뜰 수 있어요)
+                </li>
+                <li>전체 화면 게임·영상 중이 아닌지</li>
+              </ul>
+            </div>
+            {nextAtLabel && (
+              <p className="mt-2.5 text-muted-foreground">
+                다음 스케줄:{" "}
+                <strong className="text-foreground">{nextAtLabel}</strong>
+              </p>
+            )}
+            <p className="mt-2 text-[12px] text-muted-foreground">
+              창을 닫아도 오른쪽 아래{" "}
+              <strong className="text-foreground">트레이(∧ 숨은 아이콘)</strong>
+              에 Study Alarm 이 남아 있어야 알람이 계속 울려요. 완전 종료하면
+              스케줄이 멈춥니다.
+            </p>
+            <Button
+              type="button"
+              variant="outline"
+              size="sm"
+              className="mt-3 h-8 font-semibold"
+              onClick={() => void openOsNotificationSettings()}
+            >
+              Windows 알림 설정 열기
+            </Button>
+          </div>
         ) : (
           <div className="rounded-xl border border-border bg-muted/40 px-3.5 py-3 text-[13px] leading-relaxed">
             <p className="font-bold text-foreground">알림이 안 울릴 때</p>
-            {osPlatform === "win32" ? (
-              <p className="mt-1 text-muted-foreground">
-                테스트 알림은 화면{" "}
-                <strong className="text-foreground">오른쪽 아래</strong>에
-                잠깐 떴다가, 놓치면{" "}
-                <strong className="text-foreground">Win + N</strong> (알림
-                센터)에 쌓여요.{" "}
-                <strong className="text-foreground">
-                  설정 → 시스템 → 알림
-                </strong>
-                에서 Study Alarm 이 켜져 있는지,{" "}
-                <strong className="text-foreground">집중 지원</strong>이 꺼져
-                있는지도 확인해 주세요.
-              </p>
-            ) : (
-              <p className="mt-1 text-muted-foreground">
-                macOS{" "}
-                <strong className="text-foreground">
-                  시스템 설정 → 알림 → Study Alarm
-                </strong>
-                에서 <strong className="text-foreground">알림 허용</strong>이
-                켜져 있어야 해요. 앱의 알람 스위치와는 별개입니다.
-              </p>
-            )}
+            <p className="mt-1 text-muted-foreground">
+              macOS{" "}
+              <strong className="text-foreground">
+                시스템 설정 → 알림 → Study Alarm
+              </strong>
+              에서 <strong className="text-foreground">알림 허용</strong>이 켜져
+              있어야 해요. 앱의 알람 스위치와는 별개입니다.
+            </p>
             {nextAtLabel && (
               <p className="mt-1 text-muted-foreground">
                 다음 스케줄: {nextAtLabel}
               </p>
             )}
             <p className="mt-1 text-muted-foreground">
-              {osPlatform === "win32"
-                ? "창을 닫아도 트레이(알림 영역)에 남아 있어야 해요. 완전 종료하면 스케줄이 멈춥니다."
-                : "창을 닫아도 메뉴바 트레이에 남아 있어야 해요. 완전 종료하면 스케줄이 멈춥니다."}
+              창을 닫아도 메뉴바 트레이에 남아 있어야 해요. 완전 종료하면
+              스케줄이 멈춥니다.
             </p>
             <Button
               type="button"
@@ -365,9 +422,7 @@ export function SettingsView() {
               className="mt-2 h-8 font-semibold"
               onClick={() => void openOsNotificationSettings()}
             >
-              {osPlatform === "win32"
-                ? "Windows 알림 설정 열기"
-                : "macOS 알림 설정 열기"}
+              macOS 알림 설정 열기
             </Button>
           </div>
         )}
