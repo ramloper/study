@@ -12,6 +12,7 @@
     "build:desktop": "pnpm --filter @study/shared build && pnpm --filter @study/desktop build",
     "dist:mac": "pnpm --filter @study/shared build && pnpm --filter @study/desktop dist:mac",
     "dist:win": "pnpm --filter @study/shared build && pnpm --filter @study/desktop dist:win",
+    "seed:isan": "pnpm --filter @study/web exec node ../../scripts/seed-industrial-safety.mjs",
     "postinstall": "pnpm --filter @study/shared build"
   }
 }
