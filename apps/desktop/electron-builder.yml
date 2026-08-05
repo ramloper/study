@@ -22,10 +22,12 @@ extraMetadata:
   main: dist/main.js
 asar: true
 
+# Friendly names applied in scripts/rename-release-artifacts.cjs
+afterAllArtifactBuild: ./scripts/rename-release-artifacts.cjs
+
 mac:
   icon: assets/icon.icns
   category: public.app-category.education
-  # Set CSC_IDENTITY_AUTO_DISCOVERY=false or identity: null for unsigned local builds
   identity: null
   hardenedRuntime: false
   gatekeeperAssess: false
@@ -41,7 +43,8 @@ mac:
 
 dmg:
   title: Study Alarm
-  artifactName: StudyAlarm-${version}-mac-${arch}.${ext}
+  # intermediate → rename-release-artifacts: Mac.dmg / Mac-Intel.dmg
+  artifactName: build-mac-${arch}.${ext}
 
 win:
   icon: assets/icon.png
@@ -49,7 +52,8 @@ win:
     - target: nsis
       arch:
         - x64
-  artifactName: StudyAlarm-${version}-win-${arch}.${ext}
+  # intermediate → Windows.exe
+  artifactName: build-win.${ext}
 
 nsis:
   oneClick: false
@@ -63,4 +67,4 @@ linux:
   category: Education
   target:
     - AppImage
-  artifactName: StudyAlarm-${version}-linux-${arch}.${ext}
+  artifactName: Linux.${ext}

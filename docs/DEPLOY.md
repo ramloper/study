@@ -75,14 +75,14 @@ export STUDY_WEB_URL=https://your-app.vercel.app
 pnpm dist:mac
 ```
 
-산출물:
+산출물 (이름):
 
 ```
 apps/desktop/release/
-  StudyAlarm-0.1.0-mac-arm64.dmg
-  StudyAlarm-0.1.0-mac-x64.dmg
-  StudyAlarm-0.1.0-mac-arm64.zip
-  StudyAlarm-0.1.0-mac-x64.zip
+  Mac.dmg           # Apple Silicon (M1/M2/M3…)
+  Mac-Intel.dmg     # Intel Mac
+  Mac.zip
+  Mac-Intel.zip
 ```
 
 - **DMG**: 일반 사용자 설치 (Applications 로 드래그)
@@ -101,7 +101,7 @@ export STUDY_WEB_URL=https://your-app.vercel.app
 pnpm dist:win
 ```
 
-산출물: `StudyAlarm-0.1.0-win-x64.exe` (설치 마법사)
+산출물: `Windows.exe` (설치 마법사)
 
 ### 2-3. 로컬 개발 (기존)
 
@@ -109,6 +109,95 @@ pnpm dist:win
 pnpm dev                 # Vercel 대신 localhost:3000
 pnpm dev:desktop         # Study Alarm.app → localhost
 ```
+
+---
+
+## 2-4. GitHub Actions CI (Mac + Windows 자동 빌드)
+
+Mac에서 Windows 설치 파일을 안 만들어도, CI가 둘 다 만듭니다.
+
+### 준비 (한 번)
+
+1. 코드가 **GitHub** 에 푸시되어 있어야 함  
+2. 레포 → **Settings → Secrets and variables → Actions**  
+3. **New repository secret**
+   - Name: `STUDY_WEB_URL`  
+   - Value: `https://your-app.vercel.app` (Vercel 주소)
+
+### 실행 방법 A — 태그 (권장)
+
+```bash
+git tag v0.1.0
+git push origin v0.1.0
+```
+
+→ Actions 탭에서 **Release Desktop** 워크플로 실행  
+→ 끝나면 **Releases** 에 DMG / EXE 첨부
+
+### 실행 방법 B — 수동
+
+1. GitHub → **Actions**  
+2. **Release Desktop**  
+3. **Run workflow**  
+4. (선택) `study_web_url` 에 Vercel 주소 입력, 비우면 secret 사용
+
+### 산출물
+
+Releases 페이지 첨부 파일 예:
+
+- `Mac.dmg` — Apple Silicon
+- `Mac-Intel.dmg` — Intel Mac
+- `Windows.exe` — Windows
+
+각 파일 **우클릭 → Copy link** 한 뒤 Vercel `/download` env에 넣기.
+
+워크플로 파일: `.github/workflows/release-desktop.yml`
+
+---
+
+## 2-5. 다운로드 페이지 (링크 한 곳에서)
+
+웹 주소:
+
+```
+https://your-app.vercel.app/download
+```
+
+로그인 없이 접속 가능. Mac / Windows 버튼이 나뉩니다.
+
+### 설치 파일을 어디에 올리나?
+
+Vercel은 큰 DMG/EXE를 올리기 어렵습니다. 추천:
+
+1. **GitHub Releases** (무료, 흔함)
+2. Cloudflare R2 / S3 / 구글 드라이브 직접 링크 등
+
+#### GitHub Releases 예시 (CI 추천)
+
+```bash
+# secret STUDY_WEB_URL 설정 후
+git tag v0.1.0 && git push origin v0.1.0
+# → Actions가 빌드 후 Releases에 자동 첨부
+# → 파일 링크 복사
+```
+
+로컬 Mac에서 mac만 만들 때:
+
+```bash
+export STUDY_WEB_URL=https://your-app.vercel.app
+pnpm dist:mac
+```
+
+#### Vercel 환경 변수
+
+| Name | 예 |
+|------|-----|
+| `NEXT_PUBLIC_DOWNLOAD_MAC_ARM64` | `…/Mac.dmg` |
+| `NEXT_PUBLIC_DOWNLOAD_MAC_X64` | `…/Mac-Intel.dmg` |
+| `NEXT_PUBLIC_DOWNLOAD_WIN_X64` | `…/Windows.exe` |
+| `NEXT_PUBLIC_APP_VERSION` | `0.1.0` |
+
+저장 후 Vercel **Redeploy** → `/download` 에서 버튼 활성화.
 
 ---
 

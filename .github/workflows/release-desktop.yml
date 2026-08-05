@@ -1,0 +1,194 @@
+# Build Study Alarm installers (macOS + Windows) and attach to a GitHub Release.
+#
+# Trigger:
+#   - Push a version tag:  git tag v0.1.0 && git push origin v0.1.0
+#   - Or: Actions → Release Desktop → Run workflow
+#
+# Secrets (repo Settings → Secrets and variables → Actions):
+#   STUDY_WEB_URL  = https://your-app.vercel.app   (required)
+
+name: Release Desktop
+
+on:
+  push:
+    tags:
+      - "v*"
+  workflow_dispatch:
+    inputs:
+      study_web_url:
+        description: "Web app URL (overrides STUDY_WEB_URL secret if set)"
+        required: false
+        type: string
+
+permissions:
+  contents: write
+
+concurrency:
+  group: release-desktop-${{ github.ref }}
+  cancel-in-progress: true
+
+env:
+  # Prefer workflow input, then secret
+  STUDY_WEB_URL: ${{ inputs.study_web_url || secrets.STUDY_WEB_URL }}
+
+jobs:
+  # ─── macOS DMG + ZIP ───────────────────────────────────────────
+  build-mac:
+    name: Build macOS
+    runs-on: macos-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: pnpm
+
+      - name: Check STUDY_WEB_URL
+        run: |
+          if [ -z "$STUDY_WEB_URL" ]; then
+            echo "::error::STUDY_WEB_URL secret is empty. Set repo secret STUDY_WEB_URL to your Vercel URL."
+            exit 1
+          fi
+          echo "STUDY_WEB_URL=$STUDY_WEB_URL"
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build shared
+        run: pnpm --filter @study/shared build
+
+      - name: Build mac installers
+        working-directory: apps/desktop
+        env:
+          STUDY_WEB_URL: ${{ env.STUDY_WEB_URL }}
+          # unsigned local-style build on CI (no Apple cert required)
+          CSC_IDENTITY_AUTO_DISCOVERY: false
+        run: pnpm run dist:mac:ci
+
+      - name: Upload mac artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: mac-installers
+          path: |
+            apps/desktop/release/*.dmg
+            apps/desktop/release/*.zip
+          if-no-files-found: error
+
+  # ─── Windows NSIS ──────────────────────────────────────────────
+  build-win:
+    name: Build Windows
+    runs-on: windows-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: pnpm
+
+      - name: Check STUDY_WEB_URL
+        shell: bash
+        run: |
+          if [ -z "$STUDY_WEB_URL" ]; then
+            echo "::error::STUDY_WEB_URL secret is empty."
+            exit 1
+          fi
+          echo "STUDY_WEB_URL=$STUDY_WEB_URL"
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build shared
+        run: pnpm --filter @study/shared build
+
+      - name: Build Windows installer
+        working-directory: apps/desktop
+        env:
+          STUDY_WEB_URL: ${{ env.STUDY_WEB_URL }}
+          CSC_IDENTITY_AUTO_DISCOVERY: false
+        run: pnpm run dist:win:ci
+
+      - name: Upload windows artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: win-installers
+          path: |
+            apps/desktop/release/*.exe
+          if-no-files-found: error
+
+  # ─── GitHub Release ────────────────────────────────────────────
+  release:
+    name: Publish GitHub Release
+    needs: [build-mac, build-win]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Download mac artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: mac-installers
+          path: dist-release
+
+      - name: Download win artifacts
+        uses: actions/download-artifact@v4
+        with:
+          name: win-installers
+          path: dist-release
+
+      - name: List files
+        run: ls -lah dist-release
+
+      - name: Resolve tag name
+        id: tag
+        shell: bash
+        run: |
+          if [[ "${{ github.ref }}" == refs/tags/* ]]; then
+            echo "name=${GITHUB_REF_NAME}" >> "$GITHUB_OUTPUT"
+          else
+            # manual run without tag
+            echo "name=desktop-${{ github.run_number }}" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ steps.tag.outputs.name }}
+          name: Study Alarm ${{ steps.tag.outputs.name }}
+          draft: false
+          prerelease: false
+          generate_release_notes: true
+          files: |
+            dist-release/**
+          body: |
+            ## Study Alarm desktop installers
+
+            | OS | File |
+            |----|------|
+            | macOS Apple Silicon | `Mac.dmg` |
+            | macOS Intel | `Mac-Intel.dmg` |
+            | Windows | `Windows.exe` |
+
+            Web app: `${{ env.STUDY_WEB_URL }}`
+
+            Download page (after wiring env): `${{ env.STUDY_WEB_URL }}/download`
+
+            > macOS unsigned build: right-click → Open the first time.
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

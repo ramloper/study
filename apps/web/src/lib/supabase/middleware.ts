@@ -3,7 +3,43 @@ import { NextResponse, type NextRequest } from "next/server";
 
 import { getSupabaseEnv, isSupabaseConfigured } from "@/lib/supabase/env";
 
+function isElectron(request: NextRequest): boolean {
+  const ua = request.headers.get("user-agent") || "";
+  return /Electron/i.test(ua);
+}
+
+function isPublicAsset(path: string): boolean {
+  return (
+    path.startsWith("/_next") ||
+    path.startsWith("/favicon") ||
+    path.includes(".")
+  );
+}
+
+/** Browser-only: force download page. Desktop app (Electron) uses full UI. */
+function browserMustDownload(path: string): boolean {
+  if (path === "/download" || path.startsWith("/download/")) return false;
+  // email confirm / auth callback must still work in Safari/Chrome
+  if (path.startsWith("/auth")) return false;
+  return true;
+}
+
 export async function updateSession(request: NextRequest) {
+  const path = request.nextUrl.pathname;
+
+  if (isPublicAsset(path)) {
+    return NextResponse.next({ request });
+  }
+
+  // ── Web browser → always send to /download (desktop-only product) ──
+  if (!isElectron(request) && browserMustDownload(path)) {
+    const redirectUrl = request.nextUrl.clone();
+    redirectUrl.pathname = "/download";
+    redirectUrl.search = "";
+    return NextResponse.redirect(redirectUrl);
+  }
+
+  // Below: Electron app (or allowed public browser routes)
   let supabaseResponse = NextResponse.next({ request });
 
   if (!isSupabaseConfigured()) {
@@ -29,24 +65,19 @@ export async function updateSession(request: NextRequest) {
     },
   });
 
-  // Refresh session
   const {
     data: { user },
   } = await supabase.auth.getUser();
 
-  const path = request.nextUrl.pathname;
   const isAuthPage =
     path.startsWith("/login") ||
     path.startsWith("/signup") ||
     path.startsWith("/auth");
-  const isPublicAsset =
-    path.startsWith("/_next") ||
-    path.startsWith("/favicon") ||
-    path.includes(".");
+  const isDownloadPage =
+    path === "/download" || path.startsWith("/download/");
 
-  if (isPublicAsset) return supabaseResponse;
-
-  if (!user && !isAuthPage) {
+  // Electron: require login for app screens
+  if (isElectron(request) && !user && !isAuthPage && !isDownloadPage) {
     const redirectUrl = request.nextUrl.clone();
     redirectUrl.pathname = "/login";
     redirectUrl.searchParams.set("next", path);
@@ -59,12 +90,13 @@ export async function updateSession(request: NextRequest) {
     return NextResponse.redirect(redirectUrl);
   }
 
-  // Onboarding gate: require at least 1 enabled subject
+  // Onboarding gate
   if (
     user &&
+    isElectron(request) &&
     !path.startsWith("/onboarding") &&
     !isAuthPage &&
-    path !== "/logout"
+    !isDownloadPage
   ) {
     const { count, error } = await supabase
       .from("user_subjects")
@@ -79,7 +111,6 @@ export async function updateSession(request: NextRequest) {
     }
   }
 
-  // Already onboarded users hitting /onboarding → home
   if (user && path.startsWith("/onboarding")) {
     const { count, error } = await supabase
       .from("user_subjects")

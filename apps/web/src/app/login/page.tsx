@@ -189,6 +189,14 @@ function LoginForm() {
           <p className="mt-2 text-center text-xs text-muted-foreground">
             가입 직후라면 메일 인증을 먼저 완료해 주세요.
           </p>
+          <p className="mt-3 text-center text-sm">
+            <Link
+              href="/download"
+              className="font-semibold text-primary underline-offset-4 hover:underline"
+            >
+              데스크톱 앱 다운로드
+            </Link>
+          </p>
         </CardContent>
       </Card>
     </div>

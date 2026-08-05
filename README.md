@@ -48,7 +48,7 @@ export STUDY_WEB_URL=https://your-app.vercel.app
 
 # macOS DMG + ZIP
 pnpm dist:mac
-# → apps/desktop/release/StudyAlarm-*-mac-*.dmg
+# → apps/desktop/release/Mac.dmg , Windows.exe 등
 
 # Windows 설치 파일 (Windows/CI)
 pnpm dist:win
