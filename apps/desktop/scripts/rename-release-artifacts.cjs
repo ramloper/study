@@ -11,12 +11,12 @@ module.exports = async function renameReleaseArtifacts(context) {
   const renamed = [];
 
   const map = [
-    // mac dmg
-    { test: /arm64\.dmg$/i, name: "Mac.dmg" },
-    { test: /x64\.dmg$/i, name: "Mac-Intel.dmg" },
+    // mac dmg (build-mac-arm64.dmg / …-arm64-mac.dmg 등 모두)
+    { test: /arm64.*\.dmg$/i, name: "Mac.dmg" },
+    { test: /(x64|intel).*\.dmg$/i, name: "Mac-Intel.dmg" },
     // mac zip
-    { test: /arm64\.zip$/i, name: "Mac.zip" },
-    { test: /x64\.zip$/i, name: "Mac-Intel.zip" },
+    { test: /arm64.*\.zip$/i, name: "Mac.zip" },
+    { test: /(x64|intel).*\.zip$/i, name: "Mac-Intel.zip" },
     // windows
     { test: /\.exe$/i, name: "Windows.exe" },
   ];

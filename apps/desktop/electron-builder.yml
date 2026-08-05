@@ -31,6 +31,8 @@ mac:
   identity: null
   hardenedRuntime: false
   gatekeeperAssess: false
+  # CI: dist:mac:ci passes --arm64 --x64 (host arch alone skips Intel)
+  artifactName: build-mac-${arch}.${ext}
   target:
     - target: dmg
       arch:
@@ -43,8 +45,6 @@ mac:
 
 dmg:
   title: Study Alarm
-  # intermediate → rename-release-artifacts: Mac.dmg / Mac-Intel.dmg
-  artifactName: build-mac-${arch}.${ext}
 
 win:
   icon: assets/icon.png
