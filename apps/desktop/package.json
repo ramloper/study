@@ -1,0 +1,37 @@
+{
+  "name": "@study/desktop",
+  "productName": "Study Alarm",
+  "version": "0.1.0",
+  "description": "틈틈이 한 문제씩 푸는 직장인 공부 앱",
+  "author": "Study Alarm",
+  "private": true,
+  "main": "dist/main.js",
+  "scripts": {
+    "patch:icon": "node scripts/patch-electron-mac-icon.mjs",
+    "clear:icon-cache": "bash scripts/clear-mac-icon-cache.sh",
+    "write-config": "node scripts/write-app-config.mjs",
+    "dev": "tsc -p tsconfig.json && node scripts/write-app-config.mjs && wait-on http://127.0.0.1:3000 && node scripts/run-packaged.mjs",
+    "dev:electron-raw": "tsc -p tsconfig.json && node scripts/patch-electron-mac-icon.mjs && wait-on http://127.0.0.1:3000 && electron .",
+    "dev:nowait": "tsc -p tsconfig.json && node scripts/write-app-config.mjs && node scripts/run-packaged.mjs",
+    "build:native": "mkdir -p native && swiftc -emit-library -o native/libstudy_notif.dylib scripts/study_notif_auth.swift -framework UserNotifications -framework Foundation",
+    "build": "pnpm run build:native && tsc -p tsconfig.json && node scripts/write-app-config.mjs",
+    "pack:mac": "pnpm run build && electron-builder --mac dir --config electron-builder.yml",
+    "dist:mac": "pnpm run build && electron-builder --mac dmg zip --config electron-builder.yml",
+    "dist:win": "pnpm run build && electron-builder --win nsis --config electron-builder.yml",
+    "dist": "pnpm run build && electron-builder --mac dmg zip --win nsis --config electron-builder.yml",
+    "start": "electron .",
+    "start:app": "node scripts/run-packaged.mjs"
+  },
+  "dependencies": {
+    "@study/shared": "workspace:*",
+    "koffi": "^3.1.4"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.7",
+    "concurrently": "^9.1.2",
+    "electron": "^34.0.0",
+    "electron-builder": "^25.1.8",
+    "typescript": "^5.7.3",
+    "wait-on": "^8.0.2"
+  }
+}

@@ -1,0 +1,8 @@
+# Minimal config for local CLI (optional).
+# Project linking: supabase link --project-ref <ref>
+
+[project]
+id = "study-alarm"
+
+[db]
+port = 54322

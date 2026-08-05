@@ -1,0 +1,66 @@
+appId: com.studyalarm.app
+productName: Study Alarm
+copyright: Copyright © Study Alarm
+directories:
+  output: release
+  buildResources: assets
+files:
+  - dist/**/*
+  - assets/**/*
+  - package.json
+extraResources:
+  - from: native
+    to: native
+    filter:
+      - "**/*"
+  - from: assets
+    to: assets
+    filter:
+      - "trayTemplate*.png"
+      - "icon.png"
+extraMetadata:
+  main: dist/main.js
+asar: true
+
+mac:
+  icon: assets/icon.icns
+  category: public.app-category.education
+  # Set CSC_IDENTITY_AUTO_DISCOVERY=false or identity: null for unsigned local builds
+  identity: null
+  hardenedRuntime: false
+  gatekeeperAssess: false
+  target:
+    - target: dmg
+      arch:
+        - arm64
+        - x64
+    - target: zip
+      arch:
+        - arm64
+        - x64
+
+dmg:
+  title: Study Alarm
+  artifactName: StudyAlarm-${version}-mac-${arch}.${ext}
+
+win:
+  icon: assets/icon.png
+  target:
+    - target: nsis
+      arch:
+        - x64
+  artifactName: StudyAlarm-${version}-win-${arch}.${ext}
+
+nsis:
+  oneClick: false
+  allowToChangeInstallationDirectory: true
+  createDesktopShortcut: true
+  createStartMenuShortcut: true
+  shortcutName: Study Alarm
+
+linux:
+  icon: assets/icon.png
+  category: Education
+  target:
+    - AppImage
+  artifactName: StudyAlarm-${version}-linux-${arch}.${ext}

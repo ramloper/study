@@ -1,0 +1,17 @@
+{
+  "name": "study-alarm",
+  "private": true,
+  "packageManager": "pnpm@9.15.0",
+  "scripts": {
+    "dev": "pnpm --filter @study/web dev",
+    "dev:web": "pnpm --filter @study/web dev",
+    "dev:desktop": "pnpm --filter @study/shared build && pnpm --filter @study/desktop pack:mac && pnpm --filter @study/desktop start:app",
+    "dev:desktop:watch": "pnpm --filter @study/shared build && pnpm --filter @study/desktop dev",
+    "build": "pnpm --filter @study/shared build && pnpm --filter @study/web build && pnpm --filter @study/desktop build",
+    "build:web": "pnpm --filter @study/shared build && pnpm --filter @study/web build",
+    "build:desktop": "pnpm --filter @study/shared build && pnpm --filter @study/desktop build",
+    "dist:mac": "pnpm --filter @study/shared build && pnpm --filter @study/desktop dist:mac",
+    "dist:win": "pnpm --filter @study/shared build && pnpm --filter @study/desktop dist:win",
+    "postinstall": "pnpm --filter @study/shared build"
+  }
+}

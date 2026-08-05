@@ -1,0 +1,15 @@
+node_modules
+.next
+out
+dist
+.turbo
+*.log
+.DS_Store
+_design_extract
+.env
+.env.local
+.env*.local
+apps/desktop/release
+apps/desktop/native/*.dylib
+!.gitkeep
+.vercel
