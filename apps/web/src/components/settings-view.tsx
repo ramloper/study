@@ -56,11 +56,23 @@ export function SettingsView() {
   const [testingAlarm, setTestingAlarm] = useState(false);
   const [userEmail, setUserEmail] = useState<string | null>(null);
   const [desktopMode, setDesktopMode] = useState(false);
+  /** Electron process.platform: "darwin" | "win32" | … */
+  const [osPlatform, setOsPlatform] = useState<string | null>(null);
   const [nextAtLabel, setNextAtLabel] = useState<string | null>(null);
 
   useEffect(() => {
     void (async () => {
       setDesktopMode(isDesktop());
+      if (typeof window !== "undefined" && window.desktop?.platform) {
+        setOsPlatform(window.desktop.platform);
+      } else if (typeof window !== "undefined" && window.desktop?.getInfo) {
+        try {
+          const info = await window.desktop.getInfo();
+          setOsPlatform(info.platform);
+        } catch {
+          /* ignore */
+        }
+      }
       const alarm = await loadAlarmSettings(DEFAULT_ALARM_SETTINGS);
       setSettings(alarm);
 
@@ -165,9 +177,13 @@ export function SettingsView() {
         return;
       }
       // Always attempt; if OS blocks, user simply won't see a banner
-      toast.success(
-        "테스트 알림을 요청했어요. 안 보이면 macOS 설정 → 알림 → Study Alarm 을 확인해 주세요."
-      );
+      const hint =
+        osPlatform === "win32"
+          ? "안 보이면 Windows 설정 → 시스템 → 알림 에서 Study Alarm 을 확인해 주세요."
+          : osPlatform === "darwin"
+            ? "안 보이면 macOS 시스템 설정 → 알림 → Study Alarm 을 확인해 주세요."
+            : "안 보이면 OS 알림 설정에서 Study Alarm 허용을 확인해 주세요.";
+      toast.success(`테스트 알림을 요청했어요. ${hint}`);
     } catch (e) {
       toast.error(e instanceof Error ? e.message : "테스트 실패");
     } finally {
@@ -308,18 +324,35 @@ export function SettingsView() {
         ) : (
           <div className="rounded-xl border border-border bg-muted/40 px-3.5 py-3 text-[13px] leading-relaxed">
             <p className="font-bold text-foreground">알림이 안 울릴 때</p>
-            <p className="mt-1 text-muted-foreground">
-              macOS <strong className="text-foreground">설정 → 알림 → Study Alarm</strong>
-              에서 <strong className="text-foreground">알림 허용</strong>이 켜져
-              있어야 해요. 앱의 알람 스위치와는 별개입니다.
-            </p>
+            {osPlatform === "win32" ? (
+              <p className="mt-1 text-muted-foreground">
+                Windows{" "}
+                <strong className="text-foreground">
+                  설정 → 시스템 → 알림
+                </strong>
+                에서{" "}
+                <strong className="text-foreground">Study Alarm</strong> 알림이
+                허용돼 있어야 해요. 앱의 알람 스위치와는 별개입니다.
+              </p>
+            ) : (
+              <p className="mt-1 text-muted-foreground">
+                macOS{" "}
+                <strong className="text-foreground">
+                  시스템 설정 → 알림 → Study Alarm
+                </strong>
+                에서 <strong className="text-foreground">알림 허용</strong>이
+                켜져 있어야 해요. 앱의 알람 스위치와는 별개입니다.
+              </p>
+            )}
             {nextAtLabel && (
               <p className="mt-1 text-muted-foreground">
                 다음 스케줄: {nextAtLabel}
               </p>
             )}
             <p className="mt-1 text-muted-foreground">
-              창을 닫아도 트레이에 남아 있어야 해요. (완전 종료 시 스케줄 중단)
+              {osPlatform === "win32"
+                ? "창을 닫아도 트레이(알림 영역)에 남아 있어야 해요. 완전 종료하면 스케줄이 멈춥니다."
+                : "창을 닫아도 메뉴바 트레이에 남아 있어야 해요. 완전 종료하면 스케줄이 멈춥니다."}
             </p>
             <Button
               type="button"
@@ -328,7 +361,9 @@ export function SettingsView() {
               className="mt-2 h-8 font-semibold"
               onClick={() => void openOsNotificationSettings()}
             >
-              macOS 알림 설정 열기
+              {osPlatform === "win32"
+                ? "Windows 알림 설정 열기"
+                : "macOS 알림 설정 열기"}
             </Button>
           </div>
         )}

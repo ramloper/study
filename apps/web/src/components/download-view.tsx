@@ -168,9 +168,24 @@ export function DownloadView({ links }: Props) {
       <div className="rounded-xl border border-border bg-muted/40 px-4 py-3 text-[13px] leading-relaxed text-muted-foreground">
         <p className="font-semibold text-foreground">설치 후</p>
         <ol className="mt-1 list-decimal space-y-0.5 pl-4">
-          <li>앱 실행 → 웹과 같은 계정으로 로그인</li>
-          <li>macOS는 처음 실행 시 우클릭 → 열기 가 필요할 수 있어요</li>
-          <li>알림: 시스템 설정 → 알림 → Study Alarm 허용</li>
+          <li>
+            Mac: DMG를 열고 <strong className="text-foreground">응용 프로그램</strong>으로
+            드래그한 뒤 실행
+          </li>
+          <li>앱 실행 → 같은 계정으로 로그인</li>
+          <li>
+            macOS에서 &quot;확인되지 않은 개발자&quot; / &quot;손상됨&quot;이 뜨면: 앱을{" "}
+            <strong className="text-foreground">우클릭 → 열기</strong>
+          </li>
+          <li>
+            그래도 안 되면 터미널:
+            <code className="mt-1 block rounded bg-muted px-2 py-1 text-[11px] text-foreground">
+              xattr -cr &quot;/Applications/Study Alarm.app&quot;
+            </code>
+          </li>
+          <li>
+            알림 허용: Mac은 시스템 설정 → 알림 / Windows는 설정 → 시스템 → 알림
+          </li>
         </ol>
       </div>
     </div>

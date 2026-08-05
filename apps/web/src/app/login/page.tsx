@@ -9,7 +9,6 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { resendSignupEmail } from "@/lib/auth";
 import { isSupabaseConfigured } from "@/lib/supabase/env";
 import { tryCreateClient } from "@/lib/supabase/client";
 
@@ -25,8 +24,6 @@ function LoginForm() {
   const [email, setEmail] = useState(emailFromQuery);
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false);
-  const [resending, setResending] = useState(false);
-  const [needsConfirm, setNeedsConfirm] = useState(false);
 
   const configured = isSupabaseConfigured();
 
@@ -39,24 +36,6 @@ function LoginForm() {
     }
   }, [verified, errorParam, messageParam]);
 
-  async function onResend() {
-    if (!email.trim()) {
-      toast.error("이메일을 입력해 주세요");
-      return;
-    }
-    setResending(true);
-    try {
-      await resendSignupEmail(email);
-      toast.success("인증 메일을 다시 보냈어요. 메일함을 확인해 주세요.");
-    } catch (e) {
-      toast.error(
-        e instanceof Error ? e.message : "메일 재전송에 실패했어요"
-      );
-    } finally {
-      setResending(false);
-    }
-  }
-
   async function onSubmit(e: React.FormEvent) {
     e.preventDefault();
     const supabase = tryCreateClient();
@@ -65,7 +44,6 @@ function LoginForm() {
       return;
     }
     setLoading(true);
-    setNeedsConfirm(false);
     const { error } = await supabase.auth.signInWithPassword({
       email,
       password,
@@ -74,7 +52,6 @@ function LoginForm() {
     if (error) {
       const msg = error.message.toLowerCase();
       if (msg.includes("email not confirmed") || msg.includes("not confirmed")) {
-        setNeedsConfirm(true);
         toast.error(
           "이메일 인증이 아직 안 됐어요. 메일함의 인증 링크를 확인해 주세요."
         );
@@ -149,52 +126,10 @@ function LoginForm() {
             </Button>
           </form>
 
-          {needsConfirm && (
-            <div className="mt-4 rounded-xl border border-amber-500/30 bg-amber-500/10 px-3.5 py-3 text-[13px]">
-              <p className="font-semibold text-foreground">
-                이메일 인증이 필요해요
-              </p>
-              <p className="mt-1 text-muted-foreground">
-                메일이 없다면 아래 버튼으로 다시 받을 수 있어요.
-              </p>
-              <Button
-                type="button"
-                variant="outline"
-                className="mt-3 h-9 w-full font-semibold"
-                disabled={resending || !email.trim()}
-                onClick={() => void onResend()}
-              >
-                {resending ? "전송 중…" : "인증 메일 다시 보내기"}
-              </Button>
-            </div>
-          )}
-
-          {!needsConfirm && (
-            <button
-              type="button"
-              className="mt-3 w-full text-center text-sm font-semibold text-primary disabled:opacity-50"
-              disabled={resending || !configured}
-              onClick={() => void onResend()}
-            >
-              {resending ? "전송 중…" : "인증 메일 다시 보내기"}
-            </button>
-          )}
-
           <p className="mt-4 text-center text-sm text-muted-foreground">
             계정이 없나요?{" "}
             <Link href="/signup" className="font-semibold text-primary">
               회원가입
-            </Link>
-          </p>
-          <p className="mt-2 text-center text-xs text-muted-foreground">
-            가입 직후라면 메일 인증을 먼저 완료해 주세요.
-          </p>
-          <p className="mt-3 text-center text-sm">
-            <Link
-              href="/download"
-              className="font-semibold text-primary underline-offset-4 hover:underline"
-            >
-              데스크톱 앱 다운로드
             </Link>
           </p>
         </CardContent>

@@ -22,13 +22,17 @@ extraMetadata:
   main: dist/main.js
 asar: true
 
+# afterPack: ad-hoc codesign (fixes macOS "damaged" on download)
+afterPack: ./scripts/after-pack.cjs
 # Friendly names applied in scripts/rename-release-artifacts.cjs
 afterAllArtifactBuild: ./scripts/rename-release-artifacts.cjs
 
 mac:
   icon: assets/icon.icns
   category: public.app-category.education
-  identity: null
+  # null = skip signing → broken partial Electron linker signatures → "damaged"
+  # "-" = ad-hoc sign (no Apple Developer account). afterPack also deep-signs.
+  identity: "-"
   hardenedRuntime: false
   gatekeeperAssess: false
   # CI: dist:mac:ci passes --arm64 --x64 (host arch alone skips Intel)
