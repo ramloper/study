@@ -92,6 +92,10 @@ function openQuestionFromNotification() {
 
 function resolveIconPath(): string | null {
   const candidates = [
+    // packaged: extraResources
+    path.join(process.resourcesPath, "assets", "icon.png"),
+    path.join(process.resourcesPath, "icon.png"),
+    // asar / dev
     path.join(__dirname, "..", "assets", "icon.png"),
     path.join(process.cwd(), "assets", "icon.png"),
     path.join(app.getAppPath(), "assets", "icon.png"),

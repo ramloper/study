@@ -326,18 +326,17 @@ export function SettingsView() {
             <p className="font-bold text-foreground">알림이 안 울릴 때</p>
             {osPlatform === "win32" ? (
               <p className="mt-1 text-muted-foreground">
-                Windows{" "}
+                테스트 알림은 화면{" "}
+                <strong className="text-foreground">오른쪽 아래</strong>에
+                잠깐 떴다가, 놓치면{" "}
+                <strong className="text-foreground">Win + N</strong> (알림
+                센터)에 쌓여요.{" "}
                 <strong className="text-foreground">
                   설정 → 시스템 → 알림
                 </strong>
-                목록에{" "}
-                <strong className="text-foreground">Study Alarm</strong> 이
-                보여야 해요.{" "}
-                <strong className="text-foreground">설치 프로그램</strong>으로
-                깐 뒤(시작 메뉴 바로가기 필요), 아래{" "}
-                <strong className="text-foreground">지금 테스트 알림</strong> 을
-                한 번 보내면 목록에 등록됩니다. exe만 단독 실행하면 안 뜰 수
-                있어요.
+                에서 Study Alarm 이 켜져 있는지,{" "}
+                <strong className="text-foreground">집중 지원</strong>이 꺼져
+                있는지도 확인해 주세요.
               </p>
             ) : (
               <p className="mt-1 text-muted-foreground">

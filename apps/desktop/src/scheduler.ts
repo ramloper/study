@@ -92,22 +92,34 @@ export function showStudyNotification(
     title: NOTIFICATION.title,
     body: NOTIFICATION.body,
     silent: false,
-    urgency: "normal",
-    timeoutType: "default",
+    // Windows: "critical" is more likely to show a banner (not only Action Center)
+    urgency: process.platform === "win32" ? "critical" : "normal",
+    // Keep toast on screen longer so it's harder to miss
+    timeoutType: process.platform === "win32" ? "never" : "default",
   };
 
+  // Prefer absolute file path on Windows (NativeImage can fail silently for toasts)
   if (icon) {
-    opts.icon = icon;
+    if (typeof icon === "string") {
+      opts.icon = icon;
+    } else if (!icon.isEmpty()) {
+      opts.icon = icon;
+    }
   }
 
-  const n = new Notification(opts);
-  n.on("click", onClick);
-  n.on("show", () => {
-    console.log("[alarm] notification shown");
-  });
-  n.on("failed", (_e, err) => {
-    console.warn("[alarm] notification failed", err);
-  });
-  n.show();
-  return n;
+  try {
+    const n = new Notification(opts);
+    n.on("click", onClick);
+    n.on("show", () => {
+      console.log("[alarm] notification shown");
+    });
+    n.on("failed", (_e, err) => {
+      console.warn("[alarm] notification failed", err);
+    });
+    n.show();
+    return n;
+  } catch (e) {
+    console.warn("[alarm] notification threw", e);
+    return null;
+  }
 }
