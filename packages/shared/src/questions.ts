@@ -1,6 +1,7 @@
 import type { Question } from "./types";
+import { INDUSTRIAL_SAFETY_QUESTIONS } from "./questions-industrial-safety";
 
-export const QUESTIONS: Question[] = [
+const SEED_QUESTIONS: Question[] = [
   {
     id: "q-http-idempotent",
     type: "mcq",
@@ -120,6 +121,12 @@ export const QUESTIONS: Question[] = [
     concepts: ["경제 용어", "비즈니스 영어"],
     difficulty: 2,
   },
+];
+
+/** Local fallback when Supabase is off — includes industrial safety import */
+export const QUESTIONS: Question[] = [
+  ...SEED_QUESTIONS,
+  ...INDUSTRIAL_SAFETY_QUESTIONS,
 ];
 
 export function getQuestionById(id: string): Question | undefined {
