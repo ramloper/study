@@ -53,8 +53,6 @@ dmg:
 
 win:
   icon: assets/icon.png
-  # Same id as app.setAppUserModelId — required for toast + Notifications list
-  toastNotifierAppId: com.studyalarm.app
   target:
     - target: nsis
       arch:
@@ -66,12 +64,10 @@ nsis:
   oneClick: false
   allowToChangeInstallationDirectory: true
   createDesktopShortcut: true
-  # Start Menu shortcut carries AppUserModelID; without it Windows won't list
-  # the app under Settings → System → Notifications
+  # Start Menu shortcut carries AppUserModelID (= appId com.studyalarm.app).
+  # Without install + shortcut, Windows won't list the app under Notifications.
   createStartMenuShortcut: true
   shortcutName: Study Alarm
-  menuCategory: false
-  # Ensure installer registers toast-capable shortcut (not just a bare .exe run)
   runAfterFinish: true
 
 linux:
