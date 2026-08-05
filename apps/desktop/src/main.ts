@@ -229,6 +229,8 @@ function createWindow() {
     minHeight: 600,
     title: "Study Alarm",
     icon: icon.isEmpty() ? undefined : icon,
+    // Windows/Linux: no File / Edit menu bar (app UI is enough)
+    autoHideMenuBar: process.platform !== "darwin",
     webPreferences: {
       preload: path.join(__dirname, "preload.js"),
       contextIsolation: true,
@@ -355,6 +357,12 @@ function createTray() {
 }
 
 app.whenReady().then(async () => {
+  // Windows/Linux: hide default File · Edit · View menu (looks like a website shell)
+  // macOS keeps the system menu bar (app name / standard shortcuts)
+  if (process.platform !== "darwin") {
+    Menu.setApplicationMenu(null);
+  }
+
   // Start dock-hidden; show Dock only when window is open (Docker-style)
   if (process.platform === "darwin" && app.dock) {
     app.dock.hide();
