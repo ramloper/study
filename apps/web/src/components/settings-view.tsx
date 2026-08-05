@@ -330,9 +330,14 @@ export function SettingsView() {
                 <strong className="text-foreground">
                   설정 → 시스템 → 알림
                 </strong>
-                에서{" "}
-                <strong className="text-foreground">Study Alarm</strong> 알림이
-                허용돼 있어야 해요. 앱의 알람 스위치와는 별개입니다.
+                목록에{" "}
+                <strong className="text-foreground">Study Alarm</strong> 이
+                보여야 해요.{" "}
+                <strong className="text-foreground">설치 프로그램</strong>으로
+                깐 뒤(시작 메뉴 바로가기 필요), 아래{" "}
+                <strong className="text-foreground">지금 테스트 알림</strong> 을
+                한 번 보내면 목록에 등록됩니다. exe만 단독 실행하면 안 뜰 수
+                있어요.
               </p>
             ) : (
               <p className="mt-1 text-muted-foreground">

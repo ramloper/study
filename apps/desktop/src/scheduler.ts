@@ -93,6 +93,7 @@ export function showStudyNotification(
     body: NOTIFICATION.body,
     silent: false,
     urgency: "normal",
+    timeoutType: "default",
   };
 
   if (icon) {
@@ -101,6 +102,9 @@ export function showStudyNotification(
 
   const n = new Notification(opts);
   n.on("click", onClick);
+  n.on("show", () => {
+    console.log("[alarm] notification shown");
+  });
   n.on("failed", (_e, err) => {
     console.warn("[alarm] notification failed", err);
   });

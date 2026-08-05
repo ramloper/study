@@ -18,8 +18,18 @@ import {
 import { openSystemNotificationSettings } from "./notification-permission";
 import { AlarmScheduler, showStudyNotification } from "./scheduler";
 
-// macOS 알림 왼쪽 앱 이름/정체성 (Electron 대신)
+/** Must match electron-builder `appId` + Start Menu shortcut AUMID */
+const APP_USER_MODEL_ID = "com.studyalarm.app";
+
+// Display name in notifications / tray / taskbar
 app.setName("Study Alarm");
+
+// Windows: without this, toasts show as "Electron" (or not at all) and the app
+// never appears under Settings → System → Notifications.
+// Must run before app.ready. Production NSIS shortcut uses the same id.
+if (process.platform === "win32") {
+  app.setAppUserModelId(APP_USER_MODEL_ID);
+}
 
 /** Production: baked dist/app-config.json · Dev: STUDY_WEB_URL or localhost */
 function resolveAppUrl(): string {
