@@ -167,7 +167,7 @@ insert into public.question_options (id, question_id, body, sort_order) values
   ('d14b3fdd-5f3e-25b8-7734-ae755f0d345b', '5dcd700f-4d3c-2fed-ceae-9768939d3d87', '청색', 3)
 on conflict (id) do update set body = excluded.body;
 insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
-  ('5dcd700f-4d3c-2fed-ceae-9768939d3d87', '3cca0448-b9db-dc15-e661-1cf84dadd244', '③ 황색', '정답 ③. 고압가스용기의 도색 • 액화석유가스: 밝은 회색 • 수소: 주황색 • 아세틸렌: 황색 • 액화암모니아: 백색 • 액화염소: 갈색 •산소: 녹색 • 기타가스: 회색 !', array['산업안전기사','2019-2'])
+  ('5dcd700f-4d3c-2fed-ceae-9768939d3d87', '3cca0448-b9db-dc15-e661-1cf84dadd244', '③ 황색', '정답 ③. 고압가스용기의 도색 • 액화석유가스: 밝은 회색 • 수소: 주황색 • 아세틸렌: 황색 • 액화암모니아: 백색 • 액화염소: 갈색 •산소: 녹색 • 기타가스: 회색', array['산업안전기사','2019-2'])
 on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
 insert into public.questions (id, subject_id, type, body, difficulty, number) values
@@ -433,7 +433,7 @@ insert into public.question_options (id, question_id, body, sort_order) values
   ('ade2dbc1-92cc-fd5d-b66c-76251b5c2046', '2131abf8-15fc-c83a-9593-7e6c20fb11ce', '스크러버개방장치', 3)
 on conflict (id) do update set body = excluded.body;
 insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
-  ('2131abf8-15fc-c83a-9593-7e6c20fb11ce', 'f87bcb8e-4b3e-4ac2-4ea5-618a8b96016f', '① 자동경보장치', '정답 ①. 특수화학설비를 설치하는 경우에는 그 내부의 이상 상태를 조기 에 파악하기 위해 필요한 자동경보장치를 설치하여야 한다. WBigl', array['산업안전기사','2019-2'])
+  ('2131abf8-15fc-c83a-9593-7e6c20fb11ce', 'f87bcb8e-4b3e-4ac2-4ea5-618a8b96016f', '① 자동경보장치', '정답 ①. 특수화학설비를 설치하는 경우에는 그 내부의 이상 상태를 조기 에 파악하기 위해 필요한 자동경보장치를 설치하여야 한다', array['산업안전기사','2019-2'])
 on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
 insert into public.questions (id, subject_id, type, body, difficulty, number) values
@@ -490,7 +490,7 @@ insert into public.question_options (id, question_id, body, sort_order) values
   ('b0abba8c-d0b2-6377-dd24-e2db07e799c9', '8f62b92d-851e-daa5-7946-b24d5bd781da', '적재하중', 3)
 on conflict (id) do update set body = excluded.body;
 insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
-  ('8f62b92d-851e-daa5-7946-b24d5bd781da', '04da2e44-8622-5eaa-366c-b5d58c10589d', '② 정격하중', '정답 ②. 정격하중이란 크레인의 권싱하중에서 훅 • 버킷 등 달기구의 중 량에 상당하는 하중을 뺀 하중을 말한다. 이때 권상하중이란 크레인이 들 어올릴 수 있는 최대의 하중을 말한다. WETl', array['산업안전기사','2019-2'])
+  ('8f62b92d-851e-daa5-7946-b24d5bd781da', '04da2e44-8622-5eaa-366c-b5d58c10589d', '② 정격하중', '정답 ②. 정격하중이란 크레인의 권싱하중에서 훅 • 버킷 등 달기구의 중 량에 상당하는 하중을 뺀 하중을 말한다. 이때 권상하중이란 크레인이 들 어올릴 수 있는 최대의 하중을 말한다', array['산업안전기사','2019-2'])
 on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
 insert into public.questions (id, subject_id, type, body, difficulty, number) values
@@ -509,7 +509,7 @@ insert into public.question_options (id, question_id, body, sort_order) values
   ('c02016a8-0252-3613-24c1-27b65a5dab07', 'b047eeb0-90fe-5e10-c9bb-af0ee1f371e3', '거푸집 해체 작업장 주위에는 관계자를 제외하고는 출', 3)
 on conflict (id) do update set body = excluded.body;
 insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
-  ('b047eeb0-90fe-5e10-c9bb-af0ee1f371e3', 'fa406c63-fe2d-93c5-5a3a-bb28af0886ac', '① 일반적으로 수평부재의 거푸집은 연직부재의 거푸집보', '정답 ①. 입을 금지시켜야 한다. 1짜 일반적으로 연직부재의 거푸집은 수평부재의 거푸집보다 빨리 떼어낼 수 있다. EHEIgl', array['산업안전기사','2019-2'])
+  ('b047eeb0-90fe-5e10-c9bb-af0ee1f371e3', 'fa406c63-fe2d-93c5-5a3a-bb28af0886ac', '① 일반적으로 수평부재의 거푸집은 연직부재의 거푸집보', '정답 ①. 입을 금지시켜야 한다. 1짜 일반적으로 연직부재의 거푸집은 수평부재의 거푸집보다 빨리 떼어낼 수 있다', array['산업안전기사','2019-2'])
 on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
 insert into public.questions (id, subject_id, type, body, difficulty, number) values
@@ -566,7 +566,7 @@ insert into public.question_options (id, question_id, body, sort_order) values
   ('25ebed85-62b5-aeeb-7388-56ae2d0e7669', 'e1a1dbf6-3e22-77b6-18d7-210a3ae9e424', '수강자 개개인의 학습진도를 조절할 수 있다.', 3)
 on conflict (id) do update set body = excluded.body;
 insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
-  ('e1a1dbf6-3e22-77b6-18d7-210a3ae9e424', '25ebed85-62b5-aeeb-7388-56ae2d0e7669', '④ 수강자 개개인의 학습진도를 조절할 수 있다.', '정답 ④. 강의법은 다수의 수강자를 대상으로 동시에 교육을 진행하기 때 문에 개개인의 학습진도를 조절할 수 없다. EOM', array['산업안전기사','2019-3'])
+  ('e1a1dbf6-3e22-77b6-18d7-210a3ae9e424', '25ebed85-62b5-aeeb-7388-56ae2d0e7669', '④ 수강자 개개인의 학습진도를 조절할 수 있다.', '정답 ④. 강의법은 다수의 수강자를 대상으로 동시에 교육을 진행하기 때 문에 개개인의 학습진도를 조절할 수 없다', array['산업안전기사','2019-3'])
 on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
 insert into public.questions (id, subject_id, type, body, difficulty, number) values
@@ -642,7 +642,7 @@ insert into public.question_options (id, question_id, body, sort_order) values
   ('88fc56d3-415b-25ed-36bc-7173e4953b78', '517330ef-d07e-de11-8559-873d321c86aa', '기계 . 기구의 위험성과작업의 순서 및 동선에 관한사항', 3)
 on conflict (id) do update set body = excluded.body;
 insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
-  ('517330ef-d07e-de11-8559-873d321c86aa', '53af00d1-e36b-04aa-6dce-155d2383a01c', '③ 작업공정의 유해 • 위험과 재해 예방대책에 관한 사항', '정답 ③. 는 근로자와 관리감독자의 채용 시 및 작업내용 변경 시 교 육내용이고. 는 근로자의 채용 시 및 작업내용 변경 시 교육내용이다. 폐 U', array['산업안전기사','2019-3'])
+  ('517330ef-d07e-de11-8559-873d321c86aa', '53af00d1-e36b-04aa-6dce-155d2383a01c', '③ 작업공정의 유해 • 위험과 재해 예방대책에 관한 사항', '정답 ③. 는 근로자와 관리감독자의 채용 시 및 작업내용 변경 시 교 육내용이고. 는 근로자의 채용 시 및 작업내용 변경 시 교육내용이다. 폐', array['산업안전기사','2019-3'])
 on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
 insert into public.questions (id, subject_id, type, body, difficulty, number) values
@@ -699,7 +699,7 @@ insert into public.question_options (id, question_id, body, sort_order) values
   ('c9ea03f4-8fdf-4225-9565-704ccacea49f', 'b76857b7-3d16-f99d-7127-a5e27ab06aeb', 'EP-2', 3)
 on conflict (id) do update set body = excluded.body;
 insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
-  ('b76857b7-3d16-f99d-7127-a5e27ab06aeb', 'c9ea03f4-8fdf-4225-9565-704ccacea49f', '④ EP-2', '정답 ④. 방음용 귀마개 또는 귀덮개의 종류 - 등급 종류 등급 기호 성능 1 종 EP-1 저음부터 고음까지 차음하는 것 귀마개 주로 고음을 차음하고 저음（회화음영역）은 차음하지 2 종 다3-2 않는것 귀덮개 - EM', array['산업안전기사','2019-3'])
+  ('b76857b7-3d16-f99d-7127-a5e27ab06aeb', 'c9ea03f4-8fdf-4225-9565-704ccacea49f', '④ EP-2', '정답 ④. 방음용 귀마개 또는 귀덮개의 종류 - 등급 종류 등급 기호 성능 1 종 EP-1 저음부터 고음까지 차음하는 것 귀마개 주로 고음을 차음하고 저음（회화음영역）은 차음하지 2 종 다3-2 않는것 귀덮개', array['산업안전기사','2019-3'])
 on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
 insert into public.questions (id, subject_id, type, body, difficulty, number) values

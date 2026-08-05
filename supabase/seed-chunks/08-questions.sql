@@ -34,7 +34,7 @@ insert into public.question_options (id, question_id, body, sort_order) values
   ('cc90f416-d045-f5cd-6cfd-ac4b58f47402', '09207a60-2c59-2552-d943-e7680b62d16b', '화물용 엘리베이터', 3)
 on conflict (id) do update set body = excluded.body;
 insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
-  ('09207a60-2c59-2552-d943-e7680b62d16b', '4dee612f-901f-5b69-65eb-2d434b2a8d4b', '③ 적재하중 0.05톤의 이삿짐운반용 리프트', '정답 ③. 양중기의 종류 • 크레인(호이스트 (Hoist) 포함) •이동식 크레인 • 리프트(이삿짐운반용 리프트의 경우에는 적재하중이 0.1 톤 이상인 것으 로한정) •곤돌라 •승강기 WW', array['산업안전기사','2021-3'])
+  ('09207a60-2c59-2552-d943-e7680b62d16b', '4dee612f-901f-5b69-65eb-2d434b2a8d4b', '③ 적재하중 0.05톤의 이삿짐운반용 리프트', '정답 ③. 양중기의 종류 • 크레인(호이스트 (Hoist) 포함) •이동식 크레인 • 리프트(이삿짐운반용 리프트의 경우에는 적재하중이 0.1 톤 이상인 것으 로한정) •곤돌라 •승강기', array['산업안전기사','2021-3'])
 on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
 insert into public.questions (id, subject_id, type, body, difficulty, number) values
@@ -262,7 +262,7 @@ insert into public.question_options (id, question_id, body, sort_order) values
   ('d90a8582-69ac-acb0-645f-d6ec7113b639', '50209412-b57d-a29d-3284-65c63766ee50', '마그네슘 분말', 3)
 on conflict (id) do update set body = excluded.body;
 insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
-  ('50209412-b57d-a29d-3284-65c63766ee50', '610e357f-94ab-9d10-5412-0b94995c3820', '① 디아조화합물', '정답 ①. 디아조화합물은 폭발성 물질 및 유기과산화물에 해당한다. 오답래설 황린. ® 알킬알루미늄. ® 마그네슘 분말은 물반응성 물질 및 인화성 고체에 해당한다. EWEI', array['산업안전기사','2021-3'])
+  ('50209412-b57d-a29d-3284-65c63766ee50', '610e357f-94ab-9d10-5412-0b94995c3820', '① 디아조화합물', '정답 ①. 디아조화합물은 폭발성 물질 및 유기과산화물에 해당한다. 오답래설 황린. ® 알킬알루미늄. ® 마그네슘 분말은 물반응성 물질 및 인화성 고체에 해당한다', array['산업안전기사','2021-3'])
 on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
 insert into public.questions (id, subject_id, type, body, difficulty, number) values
@@ -281,7 +281,7 @@ insert into public.question_options (id, question_id, body, sort_order) values
   ('d87f9865-c1a9-b0b2-58e3-01c1346bbe2f', '1a6e462d-39e5-900c-411d-bf98f3cef8fb', '무게중심', 3)
 on conflict (id) do update set body = excluded.body;
 insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
-  ('1a6e462d-39e5-900c-411d-bf98f3cef8fb', 'c8577952-d204-b2e2-7404-86f4567cef73', '① 상단', '정답 ①. 화염방지기는 외부로부터의 화염을 방지하기 위하여 그 설비 상 단에 설치하여야 한다. !', array['산업안전기사','2021-3'])
+  ('1a6e462d-39e5-900c-411d-bf98f3cef8fb', 'c8577952-d204-b2e2-7404-86f4567cef73', '① 상단', '정답 ①. 화염방지기는 외부로부터의 화염을 방지하기 위하여 그 설비 상 단에 설치하여야 한다', array['산업안전기사','2021-3'])
 on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
 insert into public.questions (id, subject_id, type, body, difficulty, number) values
@@ -300,7 +300,7 @@ insert into public.question_options (id, question_id, body, sort_order) values
   ('4e66ad17-9cdf-ca7d-11da-5c149036ff70', 'a30896ab-6e10-c8fe-f2c6-c6cc3332d459', '도급업체 안전관리계획', 3)
 on conflict (id) do update set body = excluded.body;
 insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
-  ('a30896ab-6e10-c8fe-f2c6-c6cc3332d459', 'deb8e4e0-74c9-457d-f4f7-d8b768be12f1', '③ 각종건물•설비의 배치도', '정답 ③. 은 비상조치계획, @, 는 안전운전계획에 포함하여야 할 세 부내용이다. t gi', array['산업안전기사','2021-3'])
+  ('a30896ab-6e10-c8fe-f2c6-c6cc3332d459', 'deb8e4e0-74c9-457d-f4f7-d8b768be12f1', '③ 각종건물•설비의 배치도', '정답 ③. 은 비상조치계획, @, 는 안전운전계획에 포함하여야 할 세 부내용이다', array['산업안전기사','2021-3'])
 on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
 insert into public.questions (id, subject_id, type, body, difficulty, number) values
@@ -357,7 +357,7 @@ insert into public.question_options (id, question_id, body, sort_order) values
   ('45aa2c2f-40c3-4b89-7da8-8e35473318b1', '7213523e-96fb-1da9-98b5-dfef514d1bc0', '수직방향 8[m] 이하, 수평방향 8[m] 이하', 3)
 on conflict (id) do update set body = excluded.body;
 insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
-  ('7213523e-96fb-1da9-98b5-dfef514d1bc0', 'fc2351c5-7808-4880-067f-4581d2e56c82', '① 수직방향 5[m] 이하. 수평방향 5[m] 이하', '정답 ①. 단관비계의 벽이음은 수직방향 5[m]. 수평방향 5[m] 이내로 조립 하여야 한다. E#gl', array['산업안전기사','2021-3'])
+  ('7213523e-96fb-1da9-98b5-dfef514d1bc0', 'fc2351c5-7808-4880-067f-4581d2e56c82', '① 수직방향 5[m] 이하. 수평방향 5[m] 이하', '정답 ①. 단관비계의 벽이음은 수직방향 5[m]. 수평방향 5[m] 이내로 조립 하여야 한다', array['산업안전기사','2021-3'])
 on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
 insert into public.questions (id, subject_id, type, body, difficulty, number) values
@@ -604,7 +604,7 @@ insert into public.question_options (id, question_id, body, sort_order) values
   ('6e8e6c21-7426-3391-f80b-e9155fa45b0c', '2bf579fe-f0bd-15b4-8716-ed8c30c3360f', 'ETA', 3)
 on conflict (id) do update set body = excluded.body;
 insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
-  ('2bf579fe-f0bd-15b4-8716-ed8c30c3360f', 'ef362efd-50bf-c014-7b08-30dbafe625e0', '② PHA', '정답 ②. 나려MH 결함위험분석（FHA； Fault Hazards Analysis） 분업에 의해 여럿이 분담 설계한 서브시스템 간의 인터페이스를 조정하여 각각의 서브시스템 및 전체 시스템에 악영향을 미치지 않게 하기 위한 분 석 방식으로 시스템 정의단계와 시스템 개발단계에서 적용한다. tOZin', array['산업안전기사','2022-1'])
+  ('2bf579fe-f0bd-15b4-8716-ed8c30c3360f', 'ef362efd-50bf-c014-7b08-30dbafe625e0', '② PHA', '정답 ②. 나려MH 결함위험분석（FHA； Fault Hazards Analysis） 분업에 의해 여럿이 분담 설계한 서브시스템 간의 인터페이스를 조정하여 각각의 서브시스템 및 전체 시스템에 악영향을 미치지 않게 하기 위한 분 석 방식으로 시스템 정의단계와 시스템 개발단계에서 적용한다', array['산업안전기사','2022-1'])
 on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
 insert into public.questions (id, subject_id, type, body, difficulty, number) values
@@ -680,7 +680,7 @@ insert into public.question_options (id, question_id, body, sort_order) values
   ('e37cf900-f79a-2a6d-eaa8-e11fea4235e6', '78e2ed45-864d-6156-3e68-3b655887655d', '과부하방지장치 작동 시 경보음과 경보램프가 작동되', 3)
 on conflict (id) do update set body = excluded.body;
 insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
-  ('78e2ed45-864d-6156-3e68-3b655887655d', '524fb5cf-9f0e-db74-feb3-28243bc4c703', '② 방호장치의 기능을 변형 또는 보수할 때 양중기의 기능', '정답 ②. 어야 하며 양중기는 작동이 되지 않아야 한다. 다만, 크 레인은 과부하 상태 해지를 위하여 권상된 만큼 권하시 킬수 있다. EOi 양중기 과부하방지장치의 일반적인 성능기준 방호장치의 기능을 제거 또는 정지할 때 양중기의 기능도 동시에 정지할 수 있는 구조이어야 한다. 밖組SI', array['산업안전기사','2022-1'])
+  ('78e2ed45-864d-6156-3e68-3b655887655d', '524fb5cf-9f0e-db74-feb3-28243bc4c703', '② 방호장치의 기능을 변형 또는 보수할 때 양중기의 기능', '정답 ②. 방호장치의 기능을 변형 또는 보수할 때 양중기의 기능', array['산업안전기사','2022-1'])
 on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
 insert into public.questions (id, subject_id, type, body, difficulty, number) values

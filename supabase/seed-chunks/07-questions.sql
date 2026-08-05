@@ -53,7 +53,7 @@ insert into public.question_options (id, question_id, body, sort_order) values
   ('d6021e41-ea99-fb91-b770-b7c20c9a68d4', 'adf3850f-f7c0-bb26-4419-5a5a06e19ca8', '중뼈는 특성이 일어나는 큰뼈의 요인마다 다시 미세하', 3)
 on conflict (id) do update set body = excluded.body;
 insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
-  ('adf3850f-f7c0-bb26-4419-5a5a06e19ca8', '716dc2ae-b409-86a0-4ba2-43423da325ad', '② 등뼈는 원칙적으로 우측에서 좌측으로 향하여 가는 화', '정답 ②. 게 원인을 결정하여 기 입한다. E3 특성요인도 특성과 요인관계를 두ff 루 하여 어골상으로 세분화한 분석법으로 원인과 결과를 연계하여 상호관계를 파악한다. 오른쪽 끝의 박스 안에 앞에서 정 한 특성을 기입하고 왼쪽에서 오른쪽으로 굵은 화살표를 표시한다. tWBI', array['산업안전기사','2021-2'])
+  ('adf3850f-f7c0-bb26-4419-5a5a06e19ca8', '716dc2ae-b409-86a0-4ba2-43423da325ad', '② 등뼈는 원칙적으로 우측에서 좌측으로 향하여 가는 화', '정답 ②. 게 원인을 결정하여 기 입한다. E3 특성요인도 특성과 요인관계를 두ff 루 하여 어골상으로 세분화한 분석법으로 원인과 결과를 연계하여 상호관계를 파악한다. 오른쪽 끝의 박스 안에 앞에서 정 한 특성을 기입하고 왼쪽에서 오른쪽으로 굵은 화살표를 표시한다', array['산업안전기사','2021-2'])
 on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
 insert into public.questions (id, subject_id, type, body, difficulty, number) values
@@ -72,7 +72,7 @@ insert into public.question_options (id, question_id, body, sort_order) values
   ('3f222968-6ddf-6305-54b3-2d25bd867b80', 'b145da30-906e-11fc-cd5e-bfcc34f1b506', '정보의 내용이 시간적인 사건을 다루는 경우', 3)
 on conflict (id) do update set body = excluded.body;
 insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
-  ('b145da30-906e-11fc-cd5e-bfcc34f1b506', '2e822447-7f3a-3b79-55db-7279b5fa73ce', '② 정보가 후에 재참조되는 경우', '정답 ②. 는 시각적 표시장치보다 청각적 표시장치가 더 유리한 경우이다. kWIlll', array['산업안전기사','2021-2'])
+  ('b145da30-906e-11fc-cd5e-bfcc34f1b506', '2e822447-7f3a-3b79-55db-7279b5fa73ce', '② 정보가 후에 재참조되는 경우', '정답 ②. 는 시각적 표시장치보다 청각적 표시장치가 더 유리한 경우이다', array['산업안전기사','2021-2'])
 on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
 insert into public.questions (id, subject_id, type, body, difficulty, number) values
@@ -91,7 +91,7 @@ insert into public.question_options (id, question_id, body, sort_order) values
   ('dd917ab6-bf72-34aa-3685-fe0257f13b4a', 'e3be2f86-9648-b6a9-3449-7a45c8af4d95', '의미코드', 3)
 on conflict (id) do update set body = excluded.body;
 insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
-  ('e3be2f86-9648-b6a9-3449-7a45c8af4d95', 'ca4d23ab-a4e1-b85d-f233-8d19a94d6d62', '② 촉각코드', '정답 ②. 짜 일반적으로 작업기억의 정보는 시각(Visual), •음성(Phonetic). 의미(Semantic) 코드로 저장된다. 시각 및 음성 코드는 자극의 시각적 또 는 청각적인 표현이며. 이 각각은 반대 유형의 자극에 의하거나 장기기억에 서 내부적으로 발생할 수 있다. 의미코드는 자극에 의해 발생되는 상이나 음 이 아니라 자극 의미의 추상적인 표현으로서 장기기억에서 중요한 요소이다. EWIgi', array['산업안전기사','2021-2'])
+  ('e3be2f86-9648-b6a9-3449-7a45c8af4d95', 'ca4d23ab-a4e1-b85d-f233-8d19a94d6d62', '② 촉각코드', '정답 ②. 짜 일반적으로 작업기억의 정보는 시각(Visual), •음성(Phonetic). 의미(Semantic) 코드로 저장된다. 시각 및 음성 코드는 자극의 시각적 또 는 청각적인 표현이며. 이 각각은 반대 유형의 자극에 의하거나 장기기억에 서 내부적으로 발생할 수 있다. 의미코드는 자극에 의해 발생되는 상이나 음 이 아니라 자극 의미의 추상적인 표현으로서 장기기억에서 중요한 요소이다', array['산업안전기사','2021-2'])
 on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
 insert into public.questions (id, subject_id, type, body, difficulty, number) values
@@ -129,7 +129,7 @@ insert into public.question_options (id, question_id, body, sort_order) values
   ('c6f1e629-4748-15de-c5d4-498807c71629', '1d7298f7-996d-8a25-230f-828e95de0c98', '평가연구', 3)
 on conflict (id) do update set body = excluded.body;
 insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
-  ('1d7298f7-996d-8a25-230f-828e95de0c98', 'c6f1e629-4748-15de-c5d4-498807c71629', '④ 평가연구', '정답 ④. 평가연구 시스템 성능에 대한 인간一기계시스템이나 제품 등이 의도한 성능. 목표 수준에 도달하였는지 분석하는 연구방법이다. EWBI', array['산업안전기사','2021-2'])
+  ('1d7298f7-996d-8a25-230f-828e95de0c98', 'c6f1e629-4748-15de-c5d4-498807c71629', '④ 평가연구', '정답 ④. 평가연구 시스템 성능에 대한 인간一기계시스템이나 제품 등이 의도한 성능. 목표 수준에 도달하였는지 분석하는 연구방법이다', array['산업안전기사','2021-2'])
 on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
 insert into public.questions (id, subject_id, type, body, difficulty, number) values
@@ -148,7 +148,7 @@ insert into public.question_options (id, question_id, body, sort_order) values
   ('5ab5e6dc-c556-c3d0-da62-2525dc6abe90', '18a79c5a-b660-6995-92a8-b35a81882906', '날접촉예방장치', 3)
 on conflict (id) do update set body = excluded.body;
 insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
-  ('18a79c5a-b660-6995-92a8-b35a81882906', '8ff29067-51df-ddc1-9977-0705383cfb56', '② 안전블록', '정답 ②. 프레스 등의 금형을 부착 • 해체 또는 조정하는 작업을 할 때에 해 당 작업에 종사하는 근로자의 신체가 위험한계 내에 있는 경우 슬라이드가 갑자기 작동함으로써 근로자에게 발생할 우려가 있는 위험을 방지하기 위 하여 안전블록을 사용하는 등 필요한 조치를 하여야 한다. 圓', array['산업안전기사','2021-2'])
+  ('18a79c5a-b660-6995-92a8-b35a81882906', '8ff29067-51df-ddc1-9977-0705383cfb56', '② 안전블록', '정답 ②. 안전블록', array['산업안전기사','2021-2'])
 on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
 insert into public.questions (id, subject_id, type, body, difficulty, number) values
@@ -205,7 +205,7 @@ insert into public.question_options (id, question_id, body, sort_order) values
   ('da1c0e68-f7c6-200e-b372-5a7519143462', 'bd3651f3-0cb9-c159-b87d-763bf97ccde9', '과부하방지장치', 3)
 on conflict (id) do update set body = excluded.body;
 insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
-  ('bd3651f3-0cb9-c159-b87d-763bf97ccde9', '242d5a06-f131-7084-3f51-15252b351a50', '② 고저수위 조절장치', '정답 ②. 고저수위 조절장치 고저수위 조절장치의 동작 상태를 작업자가 쉽게 감시하도록 하기 위하여 고저수위지점을 알리는 경보등 • 경보음장치 등을 설치하여야 하며. 天동으 로 급수되거나 단수되도록 설치하여야 한다. EW8I', array['산업안전기사','2021-2'])
+  ('bd3651f3-0cb9-c159-b87d-763bf97ccde9', '242d5a06-f131-7084-3f51-15252b351a50', '② 고저수위 조절장치', '정답 ②. 고저수위 조절장치', array['산업안전기사','2021-2'])
 on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
 insert into public.questions (id, subject_id, type, body, difficulty, number) values
@@ -319,7 +319,7 @@ insert into public.question_options (id, question_id, body, sort_order) values
   ('8e192d43-2198-1869-5b74-0bb67aa06724', '8a120861-63f8-a0f3-bb25-56e973f0bb71', '20fm]', 3)
 on conflict (id) do update set body = excluded.body;
 insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
-  ('8a120861-63f8-a0f3-bb25-56e973f0bb71', '5ce82cf0-0099-7e0f-04ae-78b5b5fe10d9', '② 10[m]', '정답 ②. 단위공정시설 및 설비로부터 다른 단위공정시설 및 설비의 사이 는 설비의 바깥면으로부터 10[m] 이상의 안전거리를 두어야 한다. t', array['산업안전기사','2021-2'])
+  ('8a120861-63f8-a0f3-bb25-56e973f0bb71', '5ce82cf0-0099-7e0f-04ae-78b5b5fe10d9', '② 10[m]', '정답 ②. 단위공정시설 및 설비로부터 다른 단위공정시설 및 설비의 사이 는 설비의 바깥면으로부터 10[m] 이상의 안전거리를 두어야 한다', array['산업안전기사','2021-2'])
 on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
 insert into public.questions (id, subject_id, type, body, difficulty, number) values
@@ -357,7 +357,7 @@ insert into public.question_options (id, question_id, body, sort_order) values
   ('8b3f3553-bbc6-d5f6-187f-56af7fc51b0b', '682e4864-eb43-84b9-74c7-1457a812014c', '급성 독성 물질', 3)
 on conflict (id) do update set body = excluded.body;
 insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
-  ('682e4864-eb43-84b9-74c7-1457a812014c', '073355e6-0e05-6007-7917-4e2387a9aae2', '③ 물반응성 물질 및 인화성 고체', '정답 ③. 보기의 물질은 물반응성 물질 및 인화성 고체에 해당한다. WlilM', array['산업안전기사','2021-2'])
+  ('682e4864-eb43-84b9-74c7-1457a812014c', '073355e6-0e05-6007-7917-4e2387a9aae2', '③ 물반응성 물질 및 인화성 고체', '정답 ③. 보기의 물질은 물반응성 물질 및 인화성 고체에 해당한다', array['산업안전기사','2021-2'])
 on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
 insert into public.questions (id, subject_id, type, body, difficulty, number) values
@@ -490,7 +490,7 @@ insert into public.question_options (id, question_id, body, sort_order) values
   ('df292d10-9827-75d7-502b-eff00b12cbbe', 'c7fd6e68-9662-977e-6a4d-82832f3a2665', '리프트(Lift)', 3)
 on conflict (id) do update set body = excluded.body;
 insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
-  ('c7fd6e68-9662-977e-6a4d-82832f3a2665', '2ed974c1-70a6-b25e-c025-466e6626b38c', '① 고소작업차', '정답 ①. 양중기의 종류 • 크레인(호이스트(Hoist) 포함) • 이동식 크레인 • 리프트(이삿짐운반용 리프트의 경우에는 적재하중이 0.1 톤 이상인 것으 로한정) •곤돌라 •승강기 旦 1', array['산업안전기사','2021-2'])
+  ('c7fd6e68-9662-977e-6a4d-82832f3a2665', '2ed974c1-70a6-b25e-c025-466e6626b38c', '① 고소작업차', '정답 ①. 고소작업차', array['산업안전기사','2021-2'])
 on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
 insert into public.questions (id, subject_id, type, body, difficulty, number) values
@@ -547,7 +547,7 @@ insert into public.question_options (id, question_id, body, sort_order) values
   ('52d6aa78-52a7-a463-b3ff-4af6237649ec', '831a66ca-73ca-fa8f-6609-d84a020d13e5', '하중이 한쪽으로 치우치더라도 화물을 최대한 효율적', 3)
 on conflict (id) do update set body = excluded.body;
 insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
-  ('831a66ca-73ca-fa8f-6609-d84a020d13e5', '52d6aa78-52a7-a463-b3ff-4af6237649ec', '④ 하중이 한쪽으로 치우치더라도 화물을 최대한 효율적', '정답 ④. 으로 적재할 것 a 화물의 적재 시 준수사항 • 침하 우려가 없는 튼튼한 기반 위에 적재할 것 • 건물의 칸막이나 벽 등이 화물의 압력에 견딜 만큼의 강도를 지니지 아 니한 경우에는 칸막이나 벽에 기대어 적재하지 않도록 할 것 • 불안정할 정도로 높이 쌓아 올리지 말 것 • 하중이 한쪽으로 치우치지 않도록 쌓을 것 5回', array['산업안전기사','2021-2'])
+  ('831a66ca-73ca-fa8f-6609-d84a020d13e5', '52d6aa78-52a7-a463-b3ff-4af6237649ec', '④ 하중이 한쪽으로 치우치더라도 화물을 최대한 효율적', '정답 ④. 하중이 한쪽으로 치우치더라도 화물을 최대한 효율적', array['산업안전기사','2021-2'])
 on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
 insert into public.questions (id, subject_id, type, body, difficulty, number) values
@@ -604,7 +604,7 @@ insert into public.question_options (id, question_id, body, sort_order) values
   ('ca03f279-2212-1b4e-9df6-a27ea2599402', '049dbdc9-f091-f71b-65cb-cc8139d4b8b8', '기계설비의결함', 3)
 on conflict (id) do update set body = excluded.body;
 insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
-  ('049dbdc9-f091-f71b-65cb-cc8139d4b8b8', '4a0ba6f8-7c59-f488-1593-10e53cde4545', '③ 도덕성의결여', '정답 ③. 상황성 누발자 작업이 어렵거나, 기계설비의 결함. 환경상 주의력의 집중이 혼란된 경우. 심신의 근심으로 사고경향자가 되는 경우이 다. Wm', array['산업안전기사','2021-3'])
+  ('049dbdc9-f091-f71b-65cb-cc8139d4b8b8', '4a0ba6f8-7c59-f488-1593-10e53cde4545', '③ 도덕성의결여', '정답 ③. 상황성 누발자 작업이 어렵거나, 기계설비의 결함. 환경상 주의력의 집중이 혼란된 경우. 심신의 근심으로 사고경향자가 되는 경우이 다', array['산업안전기사','2021-3'])
 on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
 insert into public.questions (id, subject_id, type, body, difficulty, number) values
@@ -623,7 +623,7 @@ insert into public.question_options (id, question_id, body, sort_order) values
   ('734d82b3-5d40-40b4-6220-9c74fe4496ff', '22c0b839-5ff8-41ff-e068-0871076e8349', '(3, ©, ©, ®', 3)
 on conflict (id) do update set body = excluded.body;
 insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
-  ('22c0b839-5ff8-41ff-e068-0871076e8349', '734d82b3-5d40-40b4-6220-9c74fe4496ff', '④ (3, ©, ©, ®', '정답 ④. 산업재해 기록 사업주는 산업재해가 발생한 때에는 다음 사항을 기록 • 보존하여야 한다. 다만. 산업재해조사표 사본을 보존하거나 요양신청서의 사본에 재해 재발 방지 계획을 첨부하여 보존한 경우에는 그러하지 아니하다. • 사업장의 개요 및 근로자의 인적사항 • 재해발생의 일시 및 장소 • 재해발생의 원인 및과정 • 재해 재발방지 계획 WW', array['산업안전기사','2021-3'])
+  ('22c0b839-5ff8-41ff-e068-0871076e8349', '734d82b3-5d40-40b4-6220-9c74fe4496ff', '④ (3, ©, ©, ®', '정답 ④. 산업재해 기록 사업주는 산업재해가 발생한 때에는 다음 사항을 기록 • 보존하여야 한다. 다만. 산업재해조사표 사본을 보존하거나 요양신청서의 사본에 재해 재발 방지 계획을 첨부하여 보존한 경우에는 그러하지 아니하다. • 사업장의 개요 및 근로자의 인적사항 • 재해발생의 일시 및 장소 • 재해발생의 원인 및과정 • 재해 재발방지 계획', array['산업안전기사','2021-3'])
 on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
 insert into public.questions (id, subject_id, type, body, difficulty, number) values
@@ -642,7 +642,7 @@ insert into public.question_options (id, question_id, body, sort_order) values
   ('0b0d7900-73c7-7184-0999-d1a272d08235', 'b9c1fdf9-3f5b-8c19-adad-c33cfe7f57ae', '점검항목을 이해하기 쉽게 구체적으로 표현할 것', 3)
 on conflict (id) do update set body = excluded.body;
 insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
-  ('b9c1fdf9-3f5b-8c19-adad-c33cfe7f57ae', 'fb4142b5-7142-41a1-29c9-510157433703', '③ 위험성이 낮은 순서 또는 긴급을 요하는 순서대로 작성', '정답 ③. 안전점검표（체크리스트） 작성 시 유의사항 • 위험성이 높은 순이나 긴급을 요하는 순으로 작성할 것 • 정기적으로 검토하여 설비나 작업방법이 타당성 있게 개조된 내용일 것 • 점검항목을 이해하기 쉽게 구체적으로 표현할 것 • 사업장에 적합한 독자적 내용을 가지고 작성할 것 E', array['산업안전기사','2021-3'])
+  ('b9c1fdf9-3f5b-8c19-adad-c33cfe7f57ae', 'fb4142b5-7142-41a1-29c9-510157433703', '③ 위험성이 낮은 순서 또는 긴급을 요하는 순서대로 작성', '정답 ③. 안전점검표（체크리스트） 작성 시 유의사항 • 위험성이 높은 순이나 긴급을 요하는 순으로 작성할 것 • 정기적으로 검토하여 설비나 작업방법이 타당성 있게 개조된 내용일 것 • 점검항목을 이해하기 쉽게 구체적으로 표현할 것 • 사업장에 적합한 독자적 내용을 가지고 작성할 것', array['산업안전기사','2021-3'])
 on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
 insert into public.questions (id, subject_id, type, body, difficulty, number) values
@@ -661,7 +661,7 @@ insert into public.question_options (id, question_id, body, sort_order) values
   ('3f6877a2-b0df-a7b5-5d66-ea935855a393', '6ffdac53-54a3-a691-82e3-1b57943deed9', '물질적 이해관계에 관심을 두도록 한다.', 3)
 on conflict (id) do update set body = excluded.body;
 insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
-  ('6ffdac53-54a3-a691-82e3-1b57943deed9', '9e6985d6-d86c-9e6e-8caa-855b2b2e51de', '② 관리감독을 철저히 한다.', '정답 ②. 안전교육 시 동기유발의 최적수준을 유지하여야 하나 철저한 관 리감독은 오히려 동기유발을 저하시킨다. 旧', array['산업안전기사','2021-3'])
+  ('6ffdac53-54a3-a691-82e3-1b57943deed9', '9e6985d6-d86c-9e6e-8caa-855b2b2e51de', '② 관리감독을 철저히 한다.', '정답 ②. 관리감독을 철저히 한다.', array['산업안전기사','2021-3'])
 on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
 insert into public.questions (id, subject_id, type, body, difficulty, number) values
@@ -737,7 +737,7 @@ insert into public.question_options (id, question_id, body, sort_order) values
   ('e38faa67-607a-68b3-287d-0111fe27125a', '7dbaa745-8c0e-a7a8-3fde-c073c7882542', '수인식', 3)
 on conflict (id) do update set body = excluded.body;
 insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
-  ('7dbaa745-8c0e-a7a8-3fde-c073c7882542', 'e81a77e4-5f2b-d294-07b5-0994e963ae54', '① 양수조작식', '정답 ①. 양수조작식(Two-hand Control) 방호장치 기계의 조작을 양손으로 동시에 하지 않으면 기계가 가동하지 않으며 한 손이라도 떼어내면 기계가 급정지 또는 급상승하게 하는 장치를 말한다. 급정지기구가 있는 마찰프레스에 적합하다. WHM', array['산업안전기사','2021-3'])
+  ('7dbaa745-8c0e-a7a8-3fde-c073c7882542', 'e81a77e4-5f2b-d294-07b5-0994e963ae54', '① 양수조작식', '정답 ①. 양수조작식(Two-hand Control) 방호장치 기계의 조작을 양손으로 동시에 하지 않으면 기계가 가동하지 않으며 한 손이라도 떼어내면 기계가 급정지 또는 급상승하게 하는 장치를 말한다. 급정지기구가 있는 마찰프레스에 적합하다', array['산업안전기사','2021-3'])
 on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
 insert into public.questions (id, subject_id, type, body, difficulty, number) values

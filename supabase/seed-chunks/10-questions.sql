@@ -15,7 +15,7 @@ insert into public.question_options (id, question_id, body, sort_order) values
   ('8327bacc-83d1-c4f1-bb6d-acc3e095b5c9', 'ab9e3b82-077e-2099-82ba-30fedc927d02', '적응보전', 3)
 on conflict (id) do update set body = excluded.body;
 insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
-  ('ab9e3b82-077e-2099-82ba-30fedc927d02', 'cd812c9d-3bfa-803d-a175-c0456a33c75c', '② 개량보전', '정답 ②. 예방보전의 종류 시간계획보전. 상태감시보전（상태기준보전）. 수명보전（적응보전） 개량보전 설비가 두 번 다시 동일한 원인에 의한 고장이 일어나지 않도록 연구를 거 듭하는 것으로 사후보전에 해당한다. E H', array['산업안전기사','2022-2'])
+  ('ab9e3b82-077e-2099-82ba-30fedc927d02', 'cd812c9d-3bfa-803d-a175-c0456a33c75c', '② 개량보전', '정답 ②. 예방보전의 종류 시간계획보전. 상태감시보전（상태기준보전）. 수명보전（적응보전） 개량보전 설비가 두 번 다시 동일한 원인에 의한 고장이 일어나지 않도록 연구를 거 듭하는 것으로 사후보전에 해당한다', array['산업안전기사','2022-2'])
 on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
 insert into public.questions (id, subject_id, type, body, difficulty, number) values
@@ -53,7 +53,7 @@ insert into public.question_options (id, question_id, body, sort_order) values
   ('fac6b96f-246e-21d8-8235-51272b0d7d3a', 'cefeece6-2a29-aaa4-d548-57d554eb9dbd', '접근반응형 방호장치', 3)
 on conflict (id) do update set body = excluded.body;
 insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
-  ('cefeece6-2a29-aaa4-d548-57d554eb9dbd', 'bd0deca7-a7af-fb22-c2fd-bf6aa64af485', '③ 위치제한형 방호장치', '정답 ③. 위치제한형 방호장치 작업자의 신체부위가 위험한계 밖에 있도록 기계의 조작장치를 위험구역 에서 일정거리 이상 떨어지게 한 방호장치（양수조작식 안전장치）이다. #BIgl', array['산업안전기사','2022-2'])
+  ('cefeece6-2a29-aaa4-d548-57d554eb9dbd', 'bd0deca7-a7af-fb22-c2fd-bf6aa64af485', '③ 위치제한형 방호장치', '정답 ③. 위치제한형 방호장치 작업자의 신체부위가 위험한계 밖에 있도록 기계의 조작장치를 위험구역 에서 일정거리 이상 떨어지게 한 방호장치（양수조작식 안전장치）이다', array['산업안전기사','2022-2'])
 on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
 insert into public.questions (id, subject_id, type, body, difficulty, number) values
@@ -72,7 +72,7 @@ insert into public.question_options (id, question_id, body, sort_order) values
   ('e4241360-025c-429a-64af-f274c4eb4870', '173ad79f-edb9-2cb1-0431-a8067bb169af', '발생기실을 옥외에 설치한 경우에는 그 개구부를 다른', 3)
 on conflict (id) do update set body = excluded.body;
 insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
-  ('173ad79f-edb9-2cb1-0431-a8067bb169af', '6b728f5b-a690-6144-1aaf-2b792eaa5aea', '② 바닥면적의 16분의 1 이상의 단면적을 가진 배기통을', '정답 ②. 건축물로부터 1.0미터 이내 떨어지도록할 것 1 冒» 발생기실의 구조 • 벽은 불연성 재료로 하고 철근 콘크리트 또는 그 밖에 이와 같은 수준이 거나 그 이상의 강도를 가진 구조로 할 것 • 지붕과 천장에는 얇은 철판이나 가벼운 불연성 재료를 사용할 것 • 바닥면적의 丄 이상의 단면적을 가진 배기통을 옥상으로 돌출시키고 그 개구부를 창이나 출입구로부터 1.5[m] 이상 떨어지도록 할 것 • 출입구의 문은 불연성 재료로 하고 두께 1.5[mm] 이상의 철판이나 그 밖에 그 이상의 강도를 가진 구조로 할 것 • 벽과 발생기 사이에는 발생기의 조정 또는 카바이드 공급 등의 작업을 방해하지 않도록 간격을 확보할 것 W@1', array['산업안전기사','2022-2'])
+  ('173ad79f-edb9-2cb1-0431-a8067bb169af', '6b728f5b-a690-6144-1aaf-2b792eaa5aea', '② 바닥면적의 16분의 1 이상의 단면적을 가진 배기통을', '정답 ②. 바닥면적의 16분의 1 이상의 단면적을 가진 배기통을', array['산업안전기사','2022-2'])
 on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
 insert into public.questions (id, subject_id, type, body, difficulty, number) values
@@ -224,7 +224,7 @@ insert into public.question_options (id, question_id, body, sort_order) values
   ('b1304793-a233-719d-bb07-3e04ea9c2098', 'cc9d8dbc-b318-3427-be40-ea68e06b5242', '흡열반응이 일어나는 반응장치', 3)
 on conflict (id) do update set body = excluded.body;
 insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
-  ('cc9d8dbc-b318-3427-be40-ea68e06b5242', 'b1304793-a233-719d-bb07-3e04ea9c2098', '④ 흡열반응이 일어나는 반응장치', '정답 ④. 계측장치를 설치하여야 하는 특수화학설비 • 발열반응이 일어나는 반응장치 • 증류 •정류'' 증발 • 추출 등 분리를 하는 장치 • 가열시켜 주는 물질의 온도가 가열되는 위험물질의 분해온도 또는 발화 점보다 높은 상태에서 운전되는 설비 • 반응폭주 등 이상 화학반응에 의하여 위험물질이 발생할 우려가 있는 설비 • 온도가 350[℃] 이상이거나 게이지압력이 980[kPa] 이상인 상태에서 운전되는 설비 •가열로 또는가열기 hUWI', array['산업안전기사','2022-2'])
+  ('cc9d8dbc-b318-3427-be40-ea68e06b5242', 'b1304793-a233-719d-bb07-3e04ea9c2098', '④ 흡열반응이 일어나는 반응장치', '정답 ④. 계측장치를 설치하여야 하는 특수화학설비 • 발열반응이 일어나는 반응장치 • 증류 •정류'' 증발 • 추출 등 분리를 하는 장치 • 가열시켜 주는 물질의 온도가 가열되는 위험물질의 분해온도 또는 발화 점보다 높은 상태에서 운전되는 설비 • 반응폭주 등 이상 화학반응에 의하여 위험물질이 발생할 우려가 있는 설비 • 온도가 350[℃] 이상이거나 게이지압력이 980[kPa] 이상인 상태에서 운전되는 설비 •가열로 또는가열기', array['산업안전기사','2022-2'])
 on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
 insert into public.questions (id, subject_id, type, body, difficulty, number) values
@@ -243,7 +243,7 @@ insert into public.question_options (id, question_id, body, sort_order) values
   ('642bc03e-808b-04a9-69f9-7d4b720fc430', '5be4c6e9-c346-7969-2cbb-f39551c72f63', '봉쇄', 3)
 on conflict (id) do update set body = excluded.body;
 insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
-  ('5be4c6e9-c346-7969-2cbb-f39551c72f63', '93bffc62-f324-2337-3fab-9a6bf4425182', '① 불활성화', '정답 ①. 폭발방호대책은 폭발 시 피해를 최소화하기 위한 대책이다. 불활 성화는 폭발을 예방하기 위한 대책이므로 폭발방지대책에 해당한다. miWI', array['산업안전기사','2022-2'])
+  ('5be4c6e9-c346-7969-2cbb-f39551c72f63', '93bffc62-f324-2337-3fab-9a6bf4425182', '① 불활성화', '정답 ①. 폭발방호대책은 폭발 시 피해를 최소화하기 위한 대책이다. 불활 성화는 폭발을 예방하기 위한 대책이므로 폭발방지대책에 해당한다', array['산업안전기사','2022-2'])
 on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
 insert into public.questions (id, subject_id, type, body, difficulty, number) values
@@ -262,7 +262,7 @@ insert into public.question_options (id, question_id, body, sort_order) values
   ('6a62b8f8-4a80-576b-25fb-d698f61c83f1', '01b32c3c-4800-72bf-6f5e-3744c1cff9d6', '설비의 조작부', 3)
 on conflict (id) do update set body = excluded.body;
 insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
-  ('01b32c3c-4800-72bf-6f5e-3744c1cff9d6', 'e83966f4-c9e2-ad44-a6df-20dc19c0dc85', '① 설비의 상단', '정답 ①. 화염방지기는 외부로부터의 화염을 방지하기 위하여 그 설비 상 단에 설치하여야 한다. tMBI', array['산업안전기사','2022-2'])
+  ('01b32c3c-4800-72bf-6f5e-3744c1cff9d6', 'e83966f4-c9e2-ad44-a6df-20dc19c0dc85', '① 설비의 상단', '정답 ①. 화염방지기는 외부로부터의 화염을 방지하기 위하여 그 설비 상 단에 설치하여야 한다', array['산업안전기사','2022-2'])
 on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
 insert into public.questions (id, subject_id, type, body, difficulty, number) values
@@ -395,7 +395,7 @@ insert into public.question_options (id, question_id, body, sort_order) values
   ('e3bac03d-eddf-f4a3-846c-7d5da4817f9f', 'ff255541-18bb-9298-e6a1-609bc5a2e1f9', '항타기나 항발기의 권상장치에 하중을 건 상태로 정지', 3)
 on conflict (id) do update set body = excluded.body;
 insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
-  ('ff255541-18bb-9298-e6a1-609bc5a2e1f9', 'f36e4234-2d7d-3152-0e1b-6d4a5d7907e7', '① 공기를 차단하는 장치를 작업관리자가 쉽게 조작할 수', '정답 ①. 로프가 꼬인 경우에는 와이어로프에 하중을 걸어서는 항타기나 항발기의 권상장치에 하중을 건 상태로 정지 하여 두는 경우에는 HA) 또는 역회전방지용 브레 이크를 사용하여 제동하는 등 확실하게 정지시켜 두어 압축공기를 동력원으로 하는 항타기나 항발기를 사용하는 경우 공기를 차단하는 장치는 해머의 운전자가 쉽게 조작할 수 있는 위치에 A', array['산업안전기사','2022-2'])
+  ('ff255541-18bb-9298-e6a1-609bc5a2e1f9', 'f36e4234-2d7d-3152-0e1b-6d4a5d7907e7', '① 공기를 차단하는 장치를 작업관리자가 쉽게 조작할 수', '정답 ①. 로프가 꼬인 경우에는 와이어로프에 하중을 걸어서는 항타기나 항발기의 권상장치에 하중을 건 상태로 정지 하여 두는 경우에는 HA) 또는 역회전방지용 브레 이크를 사용하여 제동하는 등 확실하게 정지시켜 두어 압축공기를 동력원으로 하는 항타기나 항발기를 사용하는 경우 공기를 차단하는 장치는 해머의 운전자가 쉽게 조작할 수 있는 위치에', array['산업안전기사','2022-2'])
 on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
 insert into public.questions (id, subject_id, type, body, difficulty, number) values
@@ -452,7 +452,7 @@ insert into public.question_options (id, question_id, body, sort_order) values
   ('5880533e-070b-c7c9-48e0-bc9cca0791a8', '496ba631-88d6-8df9-b644-cac91e41a571', '옹벽 공법', 3)
 on conflict (id) do update set body = excluded.body;
 insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
-  ('496ba631-88d6-8df9-b644-cac91e41a571', '5880533e-070b-c7c9-48e0-bc9cca0791a8', '④ 옹벽 공법', '정답 ④. 옹벽 공법은 지반개량공법이 아닌 사면보강공법에 해당한다. WSIEi', array['산업안전기사','2022-2'])
+  ('496ba631-88d6-8df9-b644-cac91e41a571', '5880533e-070b-c7c9-48e0-bc9cca0791a8', '④ 옹벽 공법', '정답 ④. 옹벽 공법은 지반개량공법이 아닌 사면보강공법에 해당한다', array['산업안전기사','2022-2'])
 on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
 insert into public.questions (id, subject_id, type, body, difficulty, number) values
@@ -471,7 +471,7 @@ insert into public.question_options (id, question_id, body, sort_order) values
   ('33daf4f5-c930-bac1-371d-b62acebe2988', '55efa3b2-01bd-30e7-cdb5-96fdd392e98a', '토질의 상태에 관계없이 기울기 조건을 일정하게 한다.', 3)
 on conflict (id) do update set body = excluded.body;
 insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
-  ('55efa3b2-01bd-30e7-cdb5-96fdd392e98a', 'fe4f68cd-6732-ca59-0ad9-f38be702b2ac', '① 지표수와 지하수의 침투를 방지한다.', '정답 ①. 지표수 및 지하수의 침투에 의한 토사 중량의 증가는 법면 붕괴 요인에 해당하므로 붕괴재해 예방을 위해서 지표수와 지하수의 침투를 방 지하는 것이 좋다. 唱1', array['산업안전기사','2022-2'])
+  ('55efa3b2-01bd-30e7-cdb5-96fdd392e98a', 'fe4f68cd-6732-ca59-0ad9-f38be702b2ac', '① 지표수와 지하수의 침투를 방지한다.', '정답 ①. 지표수와 지하수의 침투를 방지한다.', array['산업안전기사','2022-2'])
 on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
 insert into public.questions (id, subject_id, type, body, difficulty, number) values
@@ -490,7 +490,7 @@ insert into public.question_options (id, question_id, body, sort_order) values
   ('e03172bd-9098-5d1b-fbe6-674377ef0f16', 'dd9fc3f5-7fcd-708e-af4d-6db65c992fa4', '추락의 위험이 있는 장소에는 안전난간을 설치한다.', 3)
 on conflict (id) do update set body = excluded.body;
 insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
-  ('dd9fc3f5-7fcd-708e-af4d-6db65c992fa4', 'cf6fa544-c7b7-e564-771a-90a1352002b9', '③ 수직갱에 가설된 통로의 길이가 15[m] 이상일 경우에', '정답 ③. 가설통로 설치 시 준수 사항 견고한 구조로 할 것 • 경사는 30" 이하로 할 것 • 경사가 15’를 초과하는 경우에는 미끄러지지 아니하는 구조로 할 것 • 추락할 위험이 있는 장소에는 안전난간을 설치할 것 • 수직갱에 가설된 통로의 길이가 15[m] 이상인 경우에는 10[m] 이내마 다 계단참을 설치할 것 • 건설공사에 사용하는 높이 8[m] 이상인 비계다리에는 7[m] 이내마다 계단참을 설치할 것 E nn', array['산업안전기사','2022-2'])
+  ('dd9fc3f5-7fcd-708e-af4d-6db65c992fa4', 'cf6fa544-c7b7-e564-771a-90a1352002b9', '③ 수직갱에 가설된 통로의 길이가 15[m] 이상일 경우에', '정답 ③. 가설통로 설치 시 준수 사항 견고한 구조로 할 것 • 경사는 30" 이하로 할 것 • 경사가 15’를 초과하는 경우에는 미끄러지지 아니하는 구조로 할 것 • 추락할 위험이 있는 장소에는 안전난간을 설치할 것 • 수직갱에 가설된 통로의 길이가 15[m] 이상인 경우에는 10[m] 이내마 다 계단참을 설치할 것 • 건설공사에 사용하는 높이 8[m] 이상인 비계다리에는 7[m] 이내마다 계단참을 설치할 것', array['산업안전기사','2022-2'])
 on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
 insert into public.questions (id, subject_id, type, body, difficulty, number) values
@@ -509,7 +509,7 @@ insert into public.question_options (id, question_id, body, sort_order) values
   ('90571f3a-0477-d2fc-eb0b-500cf6ac16a3', 'a18f516d-596c-81f4-61e9-07844a324d71', '2시간 이상', 3)
 on conflict (id) do update set body = excluded.body;
 insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
-  ('a18f516d-596c-81f4-61e9-07844a324d71', '752610e4-8a00-e25d-4464-c6f5255571ee', '② 매반기 12시간 이상', '정답 ②. 근로자 안전보건교육 교육과정별 교육시간 교육과정 교육대상 교육시간 사무직 종사 근로자 매반기 6시간 이상 판매업무에 직접 종사하는 매반기 6시간 이상 정기교육 그 밖의 근로자 근로자 판매업무에 직접 종사하는 매반기 12시간이상 근로자 외의 근로자 일용근로자 및 근로계약기간이 1주일 1시간이상 이하인 기간재근로자 채용 시 교육 근로계약기간이 1주일 초과 1개월이 4시간이상 하인 기간제근로자 그 밖의 근로자 8시간이상 일용근로자 및 근로계약기간이 1주일 작업내용 1시간이상 이하인 기간제근로자 변경 시 교육 그 밖의 근로자 2시간이상 건설업 기초 건설 일용근로자 4시간이상 안전 • 보건교육 ※ 이 문제는 개정된 법령에 따라 수정한 문제입니다. E寂HH', array['산업안전기사','2022-3'])
+  ('a18f516d-596c-81f4-61e9-07844a324d71', '752610e4-8a00-e25d-4464-c6f5255571ee', '② 매반기 12시간 이상', '정답 ②. 매반기 12시간 이상', array['산업안전기사','2022-3'])
 on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
 insert into public.questions (id, subject_id, type, body, difficulty, number) values
@@ -566,7 +566,7 @@ insert into public.question_options (id, question_id, body, sort_order) values
   ('83455000-74f9-b4e1-d432-6ee84dbd579f', 'd553f467-6122-5908-6a72-a251835c946f', '140', 3)
 on conflict (id) do update set body = excluded.body;
 insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
-  ('d553f467-6122-5908-6a72-a251835c946f', '83455000-74f9-b4e1-d432-6ee84dbd579f', '④ 140', '정답 ④. 충격소음작업 소음이 1초 이상의 간격으로 발생하는 작업 중 다음의 어느 하나에 해당하 는 작업을 말한다. • 120[dB]을 초과하는 소음이 1일 1만 회 이상 발생하는 작업 • 130[dB]을 초과하는 소음이 1일 1천 회 이상 발생하는 작업 • 140[dB]을 초과하는 소음이 1일 1백 회 이상 발생하는 작업 t', array['산업안전기사','2022-3'])
+  ('d553f467-6122-5908-6a72-a251835c946f', '83455000-74f9-b4e1-d432-6ee84dbd579f', '④ 140', '정답 ④. 충격소음작업 소음이 1초 이상의 간격으로 발생하는 작업 중 다음의 어느 하나에 해당하 는 작업을 말한다. • 120[dB]을 초과하는 소음이 1일 1만 회 이상 발생하는 작업 • 130[dB]을 초과하는 소음이 1일 1천 회 이상 발생하는 작업 • 140[dB]을 초과하는 소음이 1일 1백 회 이상 발생하는 작업', array['산업안전기사','2022-3'])
 on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
 insert into public.questions (id, subject_id, type, body, difficulty, number) values
@@ -585,7 +585,7 @@ insert into public.question_options (id, question_id, body, sort_order) values
   ('9eb6b05c-9a55-a3a2-9065-25cd66c11481', '655ac728-af7a-a96e-e89b-4ef9828a2773', '주파수의 크기', 3)
 on conflict (id) do update set body = excluded.body;
 insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
-  ('655ac728-af7a-a96e-e89b-4ef9828a2773', '9eb6b05c-9a55-a3a2-9065-25cd66c11481', '④ 주파수의 크기', '정답 ④. 투과사진의 상질을 점검할 때 확인해야 할 항목 • 투과도계의 식별 최소선경 • 시험부의 사진농도 • 계조계의 값(농도차/농도) E SI', array['산업안전기사','2022-3'])
+  ('655ac728-af7a-a96e-e89b-4ef9828a2773', '9eb6b05c-9a55-a3a2-9065-25cd66c11481', '④ 주파수의 크기', '정답 ④. 투과사진의 상질을 점검할 때 확인해야 할 항목 • 투과도계의 식별 최소선경 • 시험부의 사진농도 • 계조계의 값(농도차/농도)', array['산업안전기사','2022-3'])
 on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
 insert into public.questions (id, subject_id, type, body, difficulty, number) values
@@ -642,7 +642,7 @@ insert into public.question_options (id, question_id, body, sort_order) values
   ('c6a84b60-09fb-26c9-b350-3557a2a26a7b', 'bc40931b-5ae4-8d29-bbb1-942aca8bc3c4', '상하 좌우 이송장치의 핸들은 사용 후 풀어 둔다.', 3)
 on conflict (id) do update set body = excluded.body;
 insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
-  ('bc40931b-5ae4-8d29-bbb1-942aca8bc3c4', 'e0e3d9de-02dc-0e82-6edc-f658ca0577ae', '③ 강력 절삭을 할 때는 일감을 바이스에 얕게 물린다.', '정답 ③. 밀링작업 시 강력절삭을 할 때는 일감을 바이스에 깊게 물린다. fWIEI', array['산업안전기사','2022-3'])
+  ('bc40931b-5ae4-8d29-bbb1-942aca8bc3c4', 'e0e3d9de-02dc-0e82-6edc-f658ca0577ae', '③ 강력 절삭을 할 때는 일감을 바이스에 얕게 물린다.', '정답 ③. 밀링작업 시 강력절삭을 할 때는 일감을 바이스에 깊게 물린다', array['산업안전기사','2022-3'])
 on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
 insert into public.questions (id, subject_id, type, body, difficulty, number) values
@@ -756,5 +756,5 @@ insert into public.question_options (id, question_id, body, sort_order) values
   ('0a42c829-b61c-d5a9-c9a3-08e5b288a8d5', '53d8c87b-b8c5-f9bc-18d2-5569e6045121', '비중계', 3)
 on conflict (id) do update set body = excluded.body;
 insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
-  ('53d8c87b-b8c5-f9bc-18d2-5569e6045121', '0a42c829-b61c-d5a9-c9a3-08e5b288a8d5', '④ 비중계', '정답 ④. 특수화학설비를 설치하는 경우에는 내부의 이상 상태를 조기에 파악하기 위하여 필요한 온도계 • 유량계 • 압력계 등의 계측장치를 설치하 여야 한다. WBI', array['산업안전기사','2022-3'])
+  ('53d8c87b-b8c5-f9bc-18d2-5569e6045121', '0a42c829-b61c-d5a9-c9a3-08e5b288a8d5', '④ 비중계', '정답 ④. 특수화학설비를 설치하는 경우에는 내부의 이상 상태를 조기에 파악하기 위하여 필요한 온도계 • 유량계 • 압력계 등의 계측장치를 설치하 여야 한다', array['산업안전기사','2022-3'])
 on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;

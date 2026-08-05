@@ -15,7 +15,7 @@ insert into public.question_options (id, question_id, body, sort_order) values
   ('3d2c92f3-d0d5-fc25-9b89-eb49b210a510', 'ec15f098-6214-81ae-42c1-8a372a8cac92', '변속치차', 3)
 on conflict (id) do update set body = excluded.body;
 insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
-  ('ec15f098-6214-81ae-42c1-8a372a8cac92', '056d7c36-cdc5-c079-7bab-c374c7c52e47', '③ 선반', '정답 ③. 기인물은 선반이고. 가해물은 변속치차이다. @BS!', array['산업안전기사','2019-1'])
+  ('ec15f098-6214-81ae-42c1-8a372a8cac92', '056d7c36-cdc5-c079-7bab-c374c7c52e47', '③ 선반', '정답 ③. 기인물은 선반이고. 가해물은 변속치차이다', array['산업안전기사','2019-1'])
 on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
 insert into public.questions (id, subject_id, type, body, difficulty, number) values
@@ -53,7 +53,7 @@ insert into public.question_options (id, question_id, body, sort_order) values
   ('c747abe7-0682-9a48-d10b-edb45931eda9', '168c0c9b-7d62-516a-0f33-a31a99feea3e', '시나리오 역할연기훈련', 3)
 on conflict (id) do update set body = excluded.body;
 insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
-  ('168c0c9b-7d62-516a-0f33-a31a99feea3e', '9c0886a8-3398-9055-aa7d-a9d4c2e4beab', '① 1인 위험예지훈련', '정답 ①. 인위험예지훈련 각자가 위험에 대한 감수성 향상을 도모하기 위하여 삼각 및 원포인트 위 험예지훈련을 실시하는 것이다. W!%!', array['산업안전기사','2019-1'])
+  ('168c0c9b-7d62-516a-0f33-a31a99feea3e', '9c0886a8-3398-9055-aa7d-a9d4c2e4beab', '① 1인 위험예지훈련', '정답 ①. 인위험예지훈련 각자가 위험에 대한 감수성 향상을 도모하기 위하여 삼각 및 원포인트 위 험예지훈련을 실시하는 것이다', array['산업안전기사','2019-1'])
 on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
 insert into public.questions (id, subject_id, type, body, difficulty, number) values
@@ -110,7 +110,7 @@ insert into public.question_options (id, question_id, body, sort_order) values
   ('8f6784d6-41f6-b448-02cc-e35a867abc2a', '39b5e18b-ecdc-97c6-9262-821b19cc6f92', '정부 규정에 의한 교육에 한정하여 실시한다.', 3)
 on conflict (id) do update set body = excluded.body;
 insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
-  ('39b5e18b-ecdc-97c6-9262-821b19cc6f92', '8f6784d6-41f6-b448-02cc-e35a867abc2a', '④ 정부 규정에 의한 교육에 한정하여 실시한다.', '정답 ④. 안전보건교육계획 수립 시 법 규정에 의한 교육에만 그치지 않아 야 한다. E H', array['산업안전기사','2019-1'])
+  ('39b5e18b-ecdc-97c6-9262-821b19cc6f92', '8f6784d6-41f6-b448-02cc-e35a867abc2a', '④ 정부 규정에 의한 교육에 한정하여 실시한다.', '정답 ④. 안전보건교육계획 수립 시 법 규정에 의한 교육에만 그치지 않아 야 한다', array['산업안전기사','2019-1'])
 on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
 insert into public.questions (id, subject_id, type, body, difficulty, number) values
@@ -148,7 +148,7 @@ insert into public.question_options (id, question_id, body, sort_order) values
   ('4aee2175-34ca-ed01-d5b9-175b0f14f3be', 'f9daf3d2-b25c-b2d3-bbc2-ea4ced2ac82e', '일시 일부노동 불능', 3)
 on conflict (id) do update set body = excluded.body;
 insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
-  ('f9daf3d2-b25c-b2d3-bbc2-ea4ced2ac82e', '068c4d4f-63f7-0478-56ed-ccee8794dcb1', '② 영구 일부노동 불능', '정답 ②. 상해정도별 구분 •사망 • 영구 전노동 불능 상해（신체장해등급 1〜3등급） • 영구 일부노동 불능 상해（신체장해등급 4〜14등급） • 일시 전노동 불능 상해 : 장해가 남지 않는 휴업상해 • 일시 일부노동 불능 상해: 일시 근무 중에 업무를 떠나 치료를 받는 정 도의 상해 • 구급처치상해: 응급처치 후 정상작업을 할 수 있는 정도의 상해 WBI', array['산업안전기사','2019-1'])
+  ('f9daf3d2-b25c-b2d3-bbc2-ea4ced2ac82e', '068c4d4f-63f7-0478-56ed-ccee8794dcb1', '② 영구 일부노동 불능', '정답 ②. 상해정도별 구분 •사망 • 영구 전노동 불능 상해（신체장해등급 1〜3등급） • 영구 일부노동 불능 상해（신체장해등급 4〜14등급） • 일시 전노동 불능 상해 : 장해가 남지 않는 휴업상해 • 일시 일부노동 불능 상해: 일시 근무 중에 업무를 떠나 치료를 받는 정 도의 상해 • 구급처치상해: 응급처치 후 정상작업을 할 수 있는 정도의 상해', array['산업안전기사','2019-1'])
 on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
 insert into public.questions (id, subject_id, type, body, difficulty, number) values
@@ -167,7 +167,7 @@ insert into public.question_options (id, question_id, body, sort_order) values
   ('2a249ba0-fffc-a703-e2cb-3eebbeb05661', '4b80d6c4-e655-776c-3006-96268a28b624', '관리도', 3)
 on conflict (id) do update set body = excluded.body;
 insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
-  ('4b80d6c4-e655-776c-3006-96268a28b624', '4d5f3618-6fb8-c03d-48e4-e0a9c40daffb', '② 종합적 원인분석', '정답 ②. 종합적 원인분석은 사고 원인분석방법에 해당하지 않는다. 재해의 통계적 원인분석 방법 파레토도 특성요인도, 클로즈분석도. 관리도 히%1', array['산업안전기사','2019-1'])
+  ('4b80d6c4-e655-776c-3006-96268a28b624', '4d5f3618-6fb8-c03d-48e4-e0a9c40daffb', '② 종합적 원인분석', '정답 ②. 종합적 원인분석은 사고 원인분석방법에 해당하지 않는다. 재해의 통계적 원인분석 방법 파레토도 특성요인도, 클로즈분석도. 관리도', array['산업안전기사','2019-1'])
 on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
 insert into public.questions (id, subject_id, type, body, difficulty, number) values
@@ -243,7 +243,7 @@ insert into public.question_options (id, question_id, body, sort_order) values
   ('d54d87f2-e18f-8560-b543-6100e359c313', 'a43812b8-712f-513c-3563-2d20d397a070', '고소（高所）작업대', 3)
 on conflict (id) do update set body = excluded.body;
 insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
-  ('a43812b8-712f-513c-3563-2d20d397a070', 'b7df47cd-9bcf-36df-6e67-427afe83bf73', '① 연삭기', '정답 ①. 연삭기는 안전인증대상이 아닌 자율안전확인대상 기계 • 기구이다. 안전인증대상 기계 • 기구 및 설비 프레스. 전단기 및 절곡기, 크레인, 리프트. 압력용기. 롤러기. 사출성형기. 고소작업대. 곤돌라 mm', array['산업안전기사','2019-1'])
+  ('a43812b8-712f-513c-3563-2d20d397a070', 'b7df47cd-9bcf-36df-6e67-427afe83bf73', '① 연삭기', '정답 ①. 연삭기는 안전인증대상이 아닌 자율안전확인대상 기계 • 기구이다. 안전인증대상 기계 • 기구 및 설비 프레스. 전단기 및 절곡기, 크레인, 리프트. 압력용기. 롤러기. 사출성형기. 고소작업대. 곤돌라', array['산업안전기사','2019-1'])
 on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
 insert into public.questions (id, subject_id, type, body, difficulty, number) values
@@ -262,7 +262,7 @@ insert into public.question_options (id, question_id, body, sort_order) values
   ('007081b6-60ef-29de-a5fb-7a59587a3d6a', 'ba1ec92b-e263-86ae-4634-8f399e971050', '시스템의 목표와 성능명세 결정', 3)
 on conflict (id) do update set body = excluded.body;
 insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
-  ('ba1ec92b-e263-86ae-4634-8f399e971050', '007081b6-60ef-29de-a5fb-7a59587a3d6a', '④ 시스템의 목표와 성능명세 결정', '정답 ④. 인간-기계 시스템 설계과정 6단계 ⑪ 목표 및 성능명세 결정: 시스템 설계 전 그 목적이나 존재 이유가 있어야 함（인간요소적인 면, 신체의 역학적 특성 및 인체측정학적 요소 고려） © 시스템（체계） 정의: 목적을 달성하기 위한 특정한 기본기능들이 수행되 어야 함 © 기본설계: 시스템의 형태를 갖추기 시작하는 단계（직무분석. 작업설계. 기능할당） ⑨ 인터페이스（계면） 설계: 사용자 편의와 시스템 성능에 관여 © 촉진물 설계: 인간의 성능을 증진시킬 보조물 설계 ® 시험 및 평가: 시스템 개발과 관련된 평가와 인간적인 요소 평가 실시 Wiki', array['산업안전기사','2019-1'])
+  ('ba1ec92b-e263-86ae-4634-8f399e971050', '007081b6-60ef-29de-a5fb-7a59587a3d6a', '④ 시스템의 목표와 성능명세 결정', '정답 ④. 인간-기계 시스템 설계과정 6단계 ⑪ 목표 및 성능명세 결정: 시스템 설계 전 그 목적이나 존재 이유가 있어야 함（인간요소적인 면, 신체의 역학적 특성 및 인체측정학적 요소 고려） © 시스템（체계） 정의: 목적을 달성하기 위한 특정한 기본기능들이 수행되 어야 함 © 기본설계: 시스템의 형태를 갖추기 시작하는 단계（직무분석. 작업설계. 기능할당） ⑨ 인터페이스（계면） 설계: 사용자 편의와 시스템 성능에 관여 © 촉진물 설계: 인간의 성능을 증진시킬 보조물 설계 ® 시험 및 평가: 시스템 개발과 관련된 평가와 인간적인 요소 평가 실시', array['산업안전기사','2019-1'])
 on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
 insert into public.questions (id, subject_id, type, body, difficulty, number) values
@@ -338,7 +338,7 @@ insert into public.question_options (id, question_id, body, sort_order) values
   ('300ac2e2-65f6-54c1-9c8f-b9dcdf073ddf', 'b0b03506-7fb1-0894-e0e5-0082e9e2795c', '측면을 사용하는 목적으로 하는 연삭숫돌 이외에는 측', 3)
 on conflict (id) do update set body = excluded.body;
 insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
-  ('b0b03506-7fb1-0894-e0e5-0082e9e2795c', '4747faec-7720-86a4-f70b-e2e7435b2405', '① 연삭숫돌을 사용하는 경우 작업시작 전과 연삭숫돌을', '정답 ①. 면을 사용해서는 안 된다. Kmi 연삭숫돌을 사용하는 작업의 경우 작업을 시작하기 전에는 1분 이상. 연삭숫돌을 교체한 후에는 3분 이상 시험운전을 하고 해당 기계에 이상이 있는지의 여부를 확인하여야 한다. Wlil', array['산업안전기사','2019-1'])
+  ('b0b03506-7fb1-0894-e0e5-0082e9e2795c', '4747faec-7720-86a4-f70b-e2e7435b2405', '① 연삭숫돌을 사용하는 경우 작업시작 전과 연삭숫돌을', '정답 ①. 면을 사용해서는 안 된다. Kmi 연삭숫돌을 사용하는 작업의 경우 작업을 시작하기 전에는 1분 이상. 연삭숫돌을 교체한 후에는 3분 이상 시험운전을 하고 해당 기계에 이상이 있는지의 여부를 확인하여야 한다', array['산업안전기사','2019-1'])
 on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
 insert into public.questions (id, subject_id, type, body, difficulty, number) values
@@ -395,7 +395,7 @@ insert into public.question_options (id, question_id, body, sort_order) values
   ('fa9980b8-dc71-5b95-520c-6925b23a4a57', 'd3eb3168-6074-4a8e-4815-66525d5aa825', '임피던스법', 3)
 on conflict (id) do update set body = excluded.body;
 insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
-  ('d3eb3168-6074-4a8e-4815-66525d5aa825', 'fa9980b8-dc71-5b95-520c-6925b23a4a57', '④ 임피던스법', '정답 ④. 자분탐상검사의 자화방법 • 축통전법 -직각통전법 • 프로드법 -전류관통법 • 코일법 • 극간법 • 자속관통법 t', array['산업안전기사','2019-1'])
+  ('d3eb3168-6074-4a8e-4815-66525d5aa825', 'fa9980b8-dc71-5b95-520c-6925b23a4a57', '④ 임피던스법', '정답 ④. 자분탐상검사의 자화방법 • 축통전법 -직각통전법 • 프로드법 -전류관통법 • 코일법 • 극간법 • 자속관통법', array['산업안전기사','2019-1'])
 on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
 insert into public.questions (id, subject_id, type, body, difficulty, number) values
@@ -414,7 +414,7 @@ insert into public.question_options (id, question_id, body, sort_order) values
   ('013afa41-c2ca-65c1-fa36-3d1a6cbed3e7', '4826e995-9c17-1b13-c617-f302d63c32bd', '롤러식', 3)
 on conflict (id) do update set body = excluded.body;
 insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
-  ('4826e995-9c17-1b13-c617-f302d63c32bd', 'f8d7d310-cd7e-2128-8e1b-e2d2f82677ac', '③ 스러스트식', '정답 ③. 기계식 역주행방지장치 롤러식. 라쳇식, 밴드식 取나#I', array['산업안전기사','2019-1'])
+  ('4826e995-9c17-1b13-c617-f302d63c32bd', 'f8d7d310-cd7e-2128-8e1b-e2d2f82677ac', '③ 스러스트식', '정답 ③. 스러스트식', array['산업안전기사','2019-1'])
 on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
 insert into public.questions (id, subject_id, type, body, difficulty, number) values
@@ -433,7 +433,7 @@ insert into public.question_options (id, question_id, body, sort_order) values
   ('9d8789d9-d51c-40b0-efa2-4e1e27ce7eb3', '366cd678-5871-c204-599c-faec2dead60a', '기계의 히터 등의 가열 부위, 감전우려가 있는 부위에', 3)
 on conflict (id) do update set body = excluded.body;
 insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
-  ('366cd678-5871-c204-599c-faec2dead60a', 'ff96ba0d-b541-e635-697c-ab2ff044e298', '② 게이트가드식 방호장치를 설치할 경우에는 연동구조를', '정답 ②. 는 방호덮개를 설치하여 사용한다. K9 사출성형기 방호장치 • 사출성형기 •주형조형기 및 형단조기 등에 근로자의 신체 일부가 말려 들어갈 우려가 있는 경우 게이트가드 또는 양수조작식 등에 의한 방호장 치, 그 밖에 필요한 방호조치를 하여야 한다. • 게이트가드는 닫지 아니하면 기계가 작동되지 아니하는 연동구조이어야 한다. • 기계의 히터 등의 가열 부위 또는 감전 우려가 있는 부위에는 방호덮개 를 설치하는 등 필요한 안전조치를 하여야 한다. EWI%I', array['산업안전기사','2019-1'])
+  ('366cd678-5871-c204-599c-faec2dead60a', 'ff96ba0d-b541-e635-697c-ab2ff044e298', '② 게이트가드식 방호장치를 설치할 경우에는 연동구조를', '정답 ②. 는 방호덮개를 설치하여 사용한다. K9 사출성형기 방호장치 • 사출성형기 •주형조형기 및 형단조기 등에 근로자의 신체 일부가 말려 들어갈 우려가 있는 경우 게이트가드 또는 양수조작식 등에 의한 방호장 치, 그 밖에 필요한 방호조치를 하여야 한다. • 게이트가드는 닫지 아니하면 기계가 작동되지 아니하는 연동구조이어야 한다. • 기계의 히터 등의 가열 부위 또는 감전 우려가 있는 부위에는 방호덮개 를 설치하는 등 필요한 안전조치를 하여야 한다', array['산업안전기사','2019-1'])
 on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
 insert into public.questions (id, subject_id, type, body, difficulty, number) values
@@ -566,7 +566,7 @@ insert into public.question_options (id, question_id, body, sort_order) values
   ('72d04818-1cae-9670-7277-f76af36c8efe', '33cfcf2e-aee8-52c9-4c39-1cd9ad54bd66', '최대 지간길이가 7이m] 이상인 교량건설 등 공사', 3)
 on conflict (id) do update set body = excluded.body;
 insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
-  ('33cfcf2e-aee8-52c9-4c39-1cd9ad54bd66', '62464274-7fdd-ecb8-3db9-e3ce4dc092db', '② 최대 지간길이가 50[m] 이상인 교량건설 등 공사', '정답 ②. 유해위험방지계획서 제출대상 건설공사 • 지상높이가 31[m] 이상인 건축물 또는 인공구조물. 연면적 30,000[m2] 이상인 건축물 또는 연면적 5.0001m2] 이상의 문화 및 집회시설（전시장 및 동물원 • 식물원 제외）. 판매시설. 운수시설（고속철도의 역사 및 집배 송시설 제외）. 종교시설. 의료시설 중 종합병원. 숙박시설 중 관광숙박시 설, 지하도상가 또는 냉동 • 냉장 창고시설의 건설 개조 또는 해체（건설 등） 공사 • 연면적 5,0001m2] 이상의 냉동 냉장 창고시설의 설비공사 및 단열공사 • 최대 지간길이가 50[m] 이상인 다리의 건설 등 공사 • 터널의 건설 등 공사 • 다목적댐. 발전용댐. 저수용량 2천만 톤 이상의 용수 전용 댐 및 지방 상 수도 전용 댐의 건설 등 공사 • 깊이가 10[m】 이상인 굴착공사 E H', array['산업안전기사','2019-1'])
+  ('33cfcf2e-aee8-52c9-4c39-1cd9ad54bd66', '62464274-7fdd-ecb8-3db9-e3ce4dc092db', '② 최대 지간길이가 50[m] 이상인 교량건설 등 공사', '정답 ②. 유해위험방지계획서 제출대상 건설공사 • 지상높이가 31[m] 이상인 건축물 또는 인공구조물. 연면적 30,000[m2] 이상인 건축물 또는 연면적 5.0001m2] 이상의 문화 및 집회시설（전시장 및 동물원 • 식물원 제외）. 판매시설. 운수시설（고속철도의 역사 및 집배 송시설 제외）. 종교시설. 의료시설 중 종합병원. 숙박시설 중 관광숙박시 설, 지하도상가 또는 냉동 • 냉장 창고시설의 건설 개조 또는 해체（건설 등） 공사 • 연면적 5,0001m2] 이상의 냉동 냉장 창고시설의 설비공사 및 단열공사 • 최대 지간길이가 50[m] 이상인 다리의 건설 등 공사 • 터널의 건설 등 공사 • 다목적댐. 발전용댐. 저수용량 2천만 톤 이상의 용수 전용 댐 및 지방 상 수도 전용 댐의 건설 등 공사 • 깊이가 10[m】 이상인 굴착공사', array['산업안전기사','2019-1'])
 on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
 insert into public.questions (id, subject_id, type, body, difficulty, number) values
@@ -680,7 +680,7 @@ insert into public.question_options (id, question_id, body, sort_order) values
   ('3c5bdc39-060c-0f79-0a55-6fcc3899c867', '56cd6cda-1fa6-4b38-71fb-9d74662942b9', '6시간 이상', 3)
 on conflict (id) do update set body = excluded.body;
 insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
-  ('56cd6cda-1fa6-4b38-71fb-9d74662942b9', '404aaaaf-acae-a21a-650b-509461f5e3b3', '② 2시간 이상', '정답 ②. 근로자 안전보건교육 교육과정별 교육시간 교육과정 교육대상 교육시간 사무직 종사 근로자 매반기 6시간 이상 판매업무에 직접 종사하는 매반기 6시간 이상 정기교육 그 밖의 근로자 근로자 판매업무에 직접 종사하는 매반기 12시간이상 근로자 외의 근로자 일용근로자 및 근로계약기간이 1주일 1 시간이상 이하인 기간제근로자 채용 시 교육 근로계약기간이 1주일 초과 1개월이 4시간이상 하인 기간제근로자 그 밖의 근로자 8시간이상 일용근로자 및 근로계약기간이 1주일 작업내용 1 시간이상 이하인 기간제근로자 변경 시 교육 그 밖의 근로자 2시간 이상 쪼 이 문제는 개정된 법령에 따라 수정한 문제입니다. E H', array['산업안전기사','2019-2'])
+  ('56cd6cda-1fa6-4b38-71fb-9d74662942b9', '404aaaaf-acae-a21a-650b-509461f5e3b3', '② 2시간 이상', '정답 ②. 근로자 안전보건교육 교육과정별 교육시간 교육과정 교육대상 교육시간 사무직 종사 근로자 매반기 6시간 이상 판매업무에 직접 종사하는 매반기 6시간 이상 정기교육 그 밖의 근로자 근로자 판매업무에 직접 종사하는 매반기 12시간이상 근로자 외의 근로자 일용근로자 및 근로계약기간이 1주일 1 시간이상 이하인 기간제근로자 채용 시 교육 근로계약기간이 1주일 초과 1개월이 4시간이상 하인 기간제근로자 그 밖의 근로자 8시간이상 일용근로자 및 근로계약기간이 1주일 작업내용 1 시간이상 이하인 기간제근로자 변경 시 교육 그 밖의 근로자 2시간 이상 쪼 이 문제는 개정된 법령에 따라 수정한 문제입니다', array['산업안전기사','2019-2'])
 on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
 insert into public.questions (id, subject_id, type, body, difficulty, number) values
@@ -718,7 +718,7 @@ insert into public.question_options (id, question_id, body, sort_order) values
   ('8335766a-48af-d2c8-0044-b4569d69cb86', '4bc3e51c-9fe8-2620-535e-1cdc4b33c513', '화재예방 및 초기 대응에 관한 사항', 3)
 on conflict (id) do update set body = excluded.body;
 insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
-  ('4bc3e51c-9fe8-2620-535e-1cdc4b33c513', '8335766a-48af-d2c8-0044-b4569d69cb86', '④ 화재예방 및 초기 대응에 관한 사항', '정답 ④. 밀폐된 장소에서 하는 용접작업 또는 습한 장소에서 하는 전 기용접 작업 시 특별교육내용 • 작업순서. 안전작업방법 및 수칙에 관한 사항 • 환기설비에 관한사항 • 전격 방지 및 보호구 착용에 관한 사항 • 질식 시 응급조치에 관한 사항 • 작업환경 점검에 관한사항 • 그 밖에 안전 • 보건관리에 필요한 사항 E! l', array['산업안전기사','2019-2'])
+  ('4bc3e51c-9fe8-2620-535e-1cdc4b33c513', '8335766a-48af-d2c8-0044-b4569d69cb86', '④ 화재예방 및 초기 대응에 관한 사항', '정답 ④. 밀폐된 장소에서 하는 용접작업 또는 습한 장소에서 하는 전 기용접 작업 시 특별교육내용 • 작업순서. 안전작업방법 및 수칙에 관한 사항 • 환기설비에 관한사항 • 전격 방지 및 보호구 착용에 관한 사항 • 질식 시 응급조치에 관한 사항 • 작업환경 점검에 관한사항 • 그 밖에 안전 • 보건관리에 필요한 사항', array['산업안전기사','2019-2'])
 on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
 insert into public.questions (id, subject_id, type, body, difficulty, number) values
@@ -756,5 +756,5 @@ insert into public.question_options (id, question_id, body, sort_order) values
   ('d8b1fe3f-8c2e-4021-cb34-e97a40ad5a99', '8c7dae74-7ebe-7eca-f359-a647e84e6946', '염소가스 또는 증기', 3)
 on conflict (id) do update set body = excluded.body;
 insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
-  ('8c7dae74-7ebe-7eca-f359-a647e84e6946', 'd8b1fe3f-8c2e-4021-cb34-e97a40ad5a99', '④ 염소가스 또는 증기', '정답 ④. 방독마스크의 종류 및 시험가스 정화통 흡수제 종류 시험가스 (정화제) 시클로헥산(c6h)2) 유기화합물용 디메틸에테르(CH30cH3) 활성탄 이소부탄(C4Ht0) 할로겐용 염소가스 또는 증기(Cl2) 소다라임. 활성탄 EUSIIH', array['산업안전기사','2019-2'])
+  ('8c7dae74-7ebe-7eca-f359-a647e84e6946', 'd8b1fe3f-8c2e-4021-cb34-e97a40ad5a99', '④ 염소가스 또는 증기', '정답 ④. 방독마스크의 종류 및 시험가스 정화통 흡수제 종류 시험가스 (정화제) 시클로헥산(c6h)2) 유기화합물용 디메틸에테르(CH30cH3) 활성탄 이소부탄(C4Ht0) 할로겐용 염소가스 또는 증기(Cl2) 소다라임. 활성탄', array['산업안전기사','2019-2'])
 on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;

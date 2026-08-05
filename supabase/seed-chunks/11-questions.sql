@@ -15,7 +15,7 @@ insert into public.question_options (id, question_id, body, sort_order) values
   ('2b22dfce-5383-7032-9c72-cabfa109cb7b', '9cfc497c-2901-36f5-4f10-1ac30dfc6cf8', '폭발하한계는 혼합가스의 단위체적당의 발열량이 일정', 3)
 on conflict (id) do update set body = excluded.body;
 insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
-  ('9cfc497c-2901-36f5-4f10-1ac30dfc6cf8', 'd41a0031-454c-4828-4a83-f78ba032ab51', '③ 화염이 하향전파인 경우 일반적으로 온도가 상승함에', '정답 ③. 한 한계치에 도달하는 데 필요한 가연성 가스의 농도이 다. « 기준이 되는 25[℃]에서 100[℃]씩 증가할 때마다 폭발하한계의 값이 8[야] 감소하며. 폭발상한은 8[%] 증가한다. g', array['산업안전기사','2022-3'])
+  ('9cfc497c-2901-36f5-4f10-1ac30dfc6cf8', 'd41a0031-454c-4828-4a83-f78ba032ab51', '③ 화염이 하향전파인 경우 일반적으로 온도가 상승함에', '정답 ③. 한 한계치에 도달하는 데 필요한 가연성 가스의 농도이 다. « 기준이 되는 25[℃]에서 100[℃]씩 증가할 때마다 폭발하한계의 값이 8[야] 감소하며. 폭발상한은 8[%] 증가한다', array['산업안전기사','2022-3'])
 on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
 insert into public.questions (id, subject_id, type, body, difficulty, number) values
@@ -148,7 +148,7 @@ insert into public.question_options (id, question_id, body, sort_order) values
   ('75f62f4c-f87a-c985-942d-aac030df1c10', '68804cf8-5e3a-b5f6-06fe-90c605bfc0f6', '깊이가 5[m] 이상인 굴착공사', 3)
 on conflict (id) do update set body = excluded.body;
 insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
-  ('68804cf8-5e3a-b5f6-06fe-90c605bfc0f6', '75f62f4c-f87a-c985-942d-aac030df1c10', '④ 깊이가 5[m] 이상인 굴착공사', '정답 ④. 깊이가 10[m] 이상인 굴착공사가 유해위험방지계획서 제출대상 이다. @mi', array['산업안전기사','2022-3'])
+  ('68804cf8-5e3a-b5f6-06fe-90c605bfc0f6', '75f62f4c-f87a-c985-942d-aac030df1c10', '④ 깊이가 5[m] 이상인 굴착공사', '정답 ④. 깊이가 10[m] 이상인 굴착공사가 유해위험방지계획서 제출대상 이다', array['산업안전기사','2022-3'])
 on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
 insert into public.questions (id, subject_id, type, body, difficulty, number) values
@@ -186,7 +186,7 @@ insert into public.question_options (id, question_id, body, sort_order) values
   ('1483a6f6-fb59-f897-791f-8a5837916412', '1b1881ab-8ece-2d83-3c16-0bb988e43d78', '4명 이상', 3)
 on conflict (id) do update set body = excluded.body;
 insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
-  ('1b1881ab-8ece-2d83-3c16-0bb988e43d78', '5f4e914e-491d-c3d9-15a4-c7205a78d0fd', '② 2명이상', '정답 ②. 공사금액 800억 원 이상 1.500억 원 미만인 건설공사의 경우 안 전관리자는 2명 이상 배치하여야 한다. 다만. 전체 공사기간 중 전 • 후 15 에 해당하는 기간 동안은 1명 이상으로 한다. 目', array['산업안전기사','2022-3'])
+  ('1b1881ab-8ece-2d83-3c16-0bb988e43d78', '5f4e914e-491d-c3d9-15a4-c7205a78d0fd', '② 2명이상', '정답 ②. 2명이상', array['산업안전기사','2022-3'])
 on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
 insert into public.questions (id, subject_id, type, body, difficulty, number) values
@@ -357,7 +357,7 @@ insert into public.question_options (id, question_id, body, sort_order) values
   ('bc1690d7-62f2-0f8c-b1df-4358e76a6b80', 'c97a9924-2e1c-fc1d-e710-2cd58422e8b7', '미니멀 컷셋은 정상사상（Top Event）을 일으키기 위한', 3)
 on conflict (id) do update set body = excluded.body;
 insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
-  ('c97a9924-2e1c-fc1d-e710-2cd58422e8b7', 'bc1690d7-62f2-0f8c-b1df-4358e76a6b80', '④ 미니멀 컷셋은 정상사상（Top Event）을 일으키기 위한', '정답 ④. 최소한의 컷셋이다. KOI 미니멀 컷셋은 시스템의 위험성을 표시하는 것이다. 미니멀 패스셋은 시스템의 신뢰성을 표시하는 것이다. 미니멀 패스셋은 정상사상（고장）이 일어나지 않는 최소한의 패스셋이다. tWM', array['산업안전기사','2023-1'])
+  ('c97a9924-2e1c-fc1d-e710-2cd58422e8b7', 'bc1690d7-62f2-0f8c-b1df-4358e76a6b80', '④ 미니멀 컷셋은 정상사상（Top Event）을 일으키기 위한', '정답 ④. 최소한의 컷셋이다. KOI 미니멀 컷셋은 시스템의 위험성을 표시하는 것이다. 미니멀 패스셋은 시스템의 신뢰성을 표시하는 것이다. 미니멀 패스셋은 정상사상（고장）이 일어나지 않는 최소한의 패스셋이다', array['산업안전기사','2023-1'])
 on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
 insert into public.questions (id, subject_id, type, body, difficulty, number) values
@@ -376,7 +376,7 @@ insert into public.question_options (id, question_id, body, sort_order) values
   ('b1650d5d-5c16-3249-ce9a-0761258e3703', '52e3d18a-5d1e-936f-b382-11194e5db54b', '최소치수를 이용한 설계', 3)
 on conflict (id) do update set body = excluded.body;
 insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
-  ('52e3d18a-5d1e-936f-b382-11194e5db54b', '574bec24-bbe2-6c96-da1b-c552bddd7569', '③ 최대치수를 이용한 설계', '정답 ③. 특정한 설비를 설계할 때, 거의 SE 사람을 수용할 수 있도록 설계한다. + 최소치 설계: 하위 백분위 수 기준 1, 5, 10[%tile] 예 선반의 높이, 조종장치까지의 거리 등 x ㆍ최대치 설계: 상위 백분위 수 기준 90, 95, 99[% 116] 에 문, 통로, 탈출구 등 x', array['산업안전기사','2023-1'])
+  ('52e3d18a-5d1e-936f-b382-11194e5db54b', '574bec24-bbe2-6c96-da1b-c552bddd7569', '③ 최대치수를 이용한 설계', '정답 ③. 특정한 설비를 설계할 때, 거의 SE 사람을 수용할 수 있도록 설계한다. + 최소치 설계: 하위 백분위 수 기준 1, 5, 10[%tile] 예 선반의 높이, 조종장치까지의 거리 등 x ㆍ최대치 설계: 상위 백분위 수 기준 90, 95, 99[% 116] 에 문, 통로, 탈출구 등', array['산업안전기사','2023-1'])
 on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
 insert into public.questions (id, subject_id, type, body, difficulty, number) values
@@ -414,7 +414,7 @@ insert into public.question_options (id, question_id, body, sort_order) values
   ('1fefa86e-7d28-e193-1755-4c4ec39fd615', '4c18bdd9-dfbc-8239-8d9f-b105ccb1d4bd', '광원의 주위를 어둡게 한다.', 3)
 on conflict (id) do update set body = excluded.body;
 insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
-  ('4c18bdd9-dfbc-8239-8d9f-b105ccb1d4bd', '1fefa86e-7d28-e193-1755-4c4ec39fd615', '④ 광원의 주위를 어둡게 한다.', '정답 ④. 광원으로부터의 휘광(Glare) 처리 시 휘광원 주위를 밝게 하여 광도비를 줄여야 한다. 바劍51', array['산업안전기사','2023-1'])
+  ('4c18bdd9-dfbc-8239-8d9f-b105ccb1d4bd', '1fefa86e-7d28-e193-1755-4c4ec39fd615', '④ 광원의 주위를 어둡게 한다.', '정답 ④. 광원의 주위를 어둡게 한다.', array['산업안전기사','2023-1'])
 on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
 insert into public.questions (id, subject_id, type, body, difficulty, number) values
@@ -433,7 +433,7 @@ insert into public.question_options (id, question_id, body, sort_order) values
   ('f58264ca-cea9-0247-52bb-6c45f621a22c', 'c32f86aa-ea81-b54f-452f-2c936b5f9f9c', '마모고장', 3)
 on conflict (id) do update set body = excluded.body;
 insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
-  ('c32f86aa-ea81-b54f-452f-2c936b5f9f9c', '84f6e6c3-f9f9-0dad-cd65-ffc42b8b0d59', '① 조립고장', '정답 ①. 고장률의 유형 • 초기고장（감소형）: 제조가 불량하거나 생산과정에서 품질관리가 안 되어 서생기는 고장 • 우발고장（일정형）: 실제 사용하는 상태에서 발생하는 고장으로 예측할 수 없는 랜덤의 간격으로 생기는 고장 • 마모고장（증가형）: 설비 또는 장치가 수명을 다하여 생기는 고장 *m', array['산업안전기사','2023-1'])
+  ('c32f86aa-ea81-b54f-452f-2c936b5f9f9c', '84f6e6c3-f9f9-0dad-cd65-ffc42b8b0d59', '① 조립고장', '정답 ①. 고장률의 유형 • 초기고장（감소형）: 제조가 불량하거나 생산과정에서 품질관리가 안 되어 서생기는 고장 • 우발고장（일정형）: 실제 사용하는 상태에서 발생하는 고장으로 예측할 수 없는 랜덤의 간격으로 생기는 고장 • 마모고장（증가형）: 설비 또는 장치가 수명을 다하여 생기는 고장', array['산업안전기사','2023-1'])
 on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
 insert into public.questions (id, subject_id, type, body, difficulty, number) values
@@ -452,7 +452,7 @@ insert into public.question_options (id, question_id, body, sort_order) values
   ('271c8ce3-d082-fb89-5cec-d5d8bb339953', 'ce39809f-22c0-0b0e-98ed-abf9b8e9e281', '작업점의안전화', 3)
 on conflict (id) do update set body = excluded.body;
 insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
-  ('ce39809f-22c0-0b0e-98ed-abf9b8e9e281', '28c3e9f0-a59a-470e-3604-c20004a9c9fb', '② 기능상의 안전화', '정답 ②. 기능상의 안전화 최근 기계는 반자동 또는 자동 제어장치를 갖추고 있어 에너지 변동에 따 라 오동작이 발생하여 주요 문제로 대두되므로 이에 따른 기능의 안전화가 요구되고 있다. 예 전압 강하 및 정전에 따른 오작동. 사용압력 변동 시의 오작동. 단락 또 는 스위치 고장 시의 오작동 g間nn', array['산업안전기사','2023-1'])
+  ('ce39809f-22c0-0b0e-98ed-abf9b8e9e281', '28c3e9f0-a59a-470e-3604-c20004a9c9fb', '② 기능상의 안전화', '정답 ②. 기능상의 안전화', array['산업안전기사','2023-1'])
 on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
 insert into public.questions (id, subject_id, type, body, difficulty, number) values
@@ -471,7 +471,7 @@ insert into public.question_options (id, question_id, body, sort_order) values
   ('9f084691-fa37-99a6-bebf-bf29c0faf31e', 'b99e3a32-24ec-0e2c-b888-a28bae7ac5f6', '최고사용압력의 1.1 배 이하에서 2개가 동시 작동', 3)
 on conflict (id) do update set body = excluded.body;
 insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
-  ('b99e3a32-24ec-0e2c-b888-a28bae7ac5f6', '7fe74f7a-111a-ba0e-8476-0b99a5c9389c', '② 최고사용압력 이하에서 1개가 작동되고 다른 것은 최', '정답 ②. 보일러의 안전한 가동을 위하여 보일러 규격에 맞는 압력방출장 치를 1개 또는 2개 이상 설치하고 최고사용압력 이하에서 작동되도록 하 여야 한다. 다만. 압력방출장치가 2개 이상 설치된 경우에는 최고사용압력 이하에서 1개가 작동되고. 다른 압력방출장치는 최고사용압력 1.05배 이 하에서 작동되도록 부착하여야 한다. E gl', array['산업안전기사','2023-1'])
+  ('b99e3a32-24ec-0e2c-b888-a28bae7ac5f6', '7fe74f7a-111a-ba0e-8476-0b99a5c9389c', '② 최고사용압력 이하에서 1개가 작동되고 다른 것은 최', '정답 ②. 보일러의 안전한 가동을 위하여 보일러 규격에 맞는 압력방출장 치를 1개 또는 2개 이상 설치하고 최고사용압력 이하에서 작동되도록 하 여야 한다. 다만. 압력방출장치가 2개 이상 설치된 경우에는 최고사용압력 이하에서 1개가 작동되고. 다른 압력방출장치는 최고사용압력 1.05배 이 하에서 작동되도록 부착하여야 한다', array['산업안전기사','2023-1'])
 on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
 insert into public.questions (id, subject_id, type, body, difficulty, number) values
@@ -604,7 +604,7 @@ insert into public.question_options (id, question_id, body, sort_order) values
   ('cdf4fcc8-afca-894e-cb78-54ff1091ba02', 'f93d0311-a9b2-8e74-9873-865b6b224708', '급성 독성 물질', 3)
 on conflict (id) do update set body = excluded.body;
 insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
-  ('f93d0311-a9b2-8e74-9873-865b6b224708', '1f5edc4b-2357-9d5f-45bd-a591c9cbfa21', '③ 물반응성 물질 및 인화성 고체', '정답 ③. 보기의 물질은 물반응성 물질 및 인화성 고체에 해당한다. "唱!', array['산업안전기사','2023-1'])
+  ('f93d0311-a9b2-8e74-9873-865b6b224708', '1f5edc4b-2357-9d5f-45bd-a591c9cbfa21', '③ 물반응성 물질 및 인화성 고체', '정답 ③. 물반응성 물질 및 인화성 고체', array['산업안전기사','2023-1'])
 on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
 insert into public.questions (id, subject_id, type, body, difficulty, number) values
@@ -699,7 +699,7 @@ insert into public.question_options (id, question_id, body, sort_order) values
   ('7aacc14b-966e-cccb-fd0b-14ad005ac827', 'b89b60d6-d59f-dd67-a5f7-50d1cb92b527', '현장타설 콘크리트 격자공', 3)
 on conflict (id) do update set body = excluded.body;
 insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
-  ('b89b60d6-d59f-dd67-a5f7-50d1cb92b527', '97ac684a-1a7a-1f58-0c85-699bf5aecbb5', '② 식생구멍공', '정답 ②. 식생구멍공은 구조물에 의한 보호공법이 아닌 수목 등을 활용한 식생공법에 해당된다. WWI', array['산업안전기사','2023-1'])
+  ('b89b60d6-d59f-dd67-a5f7-50d1cb92b527', '97ac684a-1a7a-1f58-0c85-699bf5aecbb5', '② 식생구멍공', '정답 ②. 식생구멍공은 구조물에 의한 보호공법이 아닌 수목 등을 활용한 식생공법에 해당된다', array['산업안전기사','2023-1'])
 on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
 insert into public.questions (id, subject_id, type, body, difficulty, number) values

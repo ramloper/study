@@ -15,7 +15,7 @@ insert into public.question_options (id, question_id, body, sort_order) values
   ('5af659c7-81c6-e7cb-c937-7622dea9c652', '6abcddcc-76a6-e478-602a-b02f9080c7f1', '사회화의 원리', 3)
 on conflict (id) do update set body = excluded.body;
 insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
-  ('6abcddcc-76a6-e478-602a-b02f9080c7f1', '906a17be-03be-16b9-4fd1-a5218eaa279a', '③ 계속성의 원리', '정답 ③. 계속성의 원리는 학습지도의 원리가 아닌 파블로프의 조건반사 설에 해당한다. 학습지도 이론 개별화의 원리, 통합의 원리. 사회화의 원리. 자발성의 원리. 직관의 원리 EWH', array['산업안전기사','2023-2'])
+  ('6abcddcc-76a6-e478-602a-b02f9080c7f1', '906a17be-03be-16b9-4fd1-a5218eaa279a', '③ 계속성의 원리', '정답 ③. 계속성의 원리는 학습지도의 원리가 아닌 파블로프의 조건반사 설에 해당한다. 학습지도 이론 개별화의 원리, 통합의 원리. 사회화의 원리. 자발성의 원리. 직관의 원리', array['산업안전기사','2023-2'])
 on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
 insert into public.questions (id, subject_id, type, body, difficulty, number) values
@@ -148,7 +148,7 @@ insert into public.question_options (id, question_id, body, sort_order) values
   ('4680dd9f-3639-0563-9d4f-921b6c736739', '9083a645-4ed3-8319-cae3-cd54bc28a6c5', '공작물은 전원스위치를 끄고 바이트를 충분히 멀리 위', 3)
 on conflict (id) do update set body = excluded.body;
 insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
-  ('9083a645-4ed3-8319-cae3-cd54bc28a6c5', '553b06a7-dd6c-23f2-9011-8b5d80ce1cfc', '③ 상의의 옷자락은 안으로 넣고, 끈을 이용하여 소맷자락', '정답 ③. 치시킨 후 고정한다. KOi 선반작업 시 상의의 옷자락은 안으로 넣고. 소맷자락을 묶을 때 에는 끈을 사용하지 않는다. 5!回', array['산업안전기사','2023-2'])
+  ('9083a645-4ed3-8319-cae3-cd54bc28a6c5', '553b06a7-dd6c-23f2-9011-8b5d80ce1cfc', '③ 상의의 옷자락은 안으로 넣고, 끈을 이용하여 소맷자락', '정답 ③. 상의의 옷자락은 안으로 넣고, 끈을 이용하여 소맷자락', array['산업안전기사','2023-2'])
 on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
 insert into public.questions (id, subject_id, type, body, difficulty, number) values
@@ -224,7 +224,7 @@ insert into public.question_options (id, question_id, body, sort_order) values
   ('3ad7c04a-2e94-4840-a221-2dfd1866ac9c', '45a57136-43ab-4f49-d0d1-6f83879cec2e', '피크린산', 3)
 on conflict (id) do update set body = excluded.body;
 insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
-  ('45a57136-43ab-4f49-d0d1-6f83879cec2e', '3ad7c04a-2e94-4840-a221-2dfd1866ac9c', '④ 피크린산', '정답 ④. 피크린산（트리니트로페놀）은 니트로화합물로 폭발성 물질 및 유 기과산화물에 해당한다. Egmn', array['산업안전기사','2023-2'])
+  ('45a57136-43ab-4f49-d0d1-6f83879cec2e', '3ad7c04a-2e94-4840-a221-2dfd1866ac9c', '④ 피크린산', '정답 ④. 피크린산（트리니트로페놀）은 니트로화합물로 폭발성 물질 및 유 기과산화물에 해당한다', array['산업안전기사','2023-2'])
 on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
 insert into public.questions (id, subject_id, type, body, difficulty, number) values
@@ -319,7 +319,7 @@ insert into public.question_options (id, question_id, body, sort_order) values
   ('f9e66d12-fe47-4c5a-418e-0ce0078c1d5a', '6552c7b1-1584-b5bf-2abc-5a78835aac17', '차량계 건설기 계를 사용하여 작업을 하는 경우 승차석', 3)
 on conflict (id) do update set body = excluded.body;
 insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
-  ('6552c7b1-1584-b5bf-2abc-5a78835aac17', '1e48696f-54e3-7ee3-a631-994360cd9dae', '② 차량계 건설기계의 운전자가 운전위치를 이탈하는 경', '정답 ②. 이 아닌 위치에 근로자를 탑승시키지 말 것 a 치량계 하역운반기계 등. 차량계 건설기계의 운전자가 운전위치 이탈 시에는 포크. 버킷, 디퍼 등의 장치를 가장 낮은 위치 또는 지면에 내 려 두어야 한다. Emn', array['산업안전기사','2023-2'])
+  ('6552c7b1-1584-b5bf-2abc-5a78835aac17', '1e48696f-54e3-7ee3-a631-994360cd9dae', '② 차량계 건설기계의 운전자가 운전위치를 이탈하는 경', '정답 ②. 이 아닌 위치에 근로자를 탑승시키지 말 것 a 치량계 하역운반기계 등. 차량계 건설기계의 운전자가 운전위치 이탈 시에는 포크. 버킷, 디퍼 등의 장치를 가장 낮은 위치 또는 지면에 내 려 두어야 한다', array['산업안전기사','2023-2'])
 on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
 insert into public.questions (id, subject_id, type, body, difficulty, number) values
@@ -528,7 +528,7 @@ insert into public.question_options (id, question_id, body, sort_order) values
   ('2c3aa4df-5852-2bc4-09f9-a787d887f629', '1ecf5e78-6557-69ba-186b-f5d917e5d88b', '초음파탐상검사', 3)
 on conflict (id) do update set body = excluded.body;
 insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
-  ('1ecf5e78-6557-69ba-186b-f5d917e5d88b', '9b35f364-aea7-623a-df02-13058c5ce98b', '① 피로시험', '정답 ①. 피로시험은 파괴시험의 일종이다. 비파괴검사의 종류 방사선투과검사(RT). 초음파탐상검사(UT). 자분 탐상검사(MT). 침투탐 상검사(PT). 음향탐상검사(AET). 와류탐상검사(ECT) 등 b SI', array['산업안전기사','2023-3'])
+  ('1ecf5e78-6557-69ba-186b-f5d917e5d88b', '9b35f364-aea7-623a-df02-13058c5ce98b', '① 피로시험', '정답 ①. 피로시험은 파괴시험의 일종이다. 비파괴검사의 종류 방사선투과검사(RT). 초음파탐상검사(UT). 자분 탐상검사(MT). 침투탐 상검사(PT). 음향탐상검사(AET). 와류탐상검사(ECT) 등', array['산업안전기사','2023-3'])
 on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
 insert into public.questions (id, subject_id, type, body, difficulty, number) values
@@ -699,7 +699,7 @@ insert into public.question_options (id, question_id, body, sort_order) values
   ('0d6887d9-e4a8-69bb-f807-d5e3c903a0d0', '4ed2e05f-91aa-bc10-3aa9-871bd5faf7a9', '펌프의 설치높이를 낮추어 흡입양정을 짧게 한다.', 3)
 on conflict (id) do update set body = excluded.body;
 insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
-  ('4ed2e05f-91aa-bc10-3aa9-871bd5faf7a9', '1ae0b97d-49a5-26e1-62a3-9c2ebdb441df', '① 펌프의 회전수를 높인다.', '정답 ①. 공동현상은 유속이 빠를 경우 발생할 수 있으므로 공동현상을 예 방하려면 펌프의 회전수를 낮춰야 한다. EHWl', array['산업안전기사','2023-3'])
+  ('4ed2e05f-91aa-bc10-3aa9-871bd5faf7a9', '1ae0b97d-49a5-26e1-62a3-9c2ebdb441df', '① 펌프의 회전수를 높인다.', '정답 ①. 공동현상은 유속이 빠를 경우 발생할 수 있으므로 공동현상을 예 방하려면 펌프의 회전수를 낮춰야 한다', array['산업안전기사','2023-3'])
 on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
 insert into public.questions (id, subject_id, type, body, difficulty, number) values
@@ -718,7 +718,7 @@ insert into public.question_options (id, question_id, body, sort_order) values
   ('89a6ae06-a807-d090-555a-b4899db33c8d', '4e236c54-0651-addf-9d61-db906f86e746', '비계등에 의한 작업대 설치', 3)
 on conflict (id) do update set body = excluded.body;
 insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
-  ('4e236c54-0651-addf-9d61-db906f86e746', 'b66cbf97-7579-2cbe-f07c-8ada0668f8fa', '② 지붕트러스의 일체화 또는 지상에서 조립', '정답 ②. 지붕트러스의 일체화 또는 지상에서 조립하는 경우 고소작업을 최소화할 수 있다. EH@1', array['산업안전기사','2023-3'])
+  ('4e236c54-0651-addf-9d61-db906f86e746', 'b66cbf97-7579-2cbe-f07c-8ada0668f8fa', '② 지붕트러스의 일체화 또는 지상에서 조립', '정답 ②. 지붕트러스의 일체화 또는 지상에서 조립하는 경우 고소작업을 최소화할 수 있다. @1', array['산업안전기사','2023-3'])
 on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
 insert into public.questions (id, subject_id, type, body, difficulty, number) values
@@ -737,7 +737,7 @@ insert into public.question_options (id, question_id, body, sort_order) values
   ('dccb6fcb-4bd5-8966-eff7-5cb14806afed', '227813e1-3a9a-5564-54e0-84a91d15fb7c', '8[m] 이내마다', 3)
 on conflict (id) do update set body = excluded.body;
 insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
-  ('227813e1-3a9a-5564-54e0-84a91d15fb7c', '563213da-20cb-4b19-4900-6c4e35a11002', '③ 6[m] 이내마다', '정답 ③. 강관틀비계에는 수직방향으로 6[m], 수평방향으로 8[m] 이내마 다 벽이음을 하여야 한다. E H', array['산업안전기사','2023-3'])
+  ('227813e1-3a9a-5564-54e0-84a91d15fb7c', '563213da-20cb-4b19-4900-6c4e35a11002', '③ 6[m] 이내마다', '정답 ③. 강관틀비계에는 수직방향으로 6[m], 수평방향으로 8[m] 이내마 다 벽이음을 하여야 한다', array['산업안전기사','2023-3'])
 on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
 insert into public.questions (id, subject_id, type, body, difficulty, number) values

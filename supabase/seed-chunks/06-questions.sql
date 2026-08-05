@@ -53,7 +53,7 @@ insert into public.question_options (id, question_id, body, sort_order) values
   ('24f44f1f-a603-4d24-e697-3a9e4deda153', '4191ce20-90ed-939f-d337-d7041b96dc65', '5턱', 3)
 on conflict (id) do update set body = excluded.body;
 insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
-  ('4191ce20-90ed-939f-d337-d7041b96dc65', '24f44f1f-a603-4d24-e697-3a9e4deda153', '④ 5턱', '정답 ④. 관 상호 간 또는 관과 박스, 기타의 부속품 - 풀박스 또는 전기기 계 - 기구와는 5턱 이상 나사조임으로 접속하여야 한다. EHm', array['산업안전기사','2020-4'])
+  ('4191ce20-90ed-939f-d337-d7041b96dc65', '24f44f1f-a603-4d24-e697-3a9e4deda153', '④ 5턱', '정답 ④. 관 상호 간 또는 관과 박스, 기타의 부속품 - 풀박스 또는 전기기 계 - 기구와는 5턱 이상 나사조임으로 접속하여야 한다', array['산업안전기사','2020-4'])
 on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
 insert into public.questions (id, subject_id, type, body, difficulty, number) values
@@ -110,7 +110,7 @@ insert into public.question_options (id, question_id, body, sort_order) values
   ('9df2b24c-5f76-e8a9-e53c-af668a5f3c34', '7989e810-6dda-399b-cac7-31c55f845afa', '273.15', 3)
 on conflict (id) do update set body = excluded.body;
 insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
-  ('7989e810-6dda-399b-cac7-31c55f845afa', 'bb50eb20-d766-6e2b-c8a7-6f16abacf9e8', '③ 101.3', '정답 ③. 인화성 액체란 표준압력(101.3[kPa])에서 인화점이 60『c] 이하 이거나 고온 • 고압의 공정운전조건으로 인하여 화재 폭발위험이 있는 상 태에서 취급되는 가연성 액체 물질을 말한다. EH 1', array['산업안전기사','2020-4'])
+  ('7989e810-6dda-399b-cac7-31c55f845afa', 'bb50eb20-d766-6e2b-c8a7-6f16abacf9e8', '③ 101.3', '정답 ③. 인화성 액체란 표준압력(101.3[kPa])에서 인화점이 60『c] 이하 이거나 고온 • 고압의 공정운전조건으로 인하여 화재 폭발위험이 있는 상 태에서 취급되는 가연성 액체 물질을 말한다. 1', array['산업안전기사','2020-4'])
 on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
 insert into public.questions (id, subject_id, type, body, difficulty, number) values
@@ -129,7 +129,7 @@ insert into public.question_options (id, question_id, body, sort_order) values
   ('541ed629-6111-38b3-5e24-771dba63e371', '4ad8d904-edd0-ba6c-92d5-d583b34b4087', '재해 발생 위험 시 연락 및 대피방법', 3)
 on conflict (id) do update set body = excluded.body;
 insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
-  ('4ad8d904-edd0-ba6c-92d5-d583b34b4087', '12a49abb-9fe8-0dc2-785f-f03d4ee8963c', '② 산업안전보건관리비 작성요령', '정답 ②. 건설공사 유해위험방지계획서 제출 시 첨부서류 •공사개요서 • 공사현장으। 주변 현황 및 주변과의 관계를 나타내는 도면（매설물 현황 포함） • 전체 공정표 • 산업안전보건관리비 사용계획서 • 안전관리 조직표 • 재해 발생 위험 시 연락 및 대피방법 i', array['산업안전기사','2020-4'])
+  ('4ad8d904-edd0-ba6c-92d5-d583b34b4087', '12a49abb-9fe8-0dc2-785f-f03d4ee8963c', '② 산업안전보건관리비 작성요령', '정답 ②. 건설공사 유해위험방지계획서 제출 시 첨부서류 •공사개요서 • 공사현장으। 주변 현황 및 주변과의 관계를 나타내는 도면（매설물 현황 포함） • 전체 공정표 • 산업안전보건관리비 사용계획서 • 안전관리 조직표 • 재해 발생 위험 시 연락 및 대피방법', array['산업안전기사','2020-4'])
 on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
 insert into public.questions (id, subject_id, type, body, difficulty, number) values
@@ -167,7 +167,7 @@ insert into public.question_options (id, question_id, body, sort_order) values
   ('a2aa13f8-3136-d97c-b47c-3c3f5b38f76e', 'd5a27633-cbb6-5f30-bf61-545029214214', '현문 사다리는 근로자의 통행에만 사용하여야 하며, 화', 3)
 on conflict (id) do update set body = excluded.body;
 insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
-  ('d5a27633-cbb6-5f30-bf61-545029214214', 'f85ed565-18c2-9854-da93-54f6e465b611', '① 200톤급 이상의 선박에서 하역작업을 하는 경우에 근', '정답 ①. 물용 발판 또는 화물용 보판으로 사용하도록 해서는 아 니 된다. K3 항만하역작업 시 300톤급 이상의 선박에서 하역작업을 하는 경 우에 근로자들이 안전하게 오르내릴 수 있는 현문 사다리를 설치하여야 하 며, 이 사다리 밑에 안전망을 설치하여야 한다. E H', array['산업안전기사','2020-4'])
+  ('d5a27633-cbb6-5f30-bf61-545029214214', 'f85ed565-18c2-9854-da93-54f6e465b611', '① 200톤급 이상의 선박에서 하역작업을 하는 경우에 근', '정답 ①. 물용 발판 또는 화물용 보판으로 사용하도록 해서는 아 니 된다. K3 항만하역작업 시 300톤급 이상의 선박에서 하역작업을 하는 경 우에 근로자들이 안전하게 오르내릴 수 있는 현문 사다리를 설치하여야 하 며, 이 사다리 밑에 안전망을 설치하여야 한다', array['산업안전기사','2020-4'])
 on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
 insert into public.questions (id, subject_id, type, body, difficulty, number) values
@@ -490,7 +490,7 @@ insert into public.question_options (id, question_id, body, sort_order) values
   ('9219e564-2b04-3a26-7936-c13f851b513f', '8e0dc8e3-878d-0577-bf04-a9c097ca387b', '본질안전방폭구조', 3)
 on conflict (id) do update set body = excluded.body;
 insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
-  ('8e0dc8e3-878d-0577-bf04-a9c097ca387b', '69887483-0a70-94bf-2176-e0a616bb54e5', '① 내압방폭구조', '정답 ①. 찌 내압방폭구조 용기 내부에 폭발성 가스 및 증기가 폭발하였을 때 용기가 그 압력에 견디 며 또한 접합면, 개구부 등을 통해서 외부의 폭발성 가스 • 증기에 인화되 지 않도록 한 구조이다. kW唱I', array['산업안전기사','2021-1'])
+  ('8e0dc8e3-878d-0577-bf04-a9c097ca387b', '69887483-0a70-94bf-2176-e0a616bb54e5', '① 내압방폭구조', '정답 ①. 내압방폭구조', array['산업안전기사','2021-1'])
 on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
 insert into public.questions (id, subject_id, type, body, difficulty, number) values
@@ -604,7 +604,7 @@ insert into public.question_options (id, question_id, body, sort_order) values
   ('995c2b06-6642-d716-912a-01e6ea6e527d', 'df9779b1-709f-381c-a402-cba4859a0769', '흡열반응이 행하여지는 반응설비', 3)
 on conflict (id) do update set body = excluded.body;
 insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
-  ('df9779b1-709f-381c-a402-cba4859a0769', '321caffc-8c8b-996d-f326-bed112e6a10c', '① 가열시켜 주는 물질의 온도가 가열되는 위험물질의 분', '정답 ①. 특수화학설비 • 발열반응이 일어나는 반응장치 • 증류 • 정류 • 증발 • 추출 등 분리를 하는 장치 • 가열시켜 주는 물질의 온도가 가열되는 위험물질의 분해온도 또는 발화 점보다 높은 상태에서 운전되는 설비 • 반응폭주 등 이상 화학반응에 의하여 위험물질이 발생할 우려가 있는 설비 • 온도가 350[℃] 이상이거나 게이지압력이 980[kPa] 이상인 상태에서 운전되는 설비 • 가열로 또는가열기 t lM', array['산업안전기사','2021-1'])
+  ('df9779b1-709f-381c-a402-cba4859a0769', '321caffc-8c8b-996d-f326-bed112e6a10c', '① 가열시켜 주는 물질의 온도가 가열되는 위험물질의 분', '정답 ①. 특수화학설비 • 발열반응이 일어나는 반응장치 • 증류 • 정류 • 증발 • 추출 등 분리를 하는 장치 • 가열시켜 주는 물질의 온도가 가열되는 위험물질의 분해온도 또는 발화 점보다 높은 상태에서 운전되는 설비 • 반응폭주 등 이상 화학반응에 의하여 위험물질이 발생할 우려가 있는 설비 • 온도가 350[℃] 이상이거나 게이지압력이 980[kPa] 이상인 상태에서 운전되는 설비 • 가열로 또는가열기', array['산업안전기사','2021-1'])
 on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
 insert into public.questions (id, subject_id, type, body, difficulty, number) values
@@ -661,7 +661,7 @@ insert into public.question_options (id, question_id, body, sort_order) values
   ('a524a3a8-9800-cf95-92f1-229599d5bc8e', '97d5a114-d91b-de9e-5fc6-31b377ead748', '기온이 영하 5[℃] 이하인 경우', 3)
 on conflict (id) do update set body = excluded.body;
 insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
-  ('97d5a114-d91b-de9e-5fc6-31b377ead748', 'a524a3a8-9800-cf95-92f1-229599d5bc8e', '④ 기온이 영하 5[℃] 이하인 경우', '정답 ④. 철골작업 중지를 위한 기후조건에 기온과 관련한 기준은 없다. 철골작업 시 작업의 제한기준 구분 ] 丁으— 강풍 ; 풍속이 1O[m/s] 이상인 경우 —~거’豆 j 5*1 1[mm/h] 이상인 경우 강설 j 강설량이 1 [cm/h] 이상인 경우 1', array['산업안전기사','2021-1'])
+  ('97d5a114-d91b-de9e-5fc6-31b377ead748', 'a524a3a8-9800-cf95-92f1-229599d5bc8e', '④ 기온이 영하 5[℃] 이하인 경우', '정답 ④. 기온이 영하 5[℃] 이하인 경우', array['산업안전기사','2021-1'])
 on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
 insert into public.questions (id, subject_id, type, body, difficulty, number) values

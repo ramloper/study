@@ -15,7 +15,7 @@ insert into public.question_options (id, question_id, body, sort_order) values
   ('3fb77446-0642-b4d6-2e8d-2821345a419c', '42e0e4c7-ccff-5b40-c64f-6f17e209422b', '금형의 설치용구는 프레스의 구조에 적합한 형태로 한다.', 3)
 on conflict (id) do update set body = excluded.body;
 insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
-  ('42e0e4c7-ccff-5b40-c64f-6f17e209422b', '5d6b39c7-3305-cdc0-bcbb-a1e0aa1c8ed8', '③ 금형을 설치하는 프레스의 T홈 안길이는 설치볼트 직', '정답 ③. 금형의 탈착 시 금형을 설치하는 프레스의 T홈 안길이는 설치볼 트 직경의 2배 이상으로 한다. 5厄1', array['산업안전기사','2022-1'])
+  ('42e0e4c7-ccff-5b40-c64f-6f17e209422b', '5d6b39c7-3305-cdc0-bcbb-a1e0aa1c8ed8', '③ 금형을 설치하는 프레스의 T홈 안길이는 설치볼트 직', '정답 ③. 금형을 설치하는 프레스의 T홈 안길이는 설치볼트 직', array['산업안전기사','2022-1'])
 on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
 insert into public.questions (id, subject_id, type, body, difficulty, number) values
@@ -34,7 +34,7 @@ insert into public.question_options (id, question_id, body, sort_order) values
   ('4c9f7841-9b38-c709-f0a1-a6f0ed1dbc67', '4711d6f0-1285-d0ff-3e5d-5615f5db47e4', '알루미늄', 3)
 on conflict (id) do update set body = excluded.body;
 insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
-  ('4711d6f0-1285-d0ff-3e5d-5615f5db47e4', 'de06c6fb-5120-143c-6d9f-3d7762eab2a6', '① 납', '정답 ①. 압력방출장치는 매년 1회 이상 국가교정기관에서 교정을 받은 압력 계를 이용하여 설정압력에서 압력 방출장치가 적정하게 작동하는지를 검사한 후 납으로 봉인하여 사용하여야 한다. WEI', array['산업안전기사','2022-1'])
+  ('4711d6f0-1285-d0ff-3e5d-5615f5db47e4', 'de06c6fb-5120-143c-6d9f-3d7762eab2a6', '① 납', '정답 ①. 압력방출장치는 매년 1회 이상 국가교정기관에서 교정을 받은 압력 계를 이용하여 설정압력에서 압력 방출장치가 적정하게 작동하는지를 검사한 후 납으로 봉인하여 사용하여야 한다', array['산업안전기사','2022-1'])
 on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
 insert into public.questions (id, subject_id, type, body, difficulty, number) values
@@ -53,7 +53,7 @@ insert into public.question_options (id, question_id, body, sort_order) values
   ('49e99b57-211e-7b5c-5144-75ae7a63037c', '33bd7fd4-7a53-325b-6a13-6a393562e0db', '게이트가드식 방호장치', 3)
 on conflict (id) do update set body = excluded.body;
 insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
-  ('33bd7fd4-7a53-325b-6a13-6a393562e0db', '81e9fca8-f993-a7e8-97ce-b78cf83cf0c7', '③ 손쳐내기식 방호장치', '정답 ③. 손쳐내기식(Push Away, Sweep Guard) 방호장치 기계의 작동에 연동시켜 위험상태로 되기 전에 손을 위험 영역에서 밀어내 거나 쳐냄으로써 위험을 배제하는 장치를 말한다. tVBl', array['산업안전기사','2022-1'])
+  ('33bd7fd4-7a53-325b-6a13-6a393562e0db', '81e9fca8-f993-a7e8-97ce-b78cf83cf0c7', '③ 손쳐내기식 방호장치', '정답 ③. 손쳐내기식(Push Away, Sweep Guard) 방호장치 기계의 작동에 연동시켜 위험상태로 되기 전에 손을 위험 영역에서 밀어내 거나 쳐냄으로써 위험을 배제하는 장치를 말한다', array['산업안전기사','2022-1'])
 on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
 insert into public.questions (id, subject_id, type, body, difficulty, number) values
@@ -91,7 +91,7 @@ insert into public.question_options (id, question_id, body, sort_order) values
   ('ab147f75-3aee-528d-518e-4b4c32c0ca47', '36933e1e-ee40-6f68-2e36-73fedb6dabfa', '고저수위 조절장치', 3)
 on conflict (id) do update set body = excluded.body;
 insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
-  ('36933e1e-ee40-6f68-2e36-73fedb6dabfa', 'fce8c849-46d6-4b79-d0cf-9d14493b0e96', '① 언로드밸브', '정답 ①. 보일러의 폭발사고를 예방하기 위하여 압력방출장치. 압력제한 스위치. 고저수위 조절장치, 화염검출기 등의 기능이 정상적으로 작동될 수 있도록 유지 • 관리하여야 한다. WI', array['산업안전기사','2022-1'])
+  ('36933e1e-ee40-6f68-2e36-73fedb6dabfa', 'fce8c849-46d6-4b79-d0cf-9d14493b0e96', '① 언로드밸브', '정답 ①. 보일러의 폭발사고를 예방하기 위하여 압력방출장치. 압력제한 스위치. 고저수위 조절장치, 화염검출기 등의 기능이 정상적으로 작동될 수 있도록 유지 • 관리하여야 한다', array['산업안전기사','2022-1'])
 on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
 insert into public.questions (id, subject_id, type, body, difficulty, number) values
@@ -281,7 +281,7 @@ insert into public.question_options (id, question_id, body, sort_order) values
   ('4e3be6a5-4a0d-095e-0abf-326442ae15ae', 'aad126d2-0d4f-627b-489e-8717863fd442', '수산화칼륨 - 인화성 가스', 3)
 on conflict (id) do update set body = excluded.body;
 insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
-  ('aad126d2-0d4f-627b-489e-8717863fd442', 'a4ac9c90-f177-7751-1303-f955aff8cd45', '① 아세트산（농도 90[%]） - 부식성 산류', '정답 ①. 농도 60[%] 이상인 아세트산은 부식성 산류에 해당한다. 오답해설 아세톤-인화성 액체 이황화탄소-인화성 액체 @ 농도 40[%] 이상인 수산화칼륨-부식성 염기류 WEia', array['산업안전기사','2022-1'])
+  ('aad126d2-0d4f-627b-489e-8717863fd442', 'a4ac9c90-f177-7751-1303-f955aff8cd45', '① 아세트산（농도 90[%]） - 부식성 산류', '정답 ①. 농도 60[%] 이상인 아세트산은 부식성 산류에 해당한다. 오답해설 아세톤-인화성 액체 이황화탄소-인화성 액체 @ 농도 40[%] 이상인 수산화칼륨-부식성 염기류', array['산업안전기사','2022-1'])
 on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
 insert into public.questions (id, subject_id, type, body, difficulty, number) values
@@ -319,7 +319,7 @@ insert into public.question_options (id, question_id, body, sort_order) values
   ('26d9ff96-8631-4ca9-47d0-08bf390dbb48', '562b2ed3-756b-8dc7-b1e2-2dedb7b8436e', '배관（2개 이상의 밸브에 의하여 차단되어 대기온도에', 3)
 on conflict (id) do update set body = excluded.body;
 insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
-  ('562b2ed3-756b-8dc7-b1e2-2dedb7b8436e', 'd5432ca4-c551-024f-3859-4d3e2f22129d', '① 원심펌프', '정답 ①. 서 액체의 열팽창에 의하여 파열될 우려가 있는 것으로 한정함） ^히 '' 산업안전보건법령」상 원심펌프는 안전밸브의 설치대상이 아니다. E H', array['산업안전기사','2022-1'])
+  ('562b2ed3-756b-8dc7-b1e2-2dedb7b8436e', 'd5432ca4-c551-024f-3859-4d3e2f22129d', '① 원심펌프', '정답 ①. 서 액체의 열팽창에 의하여 파열될 우려가 있는 것으로 한정함） ^히 '' 산업안전보건법령」상 원심펌프는 안전밸브의 설치대상이 아니다', array['산업안전기사','2022-1'])
 on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
 insert into public.questions (id, subject_id, type, body, difficulty, number) values
@@ -376,7 +376,7 @@ insert into public.question_options (id, question_id, body, sort_order) values
   ('b576124b-4ab9-7006-6591-3f1da6c5b3e5', 'a500deef-0f08-6f58-f03c-e0632e2966a6', '굴착깊이가 깊을때', 3)
 on conflict (id) do update set body = excluded.body;
 insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
-  ('a500deef-0f08-6f58-f03c-e0632e2966a6', '05e7874d-903f-e240-6251-8d030abbf742', '② 히빙현상이 있을 때', '정답 ②. 하 히빙의 예방대책 • 흙막이벽의 근입 깊이 증가 • 흙막이벽 배면지반의 상재하중 제거 • 저면의 굴착부분을 남겨두어 굴착예정인 부분의 일부를 미리 굴착하여 기초콘크리트 타설 • 굴착주변을 웰 포인트(Well Point) 공법과 병행 • 굴착저면에 토사 등 인공중력 증가 W l', array['산업안전기사','2022-1'])
+  ('a500deef-0f08-6f58-f03c-e0632e2966a6', '05e7874d-903f-e240-6251-8d030abbf742', '② 히빙현상이 있을 때', '정답 ②. 하 히빙의 예방대책 • 흙막이벽의 근입 깊이 증가 • 흙막이벽 배면지반의 상재하중 제거 • 저면의 굴착부분을 남겨두어 굴착예정인 부분의 일부를 미리 굴착하여 기초콘크리트 타설 • 굴착주변을 웰 포인트(Well Point) 공법과 병행 • 굴착저면에 토사 등 인공중력 증가', array['산업안전기사','2022-1'])
 on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
 insert into public.questions (id, subject_id, type, body, difficulty, number) values
@@ -471,7 +471,7 @@ insert into public.question_options (id, question_id, body, sort_order) values
   ('41d6dedc-69eb-3f5d-8f7c-142fd2481059', '52e7fd0f-d54b-8340-cd6f-c8ac67842703', '사례연구법 (Case study method)', 3)
 on conflict (id) do update set body = excluded.body;
 insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
-  ('52e7fd0f-d54b-8340-cd6f-c8ac67842703', '7fe623b8-6778-9b75-a5cc-bc15512d2457', '③ 롤 플레 잉 (Role Playing)', '정답 ③. 롤 플레잉(R이e Playing) 참가자에게 일정한 역할을 주어 실제적으로 연기를 시켜봄으로써 자기의 역할을 보다 확실히 인식시키는 것이다. E◎面', array['산업안전기사','2022-2'])
+  ('52e7fd0f-d54b-8340-cd6f-c8ac67842703', '7fe623b8-6778-9b75-a5cc-bc15512d2457', '③ 롤 플레 잉 (Role Playing)', '정답 ③. 롤 플레 잉 (Role Playing)', array['산업안전기사','2022-2'])
 on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
 insert into public.questions (id, subject_id, type, body, difficulty, number) values
@@ -490,7 +490,7 @@ insert into public.question_options (id, question_id, body, sort_order) values
   ('5821a0c0-a372-d2c3-61ca-e3f0a8022c1b', '00d0ea1f-73de-5072-a32a-039996ad68f0', '특성요인도', 3)
 on conflict (id) do update set body = excluded.body;
 insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
-  ('00d0ea1f-73de-5072-a32a-039996ad68f0', '9dd7f5fb-4d0c-93cd-9d0b-82538efd1544', '① 관리도', '정답 ①. 재해의 통계적 원인분석 방법 파레토도 분류항목을 큰 순서대로 도표화한 분석법 특성요인도 특성과 요인관계를 도표로 하여 어골상으로 세분화한 분석법 클로즈분석도 요인별 결과 내역을 교차한 클로즈 그림을 작성. 분석하는 방법 관리도 재해발생수를 그래프화하여 관리선을 설정. 관리하는 방법 E j|', array['산업안전기사','2022-2'])
+  ('00d0ea1f-73de-5072-a32a-039996ad68f0', '9dd7f5fb-4d0c-93cd-9d0b-82538efd1544', '① 관리도', '정답 ①. 재해의 통계적 원인분석 방법 파레토도 분류항목을 큰 순서대로 도표화한 분석법 특성요인도 특성과 요인관계를 도표로 하여 어골상으로 세분화한 분석법 클로즈분석도 요인별 결과 내역을 교차한 클로즈 그림을 작성. 분석하는 방법 관리도 재해발생수를 그래프화하여 관리선을 설정. 관리하는 방법', array['산업안전기사','2022-2'])
 on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
 insert into public.questions (id, subject_id, type, body, difficulty, number) values
@@ -528,7 +528,7 @@ insert into public.question_options (id, question_id, body, sort_order) values
   ('9c5d4766-b956-014c-69e7-b708dff78e00', '284a0bf2-546e-e6f7-3cce-8468ad7fbaea', '상시근로자 1천명 이상인 사업장에서 직업성 질병자가', 3)
 on conflict (id) do update set body = excluded.body;
 insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
-  ('284a0bf2-546e-e6f7-3cce-8468ad7fbaea', '9c5d4766-b956-014c-69e7-b708dff78e00', '④ 상시근로자 1천명 이상인 사업장에서 직업성 질병자가', '정답 ④. 연간 2명 이상 발생한 사업장 a 안전보건진단을 받아 안전보건개선계획을 수립할 대상 사업장 • 산업재해율이 같은 업종 평균 산업재해율의 2배 이상인 사업장 • 사업주가 필요한 안전조치 또는 보건조치를 이행하지 아니하여 중대재 해가 발생한 사업장 • 직업성 질병자가 연간 2명 이상（상시근로자 1천명 이상 사업장의 경우 3명 이상） 발생한 사업장 • 그 밖에 작업환경 불량. 화재 • 폭발 또는 누출 사고 등으로 사업장 주변까 지 피해가 확산된 사업장으로서 고용노동부령으로 정하는 사업장 WWI', array['산업안전기사','2022-2'])
+  ('284a0bf2-546e-e6f7-3cce-8468ad7fbaea', '9c5d4766-b956-014c-69e7-b708dff78e00', '④ 상시근로자 1천명 이상인 사업장에서 직업성 질병자가', '정답 ④. 연간 2명 이상 발생한 사업장 a 안전보건진단을 받아 안전보건개선계획을 수립할 대상 사업장 • 산업재해율이 같은 업종 평균 산업재해율의 2배 이상인 사업장 • 사업주가 필요한 안전조치 또는 보건조치를 이행하지 아니하여 중대재 해가 발생한 사업장 • 직업성 질병자가 연간 2명 이상（상시근로자 1천명 이상 사업장의 경우 3명 이상） 발생한 사업장 • 그 밖에 작업환경 불량. 화재 • 폭발 또는 누출 사고 등으로 사업장 주변까 지 피해가 확산된 사업장으로서 고용노동부령으로 정하는 사업장', array['산업안전기사','2022-2'])
 on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
 insert into public.questions (id, subject_id, type, body, difficulty, number) values
@@ -566,7 +566,7 @@ insert into public.question_options (id, question_id, body, sort_order) values
   ('08400977-4bc5-c051-bde9-f3a85f871137', 'b886d032-a9b7-f94f-f1a6-7d228fed7111', '부식성물질경고', 3)
 on conflict (id) do update set body = excluded.body;
 insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
-  ('b886d032-a9b7-f94f-f1a6-7d228fed7111', '08400977-4bc5-c051-bde9-f3a85f871137', '④ 부식성물질경고', '정답 ④. 위험장소경고 레이저광선경고 방사성물질경고 부식성물질경고 令 A A A', array['산업안전기사','2022-2'])
+  ('b886d032-a9b7-f94f-f1a6-7d228fed7111', '08400977-4bc5-c051-bde9-f3a85f871137', '④ 부식성물질경고', '정답 ④. 부식성물질경고', array['산업안전기사','2022-2'])
 on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
 insert into public.questions (id, subject_id, type, body, difficulty, number) values
@@ -661,7 +661,7 @@ insert into public.question_options (id, question_id, body, sort_order) values
   ('d69fd104-fc48-0997-3727-58ff7cf9c4a9', '0f6ec060-8045-fce2-ae17-005c5fd316c6', '상. 하, 좌. 우 이송장치의 핸들은 사용 후 풀어 둔다.', 3)
 on conflict (id) do update set body = excluded.body;
 insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
-  ('0f6ec060-8045-fce2-ae17-005c5fd316c6', '3152f79e-1ceb-5433-dd10-0840b58d2eb4', '③ 강력 절삭을 할 때는 일감을 바이스에 짧게 물린다.', '정답 ③. 밀링작업 시 강력절삭을 할 때는 일감을 바이스에 깊게 물린다. t', array['산업안전기사','2022-2'])
+  ('0f6ec060-8045-fce2-ae17-005c5fd316c6', '3152f79e-1ceb-5433-dd10-0840b58d2eb4', '③ 강력 절삭을 할 때는 일감을 바이스에 짧게 물린다.', '정답 ③. 밀링작업 시 강력절삭을 할 때는 일감을 바이스에 깊게 물린다', array['산업안전기사','2022-2'])
 on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
 insert into public.questions (id, subject_id, type, body, difficulty, number) values
@@ -737,7 +737,7 @@ insert into public.question_options (id, question_id, body, sort_order) values
   ('eefdb54a-6152-1ef3-55d2-3d1646beffa8', '0b6531dd-56e3-001d-6d34-f8436bfd97ed', '작업 시작 전 1분 정도 시험운전을 실시하여 해당 기계', 3)
 on conflict (id) do update set body = excluded.body;
 insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
-  ('0b6531dd-56e3-001d-6d34-f8436bfd97ed', 'eefdb54a-6152-1ef3-55d2-3d1646beffa8', '④ 작업 시작 전 1분 정도 시험운전을 실시하여 해당 기계', '정답 ④. 의 이상 여부를 확인하였다. E3 연삭숫돌을 사용하는 작업의 경우 작업을 시작하기 전에는 1분 이상. 연삭숫돌을 교체한 후에는 3분 이상 시험운전을 하고 해당 기계에 이상이 있는지를 확인하여야 한다. E jl', array['산업안전기사','2022-2'])
+  ('0b6531dd-56e3-001d-6d34-f8436bfd97ed', 'eefdb54a-6152-1ef3-55d2-3d1646beffa8', '④ 작업 시작 전 1분 정도 시험운전을 실시하여 해당 기계', '정답 ④. 의 이상 여부를 확인하였다. E3 연삭숫돌을 사용하는 작업의 경우 작업을 시작하기 전에는 1분 이상. 연삭숫돌을 교체한 후에는 3분 이상 시험운전을 하고 해당 기계에 이상이 있는지를 확인하여야 한다', array['산업안전기사','2022-2'])
 on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
 insert into public.questions (id, subject_id, type, body, difficulty, number) values

@@ -129,7 +129,7 @@ insert into public.question_options (id, question_id, body, sort_order) values
   ('13f6cc1a-bdd6-2b95-f0a1-9fd8f5efe01b', '39dd0e98-ff1e-18fc-a72d-f39c879792b6', '활선 근접작업에 대한 방호', 3)
 on conflict (id) do update set body = excluded.body;
 insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
-  ('39dd0e98-ff1e-18fc-a72d-f39c879792b6', '8901265c-a97f-d2fc-2ad8-ecf7a301a924', '③ 잔류전하 방전', '정답 ③. 커패시터는 전기를 저장하는 장치이므로 방전코일이나 방전기구 등을 이용하여 잔류전하의 방전을 주의 깊게 조치하여야 한다. EHHm', array['산업안전기사','2025-3'])
+  ('39dd0e98-ff1e-18fc-a72d-f39c879792b6', '8901265c-a97f-d2fc-2ad8-ecf7a301a924', '③ 잔류전하 방전', '정답 ③. 커패시터는 전기를 저장하는 장치이므로 방전코일이나 방전기구 등을 이용하여 잔류전하의 방전을 주의 깊게 조치하여야 한다', array['산업안전기사','2025-3'])
 on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
 insert into public.questions (id, subject_id, type, body, difficulty, number) values
@@ -148,7 +148,7 @@ insert into public.question_options (id, question_id, body, sort_order) values
   ('ea2f6bc8-b5dc-2697-f506-89bb4df86846', '45fb007a-e166-0e6d-a4f0-95bc0bc9cf21', '환자의 몸을 조이는 옷과 장신구 등을 느슨하게 풀어주', 3)
 on conflict (id) do update set body = excluded.body;
 insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
-  ('45fb007a-e166-0e6d-a4f0-95bc0bc9cf21', 'b2bb6a21-edac-69e8-ed17-4e241f7a1fc4', '① 심각한 응급환자 발생 시 신속히 응급처치 후 119 등에', '정답 ①. 고 편한 자세로 안정을 취하도록 한다. Km 심각한 응급환자 발생 시 섣부른 응급처치보다는 빠른 신고가 우 선이므로 신속히 119 등에 전화하여 도움을 청한다. E早@1', array['산업안전기사','2025-3'])
+  ('45fb007a-e166-0e6d-a4f0-95bc0bc9cf21', 'b2bb6a21-edac-69e8-ed17-4e241f7a1fc4', '① 심각한 응급환자 발생 시 신속히 응급처치 후 119 등에', '정답 ①. 심각한 응급환자 발생 시 신속히 응급처치 후 119 등에', array['산업안전기사','2025-3'])
 on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
 insert into public.questions (id, subject_id, type, body, difficulty, number) values

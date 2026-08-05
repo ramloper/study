@@ -148,7 +148,7 @@ insert into public.question_options (id, question_id, body, sort_order) values
   ('1375002e-e12f-d2a7-2b7e-bf60b9090880', '6f3182f8-0021-0a85-d9f2-6e61c5317646', '근로복지공단의 유족급여가 지급된 사망자(지방고용노', 3)
 on conflict (id) do update set body = excluded.body;
 insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
-  ('6f3182f8-0021-0a85-d9f2-6e61c5317646', '1375002e-e12f-d2a7-2b7e-bf60b9090880', '④ 근로복지공단의 유족급여가 지급된 사망자(지방고용노', '정답 ④. 동관서의 산재미보고 적발 사망자 미포함)를 말한다. a “사망자 수”는 근로복지공단의 유족급여가 지급된 사망자(지방 고용노동관서의 산재미보고 적발 사망자 포함)수를 말한다. 다만. 사업장 밖의 교통사고(운수업. 음식숙박업은 사업장 밖의 교통사고도 포함) • 체육 행사 • 폭력행위 • 통상의 출퇴근에 의한 사망. 사고발생일로부터 1년을 경 과하여 사망한 경우는 제외한다. m', array['산업안전기사','2024-1'])
+  ('6f3182f8-0021-0a85-d9f2-6e61c5317646', '1375002e-e12f-d2a7-2b7e-bf60b9090880', '④ 근로복지공단의 유족급여가 지급된 사망자(지방고용노', '정답 ④. 동관서의 산재미보고 적발 사망자 미포함)를 말한다. a “사망자 수”는 근로복지공단의 유족급여가 지급된 사망자(지방 고용노동관서의 산재미보고 적발 사망자 포함)수를 말한다. 다만. 사업장 밖의 교통사고(운수업. 음식숙박업은 사업장 밖의 교통사고도 포함) • 체육 행사 • 폭력행위 • 통상의 출퇴근에 의한 사망. 사고발생일로부터 1년을 경 과하여 사망한 경우는 제외한다', array['산업안전기사','2024-1'])
 on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
 insert into public.questions (id, subject_id, type, body, difficulty, number) values
@@ -433,7 +433,7 @@ insert into public.question_options (id, question_id, body, sort_order) values
   ('3a12928c-3132-d15b-b9db-38366c42b957', 'f9e983ec-94f3-5c37-a4ff-390465589512', '그 밖의 흙 - 1 : 1.2', 3)
 on conflict (id) do update set body = excluded.body;
 insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
-  ('f9e983ec-94f3-5c37-a4ff-390465589512', '8f7b277f-88dd-e3a2-42a2-288150626278', '① 경암一 1 ： 1.0', '정답 ①. 굴착면의 기울기 기준 지반의 종류 굴착면의 기울기 모래 1 : 1.8 연암 및 풍화암 1 : 1.0 경암 1 ：0.5 그 밖의 흙 1 : 1.2 miE!', array['산업안전기사','2024-1'])
+  ('f9e983ec-94f3-5c37-a4ff-390465589512', '8f7b277f-88dd-e3a2-42a2-288150626278', '① 경암一 1 ： 1.0', '정답 ①. 굴착면의 기울기 기준 지반의 종류 굴착면의 기울기 모래 1 : 1.8 연암 및 풍화암 1 : 1.0 경암 1 ：0.5 그 밖의 흙 1 : 1.2', array['산업안전기사','2024-1'])
 on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
 insert into public.questions (id, subject_id, type, body, difficulty, number) values
@@ -490,7 +490,7 @@ insert into public.question_options (id, question_id, body, sort_order) values
   ('013e9013-5835-6392-09c8-bf7f65fbb67b', '90337d61-eee8-5bfd-2c22-8e14d9fde183', '암모니아용정화통', 3)
 on conflict (id) do update set body = excluded.body;
 insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
-  ('90337d61-eee8-5bfd-2c22-8e14d9fde183', '013e9013-5835-6392-09c8-bf7f65fbb67b', '④ 암모니아용정화통', '정답 ④. 정화통 외부 측면의 표시색 종류 — 표시색 유기화합물용 정화통 _ 갈색 할25_정W'' i호수소i 정화통—— 회색 시안i&^i정화통 느 ___________________아 i자i 정화통 노란색 암모니아용 정화통 녹색 BBI', array['산업안전기사','2024-2'])
+  ('90337d61-eee8-5bfd-2c22-8e14d9fde183', '013e9013-5835-6392-09c8-bf7f65fbb67b', '④ 암모니아용정화통', '정답 ④. 정화통 외부 측면의 표시색 종류 — 표시색 유기화합물용 정화통 _ 갈색 할25_정W'' i호수소i 정화통—— 회색 시안i&^i정화통 느 ___________________아 i자i 정화통 노란색 암모니아용 정화통 녹색', array['산업안전기사','2024-2'])
 on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
 insert into public.questions (id, subject_id, type, body, difficulty, number) values
@@ -509,7 +509,7 @@ insert into public.question_options (id, question_id, body, sort_order) values
   ('0d5bdc5a-1eaf-fae1-1250-81a5bea905af', '20da0023-7033-6777-31eb-790e6b7d6695', '의식의우회', 3)
 on conflict (id) do update set body = excluded.body;
 insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
-  ('20da0023-7033-6777-31eb-790e6b7d6695', 'c3e5b47d-0f4f-d45d-b373-b91d651f8154', '② 의식수준저하', '정답 ②. 부주의의 원인(현상) • 의식의 우회: 의식의 흐름이 옆으로 빗나가 발생하는 것(걱정, 고민. 욕 구불만 등에 의하여 정신을 빼앗기는 것)이다. • 의식수준의 저하: 혼미한 정신상태에서 심신이 피로할 경우나 단조로운 반복작업 둥의 경우에 일어나기 쉽다. • 의식의 단절: 지속적인 의식의 흐름에 단절이 생기고 공백의 상태가 나 타나는 것으로 주로 질병의 경우에 나타난다. • 의식의 과잉: 돌발사태에 직면하면 주의가 일점(주시점)에 집중되어 판 단정지 및 긴장 상태에 빠지게 되어 유효한 대응을 못하게 된다. • 의식의 혼란: 외적 조건에 의해 의식이 혼란하거나 분산되어 위험요인 에 대응할 수 없을 때 발생한다. E ^l', array['산업안전기사','2024-2'])
+  ('20da0023-7033-6777-31eb-790e6b7d6695', 'c3e5b47d-0f4f-d45d-b373-b91d651f8154', '② 의식수준저하', '정답 ②. 부주의의 원인(현상) • 의식의 우회: 의식의 흐름이 옆으로 빗나가 발생하는 것(걱정, 고민. 욕 구불만 등에 의하여 정신을 빼앗기는 것)이다. • 의식수준의 저하: 혼미한 정신상태에서 심신이 피로할 경우나 단조로운 반복작업 둥의 경우에 일어나기 쉽다. • 의식의 단절: 지속적인 의식의 흐름에 단절이 생기고 공백의 상태가 나 타나는 것으로 주로 질병의 경우에 나타난다. • 의식의 과잉: 돌발사태에 직면하면 주의가 일점(주시점)에 집중되어 판 단정지 및 긴장 상태에 빠지게 되어 유효한 대응을 못하게 된다. • 의식의 혼란: 외적 조건에 의해 의식이 혼란하거나 분산되어 위험요인 에 대응할 수 없을 때 발생한다', array['산업안전기사','2024-2'])
 on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
 insert into public.questions (id, subject_id, type, body, difficulty, number) values
@@ -566,7 +566,7 @@ insert into public.question_options (id, question_id, body, sort_order) values
   ('fbb99be9-d385-cee2-33c8-9f6c437fbba2', '5ef85f62-f54b-7637-fddb-ed2b4cfa657b', '미니멀 컷셋은 정상사상(Top Event)을 일으키기 위한', 3)
 on conflict (id) do update set body = excluded.body;
 insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
-  ('5ef85f62-f54b-7637-fddb-ed2b4cfa657b', 'fbb99be9-d385-cee2-33c8-9f6c437fbba2', '④ 미니멀 컷셋은 정상사상(Top Event)을 일으키기 위한', '정답 ④. 최소한의 컷셋이다. »廢 미니멀 컷셋은 시스템의 위험성을 표시하는 것이다. 미니멀 패스셋은 시스템의 신뢰성을 표시하는 것이다. 미니멀 패스셋은 정상사상(고장)이 일어나지 않는 최소한의 패스셋이다. E S1', array['산업안전기사','2024-2'])
+  ('5ef85f62-f54b-7637-fddb-ed2b4cfa657b', 'fbb99be9-d385-cee2-33c8-9f6c437fbba2', '④ 미니멀 컷셋은 정상사상(Top Event)을 일으키기 위한', '정답 ④. 미니멀 컷셋은 정상사상(Top Event)을 일으키기 위한', array['산업안전기사','2024-2'])
 on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
 insert into public.questions (id, subject_id, type, body, difficulty, number) values

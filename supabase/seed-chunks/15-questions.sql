@@ -34,7 +34,7 @@ insert into public.question_options (id, question_id, body, sort_order) values
   ('a783adb9-2a90-84c6-9424-4fdf09fcdf21', '9c31e762-7e22-cd91-d7b8-ee69ec560369', '습기가 많은 장소는 누전차단기를 설치한다.', 3)
 on conflict (id) do update set body = excluded.body;
 insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
-  ('9c31e762-7e22-cd91-d7b8-ee69ec560369', '3093b7a0-af73-f694-b794-9f80831ddc80', '② 절연이 불량인 경우 접지저항을 측정한다.', '정답 ②. 절연이 불량인 경우 절연저항을 측정하여 조치를 하여야 한다. bWlM', array['산업안전기사','2025-1'])
+  ('9c31e762-7e22-cd91-d7b8-ee69ec560369', '3093b7a0-af73-f694-b794-9f80831ddc80', '② 절연이 불량인 경우 접지저항을 측정한다.', '정답 ②. 절연이 불량인 경우 절연저항을 측정하여 조치를 하여야 한다', array['산업안전기사','2025-1'])
 on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
 insert into public.questions (id, subject_id, type, body, difficulty, number) values
@@ -72,7 +72,7 @@ insert into public.question_options (id, question_id, body, sort_order) values
   ('43b256e9-bbfc-2ec3-4e02-87ae333179a4', 'd7e6ecda-3b63-91a2-fa06-02ceb6bc0adb', '110[cm]', 3)
 on conflict (id) do update set body = excluded.body;
 insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
-  ('d7e6ecda-3b63-91a2-fa06-02ceb6bc0adb', '7de13ad6-9f0f-a81d-5c89-73adcdc24c56', '③ 90[cm]', '정답 ③. 충전전로 접근한계거리 기준 충전전로의 선간전압[kV] 충전전로에 대한 접근한계거리[cm] 2 초과 15 이하 60 15 초과 37 이하 90 37 초과 88 이하 110 t', array['산업안전기사','2025-1'])
+  ('d7e6ecda-3b63-91a2-fa06-02ceb6bc0adb', '7de13ad6-9f0f-a81d-5c89-73adcdc24c56', '③ 90[cm]', '정답 ③. 충전전로 접근한계거리 기준 충전전로의 선간전압[kV] 충전전로에 대한 접근한계거리[cm] 2 초과 15 이하 60 15 초과 37 이하 90 37 초과 88 이하 110', array['산업안전기사','2025-1'])
 on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
 insert into public.questions (id, subject_id, type, body, difficulty, number) values
@@ -110,7 +110,7 @@ insert into public.question_options (id, question_id, body, sort_order) values
   ('13f4e5fc-1a31-7307-8be3-7a8c5c87f19c', '3f36d7d0-73f2-883a-fdab-c9fdd379b189', '50[V]', 3)
 on conflict (id) do update set body = excluded.body;
 insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
-  ('3f36d7d0-73f2-883a-fdab-c9fdd379b189', '87792bf5-a33d-406a-053c-3d1e950596c2', '① 2.5[V]', '정답 ①. 허용접촉전압 종별 접촉상태 허용접촉전압 제1 종 인체의 대부분이 수중에 있는 상태 Z5[V] 이하 • 인체가 현저히 젖어 있는 상태 제 2종 •금속성의 전기기계 • 기구나 구조물에 인체의 일 25[V] 이하 부가 상시 접촉되어 있는 상태 E H', array['산업안전기사','2025-1'])
+  ('3f36d7d0-73f2-883a-fdab-c9fdd379b189', '87792bf5-a33d-406a-053c-3d1e950596c2', '① 2.5[V]', '정답 ①. 허용접촉전압 종별 접촉상태 허용접촉전압 제1 종 인체의 대부분이 수중에 있는 상태 Z5[V] 이하 • 인체가 현저히 젖어 있는 상태 제 2종 •금속성의 전기기계 • 기구나 구조물에 인체의 일 25[V] 이하 부가 상시 접촉되어 있는 상태', array['산업안전기사','2025-1'])
 on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
 insert into public.questions (id, subject_id, type, body, difficulty, number) values
@@ -129,7 +129,7 @@ insert into public.question_options (id, question_id, body, sort_order) values
   ('c2b768c7-3b83-47a6-ff73-35f0faf84f2b', '6266a964-246d-0b68-01be-b2c7f4d93ded', '통전경로', 3)
 on conflict (id) do update set body = excluded.body;
 insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
-  ('6266a964-246d-0b68-01be-b2c7f4d93ded', 'b24e39c9-4c53-d4d2-73a5-62f1888ce2a9', '① 전압의 크기', '정답 ①. 전압의 크기는 2차적 감전요소(간접적인 요인)이다. 감전재해의 요인 • 1차적 감전요소: 통전전류의 크기, 통전경로, 통전시간, 전원의 종류 • 2차적 감전요소: 인체의 조건(인체의 저항), 전압의 크기. 계절 등 주위 환경 E職M', array['산업안전기사','2025-1'])
+  ('6266a964-246d-0b68-01be-b2c7f4d93ded', 'b24e39c9-4c53-d4d2-73a5-62f1888ce2a9', '① 전압의 크기', '정답 ①. 전압의 크기', array['산업안전기사','2025-1'])
 on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
 insert into public.questions (id, subject_id, type, body, difficulty, number) values
@@ -167,7 +167,7 @@ insert into public.question_options (id, question_id, body, sort_order) values
   ('7dcfbf88-83ac-e6ee-1b93-5e74bf0b35f3', 'ee21f7f4-3252-4c35-bed5-1d4598477962', '전기설비의 밀폐화', 3)
 on conflict (id) do update set body = excluded.body;
 insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
-  ('ee21f7f4-3252-4c35-bed5-1d4598477962', '456a2131-ccb6-041f-412c-cc833ec2e74f', '② 점화원의 방폭적 격리', '정답 ②. 전기설비의 방폭화 • 점화원의 방폭적 격리(압력방폭, 유입방폭, 내압방폭) • 전기설비의 안전도 증강(안전증방폭) • 점화능력의 본질적 억제(본질안전방폭) KWEI', array['산업안전기사','2025-1'])
+  ('ee21f7f4-3252-4c35-bed5-1d4598477962', '456a2131-ccb6-041f-412c-cc833ec2e74f', '② 점화원의 방폭적 격리', '정답 ②. 전기설비의 방폭화 • 점화원의 방폭적 격리(압력방폭, 유입방폭, 내압방폭) • 전기설비의 안전도 증강(안전증방폭) • 점화능력의 본질적 억제(본질안전방폭)', array['산업안전기사','2025-1'])
 on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
 insert into public.questions (id, subject_id, type, body, difficulty, number) values
@@ -243,7 +243,7 @@ insert into public.question_options (id, question_id, body, sort_order) values
   ('1d40bb02-def4-9f85-8e99-e18b872407cf', '596e42f7-7b61-096f-dc74-133564404f8e', '덤프트럭', 3)
 on conflict (id) do update set body = excluded.body;
 insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
-  ('596e42f7-7b61-096f-dc74-133564404f8e', '25931ee5-87da-4dc9-895b-94c73e67c4f2', '③ 타워크레인', '정답 ③. 낙하물 보호구조를 갖추어야 하는 차량계 건설기계 불도저. 트랙터. 굴착기, 로더, 스크레이퍼. 덤프트럭. 모터 그레이더. 롤러, 천공기. 항타기 및 항발기 ◎H回', array['산업안전기사','2025-1'])
+  ('596e42f7-7b61-096f-dc74-133564404f8e', '25931ee5-87da-4dc9-895b-94c73e67c4f2', '③ 타워크레인', '정답 ③. 타워크레인', array['산업안전기사','2025-1'])
 on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
 insert into public.questions (id, subject_id, type, body, difficulty, number) values
@@ -452,7 +452,7 @@ insert into public.question_options (id, question_id, body, sort_order) values
   ('b119c8f5-ee24-d6ce-8012-c327443c9c12', '64d1f2af-db87-e8b7-8f17-504f7b413b5d', '권과방지장치의 이상유무', 3)
 on conflict (id) do update set body = excluded.body;
 insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
-  ('64d1f2af-db87-e8b7-8f17-504f7b413b5d', 'a82e6b5f-9d68-c736-fa95-2aa06e31b919', '③ 외부 전선의 피복 또는 외장의 손상 유무', '정답 ③. 산업용 로봇의 작업시작 전 점검사항 • 외부 전선의 피복 또는 외장의 손상 유무 • 매니퓰레이터(Manipulator) 작동의 이상 유무 • 제동장치 및 비상정지장치의 기능 #m', array['산업안전기사','2025-2'])
+  ('64d1f2af-db87-e8b7-8f17-504f7b413b5d', 'a82e6b5f-9d68-c736-fa95-2aa06e31b919', '③ 외부 전선의 피복 또는 외장의 손상 유무', '정답 ③. 산업용 로봇의 작업시작 전 점검사항 • 외부 전선의 피복 또는 외장의 손상 유무 • 매니퓰레이터(Manipulator) 작동의 이상 유무 • 제동장치 및 비상정지장치의 기능', array['산업안전기사','2025-2'])
 on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
 insert into public.questions (id, subject_id, type, body, difficulty, number) values
@@ -471,7 +471,7 @@ insert into public.question_options (id, question_id, body, sort_order) values
   ('d8f439e7-106a-4378-86bf-17bef2ead4cd', 'fe8d629e-f27c-f678-4757-a306cd943270', '소염소자는 금망, 소결금속, 스틸울(Steel Wool), 다공', 3)
 on conflict (id) do update set body = excluded.body;
 insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
-  ('fe8d629e-f27c-f678-4757-a306cd943270', 'bfdd1fd3-ee54-85d8-f6d5-7a1dd5d8ec0c', '① 재사용 시 안전에 우려가 있으므로 역화방지 후 바로', '정답 ①. 성금속물 또는 이와 동등 이상의 소염성능을 갖는 것이 어야 한다. H3 아세틸렌 용접장치에서 역화방지기는 역화를 방지한 후 복원이 되어 계속 사용할 수 있는 구조이어야 한다. WWl', array['산업안전기사','2025-2'])
+  ('fe8d629e-f27c-f678-4757-a306cd943270', 'bfdd1fd3-ee54-85d8-f6d5-7a1dd5d8ec0c', '① 재사용 시 안전에 우려가 있으므로 역화방지 후 바로', '정답 ①. 성금속물 또는 이와 동등 이상의 소염성능을 갖는 것이 어야 한다. H3 아세틸렌 용접장치에서 역화방지기는 역화를 방지한 후 복원이 되어 계속 사용할 수 있는 구조이어야 한다', array['산업안전기사','2025-2'])
 on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
 insert into public.questions (id, subject_id, type, body, difficulty, number) values
@@ -490,7 +490,7 @@ insert into public.question_options (id, question_id, body, sort_order) values
   ('fe4af74b-7b93-8f4f-f427-86f80b03e0f9', '03a7115b-5dd9-c00f-93f2-e135ba9dde7a', '지렛대식', 3)
 on conflict (id) do update set body = excluded.body;
 insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
-  ('03a7115b-5dd9-c00f-93f2-e135ba9dde7a', '01cebf14-5fc7-2abc-f2b0-5272f0bf32a4', '③ 플런저식', '정답 ③. 압력방출장치의 종류 중추식(추식), 지렛대식(레버식). 스프링식(가장 많이 사용) t l', array['산업안전기사','2025-2'])
+  ('03a7115b-5dd9-c00f-93f2-e135ba9dde7a', '01cebf14-5fc7-2abc-f2b0-5272f0bf32a4', '③ 플런저식', '정답 ③. 압력방출장치의 종류 중추식(추식), 지렛대식(레버식). 스프링식(가장 많이 사용)', array['산업안전기사','2025-2'])
 on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
 insert into public.questions (id, subject_id, type, body, difficulty, number) values
@@ -509,7 +509,7 @@ insert into public.question_options (id, question_id, body, sort_order) values
   ('4fabf4a1-a085-1699-4a2e-115bf524e2ad', 'ad42eb0a-6a53-e142-febb-642404520e91', '슬라이드 행정길이가 5이mm] 이상, 슬라이드 행정수', 3)
 on conflict (id) do update set body = excluded.body;
 insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
-  ('ad42eb0a-6a53-e142-febb-642404520e91', '6ac30333-eab8-5ec9-124e-fcaa43ee278a', '② 슬라이드 행정길이가 5이mm] 이상. 슬라이드 행정수', '정답 ②. 수인식 방호장치의 설치기준 슬라이드 행정수가 100[SPM] 이하, 행정길이가 50[ㅁㅁ1] 이상의 것에 At', array['산업안전기사','2025-2'])
+  ('ad42eb0a-6a53-e142-febb-642404520e91', '6ac30333-eab8-5ec9-124e-fcaa43ee278a', '② 슬라이드 행정길이가 5이mm] 이상. 슬라이드 행정수', '정답 ②. 수인식 방호장치의 설치기준 슬라이드 행정수가 100[SPM] 이하, 행정길이가 50[ㅁㅁ1] 이상의 것에', array['산업안전기사','2025-2'])
 on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
 insert into public.questions (id, subject_id, type, body, difficulty, number) values
@@ -699,7 +699,7 @@ insert into public.question_options (id, question_id, body, sort_order) values
   ('a23843bb-3bf6-490b-e82d-6d9aa18fdbd3', '42f9ba30-59a6-8110-128c-0b6e8ad87300', '수강자 개개인의 학습진도를 조절할 수 있다.', 3)
 on conflict (id) do update set body = excluded.body;
 insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
-  ('42f9ba30-59a6-8110-128c-0b6e8ad87300', 'a23843bb-3bf6-490b-e82d-6d9aa18fdbd3', '④ 수강자 개개인의 학습진도를 조절할 수 있다.', '정답 ④. 강의법은 다수의 수강자를 대상으로 동시에 교육을 진행하기 때 문에 개개인의 학습진도를 조절할 수 없다. t M', array['산업안전기사','2025-3'])
+  ('42f9ba30-59a6-8110-128c-0b6e8ad87300', 'a23843bb-3bf6-490b-e82d-6d9aa18fdbd3', '④ 수강자 개개인의 학습진도를 조절할 수 있다.', '정답 ④. 강의법은 다수의 수강자를 대상으로 동시에 교육을 진행하기 때 문에 개개인의 학습진도를 조절할 수 없다', array['산업안전기사','2025-3'])
 on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
 insert into public.questions (id, subject_id, type, body, difficulty, number) values
@@ -756,5 +756,5 @@ insert into public.question_options (id, question_id, body, sort_order) values
   ('4736d371-5fda-1e80-ebb0-e2cd9d4bf530', '53f39d02-4c3e-7197-4514-c118afd6a8fe', '10', 3)
 on conflict (id) do update set body = excluded.body;
 insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
-  ('53f39d02-4c3e-7197-4514-c118afd6a8fe', '47319227-3692-c8e6-32e8-3a9c27a4dd2b', '① 4', '정답 ①. 헤드가드의 구비조건 • 강도는 지게차의 최대하중의 2배 값(4톤을 넘는 값에 대해서는 4톤)의 등분포정하중에 견딜 수 있을 것 • 상부틀의 각 개구의 폭 또는 길이가 16[cm] 미만일 것 • 운전자가 앉아서 조작하거나 서서 조작하는 지게차의 헤드가드는 한국 산업표준에서 정하는 높이 기준 이상일 것(입승식: 1.88[m] 이상. 좌승 식: 0.903[m] 이상) f', array['산업안전기사','2025-3'])
+  ('53f39d02-4c3e-7197-4514-c118afd6a8fe', '47319227-3692-c8e6-32e8-3a9c27a4dd2b', '① 4', '정답 ①. 헤드가드의 구비조건 • 강도는 지게차의 최대하중의 2배 값(4톤을 넘는 값에 대해서는 4톤)의 등분포정하중에 견딜 수 있을 것 • 상부틀의 각 개구의 폭 또는 길이가 16[cm] 미만일 것 • 운전자가 앉아서 조작하거나 서서 조작하는 지게차의 헤드가드는 한국 산업표준에서 정하는 높이 기준 이상일 것(입승식: 1.88[m] 이상. 좌승 식: 0.903[m] 이상)', array['산업안전기사','2025-3'])
 on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;

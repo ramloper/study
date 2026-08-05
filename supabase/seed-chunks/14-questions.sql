@@ -186,7 +186,7 @@ insert into public.question_options (id, question_id, body, sort_order) values
   ('fc519020-c951-271d-60ca-a6041c5fde32', '49f9614c-8dcf-08a8-2df5-7a57511b724e', '관리감독자의 지위에 있는 사람의 정기교육은 연간 8', 3)
 on conflict (id) do update set body = excluded.body;
 insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
-  ('49f9614c-8dcf-08a8-2df5-7a57511b724e', '2373fb2f-e258-49a4-73d8-554f02cd609d', '② 사무직에 종사하는 근로자의 정기교육은 매반기 6시간', '정답 ②. 시간이상이다. «!EM 근로자 안전보건교육 교육과정별 교육시간 교육과정 교육대상 교육시간 사무직 종사 근로자 매반기 6시간 이상 판매업무에 직접 종사하는 매반기 6시간 이상 그 밖의 근로자 정기교육 근로자 판매업무에 직접 종사하는 매반기 12시간이상 근로자 외의 근로자 관리감독자의 지위에 있는 사람 연간 16시간이상 일용근로자 및 근로계약기간이 1주일 1시간이상 이하인 기간제근로자 채용 시 교육 근로계약기간이 1주일 초과 1개월이 4시간이상 하인 기간제근로자 그 밖의 근로자 8시간이상 일용근로자 및 근로계약기간이 1주일 작업내용 1시간이상 이하인 기간제근로자 변경 시 교육 그 밖의 근로자 2시간이상 오답해설 관리감독자의 정기교육시간은 연간 16시간 이상이다. tWIIl', array['산업안전기사','2024-3'])
+  ('49f9614c-8dcf-08a8-2df5-7a57511b724e', '2373fb2f-e258-49a4-73d8-554f02cd609d', '② 사무직에 종사하는 근로자의 정기교육은 매반기 6시간', '정답 ②. 시간이상이다. «!EM 근로자 안전보건교육 교육과정별 교육시간 교육과정 교육대상 교육시간 사무직 종사 근로자 매반기 6시간 이상 판매업무에 직접 종사하는 매반기 6시간 이상 그 밖의 근로자 정기교육 근로자 판매업무에 직접 종사하는 매반기 12시간이상 근로자 외의 근로자 관리감독자의 지위에 있는 사람 연간 16시간이상 일용근로자 및 근로계약기간이 1주일 1시간이상 이하인 기간제근로자 채용 시 교육 근로계약기간이 1주일 초과 1개월이 4시간이상 하인 기간제근로자 그 밖의 근로자 8시간이상 일용근로자 및 근로계약기간이 1주일 작업내용 1시간이상 이하인 기간제근로자 변경 시 교육 그 밖의 근로자 2시간이상 오답해설 관리감독자의 정기교육시간은 연간 16시간 이상이다', array['산업안전기사','2024-3'])
 on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
 insert into public.questions (id, subject_id, type, body, difficulty, number) values
@@ -243,7 +243,7 @@ insert into public.question_options (id, question_id, body, sort_order) values
   ('ef399b72-ea46-6f96-6066-f5bed542828d', '5d53167a-3489-ef42-1329-d9e679c4366a', '반복도가 높은 작업', 3)
 on conflict (id) do update set body = excluded.body;
 insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
-  ('5d53167a-3489-ef42-1329-d9e679c4366a', 'ebf12b59-a677-be67-2903-e3e5fc201dcd', '② 다습한 환경', '정답 ②. 누적손상장애(CTDs) 발생원인 과도한 힘의 요구, 부적절한 작업자세, 장시간의 진동, 반복적인 동작 등 tWB', array['산업안전기사','2024-3'])
+  ('5d53167a-3489-ef42-1329-d9e679c4366a', 'ebf12b59-a677-be67-2903-e3e5fc201dcd', '② 다습한 환경', '정답 ②. 누적손상장애(CTDs) 발생원인 과도한 힘의 요구, 부적절한 작업자세, 장시간의 진동, 반복적인 동작 등', array['산업안전기사','2024-3'])
 on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
 insert into public.questions (id, subject_id, type, body, difficulty, number) values
@@ -319,7 +319,7 @@ insert into public.question_options (id, question_id, body, sort_order) values
   ('7c09ceb2-ef9d-99e0-33f7-9a94eafb9d78', '84329458-9f5d-5010-f5a6-029c7e3c6c20', '25', 3)
 on conflict (id) do update set body = excluded.body;
 insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
-  ('84329458-9f5d-5010-f5a6-029c7e3c6c20', '7c09ceb2-ef9d-99e0-33f7-9a94eafb9d78', '④ 25', '정답 ④. 자동전격방지장치 용접봉의 조작에 따라 용접을 할 때에만 용접기의 주회로를 폐로(ON)시키 고, 용접을 행하지 않을 때에는 용접기 주회로를 개로(OFF)시켜 용접기 출력 측의 무부하 전압을 25[V] 이하로 저하시켜 작업자가 용접봉과 모재 사이에 접촉함으로써 발생하는 감전의 위험을 방지하는 장치이다. E@gl', array['산업안전기사','2024-3'])
+  ('84329458-9f5d-5010-f5a6-029c7e3c6c20', '7c09ceb2-ef9d-99e0-33f7-9a94eafb9d78', '④ 25', '정답 ④. 자동전격방지장치 용접봉의 조작에 따라 용접을 할 때에만 용접기의 주회로를 폐로(ON)시키 고, 용접을 행하지 않을 때에는 용접기 주회로를 개로(OFF)시켜 용접기 출력 측의 무부하 전압을 25[V] 이하로 저하시켜 작업자가 용접봉과 모재 사이에 접촉함으로써 발생하는 감전의 위험을 방지하는 장치이다', array['산업안전기사','2024-3'])
 on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
 insert into public.questions (id, subject_id, type, body, difficulty, number) values
@@ -338,7 +338,7 @@ insert into public.question_options (id, question_id, body, sort_order) values
   ('b4cac4ce-974a-d1d2-3a37-a9378da4cecf', '245d85a2-d236-d792-5c33-e14c1faa1c4c', '작업의 신속한 처리', 3)
 on conflict (id) do update set body = excluded.body;
 insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
-  ('245d85a2-d236-d792-5c33-e14c1faa1c4c', 'bc0af43b-21f0-e3e8-1a0f-0b3cf33cbc25', '② 활선에 접근 시 즉시 경고', '정답 ②. 작업지휘자는 기계설비. 취급하는 재료. 용구. 작업방법 등에 대 한 불안전한 상태 및 행동의 유무를 직접 점검 • 감시 및 통제하는 임무를 가진다. tWm', array['산업안전기사','2024-3'])
+  ('245d85a2-d236-d792-5c33-e14c1faa1c4c', 'bc0af43b-21f0-e3e8-1a0f-0b3cf33cbc25', '② 활선에 접근 시 즉시 경고', '정답 ②. 작업지휘자는 기계설비. 취급하는 재료. 용구. 작업방법 등에 대 한 불안전한 상태 및 행동의 유무를 직접 점검 • 감시 및 통제하는 임무를 가진다', array['산업안전기사','2024-3'])
 on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
 insert into public.questions (id, subject_id, type, body, difficulty, number) values
@@ -433,7 +433,7 @@ insert into public.question_options (id, question_id, body, sort_order) values
   ('31be3915-6372-8ed7-f607-4a4cdda6d1f8', '6a1ec42e-b5d4-ace1-5d50-b0b6d167e65a', '인입구 개폐기 미개방한 상태에서 작업', 3)
 on conflict (id) do update set body = excluded.body;
 insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
-  ('6a1ec42e-b5d4-ace1-5d50-b0b6d167e65a', '837ffaad-0dd2-c26d-a032-5e0e387a5664', '③ 전등용 변압기 2차 측 COS 미 개방', '정답 ③. 전등용 변압기 1차 측 COS가 개방된 상태이므로 2차 측 개방은 감전사고와는 무관하다. EWWI', array['산업안전기사','2024-3'])
+  ('6a1ec42e-b5d4-ace1-5d50-b0b6d167e65a', '837ffaad-0dd2-c26d-a032-5e0e387a5664', '③ 전등용 변압기 2차 측 COS 미 개방', '정답 ③. 전등용 변압기 1차 측 COS가 개방된 상태이므로 2차 측 개방은 감전사고와는 무관하다', array['산업안전기사','2024-3'])
 on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
 insert into public.questions (id, subject_id, type, body, difficulty, number) values
@@ -471,7 +471,7 @@ insert into public.question_options (id, question_id, body, sort_order) values
   ('4a45a52b-6e43-9cfb-6fbb-3112d16b8b2e', '722e1bc9-7c50-ca5d-475a-6194863060d1', 'sa', 3)
 on conflict (id) do update set body = excluded.body;
 insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
-  ('722e1bc9-7c50-ca5d-475a-6194863060d1', '235ca6c7-59d8-2f11-0c62-c3b0460f8707', '① 四=느#2', '정답 ①. 정전에너지 E -^CV2 여기서. C： 도체의 정전용량 V： 대전전위 wmn', array['산업안전기사','2024-3'])
+  ('722e1bc9-7c50-ca5d-475a-6194863060d1', '235ca6c7-59d8-2f11-0c62-c3b0460f8707', '① 四=느#2', '정답 ①. 정전에너지 E -^CV2 여기서. C： 도체의 정전용량 V： 대전전위', array['산업안전기사','2024-3'])
 on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
 insert into public.questions (id, subject_id, type, body, difficulty, number) values
@@ -490,7 +490,7 @@ insert into public.question_options (id, question_id, body, sort_order) values
   ('723547b0-1c27-d459-23a2-65020787b1c4', '393530b5-e003-0eba-e6fa-d6038b424b21', '가스가 발생하거나 정체할 위험이 있는 장소에 대하여', 3)
 on conflict (id) do update set body = excluded.body;
 insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
-  ('393530b5-e003-0eba-e6fa-d6038b424b21', '08cbd857-2d25-3907-ee35-c20cefac2722', '③ 장시간 작업할 때에는 매 8시간마다 측정한다.', '정답 ③. 장시간 작업할 때에는 매 8시간마다 측정한다.', array['산업안전기사','2024-3'])
+  ('393530b5-e003-0eba-e6fa-d6038b424b21', '08cbd857-2d25-3907-ee35-c20cefac2722', '③ 장시간 작업할 때에는 매 8시간마다 측정한다.', '정답 ③. 장시간 작업할 때에는 매 8시간마다 측정한다', array['산업안전기사','2024-3'])
 on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
 insert into public.questions (id, subject_id, type, body, difficulty, number) values
@@ -528,7 +528,7 @@ insert into public.question_options (id, question_id, body, sort_order) values
   ('dbca6990-2d2c-342a-afb0-d4457d9dba06', 'b7d7472d-ad2a-bce5-56df-23bd98b4e61c', '할로겐화합물소화설비 - 냉각소화', 3)
 on conflict (id) do update set body = excluded.body;
 insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
-  ('b7d7472d-ad2a-bce5-56df-23bd98b4e61c', 'a185ba76-042c-29fb-d348-635f82f2e9c0', '① 포소화설비 - 질식효과', '정답 ①. 질식소화를 이용한 소화기 종류 포소화기, 분말소화기, 이산화탄소소화기. 마른모래, 팽창질석, 팽창진주암 오閉 H 설 스프링클러소화설비: 냉각소화 이산화탄소소화설비 : 질식소화 할로겐화합물소화설비 : 억제소화 E EI', array['산업안전기사','2024-3'])
+  ('b7d7472d-ad2a-bce5-56df-23bd98b4e61c', 'a185ba76-042c-29fb-d348-635f82f2e9c0', '① 포소화설비 - 질식효과', '정답 ①. 포소화설비 - 질식효과', array['산업안전기사','2024-3'])
 on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
 insert into public.questions (id, subject_id, type, body, difficulty, number) values
@@ -604,7 +604,7 @@ insert into public.question_options (id, question_id, body, sort_order) values
   ('25a9a383-604e-1fc2-7717-0e9766e6b135', 'fe60a5f4-2a2a-57fb-fe5d-743c5d8e0564', '45[cm] 이상', 3)
 on conflict (id) do update set body = excluded.body;
 insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
-  ('fe60a5f4-2a2a-57fb-fe5d-743c5d8e0564', '56db5eb0-0083-7827-d3e3-570d72cf6c53', '① 90[cm] 이상', '정답 ①. 부두 • 안벽 등 하역작업을 하는 장소에 부두 또는 안벽의 선을 따라 통로를 설치하는 경우에는 폭을 90[cm] 이상으로 하여야 한다. EWil', array['산업안전기사','2024-3'])
+  ('fe60a5f4-2a2a-57fb-fe5d-743c5d8e0564', '56db5eb0-0083-7827-d3e3-570d72cf6c53', '① 90[cm] 이상', '정답 ①. 부두 • 안벽 등 하역작업을 하는 장소에 부두 또는 안벽의 선을 따라 통로를 설치하는 경우에는 폭을 90[cm] 이상으로 하여야 한다', array['산업안전기사','2024-3'])
 on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
 insert into public.questions (id, subject_id, type, body, difficulty, number) values
@@ -623,7 +623,7 @@ insert into public.question_options (id, question_id, body, sort_order) values
   ('84b1b16b-135f-3185-d194-2d601281d60e', 'db5e7cb8-febb-45f1-0979-509438ade0c0', '15배', 3)
 on conflict (id) do update set body = excluded.body;
 insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
-  ('db5e7cb8-febb-45f1-0979-509438ade0c0', '84b1b16b-135f-3185-d194-2d601281d60e', '④ 15배', '정답 ④. 항타기 또는 항발기의 권상장치의 드럼축과 권상장치로부터 첫 번째 도르래의 축 간의 거리를 권상장치 드럼폭의 15배 이상으로 하여야 한다. k◎順', array['산업안전기사','2024-3'])
+  ('db5e7cb8-febb-45f1-0979-509438ade0c0', '84b1b16b-135f-3185-d194-2d601281d60e', '④ 15배', '정답 ④. 15배', array['산업안전기사','2024-3'])
 on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
 insert into public.questions (id, subject_id, type, body, difficulty, number) values
@@ -642,7 +642,7 @@ insert into public.question_options (id, question_id, body, sort_order) values
   ('f1176253-0663-b043-f109-e3996e2cca80', '5ecbe55e-c2e1-9c52-0a5e-109805ebaf00', '7.5R 4/14', 3)
 on conflict (id) do update set body = excluded.body;
 insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
-  ('5ecbe55e-c2e1-9c52-0a5e-109805ebaf00', '139d7ab8-75cf-ae67-7293-bc4dcc3c4c79', '② 2.5PB4/10', '정답 ②. 안전보건표지의 색도기준 및 용도 색채 색도기준 용도 사용예 파란색 a5pB 4/10 지시 특정 행위의 지시 및 사실의 고지 비상구 및 피난소, 사람 또는 차량 녹색 Z5G4/10 안내 의 통행표지 흰색 N9.5 파란색 또는 녹색에 대한 보조색 唱1', array['산업안전기사','2025-1'])
+  ('5ecbe55e-c2e1-9c52-0a5e-109805ebaf00', '139d7ab8-75cf-ae67-7293-bc4dcc3c4c79', '② 2.5PB4/10', '정답 ②. 2.5PB4/10', array['산업안전기사','2025-1'])
 on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
 insert into public.questions (id, subject_id, type, body, difficulty, number) values
@@ -661,7 +661,7 @@ insert into public.question_options (id, question_id, body, sort_order) values
   ('6f1c1783-5340-9adb-99f8-2880b509321e', '4e3a3d94-6364-3444-1a30-ddb15b481dc8', '이소부탄', 3)
 on conflict (id) do update set body = excluded.body;
 insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
-  ('4e3a3d94-6364-3444-1a30-ddb15b481dc8', '14284ba5-d12c-cf3e-f94e-33f779b7a95d', '① 염소가스 또는 증기', '정답 ①. 방독마스크의 종류 및 시험가스 정화통 흡수제 종류 시험가스 (정화제) 시클로헥산(앙|12) 유기화합물용 디메틸에테르(CH30cH3) 활성탄 이소부탄(C4Hlo) 할로겐용 염소가스 또는 증기(Cl2) 소다라임. 활성탄 EH@I', array['산업안전기사','2025-1'])
+  ('4e3a3d94-6364-3444-1a30-ddb15b481dc8', '14284ba5-d12c-cf3e-f94e-33f779b7a95d', '① 염소가스 또는 증기', '정답 ①. 방독마스크의 종류 및 시험가스 정화통 흡수제 종류 시험가스 (정화제) 시클로헥산(앙|12) 유기화합물용 디메틸에테르(CH30cH3) 활성탄 이소부탄(C4Hlo) 할로겐용 염소가스 또는 증기(Cl2) 소다라임. 활성탄', array['산업안전기사','2025-1'])
 on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
 insert into public.questions (id, subject_id, type, body, difficulty, number) values
@@ -737,7 +737,7 @@ insert into public.question_options (id, question_id, body, sort_order) values
   ('cf7ac815-825a-2beb-2762-65c19f77af73', '4a56d7e9-c594-a426-a9f5-3267021847c5', '미니멀 컷셋은 정상사상(Top Event)을 일으키기 위한', 3)
 on conflict (id) do update set body = excluded.body;
 insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
-  ('4a56d7e9-c594-a426-a9f5-3267021847c5', 'cf7ac815-825a-2beb-2762-65c19f77af73', '④ 미니멀 컷셋은 정상사상(Top Event)을 일으키기 위한', '정답 ④. 최소한의 컷셋이다. KBI 미니멀 컷셋은 시스템의 위험성을 표시하는 것이다. 미니멀 패스셋은 시스템의 신뢰성을 표시하는 것이다. 미니멀 패스셋은 정상사상(고장)이 일어나지 않는 최소한의 패스셋이다. 바劍II', array['산업안전기사','2025-1'])
+  ('4a56d7e9-c594-a426-a9f5-3267021847c5', 'cf7ac815-825a-2beb-2762-65c19f77af73', '④ 미니멀 컷셋은 정상사상(Top Event)을 일으키기 위한', '정답 ④. 미니멀 컷셋은 정상사상(Top Event)을 일으키기 위한', array['산업안전기사','2025-1'])
 on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
 insert into public.questions (id, subject_id, type, body, difficulty, number) values

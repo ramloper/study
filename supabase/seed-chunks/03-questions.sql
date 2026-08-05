@@ -72,7 +72,7 @@ insert into public.question_options (id, question_id, body, sort_order) values
   ('d0c43bf1-bd58-2197-62d0-e3901c5409bd', 'd49628b1-0c2f-9486-80c2-73d5cf61e91a', '고저수위 조절장치', 3)
 on conflict (id) do update set body = excluded.body;
 insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
-  ('d49628b1-0c2f-9486-80c2-73d5cf61e91a', '266b0688-a0a6-d2f7-042e-2bf780d4e31b', '① 압력방호판', '정답 ①. 보일러의 폭발사고를 예방하기 위하여 압력방출장치. 압력제한 스위치, 고저수위 조절장치. 화염검출기 등의 기능이 정상적으로 작동될 수 있도록 유지 • 관리하여야 한다. t', array['산업안전기사','2019-3'])
+  ('d49628b1-0c2f-9486-80c2-73d5cf61e91a', '266b0688-a0a6-d2f7-042e-2bf780d4e31b', '① 압력방호판', '정답 ①. 보일러의 폭발사고를 예방하기 위하여 압력방출장치. 압력제한 스위치, 고저수위 조절장치. 화염검출기 등의 기능이 정상적으로 작동될 수 있도록 유지 • 관리하여야 한다', array['산업안전기사','2019-3'])
 on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
 insert into public.questions (id, subject_id, type, body, difficulty, number) values
@@ -148,7 +148,7 @@ insert into public.question_options (id, question_id, body, sort_order) values
   ('10416b82-8e41-bcf2-1736-bba8b57d1ea1', 'bea7484e-d12c-46f2-613f-c86f605fdab0', '출화의 경과', 3)
 on conflict (id) do update set body = excluded.body;
 insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
-  ('bea7484e-d12c-46f2-613f-c86f605fdab0', '4adecda5-9d8d-58d0-5963-cb7e9928e473', '② 내화물', '정답 ②. 전기화재의 원인 발화원. 착화물. 출화의 경과＜발화형태） E gl', array['산업안전기사','2019-3'])
+  ('bea7484e-d12c-46f2-613f-c86f605fdab0', '4adecda5-9d8d-58d0-5963-cb7e9928e473', '② 내화물', '정답 ②. 전기화재의 원인 발화원. 착화물. 출화의 경과＜발화형태）', array['산업안전기사','2019-3'])
 on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
 insert into public.questions (id, subject_id, type, body, difficulty, number) values
@@ -167,7 +167,7 @@ insert into public.question_options (id, question_id, body, sort_order) values
   ('a80e04fd-0b73-48e3-c897-bc25ba8b0774', 'ab916a27-9b91-712f-ba75-ed941f555e2e', '도전성이 높은 장소의 전기기 계 • 기구', 3)
 on conflict (id) do update set body = excluded.body;
 insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
-  ('ab916a27-9b91-712f-ba75-ed941f555e2e', 'a80e04fd-0b73-48e3-c897-bc25ba8b0774', '④ 도전성이 높은 장소의 전기기 계 • 기구', '정답 ④. 누전차단기의 적용비대상 • r전기용품 및 생활용품 안전관리법」에 따른 이중절연 또는 이와 동등 이 상으로 보호되는 전기기계 • 기구 • 절연대 위 등과 같이 감전위험이 없는 장소에서 사용하는 전기기계 - 기구 • 비접지방식의 전로 E H', array['산업안전기사','2019-3'])
+  ('ab916a27-9b91-712f-ba75-ed941f555e2e', 'a80e04fd-0b73-48e3-c897-bc25ba8b0774', '④ 도전성이 높은 장소의 전기기 계 • 기구', '정답 ④. 누전차단기의 적용비대상 • r전기용품 및 생활용품 안전관리법」에 따른 이중절연 또는 이와 동등 이 상으로 보호되는 전기기계 • 기구 • 절연대 위 등과 같이 감전위험이 없는 장소에서 사용하는 전기기계 - 기구 • 비접지방식의 전로', array['산업안전기사','2019-3'])
 on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
 insert into public.questions (id, subject_id, type, body, difficulty, number) values
@@ -224,7 +224,7 @@ insert into public.question_options (id, question_id, body, sort_order) values
   ('24437c66-3717-68e9-9285-3aba92993093', '80ad396e-8c16-2691-0fc7-8b3c1836d3b2', '유입방폭구조', 3)
 on conflict (id) do update set body = excluded.body;
 insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
-  ('80ad396e-8c16-2691-0fc7-8b3c1836d3b2', '0b02c326-85c3-3fbd-2866-bcee4c9b063b', '② 압력방폭구조', '정답 ②. 압력방폭구조 용기 내부에 보호가스（신선한 공기 또는 불연성 기체）를 압입하여 내부압 력을 유지함으로써 폭발성 가스 또는 증기가 내부로 유입되지 않도록 한 구조이다. Wil', array['산업안전기사','2019-3'])
+  ('80ad396e-8c16-2691-0fc7-8b3c1836d3b2', '0b02c326-85c3-3fbd-2866-bcee4c9b063b', '② 압력방폭구조', '정답 ②. 압력방폭구조 용기 내부에 보호가스（신선한 공기 또는 불연성 기체）를 압입하여 내부압 력을 유지함으로써 폭발성 가스 또는 증기가 내부로 유입되지 않도록 한 구조이다', array['산업안전기사','2019-3'])
 on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
 insert into public.questions (id, subject_id, type, body, difficulty, number) values
@@ -243,7 +243,7 @@ insert into public.question_options (id, question_id, body, sort_order) values
   ('408c0c40-24ee-4fbd-3bce-b22ba6b2fce6', '3e944f53-da34-d3b9-f9f4-b119ed1bd51d', '탄산수소염류분말소화기', 3)
 on conflict (id) do update set body = excluded.body;
 insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
-  ('3e944f53-da34-d3b9-f9f4-b119ed1bd51d', '408c0c40-24ee-4fbd-3bce-b22ba6b2fce6', '④ 탄산수소염류분말소화기', '정답 ④. 탄산수소염류분말소화기는 금수성 물질에 대해 적응성이 있다. • 금수성 물질은 수분과 반응하여 가연성 가스를 발생시키므로 물을 이용 한 소화기는 사용할 수 없다. 바W!', array['산업안전기사','2019-3'])
+  ('3e944f53-da34-d3b9-f9f4-b119ed1bd51d', '408c0c40-24ee-4fbd-3bce-b22ba6b2fce6', '④ 탄산수소염류분말소화기', '정답 ④. 탄산수소염류분말소화기', array['산업안전기사','2019-3'])
 on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
 insert into public.questions (id, subject_id, type, body, difficulty, number) values
@@ -281,7 +281,7 @@ insert into public.question_options (id, question_id, body, sort_order) values
   ('a19669e5-ea63-696e-e205-d88bd2937755', '18638906-2e39-9557-2b5e-7664034e5333', '농도 60[%]인 아세트산', 3)
 on conflict (id) do update set body = excluded.body;
 insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
-  ('18638906-2e39-9557-2b5e-7664034e5333', '71bff625-b99f-c99b-ab80-da6390943212', '② 농도 4이%]인 인산', '정답 ②. 부식성 산류 • 농도가 20[%] 이상인 염산, 황산. 질산. 그 밖에 이와 같은 정도 이상의 부식성을 가지는 물질 • 농도가 60[%] 이상인 인산, 아세트산, 불산, 그 밖에 이와 같은 정도 이 상의 부식성을 가지는 물질 E H', array['산업안전기사','2019-3'])
+  ('18638906-2e39-9557-2b5e-7664034e5333', '71bff625-b99f-c99b-ab80-da6390943212', '② 농도 4이%]인 인산', '정답 ②. 부식성 산류 • 농도가 20[%] 이상인 염산, 황산. 질산. 그 밖에 이와 같은 정도 이상의 부식성을 가지는 물질 • 농도가 60[%] 이상인 인산, 아세트산, 불산, 그 밖에 이와 같은 정도 이 상의 부식성을 가지는 물질', array['산업안전기사','2019-3'])
 on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
 insert into public.questions (id, subject_id, type, body, difficulty, number) values
@@ -376,7 +376,7 @@ insert into public.question_options (id, question_id, body, sort_order) values
   ('2263699f-1b48-f7a3-c75a-77bf58aec755', 'ef841e56-905e-5bb4-cd53-0c54b62c01d6', '용기의 온도를 65도 이하로 유지한다.', 3)
 on conflict (id) do update set body = excluded.body;
 insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
-  ('ef841e56-905e-5bb4-cd53-0c54b62c01d6', '2263699f-1b48-f7a3-c75a-77bf58aec755', '④ 용기의 온도를 65도 이하로 유지한다.', '정답 ④. 금속의 용접 용단 또는 가열에 사용되는 가스 등의 용기를 취급 하는 경우에는 용기의 온도를 40[’C] 이하로 유지하여야 한다. &S!gi', array['산업안전기사','2019-3'])
+  ('ef841e56-905e-5bb4-cd53-0c54b62c01d6', '2263699f-1b48-f7a3-c75a-77bf58aec755', '④ 용기의 온도를 65도 이하로 유지한다.', '정답 ④. 금속의 용접 용단 또는 가열에 사용되는 가스 등의 용기를 취급 하는 경우에는 용기의 온도를 40[’C] 이하로 유지하여야 한다', array['산업안전기사','2019-3'])
 on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
 insert into public.questions (id, subject_id, type, body, difficulty, number) values
@@ -452,7 +452,7 @@ insert into public.question_options (id, question_id, body, sort_order) values
   ('a7566fb0-84f2-7105-4076-711f2b90826c', 'a9932be4-7d43-a04c-3cc2-079c84062bc6', '액상화현상', 3)
 on conflict (id) do update set body = excluded.body;
 insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
-  ('a9932be4-7d43-a04c-3cc2-079c84062bc6', '48781051-3178-997a-2383-7bd1a8b5ac70', '① 동상현상', '정답 ①. 동상현상은 지반 내 토층수가 동결하여 부피가 증가하면서 지표 면이 부풀어오르는 현상이다. E IH', array['산업안전기사','2019-3'])
+  ('a9932be4-7d43-a04c-3cc2-079c84062bc6', '48781051-3178-997a-2383-7bd1a8b5ac70', '① 동상현상', '정답 ①. 동상현상은 지반 내 토층수가 동결하여 부피가 증가하면서 지표 면이 부풀어오르는 현상이다', array['산업안전기사','2019-3'])
 on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
 insert into public.questions (id, subject_id, type, body, difficulty, number) values
@@ -471,7 +471,7 @@ insert into public.question_options (id, question_id, body, sort_order) values
   ('b6d350b2-046f-8f62-1698-9475a562dfe4', 'efb860ee-6176-9bad-8920-405fa4ac68e9', '4', 3)
 on conflict (id) do update set body = excluded.body;
 insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
-  ('efb860ee-6176-9bad-8920-405fa4ac68e9', 'a5db4dc1-ef0a-0c65-32be-272f9e39408a', '② 6', '정답 ②. 가설통로 설치 시 건설공사에 사용하는 높이 8[m] 이상인 비계 다리에는 7[m] 이내마다 계단참을 설치하여야 한다. b tl', array['산업안전기사','2019-3'])
+  ('efb860ee-6176-9bad-8920-405fa4ac68e9', 'a5db4dc1-ef0a-0c65-32be-272f9e39408a', '② 6', '정답 ②. 가설통로 설치 시 건설공사에 사용하는 높이 8[m] 이상인 비계 다리에는 7[m] 이내마다 계단참을 설치하여야 한다', array['산업안전기사','2019-3'])
 on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
 insert into public.questions (id, subject_id, type, body, difficulty, number) values
@@ -528,7 +528,7 @@ insert into public.question_options (id, question_id, body, sort_order) values
   ('85d2340a-17a8-623d-c658-d3cab2cc6e30', '03568d74-38ad-77ba-d1a4-2af192f9ad61', '갓길의 붕괴 방지조치', 3)
 on conflict (id) do update set body = excluded.body;
 insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
-  ('03568d74-38ad-77ba-d1a4-2af192f9ad61', 'c1a176b6-d7af-c658-4590-9f21e63763c2', '② 경보장치 설치', '정답 ②. 차량계 하역운반기계 전도 등의 방지 • 유도자 배치 • 지반의 부동침하 방지 • 갓길의 붕괴 방지 EH@1', array['산업안전기사','2019-3'])
+  ('03568d74-38ad-77ba-d1a4-2af192f9ad61', 'c1a176b6-d7af-c658-4590-9f21e63763c2', '② 경보장치 설치', '정답 ②. 차량계 하역운반기계 전도 등의 방지 • 유도자 배치 • 지반의 부동침하 방지 • 갓길의 붕괴 방지 @1', array['산업안전기사','2019-3'])
 on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
 insert into public.questions (id, subject_id, type, body, difficulty, number) values
@@ -566,7 +566,7 @@ insert into public.question_options (id, question_id, body, sort_order) values
   ('038907d4-11e1-d013-a49d-6a9d79c2ff85', '500a7b42-3d31-a3a5-2c84-a867a3eef15f', '해당 사업장 부서의 장', 3)
 on conflict (id) do update set body = excluded.body;
 insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
-  ('500a7b42-3d31-a3a5-2c84-a867a3eef15f', 'a799a54a-35bd-8bef-ad79-8d6d6e9ffadc', '③ 명예산업안전감독관', '정답 ③. 명예산업 안전감독관은 근로자위원에 해당한다. 산업안전보건위원회의 사용자 위원 • 해당 사업의 대표자 • 안전관리자 • 보건관리자 • 산업보건의 • 해당 사업의 대표자가 지명하는 9명 이내의 해당 사업장 부서의 장 WEH', array['산업안전기사','2020-12'])
+  ('500a7b42-3d31-a3a5-2c84-a867a3eef15f', 'a799a54a-35bd-8bef-ad79-8d6d6e9ffadc', '③ 명예산업안전감독관', '정답 ③. 명예산업 안전감독관은 근로자위원에 해당한다. 산업안전보건위원회의 사용자 위원 • 해당 사업의 대표자 • 안전관리자 • 보건관리자 • 산업보건의 • 해당 사업의 대표자가 지명하는 9명 이내의 해당 사업장 부서의 장', array['산업안전기사','2020-12'])
 on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
 insert into public.questions (id, subject_id, type, body, difficulty, number) values
@@ -585,7 +585,7 @@ insert into public.question_options (id, question_id, body, sort_order) values
   ('06baf5e1-104e-53a5-d237-f7326490b0b8', 'b46fb47e-620e-4581-8a38-17ee07d3550a', '차량통행 경고', 3)
 on conflict (id) do update set body = excluded.body;
 insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
-  ('b46fb47e-620e-4581-8a38-17ee07d3550a', '06baf5e1-104e-53a5-d237-f7326490b0b8', '④ 차량통행 경고', '정답 ④. 경고표지 중 차량통행 경고는 없고, 금지표지에 차량통행 금지가 있다. E! !l', array['산업안전기사','2020-12'])
+  ('b46fb47e-620e-4581-8a38-17ee07d3550a', '06baf5e1-104e-53a5-d237-f7326490b0b8', '④ 차량통행 경고', '정답 ④. 경고표지 중 차량통행 경고는 없고, 금지표지에 차량통행 금지가 있다', array['산업안전기사','2020-12'])
 on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
 insert into public.questions (id, subject_id, type, body, difficulty, number) values
@@ -623,7 +623,7 @@ insert into public.question_options (id, question_id, body, sort_order) values
   ('5a37d18b-3b09-806b-5240-db4709af9a04', 'c99e14b0-0153-a540-41e5-423da9f3a177', '교육의 과목 및 교육내용', 3)
 on conflict (id) do update set body = excluded.body;
 insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
-  ('c99e14b0-0153-a540-41e5-423da9f3a177', '7c7c07e6-e211-92e9-da50-f9f6acb928ba', '① 교육지도안', '정답 ①. 안전교육계획 수립 시 포함되어야 할 사항 • 교육대상（가장 먼저 고려） • 교육의 종류 • 교육과목 및 교육내용 • 교육기간 및 시간 •교육장소 •교육방법 • 교육담당자 및 강사 • 교육목표 및 목적 바易1이', array['산업안전기사','2020-12'])
+  ('c99e14b0-0153-a540-41e5-423da9f3a177', '7c7c07e6-e211-92e9-da50-f9f6acb928ba', '① 교육지도안', '정답 ①. 교육지도안', array['산업안전기사','2020-12'])
 on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
 insert into public.questions (id, subject_id, type, body, difficulty, number) values
@@ -699,7 +699,7 @@ insert into public.question_options (id, question_id, body, sort_order) values
   ('e2254851-262a-9a81-4d67-692d3fec66ef', '5c7ccf4e-0030-b505-cf29-d24621fdb110', '현상파악', 3)
 on conflict (id) do update set body = excluded.body;
 insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
-  ('5c7ccf4e-0030-b505-cf29-d24621fdb110', '6bccaaf7-b955-c7b9-4f67-bcc8e6b5c479', '② 대책수립', '정답 ②. 위험예지훈련의 추진을 위한 문제해결 4단계 O 1라운드: 현상파악（사실의 파악）-어떤 위험이 잠재하고 있는가? © 2라운드: 본질추구（원인조사）-이것이 위험의 포인트이다. © 3라운드: 대책수립（대책을 세운다）-당신이라면 어떻게 하겠는가? （D 4라운드: 목표설정（행동계획 작성）-우리들은 이렇게 하자! t', array['산업안전기사','2020-12'])
+  ('5c7ccf4e-0030-b505-cf29-d24621fdb110', '6bccaaf7-b955-c7b9-4f67-bcc8e6b5c479', '② 대책수립', '정답 ②. 위험예지훈련의 추진을 위한 문제해결 4단계 O 1라운드: 현상파악（사실의 파악）-어떤 위험이 잠재하고 있는가? © 2라운드: 본질추구（원인조사）-이것이 위험의 포인트이다. © 3라운드: 대책수립（대책을 세운다）-당신이라면 어떻게 하겠는가? （D 4라운드: 목표설정（행동계획 작성）-우리들은 이렇게 하자!', array['산업안전기사','2020-12'])
 on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
 insert into public.questions (id, subject_id, type, body, difficulty, number) values
@@ -718,7 +718,7 @@ insert into public.question_options (id, question_id, body, sort_order) values
   ('8959063c-2f19-9691-28d9-a7ffebc0ce8f', 'be5cefd4-eb0b-5a31-fa05-e3507416a343', '23.5[%]', 3)
 on conflict (id) do update set body = excluded.body;
 insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
-  ('be5cefd4-eb0b-5a31-fa05-e3507416a343', 'd5e3e0be-96b9-9d33-4987-cae63673d2d3', '② 18[%]', '정답 ②. 방진마스크는 산소농도 18[%] 이상인 장소에서 사용하여야 한다. ! 假', array['산업안전기사','2020-12'])
+  ('be5cefd4-eb0b-5a31-fa05-e3507416a343', 'd5e3e0be-96b9-9d33-4987-cae63673d2d3', '② 18[%]', '정답 ②. 18[%]', array['산업안전기사','2020-12'])
 on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
 insert into public.questions (id, subject_id, type, body, difficulty, number) values
@@ -756,5 +756,5 @@ insert into public.question_options (id, question_id, body, sort_order) values
   ('1c5f437d-a76d-5a8b-f7c0-54a48da5e702', '2e3a4bc4-79e0-ad7c-8992-80a629cbe25f', '반복도가 높은 작업', 3)
 on conflict (id) do update set body = excluded.body;
 insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
-  ('2e3a4bc4-79e0-ad7c-8992-80a629cbe25f', '5f440a82-7e26-c946-aaa9-bfbc8c9bd1c0', '② 다습한 환경', '정답 ②. 누적손상장애(cms) 발생원인 과도한 힘의 요구. 부적절한 작업자세. 장시간의 진동. 반복적인 동작 등 E %1', array['산업안전기사','2020-12'])
+  ('2e3a4bc4-79e0-ad7c-8992-80a629cbe25f', '5f440a82-7e26-c946-aaa9-bfbc8c9bd1c0', '② 다습한 환경', '정답 ②. 다습한 환경', array['산업안전기사','2020-12'])
 on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;

@@ -15,7 +15,7 @@ insert into public.question_options (id, question_id, body, sort_order) values
   ('0f24ef5c-117b-d1f3-6a41-d2b5f56eda85', 'e28c875e-6e1d-0a9b-e941-311319c625ce', '평균치를 기준으로 한 설계', 3)
 on conflict (id) do update set body = excluded.body;
 insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
-  ('e28c875e-6e1d-0a9b-e941-311319c625ce', 'b48489e8-ba2c-4d6d-dfea-b9a745253f1d', '① 기존 동일 제품을 기준으로 한 설계', '정답 ①. 인체계측자료의 응용원칙 •극단치 설계(최소치 설계. 최대치 설계) • 조절식 설계(5〜95[%tile]) • 평균치 설계 kWH', array['산업안전기사','2020-12'])
+  ('e28c875e-6e1d-0a9b-e941-311319c625ce', 'b48489e8-ba2c-4d6d-dfea-b9a745253f1d', '① 기존 동일 제품을 기준으로 한 설계', '정답 ①. 인체계측자료의 응용원칙 •극단치 설계(최소치 설계. 최대치 설계) • 조절식 설계(5〜95[%tile]) • 평균치 설계', array['산업안전기사','2020-12'])
 on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
 insert into public.questions (id, subject_id, type, body, difficulty, number) values
@@ -91,7 +91,7 @@ insert into public.question_options (id, question_id, body, sort_order) values
   ('c184a405-f93b-9dc1-0b3a-156c32ae8239', '1290adf5-4497-3230-eb19-a9348798bfbe', '조작버튼 및 선택스위치 등 제어장치에는 해당 기능을', 3)
 on conflict (id) do update set body = excluded.body;
 insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
-  ('1290adf5-4497-3230-eb19-a9348798bfbe', '4a058e0a-f81d-06db-e86a-e8c043e331c1', '② 로봇에는 외부 보호 장치와 연결하기 위해 하나 이상의', '정답 ②. 명확하게 구분할 수 있도록 표시 해야 한다. KOI 로봇에 설치되는 제어장치의 요건 • 누름버튼은 오작동 방지를 위한 가드가 설치되어 있는 등 불시기동을 방 지할 수 있는 구조이어야 한다. • 전원공급램프. 자동운전. 결함검출 등 작동제어의 상태를 확인할 수 있 는 표시장치가 설치되어 있어야 한다. • 조작버튼 및 선택스위치 등 제어장치에는 해당 기능을 명확하게 구분할 수 있도록 표시되어 있어야 한다. E H', array['산업안전기사','2020-12'])
+  ('1290adf5-4497-3230-eb19-a9348798bfbe', '4a058e0a-f81d-06db-e86a-e8c043e331c1', '② 로봇에는 외부 보호 장치와 연결하기 위해 하나 이상의', '정답 ②. 명확하게 구분할 수 있도록 표시 해야 한다. KOI 로봇에 설치되는 제어장치의 요건 • 누름버튼은 오작동 방지를 위한 가드가 설치되어 있는 등 불시기동을 방 지할 수 있는 구조이어야 한다. • 전원공급램프. 자동운전. 결함검출 등 작동제어의 상태를 확인할 수 있 는 표시장치가 설치되어 있어야 한다. • 조작버튼 및 선택스위치 등 제어장치에는 해당 기능을 명확하게 구분할 수 있도록 표시되어 있어야 한다', array['산업안전기사','2020-12'])
 on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
 insert into public.questions (id, subject_id, type, body, difficulty, number) values
@@ -129,7 +129,7 @@ insert into public.question_options (id, question_id, body, sort_order) values
   ('2a6706c3-fbff-25b0-192f-172438306ae4', '29359dcc-6921-bcd3-4617-7f9e7fe97107', '면장갑을 착용하여 작업한다.', 3)
 on conflict (id) do update set body = excluded.body;
 insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
-  ('29359dcc-6921-bcd3-4617-7f9e7fe97107', '2a6706c3-fbff-25b0-192f-172438306ae4', '④ 면장갑을 착용하여 작업한다.', '정답 ④. 밀링직업 시 손이 말려 들어갈 위험이 있는 장갑을 착용하지 않 는다. EWBI', array['산업안전기사','2020-12'])
+  ('29359dcc-6921-bcd3-4617-7f9e7fe97107', '2a6706c3-fbff-25b0-192f-172438306ae4', '④ 면장갑을 착용하여 작업한다.', '정답 ④. 밀링직업 시 손이 말려 들어갈 위험이 있는 장갑을 착용하지 않 는다', array['산업안전기사','2020-12'])
 on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
 insert into public.questions (id, subject_id, type, body, difficulty, number) values
@@ -148,7 +148,7 @@ insert into public.question_options (id, question_id, body, sort_order) values
   ('59b48ef5-a4f9-b5bf-c5e8-b9e14df0e01a', '4fef02dd-3057-6782-e181-0b2dc9cda9c1', '트롤리(trolley)가 횡행하는 레일의 상태', 3)
 on conflict (id) do update set body = excluded.body;
 insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
-  ('4fef02dd-3057-6782-e181-0b2dc9cda9c1', '59b48ef5-a4f9-b5bf-c5e8-b9e14df0e01a', '④ 트롤리(trolley)가 횡행하는 레일의 상태', '정답 ④. 트롤리가 횡행하는 레일의 상태 ’는 크레인을 사용하여 작업할 때 작업시작 전 점검사항이다. CTI', array['산업안전기사','2020-12'])
+  ('4fef02dd-3057-6782-e181-0b2dc9cda9c1', '59b48ef5-a4f9-b5bf-c5e8-b9e14df0e01a', '④ 트롤리(trolley)가 횡행하는 레일의 상태', '정답 ④. 트롤리가 횡행하는 레일의 상태 ’는 크레인을 사용하여 작업할 때 작업시작 전 점검사항이다', array['산업안전기사','2020-12'])
 on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
 insert into public.questions (id, subject_id, type, body, difficulty, number) values
@@ -167,7 +167,7 @@ insert into public.question_options (id, question_id, body, sort_order) values
   ('b6a49680-d60c-d904-395e-7eed2e3decf9', '5618d4d3-de0d-a910-59e1-7759f6a8a600', '승객용 엘리베이터', 3)
 on conflict (id) do update set body = excluded.body;
 insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
-  ('5618d4d3-de0d-a910-59e1-7759f6a8a600', 'abeb8c0e-3e0e-f464-9d6a-af8e151a375d', '① 리프트', '정답 ①. 승강기의 종류 승객용 엘리베이터, 승객화물용 엘리베이터. 화물용 엘리베이터. 소형화물 용 엘리베이터, 에스컬레이터 包 투', array['산업안전기사','2020-12'])
+  ('5618d4d3-de0d-a910-59e1-7759f6a8a600', 'abeb8c0e-3e0e-f464-9d6a-af8e151a375d', '① 리프트', '정답 ①. 리프트', array['산업안전기사','2020-12'])
 on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
 insert into public.questions (id, subject_id, type, body, difficulty, number) values
@@ -243,7 +243,7 @@ insert into public.question_options (id, question_id, body, sort_order) values
   ('3d58c569-4465-594d-c4cf-b553cee00146', '33b73aba-dc11-2f4b-0e17-d1def2830c67', '테스트 스위치는 조작이 용이한 곳에 위치시킨다.', 3)
 on conflict (id) do update set body = excluded.body;
 insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
-  ('33b73aba-dc11-2f4b-0e17-d1def2830c67', '9b7bf1f4-b7a6-371e-4734-6aa4bd6e348a', '② 직각으로만 부착해야 한다.', '정답 ②. 연직 또는 수평에 대해서 전격방지기의 부착편의 경사가 20•를 넘지 않도록 설치한다. E n', array['산업안전기사','2020-12'])
+  ('33b73aba-dc11-2f4b-0e17-d1def2830c67', '9b7bf1f4-b7a6-371e-4734-6aa4bd6e348a', '② 직각으로만 부착해야 한다.', '정답 ②. 연직 또는 수평에 대해서 전격방지기의 부착편의 경사가 20•를 넘지 않도록 설치한다', array['산업안전기사','2020-12'])
 on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
 insert into public.questions (id, subject_id, type, body, difficulty, number) values
@@ -300,7 +300,7 @@ insert into public.question_options (id, question_id, body, sort_order) values
   ('ca83735f-3328-42b9-1766-eaf0257cef5a', 'a029826d-f46f-7e03-71a1-56f737b84dfa', '방폭설비에서 이상이 발생하여 불꽃이 생성된 경우에', 3)
 on conflict (id) do update set body = excluded.body;
 insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
-  ('a029826d-f46f-7e03-71a1-56f737b84dfa', 'a3b271b5-0d0e-95e8-703a-c0b9d1ccd07b', '② 폭발성 분위기에 있는 용기의 접합면 틈새를 통해 화염', '정답 ②. 그것이 점화원으로 작용하지 않도록 화염의 에너지를 억제하여 폭발하한계로 되도록 화염 크기를 조정하는 한계치 KOi 화염일주한계（최대안전틈새, MESG） 폭발성 분위기 내에 방치된 표준용기의 접합면 틈새를 통하여 폭발화염이 내 부에서 외부로 전파돠는 것을 저지（최소점화에너지 이하）할 수 있는 틈새의 최대간격치이며 폭발성 가스의 종류에 따라 다르다. E@%1', array['산업안전기사','2020-12'])
+  ('a029826d-f46f-7e03-71a1-56f737b84dfa', 'a3b271b5-0d0e-95e8-703a-c0b9d1ccd07b', '② 폭발성 분위기에 있는 용기의 접합면 틈새를 통해 화염', '정답 ②. 폭발성 분위기에 있는 용기의 접합면 틈새를 통해 화염', array['산업안전기사','2020-12'])
 on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
 insert into public.questions (id, subject_id, type, body, difficulty, number) values
@@ -319,7 +319,7 @@ insert into public.question_options (id, question_id, body, sort_order) values
   ('c1533812-42dd-81ac-ca24-199097e4c0ce', '84638601-21de-f80d-0de0-27e20c3cebc6', '후드 형식은 가능하면 포위식 또는 부스식 후드를 설치', 3)
 on conflict (id) do update set body = excluded.body;
 insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
-  ('84638601-21de-f80d-0de0-27e20c3cebc6', '5e2c1b61-d9d1-a41a-d58e-250b66831c94', '② 후드의 개구부 면적은 가능한 한 크게 할 것', '정답 ②. 할것 폐* 후드（Hood） 인체에 해로운 분진 등을 배출하기 위하여 설치하는 국소배기장치의 후드 는 다음의 기준에 맞도록 하여야 한다. • 유해물질이 발생하는 곳마다 설치할 것 • 유해인자의 발생형태와 비중. 작업방법 등을 고려하여 해당 분진 등의 발산원을 제어할 수 있는 구조로 설치할 것 • 후드 형식은 가능하면 포위식 또는 부스식 후드를 설치할 것 • 외부식 또는 리시버식 후드는 해당 분진 등의 발산원에 가장 가까운 위 치에 설치할 것 t', array['산업안전기사','2020-12'])
+  ('84638601-21de-f80d-0de0-27e20c3cebc6', '5e2c1b61-d9d1-a41a-d58e-250b66831c94', '② 후드의 개구부 면적은 가능한 한 크게 할 것', '정답 ②. 할것 폐* 후드（Hood） 인체에 해로운 분진 등을 배출하기 위하여 설치하는 국소배기장치의 후드 는 다음의 기준에 맞도록 하여야 한다. • 유해물질이 발생하는 곳마다 설치할 것 • 유해인자의 발생형태와 비중. 작업방법 등을 고려하여 해당 분진 등의 발산원을 제어할 수 있는 구조로 설치할 것 • 후드 형식은 가능하면 포위식 또는 부스식 후드를 설치할 것 • 외부식 또는 리시버식 후드는 해당 분진 등의 발산원에 가장 가까운 위 치에 설치할 것', array['산업안전기사','2020-12'])
 on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
 insert into public.questions (id, subject_id, type, body, difficulty, number) values
@@ -357,7 +357,7 @@ insert into public.question_options (id, question_id, body, sort_order) values
   ('4f9b1452-666b-bc86-19fc-f82c0b72469d', 'a0e7b090-d4e4-34ec-25c7-d02f19d55c6a', '90일', 3)
 on conflict (id) do update set body = excluded.body;
 insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
-  ('a0e7b090-d4e4-34ec-25c7-d02f19d55c6a', '3e7f7d4a-3ca6-1cdf-75c1-3340bf8b6923', '② 30일', '정답 ②. 유해하거나 위험한 설비의 설치 • 이전 또는 주요 구조부분의 변 경공사의 착공일 30일 전까지 공정안전보고서를 2부 작성하여 한국산업안 전보건공단에 제출하여야 한다. EWgl', array['산업안전기사','2020-12'])
+  ('a0e7b090-d4e4-34ec-25c7-d02f19d55c6a', '3e7f7d4a-3ca6-1cdf-75c1-3340bf8b6923', '② 30일', '정답 ②. 유해하거나 위험한 설비의 설치 • 이전 또는 주요 구조부분의 변 경공사의 착공일 30일 전까지 공정안전보고서를 2부 작성하여 한국산업안 전보건공단에 제출하여야 한다', array['산업안전기사','2020-12'])
 on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
 insert into public.questions (id, subject_id, type, body, difficulty, number) values
@@ -414,7 +414,7 @@ insert into public.question_options (id, question_id, body, sort_order) values
   ('6fa4dbaf-6e09-4ae7-c4d7-29e1baa6822d', 'ac39df94-b915-6fa7-46d7-be88b35732a7', '철골보의 두 곳을 매어 인양시킬 때 와이어로프의 내각', 3)
 on conflict (id) do update set body = excluded.body;
 insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
-  ('ac39df94-b915-6fa7-46d7-be88b35732a7', 'facd4953-5563-8bce-dfb7-2cf3c2cf6911', '③ 구명줄 설치 시 마닐라 로프 직경 10[mm]를 기준하여', '정답 ③. 은 60° 이하이 어야 한다. K3 철골작업 시 구명줄을 설치할 경우에는 구명줄을 마닐라 로프 직 경 16[mm]를 기준하여 설치하고 작업방법을 충분히 검토하여야 한다. ECTISl', array['산업안전기사','2020-12'])
+  ('ac39df94-b915-6fa7-46d7-be88b35732a7', 'facd4953-5563-8bce-dfb7-2cf3c2cf6911', '③ 구명줄 설치 시 마닐라 로프 직경 10[mm]를 기준하여', '정답 ③. 은 60° 이하이 어야 한다. K3 철골작업 시 구명줄을 설치할 경우에는 구명줄을 마닐라 로프 직 경 16[mm]를 기준하여 설치하고 작업방법을 충분히 검토하여야 한다', array['산업안전기사','2020-12'])
 on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
 insert into public.questions (id, subject_id, type, body, difficulty, number) values
@@ -433,7 +433,7 @@ insert into public.question_options (id, question_id, body, sort_order) values
   ('e1dd9833-3934-604c-3246-82606b74208f', 'a2cd863f-7fdf-ec1e-00ce-3684e2166207', '그 밖의 흙 - 1 ： 1.2', 3)
 on conflict (id) do update set body = excluded.body;
 insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
-  ('a2cd863f-7fdf-ec1e-00ce-3684e2166207', '0752c891-240c-fdb3-9aeb-25702df7882e', '② 연암 및 풍화암 - 1 : 1.5', '정답 ②. 표| 굴착면의 기울기 기준 지반의 종류 굴착면의 기울기 모래 1 : 1.8 연암 및 풍화암 1 : 1.0 경암 1 ：0.5 그 밖의 흙 1 : 1.2 ※ 이 문제는 개정된 법령에 따라 수정한 문제입니다. kWIM', array['산업안전기사','2020-12'])
+  ('a2cd863f-7fdf-ec1e-00ce-3684e2166207', '0752c891-240c-fdb3-9aeb-25702df7882e', '② 연암 및 풍화암 - 1 : 1.5', '정답 ②. 표| 굴착면의 기울기 기준 지반의 종류 굴착면의 기울기 모래 1 : 1.8 연암 및 풍화암 1 : 1.0 경암 1 ：0.5 그 밖의 흙 1 : 1.2 ※ 이 문제는 개정된 법령에 따라 수정한 문제입니다', array['산업안전기사','2020-12'])
 on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
 insert into public.questions (id, subject_id, type, body, difficulty, number) values
@@ -490,7 +490,7 @@ insert into public.question_options (id, question_id, body, sort_order) values
   ('1ac24673-9c30-263f-bea1-91b4b189283a', 'b240d6b7-1499-130b-7d3d-8be7db463d1c', '6회', 3)
 on conflict (id) do update set body = excluded.body;
 insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
-  ('b240d6b7-1499-130b-7d3d-8be7db463d1c', 'cbc89311-753c-93a5-b051-e71ce5dc418f', '② 2회', '정답 ②. 권상용 와이어로프는 추 또는 해머가 최저의 위치에 있을 때 또 는 널말뚝을 빼내기 시작할 때를 기준으로 권상장치의 드럼에 적어도 2회 감기고 남을 수 있는 충분한 길이여야 한다. bWHM', array['산업안전기사','2020-12'])
+  ('b240d6b7-1499-130b-7d3d-8be7db463d1c', 'cbc89311-753c-93a5-b051-e71ce5dc418f', '② 2회', '정답 ②. 권상용 와이어로프는 추 또는 해머가 최저의 위치에 있을 때 또 는 널말뚝을 빼내기 시작할 때를 기준으로 권상장치의 드럼에 적어도 2회 감기고 남을 수 있는 충분한 길이여야 한다', array['산업안전기사','2020-12'])
 on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
 insert into public.questions (id, subject_id, type, body, difficulty, number) values
@@ -509,7 +509,7 @@ insert into public.question_options (id, question_id, body, sort_order) values
   ('c47845a0-e020-ba26-097e-9f39429c8e4e', '09acdeb2-72f2-186b-74b6-7151b0dd4a30', '건설재해예방전문지도기관의 종사자 신규교육: 24시', 3)
 on conflict (id) do update set body = excluded.body;
 insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
-  ('09acdeb2-72f2-186b-74b6-7151b0dd4a30', 'c47845a0-e020-ba26-097e-9f39429c8e4e', '④ 건설재해예방전문지도기관의 종사자 신규교육: 24시', '정답 ④. 간이상 1M 건설재해예방전문지도기관 종사자의 교육시간은 신규교육 34시 간 이상. 보수교육 24시간 이상이다. ECTH', array['산업안전기사','2020-3'])
+  ('09acdeb2-72f2-186b-74b6-7151b0dd4a30', 'c47845a0-e020-ba26-097e-9f39429c8e4e', '④ 건설재해예방전문지도기관의 종사자 신규교육: 24시', '정답 ④. 간이상 1M 건설재해예방전문지도기관 종사자의 교육시간은 신규교육 34시 간 이상. 보수교육 24시간 이상이다', array['산업안전기사','2020-3'])
 on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
 insert into public.questions (id, subject_id, type, body, difficulty, number) values
@@ -661,7 +661,7 @@ insert into public.question_options (id, question_id, body, sort_order) values
   ('f6b46eec-8045-4fe0-cb9d-e63275d9d9e7', '1fdff114-ad15-dd07-4adc-4269189b8499', '최대 인양높이', 3)
 on conflict (id) do update set body = excluded.body;
 insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
-  ('1fdff114-ad15-dd07-4adc-4269189b8499', 'f6b46eec-8045-4fe0-cb9d-e63275d9d9e7', '④ 최대 인양높이', '정답 ④. 양중기(승강기 제외) 및 달기구를 사용하여 작업하는 운전자 또 는 작업자가 보기 쉬운 곳에 해당 기계의 정격하중(달기구는 정격하중만 표시). 운전속도. 경고표시 등을 부칙호i여야 한다. E H', array['산업안전기사','2020-3'])
+  ('1fdff114-ad15-dd07-4adc-4269189b8499', 'f6b46eec-8045-4fe0-cb9d-e63275d9d9e7', '④ 최대 인양높이', '정답 ④. 양중기(승강기 제외) 및 달기구를 사용하여 작업하는 운전자 또 는 작업자가 보기 쉬운 곳에 해당 기계의 정격하중(달기구는 정격하중만 표시). 운전속도. 경고표시 등을 부칙호i여야 한다', array['산업안전기사','2020-3'])
 on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
 insert into public.questions (id, subject_id, type, body, difficulty, number) values
@@ -680,7 +680,7 @@ insert into public.question_options (id, question_id, body, sort_order) values
   ('55a0e080-c665-ad63-e6ce-0212cdcb37a6', 'd6d53019-fe1e-448f-9c1e-e70e0638b24a', '연삭숫돌에 충격을 가하지 않는다.', 3)
 on conflict (id) do update set body = excluded.body;
 insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
-  ('d6d53019-fe1e-448f-9c1e-e70e0638b24a', '91c5b938-51a0-f173-4e8f-b3b9b434cddb', '① 숫돌의 정면에 서서 숫돌 원주면을 사용한다.', '정답 ①. 연삭기 작업 시 연삭숫돌 정면에서 150” 정도 비켜서서 작업하 여야 한다. E H', array['산업안전기사','2020-3'])
+  ('d6d53019-fe1e-448f-9c1e-e70e0638b24a', '91c5b938-51a0-f173-4e8f-b3b9b434cddb', '① 숫돌의 정면에 서서 숫돌 원주면을 사용한다.', '정답 ①. 연삭기 작업 시 연삭숫돌 정면에서 150” 정도 비켜서서 작업하 여야 한다', array['산업안전기사','2020-3'])
 on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
 insert into public.questions (id, subject_id, type, body, difficulty, number) values
@@ -737,7 +737,7 @@ insert into public.question_options (id, question_id, body, sort_order) values
   ('5077f241-beaa-fa5e-0a03-99392b93ed1e', '8d795906-71c8-2f7c-d7ec-dd9bb991c080', '196[kPa]', 3)
 on conflict (id) do update set body = excluded.body;
 insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
-  ('8d795906-71c8-2f7c-d7ec-dd9bb991c080', '65e73f89-34c6-1e0f-a286-5a6585f58f33', '② 127[kPa]', '정답 ②. 아세틸렌 용접장치를 사용하여 금속의 용접 • 용단 또는 가열작 업을 하는 경우에는 게이지압력이 127[kPa](1.3[kg/m2])을 초과하는 압 력의 아세틸렌을 발생시켜 사용하여서는 아니 된다. E SI', array['산업안전기사','2020-3'])
+  ('8d795906-71c8-2f7c-d7ec-dd9bb991c080', '65e73f89-34c6-1e0f-a286-5a6585f58f33', '② 127[kPa]', '정답 ②. 아세틸렌 용접장치를 사용하여 금속의 용접 • 용단 또는 가열작 업을 하는 경우에는 게이지압력이 127[kPa](1.3[kg/m2])을 초과하는 압 력의 아세틸렌을 발생시켜 사용하여서는 아니 된다', array['산업안전기사','2020-3'])
 on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
 insert into public.questions (id, subject_id, type, body, difficulty, number) values
@@ -756,5 +756,5 @@ insert into public.question_options (id, question_id, body, sort_order) values
   ('47670f98-6c23-6396-9271-aaeec9f8d296', '868a9f7d-7ef9-4d7a-902c-842328a9e459', '금형 조정작업', 3)
 on conflict (id) do update set body = excluded.body;
 insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
-  ('868a9f7d-7ef9-4d7a-902c-842328a9e459', '95550613-fb46-8979-b51b-ca0fa0b47a4e', '① 금형 가공작업', '정답 ①. 프레스 등의 금형을 부착 • 해체 또는 조정하는 작업을 할 때에 해당 작업에 종사하는 근로자의 신체가 위험한계 내에 있는 경우 슬라이드 가 갑자기 작동함으로써 근로자에게 발생할 우려가 있는 위험을 방지하기 위하여 안전블록을 사용하는 등 필요한 조치를 하여야 한다. E H', array['산업안전기사','2020-3'])
+  ('868a9f7d-7ef9-4d7a-902c-842328a9e459', '95550613-fb46-8979-b51b-ca0fa0b47a4e', '① 금형 가공작업', '정답 ①. 프레스 등의 금형을 부착 • 해체 또는 조정하는 작업을 할 때에 해당 작업에 종사하는 근로자의 신체가 위험한계 내에 있는 경우 슬라이드 가 갑자기 작동함으로써 근로자에게 발생할 우려가 있는 위험을 방지하기 위하여 안전블록을 사용하는 등 필요한 조치를 하여야 한다', array['산업안전기사','2020-3'])
 on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
