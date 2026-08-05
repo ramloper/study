@@ -1,760 +1,760 @@
--- 9
-insert into public.questions (id,subject_id,type,body,difficulty,number) values
- ('655ac728-af7a-a96e-e89b-4ef9828a2773','11111111-1111-1111-1111-111111111104','mcq','방사선 투과검사에서 투과사진의 상질을 점검할 때 확인해 야 할 항목으로 거리가 먼 것은?',2,321)
-on conflict (id) do update set body=excluded.body, number=excluded.number;
-insert into public.question_options (id,question_id,body,sort_order) values
- ('28f937e2-8028-992d-a9ee-a94fc5a24945','655ac728-af7a-a96e-e89b-4ef9828a2773','투과도계의 식별도',0)
-on conflict (id) do update set body=excluded.body;
-insert into public.question_options (id,question_id,body,sort_order) values
- ('82bdf2eb-03e5-6cf7-52f4-d12fa4759df5','655ac728-af7a-a96e-e89b-4ef9828a2773','시험부의 사진농도 범위',1)
-on conflict (id) do update set body=excluded.body;
-insert into public.question_options (id,question_id,body,sort_order) values
- ('b07e9bb7-5a1d-fa42-4d3a-f4b4e5dde073','655ac728-af7a-a96e-e89b-4ef9828a2773','계조계의 값',2)
-on conflict (id) do update set body=excluded.body;
-insert into public.question_options (id,question_id,body,sort_order) values
- ('9eb6b05c-9a55-a3a2-9065-25cd66c11481','655ac728-af7a-a96e-e89b-4ef9828a2773','주파수의 크기',3)
-on conflict (id) do update set body=excluded.body;
-insert into public.question_answers (question_id,correct_option_id,answer_text,explanation,concepts) values
- ('655ac728-af7a-a96e-e89b-4ef9828a2773','9eb6b05c-9a55-a3a2-9065-25cd66c11481','④ 주파수의 크기','정답 ④. 투과사진의 상질을 점검할 때 확인해야 할 항목 • 투과도계의 식별 최소선경 • 시험부의 사진농도 • 계조계의 값(농도차/농도)',array['산업안전기사','2022-3'])
-on conflict (question_id) do update set correct_option_id=excluded.correct_option_id, answer_text=excluded.answer_text, explanation=excluded.explanation, concepts=excluded.concepts;
+-- chunk 9
+insert into public.questions (id, subject_id, type, body, difficulty, number) values
+  ('42e0e4c7-ccff-5b40-c64f-6f17e209422b', '11111111-1111-1111-1111-111111111104', 'mcq', '다음 중 금형 설치 • 해체작업의 일반적인 안전사항으로 틀린 것은?', 2, 321)
+on conflict (id) do update set body = excluded.body, number = excluded.number;
+insert into public.question_options (id, question_id, body, sort_order) values
+  ('15421a64-6473-5d6b-0b27-71830f82568a', '42e0e4c7-ccff-5b40-c64f-6f17e209422b', '고정볼트는 고정 후 가능하면 나사산이 3〜4개 정도 짧', 0)
+on conflict (id) do update set body = excluded.body;
+insert into public.question_options (id, question_id, body, sort_order) values
+  ('2c680aaf-5f77-c6f2-fa31-bc0ad9ec8703', '42e0e4c7-ccff-5b40-c64f-6f17e209422b', '금형 고정용 브래킷（물림판）을 고정시킬 때 고정용 브', 1)
+on conflict (id) do update set body = excluded.body;
+insert into public.question_options (id, question_id, body, sort_order) values
+  ('5d6b39c7-3305-cdc0-bcbb-a1e0aa1c8ed8', '42e0e4c7-ccff-5b40-c64f-6f17e209422b', '금형을 설치하는 프레스의 T홈 안길이는 설치볼트 직', 2)
+on conflict (id) do update set body = excluded.body;
+insert into public.question_options (id, question_id, body, sort_order) values
+  ('3fb77446-0642-b4d6-2e8d-2821345a419c', '42e0e4c7-ccff-5b40-c64f-6f17e209422b', '금형의 설치용구는 프레스의 구조에 적합한 형태로 한다.', 3)
+on conflict (id) do update set body = excluded.body;
+insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
+  ('42e0e4c7-ccff-5b40-c64f-6f17e209422b', '5d6b39c7-3305-cdc0-bcbb-a1e0aa1c8ed8', '③ 금형을 설치하는 프레스의 T홈 안길이는 설치볼트 직', '정답 ③. 금형의 탈착 시 금형을 설치하는 프레스의 T홈 안길이는 설치볼 트 직경의 2배 이상으로 한다. 5厄1', array['산업안전기사','2022-1'])
+on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
-insert into public.questions (id,subject_id,type,body,difficulty,number) values
- ('db7bef9a-7b01-3f45-b283-f7fc872cd836','11111111-1111-1111-1111-111111111104','mcq','와이어로프의 구성요소가 아닌 것은?',2,322)
-on conflict (id) do update set body=excluded.body, number=excluded.number;
-insert into public.question_options (id,question_id,body,sort_order) values
- ('1c395391-8717-81a8-33b9-42ce59831f65','db7bef9a-7b01-3f45-b283-f7fc872cd836','소선',0)
-on conflict (id) do update set body=excluded.body;
-insert into public.question_options (id,question_id,body,sort_order) values
- ('903e2c8e-f962-5ae5-9c81-21cf50c5d64e','db7bef9a-7b01-3f45-b283-f7fc872cd836','클립',1)
-on conflict (id) do update set body=excluded.body;
-insert into public.question_options (id,question_id,body,sort_order) values
- ('07535a7b-0f1a-89eb-c03b-e0401630c06a','db7bef9a-7b01-3f45-b283-f7fc872cd836','스트랜드 (Strand)',2)
-on conflict (id) do update set body=excluded.body;
-insert into public.question_options (id,question_id,body,sort_order) values
- ('4a442c38-ae52-e8a6-9845-ffcecf1bd375','db7bef9a-7b01-3f45-b283-f7fc872cd836','심강(Core)',3)
-on conflict (id) do update set body=excluded.body;
-insert into public.question_answers (question_id,correct_option_id,answer_text,explanation,concepts) values
- ('db7bef9a-7b01-3f45-b283-f7fc872cd836','903e2c8e-f962-5ae5-9c81-21cf50c5d64e','② 클립','정답 ②. 클립은 와이어로프를 고정하는 기구이다. 와이어로프 구성요소 소선, 스트랜드(Strand), 심강(Core), 심선',array['산업안전기사','2022-3'])
-on conflict (question_id) do update set correct_option_id=excluded.correct_option_id, answer_text=excluded.answer_text, explanation=excluded.explanation, concepts=excluded.concepts;
+insert into public.questions (id, subject_id, type, body, difficulty, number) values
+  ('4711d6f0-1285-d0ff-3e5d-5615f5db47e4', '11111111-1111-1111-1111-111111111104', 'mcq', '다음 중「산업안전보건법령」상 보일러에 설치하는 압력방 출장치에 대하여 검사 후 봉인에 사용되는 재료로 가장 적 합한 것은?', 2, 322)
+on conflict (id) do update set body = excluded.body, number = excluded.number;
+insert into public.question_options (id, question_id, body, sort_order) values
+  ('de06c6fb-5120-143c-6d9f-3d7762eab2a6', '4711d6f0-1285-d0ff-3e5d-5615f5db47e4', '납', 0)
+on conflict (id) do update set body = excluded.body;
+insert into public.question_options (id, question_id, body, sort_order) values
+  ('2fc86eec-68e6-f12c-0d7e-d0b4077ec8f7', '4711d6f0-1285-d0ff-3e5d-5615f5db47e4', '주석', 1)
+on conflict (id) do update set body = excluded.body;
+insert into public.question_options (id, question_id, body, sort_order) values
+  ('4779d421-465d-e95f-3578-ac11504d862a', '4711d6f0-1285-d0ff-3e5d-5615f5db47e4', '구리', 2)
+on conflict (id) do update set body = excluded.body;
+insert into public.question_options (id, question_id, body, sort_order) values
+  ('4c9f7841-9b38-c709-f0a1-a6f0ed1dbc67', '4711d6f0-1285-d0ff-3e5d-5615f5db47e4', '알루미늄', 3)
+on conflict (id) do update set body = excluded.body;
+insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
+  ('4711d6f0-1285-d0ff-3e5d-5615f5db47e4', 'de06c6fb-5120-143c-6d9f-3d7762eab2a6', '① 납', '정답 ①. 압력방출장치는 매년 1회 이상 국가교정기관에서 교정을 받은 압력 계를 이용하여 설정압력에서 압력 방출장치가 적정하게 작동하는지를 검사한 후 납으로 봉인하여 사용하여야 한다. WEI', array['산업안전기사','2022-1'])
+on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
-insert into public.questions (id,subject_id,type,body,difficulty,number) values
- ('bc40931b-5ae4-8d29-bbb1-942aca8bc3c4','11111111-1111-1111-1111-111111111104','mcq','다음 중 밀링작업 시 안전수칙으로 옳지 않은 것은?',2,323)
-on conflict (id) do update set body=excluded.body, number=excluded.number;
-insert into public.question_options (id,question_id,body,sort_order) values
- ('32302100-f671-8676-0240-e12826063bb0','bc40931b-5ae4-8d29-bbb1-942aca8bc3c4','테이블 위에 공구나 기타 물건 등을 올려놓지 않는다.',0)
-on conflict (id) do update set body=excluded.body;
-insert into public.question_options (id,question_id,body,sort_order) values
- ('f67abd5c-1a40-320b-51d7-967524bee2a8','bc40931b-5ae4-8d29-bbb1-942aca8bc3c4','제품 치수를 측정할 때는 절삭 공구의 회전을 정지한다.',1)
-on conflict (id) do update set body=excluded.body;
-insert into public.question_options (id,question_id,body,sort_order) values
- ('e0e3d9de-02dc-0e82-6edc-f658ca0577ae','bc40931b-5ae4-8d29-bbb1-942aca8bc3c4','강력 절삭을 할 때는 일감을 바이스에 얕게 물린다.',2)
-on conflict (id) do update set body=excluded.body;
-insert into public.question_options (id,question_id,body,sort_order) values
- ('c6a84b60-09fb-26c9-b350-3557a2a26a7b','bc40931b-5ae4-8d29-bbb1-942aca8bc3c4','상하 좌우 이송장치의 핸들은 사용 후 풀어 둔다.',3)
-on conflict (id) do update set body=excluded.body;
-insert into public.question_answers (question_id,correct_option_id,answer_text,explanation,concepts) values
- ('bc40931b-5ae4-8d29-bbb1-942aca8bc3c4','e0e3d9de-02dc-0e82-6edc-f658ca0577ae','③ 강력 절삭을 할 때는 일감을 바이스에 얕게 물린다.','정답 ③. 밀링작업 시 강력절삭을 할 때는 일감을 바이스에 깊게 물린다. fWIEI',array['산업안전기사','2022-3'])
-on conflict (question_id) do update set correct_option_id=excluded.correct_option_id, answer_text=excluded.answer_text, explanation=excluded.explanation, concepts=excluded.concepts;
+insert into public.questions (id, subject_id, type, body, difficulty, number) values
+  ('33bd7fd4-7a53-325b-6a13-6a393562e0db', '11111111-1111-1111-1111-111111111104', 'mcq', '슬라이드가 내려옴에 따라 손을 쳐내는 막대가 좌우로 왕복 하면서 위험점으로부터 손을 보호하여 주는 프레스의 안전 장치는?', 2, 323)
+on conflict (id) do update set body = excluded.body, number = excluded.number;
+insert into public.question_options (id, question_id, body, sort_order) values
+  ('2e13976d-f648-c392-c25b-dd83f9fae620', '33bd7fd4-7a53-325b-6a13-6a393562e0db', '수인식 방호장치', 0)
+on conflict (id) do update set body = excluded.body;
+insert into public.question_options (id, question_id, body, sort_order) values
+  ('a2f8c9b8-2b72-14b2-0b7b-71f84b0c8f37', '33bd7fd4-7a53-325b-6a13-6a393562e0db', '양손조작식 방호장치', 1)
+on conflict (id) do update set body = excluded.body;
+insert into public.question_options (id, question_id, body, sort_order) values
+  ('81e9fca8-f993-a7e8-97ce-b78cf83cf0c7', '33bd7fd4-7a53-325b-6a13-6a393562e0db', '손쳐내기식 방호장치', 2)
+on conflict (id) do update set body = excluded.body;
+insert into public.question_options (id, question_id, body, sort_order) values
+  ('49e99b57-211e-7b5c-5144-75ae7a63037c', '33bd7fd4-7a53-325b-6a13-6a393562e0db', '게이트가드식 방호장치', 3)
+on conflict (id) do update set body = excluded.body;
+insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
+  ('33bd7fd4-7a53-325b-6a13-6a393562e0db', '81e9fca8-f993-a7e8-97ce-b78cf83cf0c7', '③ 손쳐내기식 방호장치', '정답 ③. 손쳐내기식(Push Away, Sweep Guard) 방호장치 기계의 작동에 연동시켜 위험상태로 되기 전에 손을 위험 영역에서 밀어내 거나 쳐냄으로써 위험을 배제하는 장치를 말한다. tVBl', array['산업안전기사','2022-1'])
+on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
-insert into public.questions (id,subject_id,type,body,difficulty,number) values
- ('94948349-671d-6a84-40d0-601dc14eb374','11111111-1111-1111-1111-111111111104','mcq','다음 설명은 보일러의 장해 원인 중 어느 것에 해당되는가? 보일러 수중에 용해고형분이나 수분이 발생, 증기 중에 다량 함유되어 증기의 순도를 저하시킴으로써 관내 응축수가 생겨 워터해머의 원인이 되고 증기과열기나 터빈 등의 고장의 원인 이 된다.',2,324)
-on conflict (id) do update set body=excluded.body, number=excluded.number;
-insert into public.question_options (id,question_id,body,sort_order) values
- ('9851c43d-b20f-9be7-b551-33a84209282f','94948349-671d-6a84-40d0-601dc14eb374','프라이 밍 (Priming)',0)
-on conflict (id) do update set body=excluded.body;
-insert into public.question_options (id,question_id,body,sort_order) values
- ('082900df-8774-edc7-9d67-4c1bfd13c4e1','94948349-671d-6a84-40d0-601dc14eb374','포밍 (Foaming)',1)
-on conflict (id) do update set body=excluded.body;
-insert into public.question_options (id,question_id,body,sort_order) values
- ('cf73f42b-66a3-c689-1122-0883d791e70c','94948349-671d-6a84-40d0-601dc14eb374','캐리오버 (Carry Over)',2)
-on conflict (id) do update set body=excluded.body;
-insert into public.question_options (id,question_id,body,sort_order) values
- ('8c9ba1a6-9ac5-f9b6-a753-548906341508','94948349-671d-6a84-40d0-601dc14eb374','역화(Back Fire)',3)
-on conflict (id) do update set body=excluded.body;
-insert into public.question_answers (question_id,correct_option_id,answer_text,explanation,concepts) values
- ('94948349-671d-6a84-40d0-601dc14eb374','cf73f42b-66a3-c689-1122-0883d791e70c','③ 캐리오버 (Carry Over)','정답 ③. 누W 캐리오버(Carry Over) 보일러 증기관 쪽에 보내는 증기에 대량의 물방울이 포함되는 경우가 있는 데 이것을 캐리오버라 하며, 프라이밍이나 포밍이 생기면 필연적으로 캐리 오버가 발생한다. I 1',array['산업안전기사','2022-3'])
-on conflict (question_id) do update set correct_option_id=excluded.correct_option_id, answer_text=excluded.answer_text, explanation=excluded.explanation, concepts=excluded.concepts;
+insert into public.questions (id, subject_id, type, body, difficulty, number) values
+  ('608e2907-c66f-f8ab-8bdc-6e1461abc31b', '11111111-1111-1111-1111-111111111104', 'mcq', '「산업안전보건법령」에 따라 사업주는 근로자가 안전하게 통행할 수 있도록 통로에 얼마 이상의 채광 또는 조명시설 을 하여야 하는가?', 2, 324)
+on conflict (id) do update set body = excluded.body, number = excluded.number;
+insert into public.question_options (id, question_id, body, sort_order) values
+  ('2854d31a-578e-a3a5-a3dd-78fb17b05328', '608e2907-c66f-f8ab-8bdc-6e1461abc31b', '50럭스', 0)
+on conflict (id) do update set body = excluded.body;
+insert into public.question_options (id, question_id, body, sort_order) values
+  ('cf801658-a091-cd3a-324e-e14bb90ea9bb', '608e2907-c66f-f8ab-8bdc-6e1461abc31b', '75럭스', 1)
+on conflict (id) do update set body = excluded.body;
+insert into public.question_options (id, question_id, body, sort_order) values
+  ('767dab25-c4bd-ae20-dff6-7c08ddb6efb4', '608e2907-c66f-f8ab-8bdc-6e1461abc31b', '90럭스', 2)
+on conflict (id) do update set body = excluded.body;
+insert into public.question_options (id, question_id, body, sort_order) values
+  ('8ca9ba17-69d0-d969-1a3e-d04eff277bc8', '608e2907-c66f-f8ab-8bdc-6e1461abc31b', '100럭스', 3)
+on conflict (id) do update set body = excluded.body;
+insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
+  ('608e2907-c66f-f8ab-8bdc-6e1461abc31b', 'cf801658-a091-cd3a-324e-e14bb90ea9bb', '② 75럭스', '정답 ②. 근로자가 안전하게 통행할 수 있도록 통로에 75[lux] 이상의 채 광 또는 조명시설을 하여야 한다. 1', array['산업안전기사','2022-1'])
+on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
-insert into public.questions (id,subject_id,type,body,difficulty,number) values
- ('2ac525fe-ad67-a7c7-c5ca-82dd3e0bf991','11111111-1111-1111-1111-111111111104','mcq','일반 허용접촉전압과 그 종별을 짝지은 것으로 틀린 것은?',2,325)
-on conflict (id) do update set body=excluded.body, number=excluded.number;
-insert into public.question_options (id,question_id,body,sort_order) values
- ('39e7ffe0-fc5e-6b12-6b91-190994c3b57a','2ac525fe-ad67-a7c7-c5ca-82dd3e0bf991','제1종: 0.5[V] 이하',0)
-on conflict (id) do update set body=excluded.body;
-insert into public.question_options (id,question_id,body,sort_order) values
- ('26474057-9b6e-3dcb-659e-d9e00eebb352','2ac525fe-ad67-a7c7-c5ca-82dd3e0bf991','제2종: 25[V] 이하',1)
-on conflict (id) do update set body=excluded.body;
-insert into public.question_options (id,question_id,body,sort_order) values
- ('4eb8d3ac-20e6-26ef-4d0b-fe27a1ec6ebb','2ac525fe-ad67-a7c7-c5ca-82dd3e0bf991','제3종: 5O[V] 이하',2)
-on conflict (id) do update set body=excluded.body;
-insert into public.question_options (id,question_id,body,sort_order) values
- ('ebe5fbd6-4a0c-66ff-def6-818a87df78d6','2ac525fe-ad67-a7c7-c5ca-82dd3e0bf991','제4종: 제한 없음',3)
-on conflict (id) do update set body=excluded.body;
-insert into public.question_answers (question_id,correct_option_id,answer_text,explanation,concepts) values
- ('2ac525fe-ad67-a7c7-c5ca-82dd3e0bf991','39e7ffe0-fc5e-6b12-6b91-190994c3b57a','① 제1종: 0.5[V] 이하','정답 ①. 허용접촉전압 종별 허용접촉전압 제 1종 Z5[V] 이하 제 2종 25[V] 이하 제 3종 50[V] 이하 제 4종 제한 없음 I',array['산업안전기사','2022-3'])
-on conflict (question_id) do update set correct_option_id=excluded.correct_option_id, answer_text=excluded.answer_text, explanation=excluded.explanation, concepts=excluded.concepts;
+insert into public.questions (id, subject_id, type, body, difficulty, number) values
+  ('36933e1e-ee40-6f68-2e36-73fedb6dabfa', '11111111-1111-1111-1111-111111111104', 'mcq', '「산업안전보건법령」상 다음 중 보일러의 방호장치와 가장 거리가 먼 것은?', 2, 325)
+on conflict (id) do update set body = excluded.body, number = excluded.number;
+insert into public.question_options (id, question_id, body, sort_order) values
+  ('fce8c849-46d6-4b79-d0cf-9d14493b0e96', '36933e1e-ee40-6f68-2e36-73fedb6dabfa', '언로드밸브', 0)
+on conflict (id) do update set body = excluded.body;
+insert into public.question_options (id, question_id, body, sort_order) values
+  ('c3dae36a-e4c1-5974-4482-b9b4d75cf4f6', '36933e1e-ee40-6f68-2e36-73fedb6dabfa', '압력방출장치', 1)
+on conflict (id) do update set body = excluded.body;
+insert into public.question_options (id, question_id, body, sort_order) values
+  ('59348ae4-9f6e-cf65-27d7-75be56a0de0c', '36933e1e-ee40-6f68-2e36-73fedb6dabfa', '압력제한스위치', 2)
+on conflict (id) do update set body = excluded.body;
+insert into public.question_options (id, question_id, body, sort_order) values
+  ('ab147f75-3aee-528d-518e-4b4c32c0ca47', '36933e1e-ee40-6f68-2e36-73fedb6dabfa', '고저수위 조절장치', 3)
+on conflict (id) do update set body = excluded.body;
+insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
+  ('36933e1e-ee40-6f68-2e36-73fedb6dabfa', 'fce8c849-46d6-4b79-d0cf-9d14493b0e96', '① 언로드밸브', '정답 ①. 보일러의 폭발사고를 예방하기 위하여 압력방출장치. 압력제한 스위치. 고저수위 조절장치, 화염검출기 등의 기능이 정상적으로 작동될 수 있도록 유지 • 관리하여야 한다. WI', array['산업안전기사','2022-1'])
+on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
-insert into public.questions (id,subject_id,type,body,difficulty,number) values
- ('47192335-1c4e-fbe2-caba-b7931471f777','11111111-1111-1111-1111-111111111104','mcq','인체저항을 500[Q]이라 한다면 심실세동을 일으키는 위험 한계에너지는 약 몇 [J]인가?(단, 심실세동전류값은 Dalziel 의 식 / 」等 [mA]를 이용하고, 통전시간은 2초로 한다.)',2,326)
-on conflict (id) do update set body=excluded.body, number=excluded.number;
-insert into public.question_options (id,question_id,body,sort_order) values
- ('c45a6453-23aa-7228-cf13-e9725daec9d6','47192335-1c4e-fbe2-caba-b7931471f777','13.6',0)
-on conflict (id) do update set body=excluded.body;
-insert into public.question_options (id,question_id,body,sort_order) values
- ('6c7686ce-6f12-244a-7282-a9ddffd09633','47192335-1c4e-fbe2-caba-b7931471f777','16.2',1)
-on conflict (id) do update set body=excluded.body;
-insert into public.question_options (id,question_id,body,sort_order) values
- ('91ebd79d-0824-623f-8c21-c4135bd2d2c3','47192335-1c4e-fbe2-caba-b7931471f777','27.2',2)
-on conflict (id) do update set body=excluded.body;
-insert into public.question_options (id,question_id,body,sort_order) values
- ('cc09a761-3c50-928c-9914-4a4293ef10c7','47192335-1c4e-fbe2-caba-b7931471f777','32.4',3)
-on conflict (id) do update set body=excluded.body;
-insert into public.question_answers (question_id,correct_option_id,answer_text,explanation,concepts) values
- ('47192335-1c4e-fbe2-caba-b7931471f777','c45a6453-23aa-7228-cf13-e9725daec9d6','① 13.6','정답 ①. 13.6',array['산업안전기사','2022-3'])
-on conflict (question_id) do update set correct_option_id=excluded.correct_option_id, answer_text=excluded.answer_text, explanation=excluded.explanation, concepts=excluded.concepts;
+insert into public.questions (id, subject_id, type, body, difficulty, number) values
+  ('cb9111be-b45e-3c7c-476d-fdbdcd29a8af', '11111111-1111-1111-1111-111111111104', 'mcq', '다음 중 롤러기 급정지장치의 종류가 아닌 것은?', 2, 326)
+on conflict (id) do update set body = excluded.body, number = excluded.number;
+insert into public.question_options (id, question_id, body, sort_order) values
+  ('b7b38b30-366c-f226-0de8-361039a4de8b', 'cb9111be-b45e-3c7c-476d-fdbdcd29a8af', '어깨조작식', 0)
+on conflict (id) do update set body = excluded.body;
+insert into public.question_options (id, question_id, body, sort_order) values
+  ('fb0678fc-af79-af56-9d0a-3383aef169b5', 'cb9111be-b45e-3c7c-476d-fdbdcd29a8af', '손조작식', 1)
+on conflict (id) do update set body = excluded.body;
+insert into public.question_options (id, question_id, body, sort_order) values
+  ('b57107f4-ad6e-2fc8-160b-cfdabdc1447c', 'cb9111be-b45e-3c7c-476d-fdbdcd29a8af', '복부조작식', 2)
+on conflict (id) do update set body = excluded.body;
+insert into public.question_options (id, question_id, body, sort_order) values
+  ('7c62c68f-67d2-7492-5a70-79b55bf8d210', 'cb9111be-b45e-3c7c-476d-fdbdcd29a8af', '무릎조작식', 3)
+on conflict (id) do update set body = excluded.body;
+insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
+  ('cb9111be-b45e-3c7c-476d-fdbdcd29a8af', 'b7b38b30-366c-f226-0de8-361039a4de8b', '① 어깨조작식', '정답 ①. 급정지장치 조작부의 종류 손조작식. 복부조작식. 무릎조작식 1', array['산업안전기사','2022-1'])
+on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
-insert into public.questions (id,subject_id,type,body,difficulty,number) values
- ('05c2a4cf-1386-b5d1-db3f-c5221de82ae3','11111111-1111-1111-1111-111111111104','mcq','「한국전기설비규정」에 따라 피뢰설비에서 외부피뢰시스템 의 수뢰부시스템으로 적합하지 않은 것은?',2,327)
-on conflict (id) do update set body=excluded.body, number=excluded.number;
-insert into public.question_options (id,question_id,body,sort_order) values
- ('6588442b-ab47-efa9-c9f5-efd8ab24a123','05c2a4cf-1386-b5d1-db3f-c5221de82ae3','돌침',0)
-on conflict (id) do update set body=excluded.body;
-insert into public.question_options (id,question_id,body,sort_order) values
- ('e1048f2c-d549-fceb-db5c-9723098b560e','05c2a4cf-1386-b5d1-db3f-c5221de82ae3','수평도체',1)
-on conflict (id) do update set body=excluded.body;
-insert into public.question_options (id,question_id,body,sort_order) values
- ('d700dc5f-6d02-b6f9-6187-6196db3b5c21','05c2a4cf-1386-b5d1-db3f-c5221de82ae3','그물망도체',2)
-on conflict (id) do update set body=excluded.body;
-insert into public.question_options (id,question_id,body,sort_order) values
- ('7bc9540a-7baf-fc5c-cbee-cbaae5855fa9','05c2a4cf-1386-b5d1-db3f-c5221de82ae3','환상도체',3)
-on conflict (id) do update set body=excluded.body;
-insert into public.question_answers (question_id,correct_option_id,answer_text,explanation,concepts) values
- ('05c2a4cf-1386-b5d1-db3f-c5221de82ae3','7bc9540a-7baf-fc5c-cbee-cbaae5855fa9','④ 환상도체','정답 ④. 수뢰부시스템은 돌침. 수평도체. 그물망도체의 요소 중에 한 가 지 또는 이를 조합한 형식으로 시설하여야 한다. 11',array['산업안전기사','2022-3'])
-on conflict (question_id) do update set correct_option_id=excluded.correct_option_id, answer_text=excluded.answer_text, explanation=excluded.explanation, concepts=excluded.concepts;
+insert into public.questions (id, subject_id, type, body, difficulty, number) values
+  ('4a292d72-aede-629c-babf-1c8e9b14babc', '11111111-1111-1111-1111-111111111104', 'mcq', '교류아크용접기의 허용사용률[%]은?（단, 정격사용률은 10[%], 2차 정격전류는 500[A], 교류아크용접기의 사용전 류는 250[A] 이다.）', 2, 327)
+on conflict (id) do update set body = excluded.body, number = excluded.number;
+insert into public.question_options (id, question_id, body, sort_order) values
+  ('a51a0af2-bb4e-654e-8b02-36acb4cde0e6', '4a292d72-aede-629c-babf-1c8e9b14babc', '30', 0)
+on conflict (id) do update set body = excluded.body;
+insert into public.question_options (id, question_id, body, sort_order) values
+  ('1f015c0d-7f4b-2e3e-623e-810b71dd40f3', '4a292d72-aede-629c-babf-1c8e9b14babc', '40', 1)
+on conflict (id) do update set body = excluded.body;
+insert into public.question_options (id, question_id, body, sort_order) values
+  ('f78dd051-183a-36fc-e329-3a203b01fd36', '4a292d72-aede-629c-babf-1c8e9b14babc', '50', 2)
+on conflict (id) do update set body = excluded.body;
+insert into public.question_options (id, question_id, body, sort_order) values
+  ('7a998c4c-be95-5cb0-02d6-912b568ede11', '4a292d72-aede-629c-babf-1c8e9b14babc', '60', 3)
+on conflict (id) do update set body = excluded.body;
+insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
+  ('4a292d72-aede-629c-babf-1c8e9b14babc', '1f015c0d-7f4b-2e3e-623e-810b71dd40f3', '② 40', '정답 ②. 40', array['산업안전기사','2022-1'])
+on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
-insert into public.questions (id,subject_id,type,body,difficulty,number) values
- ('fdca2ac6-b350-1da6-39d5-0329d9726977','11111111-1111-1111-1111-111111111104','mcq','다음 중 유기과산화물로 분류되는 것은?',2,328)
-on conflict (id) do update set body=excluded.body, number=excluded.number;
-insert into public.question_options (id,question_id,body,sort_order) values
- ('44b9c203-f383-7e40-bbce-1f2d37342c9b','fdca2ac6-b350-1da6-39d5-0329d9726977','메틸에틸케톤',0)
-on conflict (id) do update set body=excluded.body;
-insert into public.question_options (id,question_id,body,sort_order) values
- ('ec38ea26-cc99-cde7-8574-b2854762f371','fdca2ac6-b350-1da6-39d5-0329d9726977','과망간산칼륨',1)
-on conflict (id) do update set body=excluded.body;
-insert into public.question_options (id,question_id,body,sort_order) values
- ('d84eeeb8-9aae-550a-5b19-437a3d132033','fdca2ac6-b350-1da6-39d5-0329d9726977','과산화마그네슘',2)
-on conflict (id) do update set body=excluded.body;
-insert into public.question_options (id,question_id,body,sort_order) values
- ('08f01d55-ba3e-989c-ff5d-dd7ce9160bc0','fdca2ac6-b350-1da6-39d5-0329d9726977','과산화벤조일',3)
-on conflict (id) do update set body=excluded.body;
-insert into public.question_answers (question_id,correct_option_id,answer_text,explanation,concepts) values
- ('fdca2ac6-b350-1da6-39d5-0329d9726977','08f01d55-ba3e-989c-ff5d-dd7ce9160bc0','④ 과산화벤조일','정답 ④. 과산화벤조일',array['산업안전기사','2022-3'])
-on conflict (question_id) do update set correct_option_id=excluded.correct_option_id, answer_text=excluded.answer_text, explanation=excluded.explanation, concepts=excluded.concepts;
+insert into public.questions (id, subject_id, type, body, difficulty, number) values
+  ('e9cbd954-8d03-8d6e-e0db-4561ddaafc3c', '11111111-1111-1111-1111-111111111104', 'mcq', '내압방폭구조의 필요충분조건에 대한 사항으로 틀린 것은?', 2, 328)
+on conflict (id) do update set body = excluded.body, number = excluded.number;
+insert into public.question_options (id, question_id, body, sort_order) values
+  ('ae5fc19b-257a-5b8d-9880-14eced911599', 'e9cbd954-8d03-8d6e-e0db-4561ddaafc3c', '폭발화염이 외부로 유출되지 않을 것', 0)
+on conflict (id) do update set body = excluded.body;
+insert into public.question_options (id, question_id, body, sort_order) values
+  ('3d294508-dfaf-16ed-ef2f-3d6efa839201', 'e9cbd954-8d03-8d6e-e0db-4561ddaafc3c', '습기침투에 대한 보호를 충분히 할 것', 1)
+on conflict (id) do update set body = excluded.body;
+insert into public.question_options (id, question_id, body, sort_order) values
+  ('771c43d0-8432-6f6c-3515-577caac80f66', 'e9cbd954-8d03-8d6e-e0db-4561ddaafc3c', '내부에서 폭발할 경우 그 압력에 견딜 것', 2)
+on conflict (id) do update set body = excluded.body;
+insert into public.question_options (id, question_id, body, sort_order) values
+  ('79e98dad-16a5-2618-4ad5-df253edefa16', 'e9cbd954-8d03-8d6e-e0db-4561ddaafc3c', '외함의 표면온도가 외부의 폭발성가스를 점화하지 않', 3)
+on conflict (id) do update set body = excluded.body;
+insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
+  ('e9cbd954-8d03-8d6e-e0db-4561ddaafc3c', '3d294508-dfaf-16ed-ef2f-3d6efa839201', '② 습기침투에 대한 보호를 충분히 할 것', '정답 ②. 을것 oi 내압방폭구조의 성능 • 내부에서 폭발할 경우 그 압력에 견딜 것 • 폭발화염이 외부로 유출되지 않을 것 • 외함 표면온도가 주위의 가연성 가스를 점화하지 않을 것 1 1', array['산업안전기사','2022-1'])
+on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
-insert into public.questions (id,subject_id,type,body,difficulty,number) values
- ('6e25f2ad-1ea3-e4a0-3007-bd51bf9a6f8b','11111111-1111-1111-1111-111111111104','mcq','「산업안전보건법령」에 따라 유해하거나 위험한 설비의 설 치 • 이전 또는 주요 구조부분의 변경공사 시 공정안전보고 서의 제출시기는 착공일 며칠 전까지 관련기관에 제출하여 야 하는가?',2,329)
-on conflict (id) do update set body=excluded.body, number=excluded.number;
-insert into public.question_options (id,question_id,body,sort_order) values
- ('9be7448c-20c5-ac71-4b26-c142bd8c9e74','6e25f2ad-1ea3-e4a0-3007-bd51bf9a6f8b','15일',0)
-on conflict (id) do update set body=excluded.body;
-insert into public.question_options (id,question_id,body,sort_order) values
- ('c807267c-c7b2-37d7-4d5a-bf47343a71ad','6e25f2ad-1ea3-e4a0-3007-bd51bf9a6f8b','30일',1)
-on conflict (id) do update set body=excluded.body;
-insert into public.question_options (id,question_id,body,sort_order) values
- ('9f0d1ca3-c103-6174-e3b9-da294d1d9182','6e25f2ad-1ea3-e4a0-3007-bd51bf9a6f8b','60일',2)
-on conflict (id) do update set body=excluded.body;
-insert into public.question_options (id,question_id,body,sort_order) values
- ('efa7e15c-6676-d6d0-9665-c4fa121ab072','6e25f2ad-1ea3-e4a0-3007-bd51bf9a6f8b','90일',3)
-on conflict (id) do update set body=excluded.body;
-insert into public.question_answers (question_id,correct_option_id,answer_text,explanation,concepts) values
- ('6e25f2ad-1ea3-e4a0-3007-bd51bf9a6f8b','c807267c-c7b2-37d7-4d5a-bf47343a71ad','② 30일','정답 ②. 유해하거나 위험한 설비의 설치 • 이전 또는 주요 구조부분의 변 경공사의 착공일 30일 전까지 공정안전보고서를 2부 작성하여 한국산업안 전보건공단에 제출하여야 한다',array['산업안전기사','2022-3'])
-on conflict (question_id) do update set correct_option_id=excluded.correct_option_id, answer_text=excluded.answer_text, explanation=excluded.explanation, concepts=excluded.concepts;
+insert into public.questions (id, subject_id, type, body, difficulty, number) values
+  ('0f7d72f4-c7a3-85e1-d85d-c102ca67823d', '11111111-1111-1111-1111-111111111104', 'mcq', '다음 빈칸에 들어갈 내용으로 알맞은 것은? “교류 특고압 가공전선로에서 발생하는 극저주파 전자계는 지표상 1[m]에서 전계가 ( @ )，자계가 ( ® )가 되도 록 시설하는 등 상시 정전유도 및 전자유도작용에 의하여 사 람에게 위험을 줄 우려가 없도록 시설하여야 한다.”', 2, 329)
+on conflict (id) do update set body = excluded.body, number = excluded.number;
+insert into public.question_options (id, question_id, body, sort_order) values
+  ('fdedb298-644c-3cac-3893-2268497d59a5', '0f7d72f4-c7a3-85e1-d85d-c102ca67823d', '@ 0.35[kV/m] 이하 ® 0.833*] 이하', 0)
+on conflict (id) do update set body = excluded.body;
+insert into public.question_options (id, question_id, body, sort_order) values
+  ('5fb6d597-1f1b-c24e-42a8-89a0ca449ffb', '0f7d72f4-c7a3-85e1-d85d-c102ca67823d', '® 3.5[kV/m] 이하 ® 8.33[/zT] 이하', 1)
+on conflict (id) do update set body = excluded.body;
+insert into public.question_options (id, question_id, body, sort_order) values
+  ('cb94f73f-2f17-727a-3ea6-118d1bad7740', '0f7d72f4-c7a3-85e1-d85d-c102ca67823d', '® 3.5[kV/m] 이하 ®83.3[/zT] 이하', 2)
+on conflict (id) do update set body = excluded.body;
+insert into public.question_options (id, question_id, body, sort_order) values
+  ('1a5f5879-6871-cd61-8580-5922476c2143', '0f7d72f4-c7a3-85e1-d85d-c102ca67823d', '@ 35[kV/m] 이하 ® 83301 이하', 3)
+on conflict (id) do update set body = excluded.body;
+insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
+  ('0f7d72f4-c7a3-85e1-d85d-c102ca67823d', 'cb94f73f-2f17-727a-3ea6-118d1bad7740', '③ ® 3.5[kV/m] 이하 ®83.3[/zT] 이하', '정답 ③. 교류 특고압 가공전선로에서 발생하는 극저주파 전자계는 지표 상 l[m]에서 전계가 3.5[kV/m] 이하. 자계가 83.3[XT] 이하가 되도록 시 설하고. 직류 특고압 가공전선로에서 발생하는 직류전계는 지표면에서 25[kV/m] 이하, 직류자계는 지표상 l[m]에서 400,000[/T] 이하가 되도 록 시설하는 등 상시 정전유도 및 전자유도작용에 의하여 사람에게 위험을 줄 우려가 없도록 시설하여야 한다. 1 아1APTER 05 전기설비 위험요인관리', array['산업안전기사','2022-1'])
+on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
-insert into public.questions (id,subject_id,type,body,difficulty,number) values
- ('34f6e468-12f0-9433-04f5-56b05269f68d','11111111-1111-1111-1111-111111111104','mcq','다음 중 제2종 분말소화약제의 주성분은 어느 것인가?',2,330)
-on conflict (id) do update set body=excluded.body, number=excluded.number;
-insert into public.question_options (id,question_id,body,sort_order) values
- ('6b1d5634-1840-c484-814d-1cbaab08d549','34f6e468-12f0-9433-04f5-56b05269f68d','NaHCO3',0)
-on conflict (id) do update set body=excluded.body;
-insert into public.question_options (id,question_id,body,sort_order) values
- ('78bcb02a-5b2f-e567-81f3-fbfd221b5b04','34f6e468-12f0-9433-04f5-56b05269f68d','KHCO3',1)
-on conflict (id) do update set body=excluded.body;
-insert into public.question_options (id,question_id,body,sort_order) values
- ('0b77325a-77be-dcfe-d8c7-8ab549991bfb','34f6e468-12f0-9433-04f5-56b05269f68d','NH4H2P(으',2)
-on conflict (id) do update set body=excluded.body;
-insert into public.question_options (id,question_id,body,sort_order) values
- ('42dbf547-9f95-13c8-766e-90b25580f544','34f6e468-12f0-9433-04f5-56b05269f68d','(NH2)2CO',3)
-on conflict (id) do update set body=excluded.body;
-insert into public.question_answers (question_id,correct_option_id,answer_text,explanation,concepts) values
- ('34f6e468-12f0-9433-04f5-56b05269f68d','78bcb02a-5b2f-e567-81f3-fbfd221b5b04','② KHCO3','정답 ②. 분말소화약제의 분류 • 제1종 소화약제: 탄산수소나트륨(NaHCOJ • 제2종 소화약제: 탄산수소칼륨(KHCO3) • 제3종 소화약제: 제1인산암모늄(NH4H2PO4) • 제4종 소화약제: 탄산수소칼륨+요소(KHCO3+(NH2)2cO)',array['산업안전기사','2022-3'])
-on conflict (question_id) do update set correct_option_id=excluded.correct_option_id, answer_text=excluded.answer_text, explanation=excluded.explanation, concepts=excluded.concepts;
+insert into public.questions (id, subject_id, type, body, difficulty, number) values
+  ('51cde91e-77c0-4d0b-e5fd-a2fe905f342f', '11111111-1111-1111-1111-111111111104', 'mcq', '외부피뢰시스템에서 접지극은 지표면에서 몇 [m] 이상 깊 이로 매설하여야 하는가?(단, 동결심도는 고려하지 않는 경 우이다.)', 2, 330)
+on conflict (id) do update set body = excluded.body, number = excluded.number;
+insert into public.question_options (id, question_id, body, sort_order) values
+  ('50eb3450-0722-feed-f14b-973d80df4a4c', '51cde91e-77c0-4d0b-e5fd-a2fe905f342f', '0.5', 0)
+on conflict (id) do update set body = excluded.body;
+insert into public.question_options (id, question_id, body, sort_order) values
+  ('802a9ffc-35ab-5ee3-6ab2-875a7231faf6', '51cde91e-77c0-4d0b-e5fd-a2fe905f342f', '0.75', 1)
+on conflict (id) do update set body = excluded.body;
+insert into public.question_options (id, question_id, body, sort_order) values
+  ('5e495172-72df-6887-f14e-fdfba549db5c', '51cde91e-77c0-4d0b-e5fd-a2fe905f342f', '1', 2)
+on conflict (id) do update set body = excluded.body;
+insert into public.question_options (id, question_id, body, sort_order) values
+  ('873dcf3c-1d36-1ee0-804b-cbd721ee3ceb', '51cde91e-77c0-4d0b-e5fd-a2fe905f342f', '1.25', 3)
+on conflict (id) do update set body = excluded.body;
+insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
+  ('51cde91e-77c0-4d0b-e5fd-a2fe905f342f', '802a9ffc-35ab-5ee3-6ab2-875a7231faf6', '② 0.75', '정답 ②. 접지극은 동결 깊이를 고려하여 시설하되. 고압 이상의 전기설비 와 규정에 의하여 시설하는 접지극의 매설깊이는 지표면으로부터 0.75[m] 이상으로 한다. WII8I', array['산업안전기사','2022-1'])
+on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
-insert into public.questions (id,subject_id,type,body,difficulty,number) values
- ('ce288bf1-ca88-c2d2-7151-b505723bd9c7','11111111-1111-1111-1111-111111111104','mcq','공정안전보고서 중 공정안전자료에 포함하여야 할 세부내 용에 해당하는 것은?',2,331)
-on conflict (id) do update set body=excluded.body, number=excluded.number;
-insert into public.question_options (id,question_id,body,sort_order) values
- ('5f15efe1-b278-2275-8528-1bc64b5ca8fd','ce288bf1-ca88-c2d2-7151-b505723bd9c7','비상조치계획에 따른 교육계획',0)
-on conflict (id) do update set body=excluded.body;
-insert into public.question_options (id,question_id,body,sort_order) values
- ('0b40051c-ef98-5779-acc9-4436896e2faa','ce288bf1-ca88-c2d2-7151-b505723bd9c7','안전운전지침서',1)
-on conflict (id) do update set body=excluded.body;
-insert into public.question_options (id,question_id,body,sort_order) values
- ('8a811997-e9bd-cf0b-6e84-257c0a0cbf61','ce288bf1-ca88-c2d2-7151-b505723bd9c7','각종건물 • 설비의 배치도',2)
-on conflict (id) do update set body=excluded.body;
-insert into public.question_options (id,question_id,body,sort_order) values
- ('f034cdd1-b103-a26d-e91c-6f320ee7c2e6','ce288bf1-ca88-c2d2-7151-b505723bd9c7','도급업체 안전관리계획',3)
-on conflict (id) do update set body=excluded.body;
-insert into public.question_answers (question_id,correct_option_id,answer_text,explanation,concepts) values
- ('ce288bf1-ca88-c2d2-7151-b505723bd9c7','8a811997-e9bd-cf0b-6e84-257c0a0cbf61','③ 각종건물 • 설비의 배치도','정답 ③. 각종건물 • 설비의 배치도',array['산업안전기사','2022-3'])
-on conflict (question_id) do update set correct_option_id=excluded.correct_option_id, answer_text=excluded.answer_text, explanation=excluded.explanation, concepts=excluded.concepts;
+insert into public.questions (id, subject_id, type, body, difficulty, number) values
+  ('bcc1cc6a-d284-b631-7d1e-e1bbfc694d2f', '11111111-1111-1111-1111-111111111104', 'mcq', '인체의 전기저항을 0.5[kQ]이라고 하면 심실세동을 일으 키는 위험한계에너지는 몇 [J]인가?（단, 심실세동전류값 /=쯔[mA]의 Dalziel의 식을 이용하며, 통전시간은 1초 로 한다.）', 2, 331)
+on conflict (id) do update set body = excluded.body, number = excluded.number;
+insert into public.question_options (id, question_id, body, sort_order) values
+  ('b728f922-7ea3-88bf-f6c4-11a98f24d53c', 'bcc1cc6a-d284-b631-7d1e-e1bbfc694d2f', '13.6', 0)
+on conflict (id) do update set body = excluded.body;
+insert into public.question_options (id, question_id, body, sort_order) values
+  ('f176f010-6d53-d83d-6828-c49c8e39fdaa', 'bcc1cc6a-d284-b631-7d1e-e1bbfc694d2f', '12.6', 1)
+on conflict (id) do update set body = excluded.body;
+insert into public.question_options (id, question_id, body, sort_order) values
+  ('f0077902-b6ad-8cd1-0a78-12ddfbc785a6', 'bcc1cc6a-d284-b631-7d1e-e1bbfc694d2f', '11.6', 2)
+on conflict (id) do update set body = excluded.body;
+insert into public.question_options (id, question_id, body, sort_order) values
+  ('66edc7b6-64fe-c100-53ce-e14f5cdbd6ae', 'bcc1cc6a-d284-b631-7d1e-e1bbfc694d2f', '10.6', 3)
+on conflict (id) do update set body = excluded.body;
+insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
+  ('bcc1cc6a-d284-b631-7d1e-e1bbfc694d2f', 'b728f922-7ea3-88bf-f6c4-11a98f24d53c', '① 13.6', '정답 ①. 13.6', array['산업안전기사','2022-1'])
+on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
-insert into public.questions (id,subject_id,type,body,difficulty,number) values
- ('b6c2208f-b7b9-b5e3-2a75-a0c9ea5503da','11111111-1111-1111-1111-111111111104','mcq','히빙(Heaving)현상 방지대책으로 틀린 것은?',2,332)
-on conflict (id) do update set body=excluded.body, number=excluded.number;
-insert into public.question_options (id,question_id,body,sort_order) values
- ('70a1b5f9-1f0b-6999-852b-fda8166601ee','b6c2208f-b7b9-b5e3-2a75-a0c9ea5503da','소단굴착을 실시하여 소단부 흙의 중량이 바닥을 누르',0)
-on conflict (id) do update set body=excluded.body;
-insert into public.question_options (id,question_id,body,sort_order) values
- ('d997bac9-96dc-d081-7fc8-ee3c8c1a1d89','b6c2208f-b7b9-b5e3-2a75-a0c9ea5503da','흙막이벽체 배면의 지반을 개량하여 흙의 전단강도를',1)
-on conflict (id) do update set body=excluded.body;
-insert into public.question_options (id,question_id,body,sort_order) values
- ('285e667a-cad3-d37d-a34f-bb7125891df3','b6c2208f-b7b9-b5e3-2a75-a0c9ea5503da','부풀어 솟아오르는 바닥면의 토사를 제거한다.',2)
-on conflict (id) do update set body=excluded.body;
-insert into public.question_options (id,question_id,body,sort_order) values
- ('2e58ca86-cce5-3c3d-b7bb-83b139e06c50','b6c2208f-b7b9-b5e3-2a75-a0c9ea5503da','흙막이벽체의 근입 깊이를 깊게 한다.',3)
-on conflict (id) do update set body=excluded.body;
-insert into public.question_answers (question_id,correct_option_id,answer_text,explanation,concepts) values
- ('b6c2208f-b7b9-b5e3-2a75-a0c9ea5503da','285e667a-cad3-d37d-a34f-bb7125891df3','③ 부풀어 솟아오르는 바닥면의 토사를 제거한다.','정답 ③. 히빙의 예방대책 • 흙막이벽의 근입 깊이 증가 • 흙막이벽 배면지반의 상재호주 제거 • 저면의 굴착부분을 남겨두어 굴착예정인 부분의 일부를 미리 굴착하여 기초콘크리트 타설 • 굴착주변을 웰 포인트(Well Point) 공법과 병행 • 굴착저면에 토사 등 인공중력 증가',array['산업안전기사','2022-3'])
-on conflict (question_id) do update set correct_option_id=excluded.correct_option_id, answer_text=excluded.answer_text, explanation=excluded.explanation, concepts=excluded.concepts;
+insert into public.questions (id, subject_id, type, body, difficulty, number) values
+  ('63ccf0b2-29c1-f862-4598-8ff3229381cd', '11111111-1111-1111-1111-111111111104', 'mcq', '다음 중 한국전기설비규정에 따른 전압의 구분으로 틀린 것 은?', 2, 332)
+on conflict (id) do update set body = excluded.body, number = excluded.number;
+insert into public.question_options (id, question_id, body, sort_order) values
+  ('d4748bcc-ab3f-8658-38e7-859ea7d4141a', '63ccf0b2-29c1-f862-4598-8ff3229381cd', '저압: 직류 l[kV] 이하', 0)
+on conflict (id) do update set body = excluded.body;
+insert into public.question_options (id, question_id, body, sort_order) values
+  ('9ae8816a-a0de-f8e7-9686-259410308cc1', '63ccf0b2-29c1-f862-4598-8ff3229381cd', '고압: 교류 l[kV] 초과 7[kV] 이하', 1)
+on conflict (id) do update set body = excluded.body;
+insert into public.question_options (id, question_id, body, sort_order) values
+  ('3f065ae0-40a5-53da-b934-97f724f15c08', '63ccf0b2-29c1-f862-4598-8ff3229381cd', '특고압: 직류 7[kV] 초과', 2)
+on conflict (id) do update set body = excluded.body;
+insert into public.question_options (id, question_id, body, sort_order) values
+  ('02633d29-0863-ac1b-a4d0-c3b7e4595c23', '63ccf0b2-29c1-f862-4598-8ff3229381cd', '특고압: 교류 7[kV] 초과', 3)
+on conflict (id) do update set body = excluded.body;
+insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
+  ('63ccf0b2-29c1-f862-4598-8ff3229381cd', 'd4748bcc-ab3f-8658-38e7-859ea7d4141a', '① 저압: 직류 l[kV] 이하', '정답 ①. 저압: 직류 l[kV] 이하', array['산업안전기사','2022-1'])
+on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
-insert into public.questions (id,subject_id,type,body,difficulty,number) values
- ('2275faed-249f-aa3d-63f9-b63d4fbd071e','11111111-1111-1111-1111-111111111104','mcq','달비 계에 사용하는 와이어로프의 사용금지기준으로 옳지 않은것은?',2,333)
-on conflict (id) do update set body=excluded.body, number=excluded.number;
-insert into public.question_options (id,question_id,body,sort_order) values
- ('d68428bc-c548-9258-a049-a07b0fae6cf9','2275faed-249f-aa3d-63f9-b63d4fbd071e','이음매가 있는 것',0)
-on conflict (id) do update set body=excluded.body;
-insert into public.question_options (id,question_id,body,sort_order) values
- ('26f1058a-e790-3449-1e93-95f942492e7d','2275faed-249f-aa3d-63f9-b63d4fbd071e','열과 전기 충격에 의해 손상된 것',1)
-on conflict (id) do update set body=excluded.body;
-insert into public.question_options (id,question_id,body,sort_order) values
- ('f84a81bf-4b4b-390b-ef53-0366de9f05f8','2275faed-249f-aa3d-63f9-b63d4fbd071e','지름의 감소가 공칭지름의 7[%]를 초과하는 것',2)
-on conflict (id) do update set body=excluded.body;
-insert into public.question_options (id,question_id,body,sort_order) values
- ('47beac02-2a71-277e-1945-932399f6e942','2275faed-249f-aa3d-63f9-b63d4fbd071e','와이어로프의 한 꼬임에서 끊어진 소선의 수가 7[%] 이',3)
-on conflict (id) do update set body=excluded.body;
-insert into public.question_answers (question_id,correct_option_id,answer_text,explanation,concepts) values
- ('2275faed-249f-aa3d-63f9-b63d4fbd071e','47beac02-2a71-277e-1945-932399f6e942','④ 와이어로프의 한 꼬임에서 끊어진 소선의 수가 7[%] 이','정답 ④. 와이어로프의 한 꼬임에서 끊어진 소선의 수가 7[%] 이',array['산업안전기사','2022-3'])
-on conflict (question_id) do update set correct_option_id=excluded.correct_option_id, answer_text=excluded.answer_text, explanation=excluded.explanation, concepts=excluded.concepts;
+insert into public.questions (id, subject_id, type, body, difficulty, number) values
+  ('e2326f0f-d7e5-b647-bc39-76cf0cf9dc66', '11111111-1111-1111-1111-111111111104', 'mcq', '다음 설명이 의미하는 것은? 온도. 압력 등 제어상태가 규정의 조건을 벗어나는 것에 의해 반응속도가 지수함수적으로 증대되고. 반응용기 내의 온도, 압력이 급격히 이상 상승되어 규정 조건을 벗어나고, 반응이 과격화되는 현상', 2, 333)
+on conflict (id) do update set body = excluded.body, number = excluded.number;
+insert into public.question_options (id, question_id, body, sort_order) values
+  ('23b20271-cedb-5f90-7b2a-36fe6b12aba0', 'e2326f0f-d7e5-b647-bc39-76cf0cf9dc66', '비등', 0)
+on conflict (id) do update set body = excluded.body;
+insert into public.question_options (id, question_id, body, sort_order) values
+  ('c5872eec-d76a-8509-2578-d317b4961d07', 'e2326f0f-d7e5-b647-bc39-76cf0cf9dc66', '과열. 과압', 1)
+on conflict (id) do update set body = excluded.body;
+insert into public.question_options (id, question_id, body, sort_order) values
+  ('36d2faaf-14c2-8ca5-cd59-d53423bc636c', 'e2326f0f-d7e5-b647-bc39-76cf0cf9dc66', '폭발', 2)
+on conflict (id) do update set body = excluded.body;
+insert into public.question_options (id, question_id, body, sort_order) values
+  ('1e052c14-a81d-c3bf-2342-84547b2b6980', 'e2326f0f-d7e5-b647-bc39-76cf0cf9dc66', '반응폭주', 3)
+on conflict (id) do update set body = excluded.body;
+insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
+  ('e2326f0f-d7e5-b647-bc39-76cf0cf9dc66', '1e052c14-a81d-c3bf-2342-84547b2b6980', '④ 반응폭주', '정답 ④. 반응폭주 온도, 압력 등 제어상태가 규정의 조건을 벗어나는 것에 의해 반응속도가 자수함수적으로 증대되고. 반응용기 내의 온도. 압력이 급격히 이상 상승 되어 규정 조건을 벗어나고. 반응이 과격화되는 현상이다. 1', array['산업안전기사','2022-1'])
+on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
-insert into public.questions (id,subject_id,type,body,difficulty,number) values
- ('852e80cd-be87-58e2-3fa4-f7b5958afcd4','11111111-1111-1111-1111-111111111104','mcq','「산업안전보건법령」상 보안경 착용을 포함하는 안전보건표 지의 종류는?',2,334)
-on conflict (id) do update set body=excluded.body, number=excluded.number;
-insert into public.question_options (id,question_id,body,sort_order) values
- ('7fbbaa34-76a8-25df-6251-745ad0f0207f','852e80cd-be87-58e2-3fa4-f7b5958afcd4','지시표지',0)
-on conflict (id) do update set body=excluded.body;
-insert into public.question_options (id,question_id,body,sort_order) values
- ('a1a17b85-d71d-15c7-8904-e18f16c66b78','852e80cd-be87-58e2-3fa4-f7b5958afcd4','안내표지',1)
-on conflict (id) do update set body=excluded.body;
-insert into public.question_options (id,question_id,body,sort_order) values
- ('bba296f3-92dc-9d34-e9fe-f6c02765d570','852e80cd-be87-58e2-3fa4-f7b5958afcd4','금지표지',2)
-on conflict (id) do update set body=excluded.body;
-insert into public.question_options (id,question_id,body,sort_order) values
- ('11ec2e51-d49d-f4b4-e868-66eacb98d85b','852e80cd-be87-58e2-3fa4-f7b5958afcd4','경고표지',3)
-on conflict (id) do update set body=excluded.body;
-insert into public.question_answers (question_id,correct_option_id,answer_text,explanation,concepts) values
- ('852e80cd-be87-58e2-3fa4-f7b5958afcd4','7fbbaa34-76a8-25df-6251-745ad0f0207f','① 지시표지','정답 ①. 지시표지',array['산업안전기사','2021-1'])
-on conflict (question_id) do update set correct_option_id=excluded.correct_option_id, answer_text=excluded.answer_text, explanation=excluded.explanation, concepts=excluded.concepts;
+insert into public.questions (id, subject_id, type, body, difficulty, number) values
+  ('974cdd57-7f90-a391-8884-293bf3114da9', '11111111-1111-1111-1111-111111111104', 'mcq', '위험물을 저장 • 취급하는 화학설비 및 그 부속설비를 설치 할 때 ‘단위공정시설 및 설비로부터 다른 단위공정시설 및 설비의 사이’의 안전거리는 설비의 바깥면으로부터 몇 [m] 이상이 되어야 하는가?', 2, 334)
+on conflict (id) do update set body = excluded.body, number = excluded.number;
+insert into public.question_options (id, question_id, body, sort_order) values
+  ('a48552b8-b0ef-ed46-2b4e-e003740752ff', '974cdd57-7f90-a391-8884-293bf3114da9', '5[m]', 0)
+on conflict (id) do update set body = excluded.body;
+insert into public.question_options (id, question_id, body, sort_order) values
+  ('be53c559-6886-bea7-7070-c6e1aa154cda', '974cdd57-7f90-a391-8884-293bf3114da9', '10[m]', 1)
+on conflict (id) do update set body = excluded.body;
+insert into public.question_options (id, question_id, body, sort_order) values
+  ('bf89ee86-6679-4470-2493-dfcd80b1aa06', '974cdd57-7f90-a391-8884-293bf3114da9', '15[m]', 2)
+on conflict (id) do update set body = excluded.body;
+insert into public.question_options (id, question_id, body, sort_order) values
+  ('b717867f-78aa-98b5-e70e-c4202ff7cb99', '974cdd57-7f90-a391-8884-293bf3114da9', '20[m]', 3)
+on conflict (id) do update set body = excluded.body;
+insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
+  ('974cdd57-7f90-a391-8884-293bf3114da9', 'be53c559-6886-bea7-7070-c6e1aa154cda', '② 10[m]', '정답 ②. 단위공정시설 및 설비로부터 다른 단위공정시설 및 설비의 사이 는 설비의 바깥면으로부터 10[m] 이상의 안전거리를 두어야 한다. E묘@1', array['산업안전기사','2022-1'])
+on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
-insert into public.questions (id,subject_id,type,body,difficulty,number) values
- ('0c0d0d58-82d1-9d83-6076-a2ea20a8d578','11111111-1111-1111-1111-111111111104','mcq','Thorndike의 시행착오설에 의한 학습의 원칙이 아닌 것은?',2,335)
-on conflict (id) do update set body=excluded.body, number=excluded.number;
-insert into public.question_options (id,question_id,body,sort_order) values
- ('ffec3be7-b4a6-e9ae-4a0b-ce5dc3b79473','0c0d0d58-82d1-9d83-6076-a2ea20a8d578','연습의 원칙',0)
-on conflict (id) do update set body=excluded.body;
-insert into public.question_options (id,question_id,body,sort_order) values
- ('9c2d5229-67cc-3ab4-5792-959856796a34','0c0d0d58-82d1-9d83-6076-a2ea20a8d578','효과의 원칙',1)
-on conflict (id) do update set body=excluded.body;
-insert into public.question_options (id,question_id,body,sort_order) values
- ('082f04ec-e750-7f0c-1fba-079720e25370','0c0d0d58-82d1-9d83-6076-a2ea20a8d578','동일성의원칙',2)
-on conflict (id) do update set body=excluded.body;
-insert into public.question_options (id,question_id,body,sort_order) values
- ('bd1a010c-0451-b8e8-93b1-0ddab6372490','0c0d0d58-82d1-9d83-6076-a2ea20a8d578','준비성의원칙',3)
-on conflict (id) do update set body=excluded.body;
-insert into public.question_answers (question_id,correct_option_id,answer_text,explanation,concepts) values
- ('0c0d0d58-82d1-9d83-6076-a2ea20a8d578','082f04ec-e750-7f0c-1fba-079720e25370','③ 동일성의원칙','정답 ③. 손다이크(Thorndike)의 시행착오설 • 준비성의 법칙 • 연습의 법칙 • 효과의 법칙',array['산업안전기사','2021-1'])
-on conflict (question_id) do update set correct_option_id=excluded.correct_option_id, answer_text=excluded.answer_text, explanation=excluded.explanation, concepts=excluded.concepts;
+insert into public.questions (id, subject_id, type, body, difficulty, number) values
+  ('aad126d2-0d4f-627b-489e-8717863fd442', '11111111-1111-1111-1111-111111111104', 'mcq', '「산업안전보건법령」상 각 물질이 해당하는 위험물질의 종 류를 옳게 연결한 것은?', 2, 335)
+on conflict (id) do update set body = excluded.body, number = excluded.number;
+insert into public.question_options (id, question_id, body, sort_order) values
+  ('a4ac9c90-f177-7751-1303-f955aff8cd45', 'aad126d2-0d4f-627b-489e-8717863fd442', '아세트산（농도 90[%]） - 부식성 산류', 0)
+on conflict (id) do update set body = excluded.body;
+insert into public.question_options (id, question_id, body, sort_order) values
+  ('c576b0e2-1cf2-2fc2-1211-3e0b03399057', 'aad126d2-0d4f-627b-489e-8717863fd442', '아세톤（농도 9이%]） - 부식성 염기류', 1)
+on conflict (id) do update set body = excluded.body;
+insert into public.question_options (id, question_id, body, sort_order) values
+  ('278b31b3-4bf7-0d66-9c19-d2f2fa269086', 'aad126d2-0d4f-627b-489e-8717863fd442', '이황화탄소 - 인화성 가스', 2)
+on conflict (id) do update set body = excluded.body;
+insert into public.question_options (id, question_id, body, sort_order) values
+  ('4e3be6a5-4a0d-095e-0abf-326442ae15ae', 'aad126d2-0d4f-627b-489e-8717863fd442', '수산화칼륨 - 인화성 가스', 3)
+on conflict (id) do update set body = excluded.body;
+insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
+  ('aad126d2-0d4f-627b-489e-8717863fd442', 'a4ac9c90-f177-7751-1303-f955aff8cd45', '① 아세트산（농도 90[%]） - 부식성 산류', '정답 ①. 농도 60[%] 이상인 아세트산은 부식성 산류에 해당한다. 오답해설 아세톤-인화성 액체 이황화탄소-인화성 액체 @ 농도 40[%] 이상인 수산화칼륨-부식성 염기류 WEia', array['산업안전기사','2022-1'])
+on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
-insert into public.questions (id,subject_id,type,body,difficulty,number) values
- ('887475c0-1fa9-eab4-0a39-71aef26a5e27','11111111-1111-1111-1111-111111111104','mcq','하인리히의 재해구성비율 “1 : 29 : 300”에서 “29”에 해당 되는 사고발생비율은?',2,336)
-on conflict (id) do update set body=excluded.body, number=excluded.number;
-insert into public.question_options (id,question_id,body,sort_order) values
- ('01b9c2b8-5546-9e38-05b9-45e49e6660ba','887475c0-1fa9-eab4-0a39-71aef26a5e27','8.8[%]',0)
-on conflict (id) do update set body=excluded.body;
-insert into public.question_options (id,question_id,body,sort_order) values
- ('1f8e3d2d-c32e-f169-c69b-927c5bfb077c','887475c0-1fa9-eab4-0a39-71aef26a5e27','9.8[%]',1)
-on conflict (id) do update set body=excluded.body;
-insert into public.question_options (id,question_id,body,sort_order) values
- ('9a873040-e990-c486-d4c4-9fe2c5168b63','887475c0-1fa9-eab4-0a39-71aef26a5e27','10.8[%]',2)
-on conflict (id) do update set body=excluded.body;
-insert into public.question_options (id,question_id,body,sort_order) values
- ('e8d32bc9-12d4-1cf2-de0d-fd07cdb9056a','887475c0-1fa9-eab4-0a39-71aef26a5e27','11.8[%]',3)
-on conflict (id) do update set body=excluded.body;
-insert into public.question_answers (question_id,correct_option_id,answer_text,explanation,concepts) values
- ('887475c0-1fa9-eab4-0a39-71aef26a5e27','01b9c2b8-5546-9e38-05b9-45e49e6660ba','① 8.8[%]','정답 ①. 8.8[%]',array['산업안전기사','2021-1'])
-on conflict (question_id) do update set correct_option_id=excluded.correct_option_id, answer_text=excluded.answer_text, explanation=excluded.explanation, concepts=excluded.concepts;
+insert into public.questions (id, subject_id, type, body, difficulty, number) values
+  ('58664e89-386c-b7a7-255e-0f2f6c13de1f', '11111111-1111-1111-1111-111111111104', 'mcq', '자연발화성을 가진 물질이 자연발화를 일으키는 원인으로 거리가 먼 것은?', 2, 336)
+on conflict (id) do update set body = excluded.body, number = excluded.number;
+insert into public.question_options (id, question_id, body, sort_order) values
+  ('186f15fe-7103-e234-bbd9-46ac55f12327', '58664e89-386c-b7a7-255e-0f2f6c13de1f', '분해열', 0)
+on conflict (id) do update set body = excluded.body;
+insert into public.question_options (id, question_id, body, sort_order) values
+  ('c26494f6-edf9-c87b-8edd-acf79cb0d513', '58664e89-386c-b7a7-255e-0f2f6c13de1f', '증발열', 1)
+on conflict (id) do update set body = excluded.body;
+insert into public.question_options (id, question_id, body, sort_order) values
+  ('efb9fe20-db5b-f2ca-6a9e-fd1a74a86563', '58664e89-386c-b7a7-255e-0f2f6c13de1f', '산화열', 2)
+on conflict (id) do update set body = excluded.body;
+insert into public.question_options (id, question_id, body, sort_order) values
+  ('931bcb7f-2d7d-263a-120a-d484d479fc55', '58664e89-386c-b7a7-255e-0f2f6c13de1f', '중합열', 3)
+on conflict (id) do update set body = excluded.body;
+insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
+  ('58664e89-386c-b7a7-255e-0f2f6c13de1f', 'c26494f6-edf9-c87b-8edd-acf79cb0d513', '② 증발열', '정답 ②. 찌 증발열 • 어떤 물질이 기화할 때 외부로부터 흡수하는 열량이다. • 증발열이 클수록 주변에서 더 많은 열을 빼앗으므로 주위의 온도를 낮추 게 된다. • 증발열은 냉각현상에 응용된다. 1', array['산업안전기사','2022-1'])
+on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
-insert into public.questions (id,subject_id,type,body,difficulty,number) values
- ('9ad3258f-07a4-ad5b-93ae-ac47a45466fe','11111111-1111-1111-1111-111111111104','mcq','안전보건관리조직의 형태 중 라인—스태프（Line—Staff）형에 관한 설명으로 틀린 것은?',2,337)
-on conflict (id) do update set body=excluded.body, number=excluded.number;
-insert into public.question_options (id,question_id,body,sort_order) values
- ('29059268-1365-92e1-6bd6-161b84de5ba3','9ad3258f-07a4-ad5b-93ae-ac47a45466fe','조직원 전원을 자율적으로 안전 활동에 참여시킬 수 있다.',0)
-on conflict (id) do update set body=excluded.body;
-insert into public.question_options (id,question_id,body,sort_order) values
- ('35db8bf7-2c56-0300-416d-242871044edc','9ad3258f-07a4-ad5b-93ae-ac47a45466fe','라인의 관리감독자에게도 안전에 관한 책임과 권한이 부',1)
-on conflict (id) do update set body=excluded.body;
-insert into public.question_options (id,question_id,body,sort_order) values
- ('71b6cc76-a03c-9088-8a13-268d0819f05f','9ad3258f-07a4-ad5b-93ae-ac47a45466fe','중규모 사업장（100명 이상 〜 300명 미만）에 적합하다.',2)
-on conflict (id) do update set body=excluded.body;
-insert into public.question_options (id,question_id,body,sort_order) values
- ('f13f5a7e-4a68-aa66-0032-ad7b374d0327','9ad3258f-07a4-ad5b-93ae-ac47a45466fe','안전 활동과 생산업무가 유리될 우려가 없기 때문에 균형',3)
-on conflict (id) do update set body=excluded.body;
-insert into public.question_answers (question_id,correct_option_id,answer_text,explanation,concepts) values
- ('9ad3258f-07a4-ad5b-93ae-ac47a45466fe','71b6cc76-a03c-9088-8a13-268d0819f05f','③ 중규모 사업장（100명 이상 〜 300명 미만）에 적합하다.','정답 ③. 중규모 사업장（100명 이상 〜 300명 미만）에 적합하다.',array['산업안전기사','2021-1'])
-on conflict (question_id) do update set correct_option_id=excluded.correct_option_id, answer_text=excluded.answer_text, explanation=excluded.explanation, concepts=excluded.concepts;
+insert into public.questions (id, subject_id, type, body, difficulty, number) values
+  ('562b2ed3-756b-8dc7-b1e2-2dedb7b8436e', '11111111-1111-1111-1111-111111111104', 'mcq', '사업주는「산업안전보건법령」에서 정한 설비에 대해서는 과압에 따른 폭발을 방지하기 위하여 안전밸브 등을 설치하 여야 한다. 다음 중 이에 해당하는 설비가 아닌 것은?', 2, 337)
+on conflict (id) do update set body = excluded.body, number = excluded.number;
+insert into public.question_options (id, question_id, body, sort_order) values
+  ('d5432ca4-c551-024f-3859-4d3e2f22129d', '562b2ed3-756b-8dc7-b1e2-2dedb7b8436e', '원심펌프', 0)
+on conflict (id) do update set body = excluded.body;
+insert into public.question_options (id, question_id, body, sort_order) values
+  ('2cc55863-9295-02f0-e7d6-347b286a6180', '562b2ed3-756b-8dc7-b1e2-2dedb7b8436e', '정변위 압축기', 1)
+on conflict (id) do update set body = excluded.body;
+insert into public.question_options (id, question_id, body, sort_order) values
+  ('be6886d4-0a77-5196-5c51-28ecc9aef617', '562b2ed3-756b-8dc7-b1e2-2dedb7b8436e', '정변위 펌프（토출 측에 차단밸브가 설치된 것만 해당함）', 2)
+on conflict (id) do update set body = excluded.body;
+insert into public.question_options (id, question_id, body, sort_order) values
+  ('26d9ff96-8631-4ca9-47d0-08bf390dbb48', '562b2ed3-756b-8dc7-b1e2-2dedb7b8436e', '배관（2개 이상의 밸브에 의하여 차단되어 대기온도에', 3)
+on conflict (id) do update set body = excluded.body;
+insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
+  ('562b2ed3-756b-8dc7-b1e2-2dedb7b8436e', 'd5432ca4-c551-024f-3859-4d3e2f22129d', '① 원심펌프', '정답 ①. 서 액체의 열팽창에 의하여 파열될 우려가 있는 것으로 한정함） ^히 '' 산업안전보건법령」상 원심펌프는 안전밸브의 설치대상이 아니다. E H', array['산업안전기사','2022-1'])
+on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
-insert into public.questions (id,subject_id,type,body,difficulty,number) values
- ('16b43385-1c6a-6df1-bf59-4c1fb3dbe750','11111111-1111-1111-1111-111111111104','mcq','「산업안전보건법 령」상 안전인증대상기계 등에 포함되는 기 계, 설비, 방호장치에 해당하지 않는 것은?',2,338)
-on conflict (id) do update set body=excluded.body, number=excluded.number;
-insert into public.question_options (id,question_id,body,sort_order) values
- ('01d60be1-ee84-326f-91e7-69a4cca4dcba','16b43385-1c6a-6df1-bf59-4c1fb3dbe750','롤러기',0)
-on conflict (id) do update set body=excluded.body;
-insert into public.question_options (id,question_id,body,sort_order) values
- ('2f5da111-f6d4-a780-66d2-2ca3947d2c78','16b43385-1c6a-6df1-bf59-4c1fb3dbe750','크레인',1)
-on conflict (id) do update set body=excluded.body;
-insert into public.question_options (id,question_id,body,sort_order) values
- ('9a681010-7bab-c43f-e385-f94a95478ab1','16b43385-1c6a-6df1-bf59-4c1fb3dbe750','동력식 수동대패용 칼날 접촉 방지장치',2)
-on conflict (id) do update set body=excluded.body;
-insert into public.question_options (id,question_id,body,sort_order) values
- ('72ccb8b3-0d96-0635-cb6a-71787fffae82','16b43385-1c6a-6df1-bf59-4c1fb3dbe750','방폭구조（防爆構造） 전기기계 •기구 및 부품',3)
-on conflict (id) do update set body=excluded.body;
-insert into public.question_answers (question_id,correct_option_id,answer_text,explanation,concepts) values
- ('16b43385-1c6a-6df1-bf59-4c1fb3dbe750','9a681010-7bab-c43f-e385-f94a95478ab1','③ 동력식 수동대패용 칼날 접촉 방지장치','정답 ③. 동력식 수동대패용 칼날 접촉 방지징치는 안전인증대상이 아닌 자율안전확인대 상 방호장치이다. K SUBJECT 03 기계 • 기구 및 설비 안전관리',array['산업안전기사','2021-1'])
-on conflict (question_id) do update set correct_option_id=excluded.correct_option_id, answer_text=excluded.answer_text, explanation=excluded.explanation, concepts=excluded.concepts;
+insert into public.questions (id, subject_id, type, body, difficulty, number) values
+  ('290c5fd7-9bb8-2f08-25ea-fcc72506d0c4', '11111111-1111-1111-1111-111111111104', 'mcq', '옥외에 설치되어 있는 주행크레인에 대하여 이탈방지장치 를 작동시키는 등 그 이탈을 방지하기 위한 조치를 하여야 하는 순간풍속에 대한 기준으로 옳은 것은?', 2, 338)
+on conflict (id) do update set body = excluded.body, number = excluded.number;
+insert into public.question_options (id, question_id, body, sort_order) values
+  ('71d566ec-032a-78e1-ba6e-7b08bb61447a', '290c5fd7-9bb8-2f08-25ea-fcc72506d0c4', '순간풍속이 초당 10[m]를 초과하는 바람이 불어올 우', 0)
+on conflict (id) do update set body = excluded.body;
+insert into public.question_options (id, question_id, body, sort_order) values
+  ('182de562-c07d-0e1c-3186-7c0a2da2fc77', '290c5fd7-9bb8-2f08-25ea-fcc72506d0c4', '순간풍속이 초당 20[m]를 초과하는 바람이 불어올 우', 1)
+on conflict (id) do update set body = excluded.body;
+insert into public.question_options (id, question_id, body, sort_order) values
+  ('e59df59d-fe28-1b9f-934d-722717bdae59', '290c5fd7-9bb8-2f08-25ea-fcc72506d0c4', '순간풍속이 초당 3O[m]를 초과하는 바람이 불어올 우', 2)
+on conflict (id) do update set body = excluded.body;
+insert into public.question_options (id, question_id, body, sort_order) values
+  ('ffb76c2b-20f5-afed-b6fa-804ea76ed02b', '290c5fd7-9bb8-2f08-25ea-fcc72506d0c4', '순간풍속이 초당 40[m]를 초과하는 바람•이 불어올 우', 3)
+on conflict (id) do update set body = excluded.body;
+insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
+  ('290c5fd7-9bb8-2f08-25ea-fcc72506d0c4', 'e59df59d-fe28-1b9f-934d-722717bdae59', '③ 순간풍속이 초당 3O[m]를 초과하는 바람이 불어올 우', '정답 ③. 순간풍속이 초당 3O[m]를 초과하는 바람이 불어올 우', array['산업안전기사','2022-1'])
+on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
-insert into public.questions (id,subject_id,type,body,difficulty,number) values
- ('b48b4418-09ca-20c5-ae3d-a2fefa13357f','11111111-1111-1111-1111-111111111104','mcq','「산업안전보건법령」상 보일러에 설치해야 하는 안전장치로 거리가 가장 먼 것은?',2,339)
-on conflict (id) do update set body=excluded.body, number=excluded.number;
-insert into public.question_options (id,question_id,body,sort_order) values
- ('c35e47c0-e546-2adf-2451-5fb7fc1f8442','b48b4418-09ca-20c5-ae3d-a2fefa13357f','해지장치',0)
-on conflict (id) do update set body=excluded.body;
-insert into public.question_options (id,question_id,body,sort_order) values
- ('ff9ee67d-338d-55a5-a160-fb00310d8836','b48b4418-09ca-20c5-ae3d-a2fefa13357f','압력방출장치',1)
-on conflict (id) do update set body=excluded.body;
-insert into public.question_options (id,question_id,body,sort_order) values
- ('405d7b3f-ae4e-0db6-a5cf-efbfe2953190','b48b4418-09ca-20c5-ae3d-a2fefa13357f','압력제한스위치',2)
-on conflict (id) do update set body=excluded.body;
-insert into public.question_options (id,question_id,body,sort_order) values
- ('df276102-62d6-c165-a72d-e0f3c8aab604','b48b4418-09ca-20c5-ae3d-a2fefa13357f','고저수위 조절장치',3)
-on conflict (id) do update set body=excluded.body;
-insert into public.question_answers (question_id,correct_option_id,answer_text,explanation,concepts) values
- ('b48b4418-09ca-20c5-ae3d-a2fefa13357f','c35e47c0-e546-2adf-2451-5fb7fc1f8442','① 해지장치','정답 ①. 보일러의 폭발사고를 예방하기 위하여 압력방출장치. 압력제한 스위치. 고저수위 조절장치. 화염검출기 등의 기능이 정상적으로 작동될 수 있도록 유지 • 관리하여야 한다. 1',array['산업안전기사','2021-1'])
-on conflict (question_id) do update set correct_option_id=excluded.correct_option_id, answer_text=excluded.answer_text, explanation=excluded.explanation, concepts=excluded.concepts;
+insert into public.questions (id, subject_id, type, body, difficulty, number) values
+  ('11b59e63-ca8f-7e38-a958-f12fe55a41e0', '11111111-1111-1111-1111-111111111104', 'mcq', '철골 작업 철골부재에서 근로자가 수직방향으로 이동하는 경우에 설치하여야 하는 고정된 승강로의 최소 답단 간격은 얼마 이내인가?', 2, 339)
+on conflict (id) do update set body = excluded.body, number = excluded.number;
+insert into public.question_options (id, question_id, body, sort_order) values
+  ('0a85ae54-bb66-719f-67d3-02f42265dd5c', '11b59e63-ca8f-7e38-a958-f12fe55a41e0', '20[cm]', 0)
+on conflict (id) do update set body = excluded.body;
+insert into public.question_options (id, question_id, body, sort_order) values
+  ('7bfa239b-482d-8d82-46bf-5209c6c3d45e', '11b59e63-ca8f-7e38-a958-f12fe55a41e0', '25 [cm]', 1)
+on conflict (id) do update set body = excluded.body;
+insert into public.question_options (id, question_id, body, sort_order) values
+  ('3cfb250c-1f4e-4e2f-7dd2-9b62182ed8f0', '11b59e63-ca8f-7e38-a958-f12fe55a41e0', '30[cm]', 2)
+on conflict (id) do update set body = excluded.body;
+insert into public.question_options (id, question_id, body, sort_order) values
+  ('d7135baa-a159-84b5-9e5b-912166e0e563', '11b59e63-ca8f-7e38-a958-f12fe55a41e0', '40[cm]', 3)
+on conflict (id) do update set body = excluded.body;
+insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
+  ('11b59e63-ca8f-7e38-a958-f12fe55a41e0', '3cfb250c-1f4e-4e2f-7dd2-9b62182ed8f0', '③ 30[cm]', '정답 ③. 근로자가 수직방향으로 이동하는 철골부재에는 답단 간격이 30[cm] 이내인 고정된 승강로를 설치하여야 한다', array['산업안전기사','2022-1'])
+on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
-insert into public.questions (id,subject_id,type,body,difficulty,number) values
- ('4337c5ad-fea3-943e-2690-88e5dca384f1','11111111-1111-1111-1111-111111111104','mcq','「산업안전보건법령」상 고속회전체의 회전시험을 하는 경우 미리 회전축의 재질 및 형상 등에 상응하는 종류의 비파괴 검사를 해서 결함 유무를 확인해야 한다. 이때 검사대상이 되는 고속회전체의 기준은?',2,340)
-on conflict (id) do update set body=excluded.body, number=excluded.number;
-insert into public.question_options (id,question_id,body,sort_order) values
- ('13c890d7-d5bf-734c-d955-17b33b9bfc0c','4337c5ad-fea3-943e-2690-88e5dca384f1','회 전축의 중량이 0.5톤을 초과하고, 원주속도가',0)
-on conflict (id) do update set body=excluded.body;
-insert into public.question_options (id,question_id,body,sort_order) values
- ('d94d55ac-84a2-baaf-84a4-2d4f498c10ac','4337c5ad-fea3-943e-2690-88e5dca384f1','회 전축의 중량이 0.5톤을 초과하고, 원주속도가',1)
-on conflict (id) do update set body=excluded.body;
-insert into public.question_options (id,question_id,body,sort_order) values
- ('20790b2e-3a24-87c1-5d86-e24d5e062e3f','4337c5ad-fea3-943e-2690-88e5dca384f1','회전축의 중량이 1톤을 초과하고, 원주속도가 10이m/',2)
-on conflict (id) do update set body=excluded.body;
-insert into public.question_options (id,question_id,body,sort_order) values
- ('101e097d-ab1c-ae50-907a-99aa61872eaf','4337c5ad-fea3-943e-2690-88e5dca384f1','회전축의 중량이 1톤을 초과하고, 원주속도가 120[m/',3)
-on conflict (id) do update set body=excluded.body;
-insert into public.question_answers (question_id,correct_option_id,answer_text,explanation,concepts) values
- ('4337c5ad-fea3-943e-2690-88e5dca384f1','101e097d-ab1c-ae50-907a-99aa61872eaf','④ 회전축의 중량이 1톤을 초과하고, 원주속도가 120[m/','정답 ④. 이상인 것 KS 고속회전체(회전축의 중량이 1톤을 초과하고 원주속도가 120[m/s] 이상인 것으로 한정)의 회전시험을 하는 경우에 미리 회전축의 재 질 및 형상 등에 상응하는 종류의 비파괴검사를 해서 결함 유무를 확인하여 야한다. f',array['산업안전기사','2021-1'])
-on conflict (question_id) do update set correct_option_id=excluded.correct_option_id, answer_text=excluded.answer_text, explanation=excluded.explanation, concepts=excluded.concepts;
+insert into public.questions (id, subject_id, type, body, difficulty, number) values
+  ('a500deef-0f08-6f58-f03c-e0632e2966a6', '11111111-1111-1111-1111-111111111104', 'mcq', '흙막이벽의 근입 깊이를 깊게 하고, 전면의 굴착부분을 남 겨두어 흙의 중량으로 대항하게 하거나, 굴착예정부분의 일 부를 미리 굴착하여 기초콘크리트를 타설하는 등의 대책과 가장 관계 깊은 것은?', 2, 340)
+on conflict (id) do update set body = excluded.body, number = excluded.number;
+insert into public.question_options (id, question_id, body, sort_order) values
+  ('390af2d4-f8c7-74c2-0fd3-22475db23b96', 'a500deef-0f08-6f58-f03c-e0632e2966a6', '파이핑현상이 있을 때', 0)
+on conflict (id) do update set body = excluded.body;
+insert into public.question_options (id, question_id, body, sort_order) values
+  ('05e7874d-903f-e240-6251-8d030abbf742', 'a500deef-0f08-6f58-f03c-e0632e2966a6', '히빙현상이 있을 때', 1)
+on conflict (id) do update set body = excluded.body;
+insert into public.question_options (id, question_id, body, sort_order) values
+  ('83def8a2-9db9-a1fb-b645-f3cde5c9e287', 'a500deef-0f08-6f58-f03c-e0632e2966a6', '지하수위가 높을때', 2)
+on conflict (id) do update set body = excluded.body;
+insert into public.question_options (id, question_id, body, sort_order) values
+  ('b576124b-4ab9-7006-6591-3f1da6c5b3e5', 'a500deef-0f08-6f58-f03c-e0632e2966a6', '굴착깊이가 깊을때', 3)
+on conflict (id) do update set body = excluded.body;
+insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
+  ('a500deef-0f08-6f58-f03c-e0632e2966a6', '05e7874d-903f-e240-6251-8d030abbf742', '② 히빙현상이 있을 때', '정답 ②. 하 히빙의 예방대책 • 흙막이벽의 근입 깊이 증가 • 흙막이벽 배면지반의 상재하중 제거 • 저면의 굴착부분을 남겨두어 굴착예정인 부분의 일부를 미리 굴착하여 기초콘크리트 타설 • 굴착주변을 웰 포인트(Well Point) 공법과 병행 • 굴착저면에 토사 등 인공중력 증가 W l', array['산업안전기사','2022-1'])
+on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
-insert into public.questions (id,subject_id,type,body,difficulty,number) values
- ('ded56482-7308-d6ca-ac3c-c54596c0b5c6','11111111-1111-1111-1111-111111111104','mcq','프레스의 손쳐내기식 방호장치 설치기준으로 틀린 것은?',2,341)
-on conflict (id) do update set body=excluded.body, number=excluded.number;
-insert into public.question_options (id,question_id,body,sort_order) values
- ('0dbd8161-a2f9-e4f2-9c38-94f967d40b99','ded56482-7308-d6ca-ac3c-c54596c0b5c6','방호판의 폭이 금형 폭의 1/2 이상이어야 한다.',0)
-on conflict (id) do update set body=excluded.body;
-insert into public.question_options (id,question_id,body,sort_order) values
- ('1ee06d29-aecd-b442-dc53-0061e5984501','ded56482-7308-d6ca-ac3c-c54596c0b5c6','슬라이드 행정수가 300[SPM] 이상의 것에 사용한다.',1)
-on conflict (id) do update set body=excluded.body;
-insert into public.question_options (id,question_id,body,sort_order) values
- ('783119e5-8a62-cc9b-005b-7bb2151598d6','ded56482-7308-d6ca-ac3c-c54596c0b5c6','손쳐내기봉의 행정(Stroke) 길이를 금형의 높이에 따',2)
-on conflict (id) do update set body=excluded.body;
-insert into public.question_options (id,question_id,body,sort_order) values
- ('ca023fc3-a9c1-9746-6f89-019ada1b257e','ded56482-7308-d6ca-ac3c-c54596c0b5c6','슬라이드 하행정거리의 3/4 위치에서 손을 완전히 밀',3)
-on conflict (id) do update set body=excluded.body;
-insert into public.question_answers (question_id,correct_option_id,answer_text,explanation,concepts) values
- ('ded56482-7308-d6ca-ac3c-c54596c0b5c6','1ee06d29-aecd-b442-dc53-0061e5984501','② 슬라이드 행정수가 300[SPM] 이상의 것에 사용한다.','정답 ②. 어내야 한다. 손쳐내기식 방호장치는 슬라이드 행정수가 100[SPM] 이하. 행 정길이가 40[mm] 이상의 것에 사용한다. 바&1',array['산업안전기사','2021-1'])
-on conflict (question_id) do update set correct_option_id=excluded.correct_option_id, answer_text=excluded.answer_text, explanation=excluded.explanation, concepts=excluded.concepts;
+insert into public.questions (id, subject_id, type, body, difficulty, number) values
+  ('c1454c0a-acdb-2646-0c5f-90eea88f5942', '11111111-1111-1111-1111-111111111104', 'mcq', '건설업 산업안전보건관리비 계상 및 사용기준（고용노동부 고시）은「산업안전보건법」의 건설공사 중 총 공사금액이 얼 마 이상인 공사에 적용하는가?', 2, 341)
+on conflict (id) do update set body = excluded.body, number = excluded.number;
+insert into public.question_options (id, question_id, body, sort_order) values
+  ('b505b157-c5c6-dcbd-5d5b-546d2dd3e03e', 'c1454c0a-acdb-2646-0c5f-90eea88f5942', '4천만 원', 0)
+on conflict (id) do update set body = excluded.body;
+insert into public.question_options (id, question_id, body, sort_order) values
+  ('31fdbcc1-ce07-d615-9e76-09bb3c8705ac', 'c1454c0a-acdb-2646-0c5f-90eea88f5942', '3천만 원', 1)
+on conflict (id) do update set body = excluded.body;
+insert into public.question_options (id, question_id, body, sort_order) values
+  ('c24603fe-b5f2-11a2-aa8d-8295d630b365', 'c1454c0a-acdb-2646-0c5f-90eea88f5942', '2천만 원', 2)
+on conflict (id) do update set body = excluded.body;
+insert into public.question_options (id, question_id, body, sort_order) values
+  ('dd09d329-be76-64b5-14c4-9f6d746189c5', 'c1454c0a-acdb-2646-0c5f-90eea88f5942', '1천만 원', 3)
+on conflict (id) do update set body = excluded.body;
+insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
+  ('c1454c0a-acdb-2646-0c5f-90eea88f5942', 'c24603fe-b5f2-11a2-aa8d-8295d630b365', '③ 2천만 원', '정답 ③. 2천만 원', array['산업안전기사','2022-1'])
+on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
-insert into public.questions (id,subject_id,type,body,difficulty,number) values
- ('9cabd798-3694-f712-101c-9d89e037a36e','11111111-1111-1111-1111-111111111104','mcq','「산업안전보건법령」상 롤러기의 방호장치 설치 시 유의해 야 할 사항으로 가장 적절하지 않은 것은?',2,342)
-on conflict (id) do update set body=excluded.body, number=excluded.number;
-insert into public.question_options (id,question_id,body,sort_order) values
- ('d8205f28-1e94-f2eb-6e4b-4b0211e097ff','9cabd798-3694-f712-101c-9d89e037a36e','손으로 조작하는 급정지장치의 조작부는 롤러기의 전',0)
-on conflict (id) do update set body=excluded.body;
-insert into public.question_options (id,question_id,body,sort_order) values
- ('ab4e119c-e6b5-a898-862b-807e471470b2','9cabd798-3694-f712-101c-9d89e037a36e','앞면 롤러의 표면속도가 3O[m/min] 미만인 경우 급정',1)
-on conflict (id) do update set body=excluded.body;
-insert into public.question_options (id,question_id,body,sort_order) values
- ('236af06e-647e-f7c0-061c-f898a3d34ff1','9cabd798-3694-f712-101c-9d89e037a36e','급정지장치의 조작부에 사용하는 줄은 사용 중 늘어져',2)
-on conflict (id) do update set body=excluded.body;
-insert into public.question_options (id,question_id,body,sort_order) values
- ('a372beb5-b248-fc85-12cb-7f7ffeab37de','9cabd798-3694-f712-101c-9d89e037a36e','급정지장치의 조작부에 사용하는 줄은 충분한 인장강',3)
-on conflict (id) do update set body=excluded.body;
-insert into public.question_answers (question_id,correct_option_id,answer_text,explanation,concepts) values
- ('9cabd798-3694-f712-101c-9d89e037a36e','ab4e119c-e6b5-a898-862b-807e471470b2','② 앞면 롤러의 표면속도가 3O[m/min] 미만인 경우 급정','정답 ②. 앞면 롤러의 표면속도가 3O[m/min] 미만인 경우 급정',array['산업안전기사','2021-1'])
-on conflict (question_id) do update set correct_option_id=excluded.correct_option_id, answer_text=excluded.answer_text, explanation=excluded.explanation, concepts=excluded.concepts;
+insert into public.questions (id, subject_id, type, body, difficulty, number) values
+  ('421b0eff-8d9c-5463-e80d-49824ebf6109', '11111111-1111-1111-1111-111111111104', 'mcq', '건립 중 강풍에 의한 풍압 등 외압에 대한 내력이 설계에 고 려되었는지 확인해야 하는 철골구조물의 기준으로 옳지 않 은 것은?', 2, 342)
+on conflict (id) do update set body = excluded.body, number = excluded.number;
+insert into public.question_options (id, question_id, body, sort_order) values
+  ('6600e426-5f49-44e8-13aa-5fb738b718bc', '421b0eff-8d9c-5463-e80d-49824ebf6109', '높이 2O[m] 이상의 구조물', 0)
+on conflict (id) do update set body = excluded.body;
+insert into public.question_options (id, question_id, body, sort_order) values
+  ('b5d50a5f-85cf-4cfc-6ebf-db91e4e68ca8', '421b0eff-8d9c-5463-e80d-49824ebf6109', '구조물의 폭과 높이의 비가 1： 4 이상인 구조물', 1)
+on conflict (id) do update set body = excluded.body;
+insert into public.question_options (id, question_id, body, sort_order) values
+  ('caaf472b-c309-5387-8809-d780cb5e5976', '421b0eff-8d9c-5463-e80d-49824ebf6109', '이음부가 공장 제작인 구조물', 2)
+on conflict (id) do update set body = excluded.body;
+insert into public.question_options (id, question_id, body, sort_order) values
+  ('7e3694a3-c753-7055-dcb1-862234f50c47', '421b0eff-8d9c-5463-e80d-49824ebf6109', '연면적당 철골량이 5이kg/m2] 이하인 구조물', 3)
+on conflict (id) do update set body = excluded.body;
+insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
+  ('421b0eff-8d9c-5463-e80d-49824ebf6109', 'caaf472b-c309-5387-8809-d780cb5e5976', '③ 이음부가 공장 제작인 구조물', '정답 ③. 외압에 대한 내력이 설계에 고려되었는지 확인해야 할 구조물 • 높이 20[m] 이상의 구조물 • 구조물의 폭과 높이의 비가 1 : 4 이상인 구조물 • 단면구조에 현저한 차이가 있는 구조물 • 연면적당 철골량이 50[kg/mz] 이하인 구조물 • 기둥이 타이플레이트（Tie Plate）형인 구조물 • 이음부가 현장용접인 구조물 E S1', array['산업안전기사','2022-1'])
+on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
-insert into public.questions (id,subject_id,type,body,difficulty,number) values
- ('48a41f23-bb1f-82cd-9e96-1ca86533deb7','11111111-1111-1111-1111-111111111104','mcq','「산업안전보건기준에 관한 규칙」제319조에 의한 정전전로 에서의 정전작업을 마친 후 전원을 공급하는 경우에 사업주 가 작업에 종사하는 근로자 및 전기기기와 접촉할 우려가 있는 근로자에게 감전의 위험이 없도록 준수해야 할 사항이 아닌 것은?',2,343)
-on conflict (id) do update set body=excluded.body, number=excluded.number;
-insert into public.question_options (id,question_id,body,sort_order) values
- ('21b76957-e720-c246-961e-730142b442b8','48a41f23-bb1f-82cd-9e96-1ca86533deb7','단락 접지기구 및 작업기구를 제거하고 전기기기 등이',0)
-on conflict (id) do update set body=excluded.body;
-insert into public.question_options (id,question_id,body,sort_order) values
- ('3a1d4751-5362-e86b-ec9b-269cb81d154c','48a41f23-bb1f-82cd-9e96-1ca86533deb7','모든 작업자가 작업이 완료된 전기기기에서 떨어져 있',1)
-on conflict (id) do update set body=excluded.body;
-insert into public.question_options (id,question_id,body,sort_order) values
- ('8643925f-f646-c4af-76e9-a87af880da6f','48a41f23-bb1f-82cd-9e96-1ca86533deb7','잠금장치와 꼬리표를 근로자가 직접 설치한다.',2)
-on conflict (id) do update set body=excluded.body;
-insert into public.question_options (id,question_id,body,sort_order) values
- ('5a9bc79b-f673-e79e-bd17-141c510f7ca0','48a41f23-bb1f-82cd-9e96-1ca86533deb7','모든 이상 유무를 확인한 후 전기기 기 등의 전원을 투',3)
-on conflict (id) do update set body=excluded.body;
-insert into public.question_answers (question_id,correct_option_id,answer_text,explanation,concepts) values
- ('48a41f23-bb1f-82cd-9e96-1ca86533deb7','8643925f-f646-c4af-76e9-a87af880da6f','③ 잠금장치와 꼬리표를 근로자가 직접 설치한다.','정답 ③. 잠금장치와 꼬리표를 근로자가 직접 설치한다.',array['산업안전기사','2021-1'])
-on conflict (question_id) do update set correct_option_id=excluded.correct_option_id, answer_text=excluded.answer_text, explanation=excluded.explanation, concepts=excluded.concepts;
+insert into public.questions (id, subject_id, type, body, difficulty, number) values
+  ('2eeb7386-560e-fbb6-8359-b62d610b7d46', '11111111-1111-1111-1111-111111111104', 'mcq', '동바리로 사용하는 파이프서포트는 최대 몇 개 이상 이어서 사용하지 않아야 하는가?', 2, 343)
+on conflict (id) do update set body = excluded.body, number = excluded.number;
+insert into public.question_options (id, question_id, body, sort_order) values
+  ('79e9bca6-65a7-12fa-7cf2-0a5e7301cc73', '2eeb7386-560e-fbb6-8359-b62d610b7d46', '2개', 0)
+on conflict (id) do update set body = excluded.body;
+insert into public.question_options (id, question_id, body, sort_order) values
+  ('86182f36-0bb3-68e5-79c7-4f7c0d7b1aa9', '2eeb7386-560e-fbb6-8359-b62d610b7d46', '3개', 1)
+on conflict (id) do update set body = excluded.body;
+insert into public.question_options (id, question_id, body, sort_order) values
+  ('06b81128-b6d9-7e6b-19ea-01badbd0bec8', '2eeb7386-560e-fbb6-8359-b62d610b7d46', '4개', 2)
+on conflict (id) do update set body = excluded.body;
+insert into public.question_options (id, question_id, body, sort_order) values
+  ('5571ea39-12c2-698e-b3fb-a9349a0689f1', '2eeb7386-560e-fbb6-8359-b62d610b7d46', '5개', 3)
+on conflict (id) do update set body = excluded.body;
+insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
+  ('2eeb7386-560e-fbb6-8359-b62d610b7d46', '86182f36-0bb3-68e5-79c7-4f7c0d7b1aa9', '② 3개', '정답 ②. 동바리로 사용하는 파이프서포트를 3개 이상 이어서 사용하지 않아야 한다. WI뽀I', array['산업안전기사','2022-1'])
+on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
-insert into public.questions (id,subject_id,type,body,difficulty,number) values
- ('5f110306-ee7f-3f3f-1858-50e5b0b2040d','11111111-1111-1111-1111-111111111104','mcq','인체의 전기저항을 500[Q]으로 하는 경우 심실세동을 일 으킬 수 있는 에너지는 약 얼마인가?(단, 심실세동전류 / 쯔[mA]로 한다.)',2,344)
-on conflict (id) do update set body=excluded.body, number=excluded.number;
-insert into public.question_options (id,question_id,body,sort_order) values
- ('c88ff628-3ede-2778-3882-08fedc1eedb9','5f110306-ee7f-3f3f-1858-50e5b0b2040d','13.6[J]',0)
-on conflict (id) do update set body=excluded.body;
-insert into public.question_options (id,question_id,body,sort_order) values
- ('204595f7-a32c-8ce3-cba5-5b197bd78225','5f110306-ee7f-3f3f-1858-50e5b0b2040d','19.0[J]',1)
-on conflict (id) do update set body=excluded.body;
-insert into public.question_options (id,question_id,body,sort_order) values
- ('abd3d45a-8fc9-d220-80b2-ce3dda023721','5f110306-ee7f-3f3f-1858-50e5b0b2040d','13.6[mJ]',2)
-on conflict (id) do update set body=excluded.body;
-insert into public.question_options (id,question_id,body,sort_order) values
- ('2f7bcdde-f927-a35f-7513-69a117db26ca','5f110306-ee7f-3f3f-1858-50e5b0b2040d','19.0[mJ]',3)
-on conflict (id) do update set body=excluded.body;
-insert into public.question_answers (question_id,correct_option_id,answer_text,explanation,concepts) values
- ('5f110306-ee7f-3f3f-1858-50e5b0b2040d','c88ff628-3ede-2778-3882-08fedc1eedb9','① 13.6[J]','정답 ①. 13.6[J]',array['산업안전기사','2021-1'])
-on conflict (question_id) do update set correct_option_id=excluded.correct_option_id, answer_text=excluded.answer_text, explanation=excluded.explanation, concepts=excluded.concepts;
+insert into public.questions (id, subject_id, type, body, difficulty, number) values
+  ('7dc37006-cdd3-d98a-f9e4-9f27bce2d35c', '11111111-1111-1111-1111-111111111104', 'mcq', '「보호구 자율안전확인 고시」상 자율안전확인 보호구에 표 시하여야 하는 사항을 모두 고른 것은? H.모델명 !-. 제조번호 □.사용기한 2. 자율안전확인 번호', 2, 344)
+on conflict (id) do update set body = excluded.body, number = excluded.number;
+insert into public.question_options (id, question_id, body, sort_order) values
+  ('e66ed0ca-137f-bb43-9673-75b6b97cc32a', '7dc37006-cdd3-d98a-f9e4-9f27bce2d35c', '—«, 느, 三', 0)
+on conflict (id) do update set body = excluded.body;
+insert into public.question_options (id, question_id, body, sort_order) values
+  ('3ca85b4b-8b1c-4d63-7d4e-27af8a02f339', '7dc37006-cdd3-d98a-f9e4-9f27bce2d35c', '—I, 心, 르', 1)
+on conflict (id) do update set body = excluded.body;
+insert into public.question_options (id, question_id, body, sort_order) values
+  ('9f2e841a-c852-6ce2-245a-d84a348bd84c', '7dc37006-cdd3-d98a-f9e4-9f27bce2d35c', '거, 三，己', 2)
+on conflict (id) do update set body = excluded.body;
+insert into public.question_options (id, question_id, body, sort_order) values
+  ('a39ac18d-60aa-e213-a904-cc1b2b8a4d85', '7dc37006-cdd3-d98a-f9e4-9f27bce2d35c', '1-，三，르', 3)
+on conflict (id) do update set body = excluded.body;
+insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
+  ('7dc37006-cdd3-d98a-f9e4-9f27bce2d35c', '3ca85b4b-8b1c-4d63-7d4e-27af8a02f339', '② —I, 心, 르', '정답 ②. 자율안전확인 제품표시의 붙임 • 형식 또는 모델명 • 규격 또는 등급 등 • 제조자명 • 제조번호 및 제조연월 • 자율안전확인 번호 1', array['산업안전기사','2022-2'])
+on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
-insert into public.questions (id,subject_id,type,body,difficulty,number) values
- ('2343d2ef-b216-3eab-1db4-f653c3f5ecfe','11111111-1111-1111-1111-111111111104','mcq','「한국전기설비규정」에 따라 과전류차단기로 저압전로에 사 용하는 범용 퓨즈（gG）의 용단전류는 정격전류의 몇 배인 가?（단, 정격전류가 4[A] 이하인 경우이다.）',2,345)
-on conflict (id) do update set body=excluded.body, number=excluded.number;
-insert into public.question_options (id,question_id,body,sort_order) values
- ('185e5a34-bf56-753f-1f28-ff9cb7b166c0','2343d2ef-b216-3eab-1db4-f653c3f5ecfe','1.5 배',0)
-on conflict (id) do update set body=excluded.body;
-insert into public.question_options (id,question_id,body,sort_order) values
- ('753b7236-8dd6-0965-a4b8-33b8e33dc037','2343d2ef-b216-3eab-1db4-f653c3f5ecfe','1.6 배',1)
-on conflict (id) do update set body=excluded.body;
-insert into public.question_options (id,question_id,body,sort_order) values
- ('838ce4f2-6f87-a9d7-9879-189173952468','2343d2ef-b216-3eab-1db4-f653c3f5ecfe','1.9 배',2)
-on conflict (id) do update set body=excluded.body;
-insert into public.question_options (id,question_id,body,sort_order) values
- ('853542f7-044d-6f17-63d2-1265335e1878','2343d2ef-b216-3eab-1db4-f653c3f5ecfe','2.1 배',3)
-on conflict (id) do update set body=excluded.body;
-insert into public.question_answers (question_id,correct_option_id,answer_text,explanation,concepts) values
- ('2343d2ef-b216-3eab-1db4-f653c3f5ecfe','853542f7-044d-6f17-63d2-1265335e1878','④ 2.1 배','정답 ④. 과전류차단기로 저압전로에 사용하는 퓨즈 정격전류의 배수 정격전류의 구뷘A] 시갠분] 불용단전류 용단전류 4 이하 60 1.5배 2.1 배 4 초과 16 미만 60 1.5배 1.9 배 16 이상 63 이하 60 1.25 배 1.6 배 63 초과 160 이하 120 1.25 배 1.6배',array['산업안전기사','2021-1'])
-on conflict (question_id) do update set correct_option_id=excluded.correct_option_id, answer_text=excluded.answer_text, explanation=excluded.explanation, concepts=excluded.concepts;
+insert into public.questions (id, subject_id, type, body, difficulty, number) values
+  ('52e7fd0f-d54b-8340-cd6f-c8ac67842703', '11111111-1111-1111-1111-111111111104', 'mcq', '학습지도의 형태 중 참가자에게 일정한 역할을 주어 실제적 으로 연기를 시켜봄으로써 자기의 역할을 보다 확실히 인식 시키는 방법은?', 2, 345)
+on conflict (id) do update set body = excluded.body, number = excluded.number;
+insert into public.question_options (id, question_id, body, sort_order) values
+  ('8327afac-d325-d033-da56-9c3b23e516c8', '52e7fd0f-d54b-8340-cd6f-c8ac67842703', '포럼 (Forum)', 0)
+on conflict (id) do update set body = excluded.body;
+insert into public.question_options (id, question_id, body, sort_order) values
+  ('d065d864-dfd7-659a-c499-0078df2be35e', '52e7fd0f-d54b-8340-cd6f-c8ac67842703', '심 포지 엄 (Symposium)', 1)
+on conflict (id) do update set body = excluded.body;
+insert into public.question_options (id, question_id, body, sort_order) values
+  ('7fe623b8-6778-9b75-a5cc-bc15512d2457', '52e7fd0f-d54b-8340-cd6f-c8ac67842703', '롤 플레 잉 (Role Playing)', 2)
+on conflict (id) do update set body = excluded.body;
+insert into public.question_options (id, question_id, body, sort_order) values
+  ('41d6dedc-69eb-3f5d-8f7c-142fd2481059', '52e7fd0f-d54b-8340-cd6f-c8ac67842703', '사례연구법 (Case study method)', 3)
+on conflict (id) do update set body = excluded.body;
+insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
+  ('52e7fd0f-d54b-8340-cd6f-c8ac67842703', '7fe623b8-6778-9b75-a5cc-bc15512d2457', '③ 롤 플레 잉 (Role Playing)', '정답 ③. 롤 플레잉(R이e Playing) 참가자에게 일정한 역할을 주어 실제적으로 연기를 시켜봄으로써 자기의 역할을 보다 확실히 인식시키는 것이다. E◎面', array['산업안전기사','2022-2'])
+on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
-insert into public.questions (id,subject_id,type,body,difficulty,number) values
- ('ac24a843-02d5-6196-baa8-88b952085d2b','11111111-1111-1111-1111-111111111104','mcq','정전기가 대전된 물체를 제전시키려고 한다. 다음 중 대전 된 물체의 절연저항이 증가되어 제전의 효과를 감소시키는 것은?',2,346)
-on conflict (id) do update set body=excluded.body, number=excluded.number;
-insert into public.question_options (id,question_id,body,sort_order) values
- ('b8409726-b447-3da4-e92d-6c713a5aa469','ac24a843-02d5-6196-baa8-88b952085d2b','접지한다.',0)
-on conflict (id) do update set body=excluded.body;
-insert into public.question_options (id,question_id,body,sort_order) values
- ('b112d95e-2849-d286-2aa2-944bed0071c6','ac24a843-02d5-6196-baa8-88b952085d2b','건조시킨다.',1)
-on conflict (id) do update set body=excluded.body;
-insert into public.question_options (id,question_id,body,sort_order) values
- ('ad3c4341-8773-d317-f34c-a6d6afc8115d','ac24a843-02d5-6196-baa8-88b952085d2b','도전성 재료를 첨가한다.',2)
-on conflict (id) do update set body=excluded.body;
-insert into public.question_options (id,question_id,body,sort_order) values
- ('0476061d-3509-a3e8-c117-0c5f8e51577d','ac24a843-02d5-6196-baa8-88b952085d2b','주위를 가습한다.',3)
-on conflict (id) do update set body=excluded.body;
-insert into public.question_answers (question_id,correct_option_id,answer_text,explanation,concepts) values
- ('ac24a843-02d5-6196-baa8-88b952085d2b','b112d95e-2849-d286-2aa2-944bed0071c6','② 건조시킨다.','정답 ②. 건조된 물체는 절연저항이 증가되어 제전의 효과를 감소시킨다.',array['산업안전기사','2021-1'])
-on conflict (question_id) do update set correct_option_id=excluded.correct_option_id, answer_text=excluded.answer_text, explanation=excluded.explanation, concepts=excluded.concepts;
+insert into public.questions (id, subject_id, type, body, difficulty, number) values
+  ('00d0ea1f-73de-5072-a32a-039996ad68f0', '11111111-1111-1111-1111-111111111104', 'mcq', '산업재해의 분석 및 평가를 위하여 재해발생건수 등의 추이 에 대해 한계선을 설정하여 목표 관리를 수행하는 재해통계 분석기법은?', 2, 346)
+on conflict (id) do update set body = excluded.body, number = excluded.number;
+insert into public.question_options (id, question_id, body, sort_order) values
+  ('9dd7f5fb-4d0c-93cd-9d0b-82538efd1544', '00d0ea1f-73de-5072-a32a-039996ad68f0', '관리도', 0)
+on conflict (id) do update set body = excluded.body;
+insert into public.question_options (id, question_id, body, sort_order) values
+  ('15524035-accc-41f3-3993-a270d952089b', '00d0ea1f-73de-5072-a32a-039996ad68f0', '안전 T점수', 1)
+on conflict (id) do update set body = excluded.body;
+insert into public.question_options (id, question_id, body, sort_order) values
+  ('7c5b5da9-be25-6b3d-0095-fb6668d0c27e', '00d0ea1f-73de-5072-a32a-039996ad68f0', '파레토도', 2)
+on conflict (id) do update set body = excluded.body;
+insert into public.question_options (id, question_id, body, sort_order) values
+  ('5821a0c0-a372-d2c3-61ca-e3f0a8022c1b', '00d0ea1f-73de-5072-a32a-039996ad68f0', '특성요인도', 3)
+on conflict (id) do update set body = excluded.body;
+insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
+  ('00d0ea1f-73de-5072-a32a-039996ad68f0', '9dd7f5fb-4d0c-93cd-9d0b-82538efd1544', '① 관리도', '정답 ①. 재해의 통계적 원인분석 방법 파레토도 분류항목을 큰 순서대로 도표화한 분석법 특성요인도 특성과 요인관계를 도표로 하여 어골상으로 세분화한 분석법 클로즈분석도 요인별 결과 내역을 교차한 클로즈 그림을 작성. 분석하는 방법 관리도 재해발생수를 그래프화하여 관리선을 설정. 관리하는 방법 E j|', array['산업안전기사','2022-2'])
+on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
-insert into public.questions (id,subject_id,type,body,difficulty,number) values
- ('df9779b1-709f-381c-a402-cba4859a0769','11111111-1111-1111-1111-111111111104','mcq','위험물을「산업안전보건법령」에서 정한 기준량 이상으로 제조하거나 취급하는 설비로서 특수화학설비에 해당되는 것은?',2,347)
-on conflict (id) do update set body=excluded.body, number=excluded.number;
-insert into public.question_options (id,question_id,body,sort_order) values
- ('321caffc-8c8b-996d-f326-bed112e6a10c','df9779b1-709f-381c-a402-cba4859a0769','가열시켜 주는 물질의 온도가 가열되는 위험물질의 분',0)
-on conflict (id) do update set body=excluded.body;
-insert into public.question_options (id,question_id,body,sort_order) values
- ('da833624-d1bd-d5f3-c024-7500b509ee6f','df9779b1-709f-381c-a402-cba4859a0769','상온에서 게이지 압력으로 200[kPa]의 압력으로 운전',1)
-on conflict (id) do update set body=excluded.body;
-insert into public.question_options (id,question_id,body,sort_order) values
- ('90bab20b-3ccb-9a5b-d285-f502cb7b8fb7','df9779b1-709f-381c-a402-cba4859a0769','대기압 하에서 30이。C]로 운전되는 설비',2)
-on conflict (id) do update set body=excluded.body;
-insert into public.question_options (id,question_id,body,sort_order) values
- ('995c2b06-6642-d716-912a-01e6ea6e527d','df9779b1-709f-381c-a402-cba4859a0769','흡열반응이 행하여지는 반응설비',3)
-on conflict (id) do update set body=excluded.body;
-insert into public.question_answers (question_id,correct_option_id,answer_text,explanation,concepts) values
- ('df9779b1-709f-381c-a402-cba4859a0769','321caffc-8c8b-996d-f326-bed112e6a10c','① 가열시켜 주는 물질의 온도가 가열되는 위험물질의 분','정답 ①. 특수화학설비 • 발열반응이 일어나는 반응장치 • 증류 • 정류 • 증발 • 추출 등 분리를 하는 장치 • 가열시켜 주는 물질의 온도가 가열되는 위험물질의 분해온도 또는 발화 점보다 높은 상태에서 운전되는 설비 • 반응폭주 등 이상 화학반응에 의하여 위험물질이 발생할 우려가 있는 설비 • 온도가 350[℃] 이상이거나 게이지압력이 980[kPa] 이상인 상태에서 운전되는 설비 • 가열로 또는가열기',array['산업안전기사','2021-1'])
-on conflict (question_id) do update set correct_option_id=excluded.correct_option_id, answer_text=excluded.answer_text, explanation=excluded.explanation, concepts=excluded.concepts;
+insert into public.questions (id, subject_id, type, body, difficulty, number) values
+  ('bdfca633-9649-93b9-369d-7603b04307bb', '11111111-1111-1111-1111-111111111104', 'mcq', '하인리히의 사고예방원리 5단계 중 교육 및 훈련의 개선, 인사조정, 안전관리규정 및 수칙의 개선 등을 행하는 단계 는?', 2, 347)
+on conflict (id) do update set body = excluded.body, number = excluded.number;
+insert into public.question_options (id, question_id, body, sort_order) values
+  ('e26d117a-d478-8059-3a25-5c5aeaff090e', 'bdfca633-9649-93b9-369d-7603b04307bb', '사실의발견', 0)
+on conflict (id) do update set body = excluded.body;
+insert into public.question_options (id, question_id, body, sort_order) values
+  ('f5de1a1e-41d1-0d0f-b93d-b35c2ddf61ca', 'bdfca633-9649-93b9-369d-7603b04307bb', '분석평가', 1)
+on conflict (id) do update set body = excluded.body;
+insert into public.question_options (id, question_id, body, sort_order) values
+  ('9289eb66-7e4b-3057-448d-323d3d40c30b', 'bdfca633-9649-93b9-369d-7603b04307bb', '시정방법의 선정', 2)
+on conflict (id) do update set body = excluded.body;
+insert into public.question_options (id, question_id, body, sort_order) values
+  ('c62e92ef-22e0-ab16-d0e5-36aeb74c71fa', 'bdfca633-9649-93b9-369d-7603b04307bb', '시정책의 적용', 3)
+on conflict (id) do update set body = excluded.body;
+insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
+  ('bdfca633-9649-93b9-369d-7603b04307bb', '9289eb66-7e4b-3057-448d-323d3d40c30b', '③ 시정방법의 선정', '정답 ③. 하인리히의 사고예방원리 중 4단계 시정책의 선정에서 기술의 개선. 인사조정. 교육 및 훈련 개선. 안전규정 및 수칙의 개선. 이행의 감독 과 제재 강화를 행한다. 하인리히의 사고예방대책의 기본원리 5단계 O 1단계: 조직（안전관리조직） © 2단계 : 사실의 발견（현상파악） ©3단계: 분석 • 평가｛원인규명） ©4단계: 시정책의 선정 @5단계: 시정책의 적용 1', array['산업안전기사','2022-2'])
+on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
-insert into public.questions (id,subject_id,type,body,difficulty,number) values
- ('c5e8c0c5-e5bb-5d06-e8c3-9df79de87fa9','11111111-1111-1111-1111-111111111104','mcq','「산업안전보건법령」상 다음 내용에 해당하는 폭발위험장소 는? 20종 장소 밖으로서 분진운 형태의 가연성 분진이 폭발농도 를 형성할 정도의 충분한 양이 정상작동 중에 존재할 수 있는 장소를 말한다.',2,348)
-on conflict (id) do update set body=excluded.body, number=excluded.number;
-insert into public.question_options (id,question_id,body,sort_order) values
- ('3768261f-6c13-e2ac-3504-a9ab094083aa','c5e8c0c5-e5bb-5d06-e8c3-9df79de87fa9','21종 장소',0)
-on conflict (id) do update set body=excluded.body;
-insert into public.question_options (id,question_id,body,sort_order) values
- ('53dace85-5b0b-1c04-3c09-4f09fd4d28f0','c5e8c0c5-e5bb-5d06-e8c3-9df79de87fa9','22종 장소',1)
-on conflict (id) do update set body=excluded.body;
-insert into public.question_options (id,question_id,body,sort_order) values
- ('38355390-dcfe-fdf4-abf0-627d375092b4','c5e8c0c5-e5bb-5d06-e8c3-9df79de87fa9','0종 장소',2)
-on conflict (id) do update set body=excluded.body;
-insert into public.question_options (id,question_id,body,sort_order) values
- ('da7c31e9-3d59-35aa-8679-c0e10a5c0c4f','c5e8c0c5-e5bb-5d06-e8c3-9df79de87fa9','1종 장소',3)
-on conflict (id) do update set body=excluded.body;
-insert into public.question_answers (question_id,correct_option_id,answer_text,explanation,concepts) values
- ('c5e8c0c5-e5bb-5d06-e8c3-9df79de87fa9','3768261f-6c13-e2ac-3504-a9ab094083aa','① 21종 장소','정답 ①. 21종 장소 20종 장소 밖으로서 분진운 형태의 가연성 분진이 폭발농도를 형성할 정 도의 충분한 양이 정상작동 중에 존재할 수 있는 장소이다. SUBJECT 04 전기설비 안전관리',array['산업안전기사','2021-1'])
-on conflict (question_id) do update set correct_option_id=excluded.correct_option_id, answer_text=excluded.answer_text, explanation=excluded.explanation, concepts=excluded.concepts;
+insert into public.questions (id, subject_id, type, body, difficulty, number) values
+  ('284a0bf2-546e-e6f7-3cce-8468ad7fbaea', '11111111-1111-1111-1111-111111111104', 'mcq', '「산업안전보건법령」상 안전보건진단을 받아 안전보건개선 계획의 수립 및 명령을 할 수 있는 대상이 아닌 것은?', 2, 348)
+on conflict (id) do update set body = excluded.body, number = excluded.number;
+insert into public.question_options (id, question_id, body, sort_order) values
+  ('4d407181-3a34-bd6c-8f64-d2929c5d425a', '284a0bf2-546e-e6f7-3cce-8468ad7fbaea', '유해인자의 노출기준을 초과한 사업장', 0)
+on conflict (id) do update set body = excluded.body;
+insert into public.question_options (id, question_id, body, sort_order) values
+  ('7ea4ee1b-b993-e6ec-7417-4f84d36bf302', '284a0bf2-546e-e6f7-3cce-8468ad7fbaea', '산업재해율이 같은 업종 평균 산업재해율의 2배 이상', 1)
+on conflict (id) do update set body = excluded.body;
+insert into public.question_options (id, question_id, body, sort_order) values
+  ('494bda38-15d5-df48-2bd1-c9f16cfb59b8', '284a0bf2-546e-e6f7-3cce-8468ad7fbaea', '사업주가 필요한 안전조치 또는 보건조치를 이행하지', 2)
+on conflict (id) do update set body = excluded.body;
+insert into public.question_options (id, question_id, body, sort_order) values
+  ('9c5d4766-b956-014c-69e7-b708dff78e00', '284a0bf2-546e-e6f7-3cce-8468ad7fbaea', '상시근로자 1천명 이상인 사업장에서 직업성 질병자가', 3)
+on conflict (id) do update set body = excluded.body;
+insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
+  ('284a0bf2-546e-e6f7-3cce-8468ad7fbaea', '9c5d4766-b956-014c-69e7-b708dff78e00', '④ 상시근로자 1천명 이상인 사업장에서 직업성 질병자가', '정답 ④. 연간 2명 이상 발생한 사업장 a 안전보건진단을 받아 안전보건개선계획을 수립할 대상 사업장 • 산업재해율이 같은 업종 평균 산업재해율의 2배 이상인 사업장 • 사업주가 필요한 안전조치 또는 보건조치를 이행하지 아니하여 중대재 해가 발생한 사업장 • 직업성 질병자가 연간 2명 이상（상시근로자 1천명 이상 사업장의 경우 3명 이상） 발생한 사업장 • 그 밖에 작업환경 불량. 화재 • 폭발 또는 누출 사고 등으로 사업장 주변까 지 피해가 확산된 사업장으로서 고용노동부령으로 정하는 사업장 WWI', array['산업안전기사','2022-2'])
+on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
-insert into public.questions (id,subject_id,type,body,difficulty,number) values
- ('7713dcc8-89f6-7ca2-e0e7-43d67df3d43d','11111111-1111-1111-1111-111111111104','mcq','크레인 등 건설장비의 가공전선로 접근 시 안전대책으로 옳 지 않은 것은?',2,349)
-on conflict (id) do update set body=excluded.body, number=excluded.number;
-insert into public.question_options (id,question_id,body,sort_order) values
- ('0399df4f-70e2-edeb-c133-a9cb914c4cbd','7713dcc8-89f6-7ca2-e0e7-43d67df3d43d','안전 이격거 리를 유지하고 작업한다.',0)
-on conflict (id) do update set body=excluded.body;
-insert into public.question_options (id,question_id,body,sort_order) values
- ('efe8e57d-9bc4-fc3b-7e16-b6bf665f843a','7713dcc8-89f6-7ca2-e0e7-43d67df3d43d','장비를 가공전선로 밑에 보관한다.',1)
-on conflict (id) do update set body=excluded.body;
-insert into public.question_options (id,question_id,body,sort_order) values
- ('e438cb70-05ed-53ff-a2df-919478bce975','7713dcc8-89f6-7ca2-e0e7-43d67df3d43d','장비의 조립, 준비 시부터 가공전선로에 대한 감전 방',2)
-on conflict (id) do update set body=excluded.body;
-insert into public.question_options (id,question_id,body,sort_order) values
- ('3659fe62-984b-879e-c958-d901608f13a9','7713dcc8-89f6-7ca2-e0e7-43d67df3d43d','장비 사용 현장의 장애물, 위험물 등을 점검 후 작업계',3)
-on conflict (id) do update set body=excluded.body;
-insert into public.question_answers (question_id,correct_option_id,answer_text,explanation,concepts) values
- ('7713dcc8-89f6-7ca2-e0e7-43d67df3d43d','efe8e57d-9bc4-fc3b-7e16-b6bf665f843a','② 장비를 가공전선로 밑에 보관한다.','정답 ②. 획을수립한다. K9 크레인 등 건설장비는 가공전선로 밑에 보관 시 감전의 위험이 있00.루 가공전선로와 이격된 장소에 보관하여야 한다. 바리IU SUBJECT 04 전기설비 안전관리',array['산업안전기사','2021-1'])
-on conflict (question_id) do update set correct_option_id=excluded.correct_option_id, answer_text=excluded.answer_text, explanation=excluded.explanation, concepts=excluded.concepts;
+insert into public.questions (id, subject_id, type, body, difficulty, number) values
+  ('8e875816-d8bc-3f68-59ab-f1eae3af80c3', '11111111-1111-1111-1111-111111111104', 'mcq', '「산업안전보건법령」상 거푸집 및 동바리의 조립 또는 해체 작업 시 특별교육 내용이 아닌 것은?（단, 그 밖에 안전 ■ 보 건관리에 필요한 사항은 제외한다.）', 2, 349)
+on conflict (id) do update set body = excluded.body, number = excluded.number;
+insert into public.question_options (id, question_id, body, sort_order) values
+  ('9af634d1-0c56-1a90-2dd1-b810af298639', '8e875816-d8bc-3f68-59ab-f1eae3af80c3', '비계의 조립순서 및 방법에 관한 사항', 0)
+on conflict (id) do update set body = excluded.body;
+insert into public.question_options (id, question_id, body, sort_order) values
+  ('3737a0fa-9e72-6294-30b9-d2b79349788e', '8e875816-d8bc-3f68-59ab-f1eae3af80c3', '조립 • 해체 시의 사고 예방에 관한 사항', 1)
+on conflict (id) do update set body = excluded.body;
+insert into public.question_options (id, question_id, body, sort_order) values
+  ('d81fc026-a308-83f3-9131-2de2477d56f3', '8e875816-d8bc-3f68-59ab-f1eae3af80c3', '동바리의 조립방법 및 작업 절차에 관한 사항', 2)
+on conflict (id) do update set body = excluded.body;
+insert into public.question_options (id, question_id, body, sort_order) values
+  ('ad0d7334-9779-2919-54a1-5d1dac5ff171', '8e875816-d8bc-3f68-59ab-f1eae3af80c3', '조립재료의 취급방법 및 설치기준에 관한 사항', 3)
+on conflict (id) do update set body = excluded.body;
+insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
+  ('8e875816-d8bc-3f68-59ab-f1eae3af80c3', '9af634d1-0c56-1a90-2dd1-b810af298639', '① 비계의 조립순서 및 방법에 관한 사항', '정답 ①. 비계의 조립순서 및 방법에 관한 사항은 비계의 조립 • 해체 또는 변경작업 시 특별교육 내용이다. 거푸집 및 동바리의 조립 또는 해체작업 시 특별교육 내용 • 동바리의 조립방법 및 작업 절차에 관한 사항 • 조립재료의 취급방법 및 설치기준에 관한 사항 • 조립 • 해체 시의 사고 예방에 관한 사항 • 보호구 착용 및 점검에 관한 사항 • 그 밖에 안전 • 보건관리에 필요한 사항 E E1', array['산업안전기사','2022-2'])
+on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
-insert into public.questions (id,subject_id,type,body,difficulty,number) values
- ('7aed81b7-edc8-785c-17f9-d8a52b390080','11111111-1111-1111-1111-111111111104','mcq','유해 위험방지계획서를 고용노동부 장관에게 제출하고 심사 를 받아야 하는 대상 건설공사 기준으로 옳지 않은 것은?',2,350)
-on conflict (id) do update set body=excluded.body, number=excluded.number;
-insert into public.question_options (id,question_id,body,sort_order) values
- ('6944bfe0-095c-ecac-94e6-19aea1c29aea','7aed81b7-edc8-785c-17f9-d8a52b390080','최대 지간길이가 5이m] 이상인 다리의 건설 등 공사',0)
-on conflict (id) do update set body=excluded.body;
-insert into public.question_options (id,question_id,body,sort_order) values
- ('f4b1f94a-845f-c4c1-bff0-cf88f2d89487','7aed81b7-edc8-785c-17f9-d8a52b390080','지상높이 25[m] 이상인 건축물 또는 인공구조물의 건',1)
-on conflict (id) do update set body=excluded.body;
-insert into public.question_options (id,question_id,body,sort_order) values
- ('8c8fcf36-3eed-9a90-6969-dc718ba7697f','7aed81b7-edc8-785c-17f9-d8a52b390080','깊이 10[m] 이상인 굴착공사',2)
-on conflict (id) do update set body=excluded.body;
-insert into public.question_options (id,question_id,body,sort_order) values
- ('478d2a78-b5b1-7b80-a0b3-d0f7caa5239b','7aed81b7-edc8-785c-17f9-d8a52b390080','다목적댐, 발전용댐, 저수용량 2천만 톤 이상의 용수',3)
-on conflict (id) do update set body=excluded.body;
-insert into public.question_answers (question_id,correct_option_id,answer_text,explanation,concepts) values
- ('7aed81b7-edc8-785c-17f9-d8a52b390080','f4b1f94a-845f-c4c1-bff0-cf88f2d89487','② 지상높이 25[m] 이상인 건축물 또는 인공구조물의 건','정답 ②. 지상높이 25[m] 이상인 건축물 또는 인공구조물의 건',array['산업안전기사','2021-1'])
-on conflict (question_id) do update set correct_option_id=excluded.correct_option_id, answer_text=excluded.answer_text, explanation=excluded.explanation, concepts=excluded.concepts;
+insert into public.questions (id, subject_id, type, body, difficulty, number) values
+  ('b886d032-a9b7-f94f-f1a6-7d228fed7111', '11111111-1111-1111-1111-111111111104', 'mcq', '「산업안전보건법령」상 다음의 안전보건표지 중 기본모형이 다른 것은?', 2, 350)
+on conflict (id) do update set body = excluded.body, number = excluded.number;
+insert into public.question_options (id, question_id, body, sort_order) values
+  ('51c1de59-c818-bd09-c6ff-f23f9354b20b', 'b886d032-a9b7-f94f-f1a6-7d228fed7111', '위험장소경고', 0)
+on conflict (id) do update set body = excluded.body;
+insert into public.question_options (id, question_id, body, sort_order) values
+  ('4d52641c-482a-4aa7-0558-b8a0367519d0', 'b886d032-a9b7-f94f-f1a6-7d228fed7111', '레이저광선경고', 1)
+on conflict (id) do update set body = excluded.body;
+insert into public.question_options (id, question_id, body, sort_order) values
+  ('f2aa499e-ce72-30bf-80e8-14c40f0b9676', 'b886d032-a9b7-f94f-f1a6-7d228fed7111', '방사성물질경고', 2)
+on conflict (id) do update set body = excluded.body;
+insert into public.question_options (id, question_id, body, sort_order) values
+  ('08400977-4bc5-c051-bde9-f3a85f871137', 'b886d032-a9b7-f94f-f1a6-7d228fed7111', '부식성물질경고', 3)
+on conflict (id) do update set body = excluded.body;
+insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
+  ('b886d032-a9b7-f94f-f1a6-7d228fed7111', '08400977-4bc5-c051-bde9-f3a85f871137', '④ 부식성물질경고', '정답 ④. 위험장소경고 레이저광선경고 방사성물질경고 부식성물질경고 令 A A A', array['산업안전기사','2022-2'])
+on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
-insert into public.questions (id,subject_id,type,body,difficulty,number) values
- ('3f107caf-98aa-f83e-ff43-bfbf5d86ffba','11111111-1111-1111-1111-111111111104','mcq','「산업안전보건법령」상 안전보건표지의 종류 중 경고표지의 기본모형(형태)이 다른 것은?',2,351)
-on conflict (id) do update set body=excluded.body, number=excluded.number;
-insert into public.question_options (id,question_id,body,sort_order) values
- ('b6b2b483-4d55-607e-6276-2b7fa793ffdb','3f107caf-98aa-f83e-ff43-bfbf5d86ffba','고압전기 경고',0)
-on conflict (id) do update set body=excluded.body;
-insert into public.question_options (id,question_id,body,sort_order) values
- ('954a5dd0-d86b-7762-b232-8e62bb3cbb71','3f107caf-98aa-f83e-ff43-bfbf5d86ffba','방사성물질 경고',1)
-on conflict (id) do update set body=excluded.body;
-insert into public.question_options (id,question_id,body,sort_order) values
- ('ec1570b4-723b-43a6-2888-fe30569ce995','3f107caf-98aa-f83e-ff43-bfbf5d86ffba','폭발성물질 경고',2)
-on conflict (id) do update set body=excluded.body;
-insert into public.question_options (id,question_id,body,sort_order) values
- ('b61c9742-4437-6d63-643e-ffe0fa7d241d','3f107caf-98aa-f83e-ff43-bfbf5d86ffba','매달린물체 경고',3)
-on conflict (id) do update set body=excluded.body;
-insert into public.question_answers (question_id,correct_option_id,answer_text,explanation,concepts) values
- ('3f107caf-98aa-f83e-ff43-bfbf5d86ffba','ec1570b4-723b-43a6-2888-fe30569ce995','③ 폭발성물질 경고','정답 ③. 고압전기경고 방사성물질경고 폭발성물질경고 매달린물체경고 A A < A',array['산업안전기사','2021-2'])
-on conflict (question_id) do update set correct_option_id=excluded.correct_option_id, answer_text=excluded.answer_text, explanation=excluded.explanation, concepts=excluded.concepts;
+insert into public.questions (id, subject_id, type, body, difficulty, number) values
+  ('6956581a-8209-3881-395b-d0a4ca5a784a', '11111111-1111-1111-1111-111111111104', 'mcq', '근골격계질환 작업분석 및 평가 방법인 OWAS의 평가요소 를 모두 고른 것은? —1. 상지 >-. 무게（하중） 仁. 하지 己. 허리', 2, 351)
+on conflict (id) do update set body = excluded.body, number = excluded.number;
+insert into public.question_options (id, question_id, body, sort_order) values
+  ('08dd7262-37d5-eec4-f27c-fd18582c853f', '6956581a-8209-3881-395b-d0a4ca5a784a', '己 亡', 0)
+on conflict (id) do update set body = excluded.body;
+insert into public.question_options (id, question_id, body, sort_order) values
+  ('1943bd14-057e-b6a8-b99e-1af703cf7728', '6956581a-8209-3881-395b-d0a4ca5a784a', '1, c, e', 1)
+on conflict (id) do update set body = excluded.body;
+insert into public.question_options (id, question_id, body, sort_order) values
+  ('e52a16ab-f766-184f-ff12-cae1070ab5b7', '6956581a-8209-3881-395b-d0a4ca5a784a', '亡, C, S', 2)
+on conflict (id) do update set body = excluded.body;
+insert into public.question_options (id, question_id, body, sort_order) values
+  ('3b3c53fe-4f02-ea59-eb0a-c0d34f49db2b', '6956581a-8209-3881-395b-d0a4ca5a784a', '그, 亡, c, 5', 3)
+on conflict (id) do update set body = excluded.body;
+insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
+  ('6956581a-8209-3881-395b-d0a4ca5a784a', '3b3c53fe-4f02-ea59-eb0a-c0d34f49db2b', '④ 그, 亡, c, 5', '정답 ④. 그, 亡, c, 5', array['산업안전기사','2022-2'])
+on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
-insert into public.questions (id,subject_id,type,body,difficulty,number) values
- ('a88fc512-3186-577e-6cb0-5a30b6e8e628','11111111-1111-1111-1111-111111111104','mcq','「산업안전보건법령」상 보호구 안전인증대상 방독마스크의 유기화합물용 정화통 외부 측면 표시색으로 옳은 것은?',2,352)
-on conflict (id) do update set body=excluded.body, number=excluded.number;
-insert into public.question_options (id,question_id,body,sort_order) values
- ('fcd647cb-c37d-6970-3a3a-e599fd216730','a88fc512-3186-577e-6cb0-5a30b6e8e628','갈색',0)
-on conflict (id) do update set body=excluded.body;
-insert into public.question_options (id,question_id,body,sort_order) values
- ('8d9269c5-99f1-ae50-bd76-c15f9f5aa29e','a88fc512-3186-577e-6cb0-5a30b6e8e628','녹색',1)
-on conflict (id) do update set body=excluded.body;
-insert into public.question_options (id,question_id,body,sort_order) values
- ('e7baa671-26a2-108b-4524-80c704e36878','a88fc512-3186-577e-6cb0-5a30b6e8e628','회색',2)
-on conflict (id) do update set body=excluded.body;
-insert into public.question_options (id,question_id,body,sort_order) values
- ('69503672-9e94-c9b6-d629-943059f23dbd','a88fc512-3186-577e-6cb0-5a30b6e8e628','노랑색',3)
-on conflict (id) do update set body=excluded.body;
-insert into public.question_answers (question_id,correct_option_id,answer_text,explanation,concepts) values
- ('a88fc512-3186-577e-6cb0-5a30b6e8e628','fcd647cb-c37d-6970-3a3a-e599fd216730','① 갈색','정답 ①. 정화통 외부 측면의 표시색 종류 표시색 유기화합물용 정화통 갈색 할로겐용 정화통 황화수소용 정화통 회색 시안화수소용 정화통 아황산용 정화통 노란색 암모니아용 정화통 녹색',array['산업안전기사','2021-2'])
-on conflict (question_id) do update set correct_option_id=excluded.correct_option_id, answer_text=excluded.answer_text, explanation=excluded.explanation, concepts=excluded.concepts;
+insert into public.questions (id, subject_id, type, body, difficulty, number) values
+  ('8668f8e7-2d1d-2ed9-4e73-20dffd0e6151', '11111111-1111-1111-1111-111111111104', 'mcq', 'n개의 요소를 가진 병렬시스템에 있어 요소의 수명（MTTF） 이 지수분포를 따를 경우, 이 시스템의 수명으로 옳은 것은?', 2, 352)
+on conflict (id) do update set body = excluded.body, number = excluded.number;
+insert into public.question_options (id, question_id, body, sort_order) values
+  ('ab50c17e-60f3-13d5-5cd7-de5bd1592b3d', '8668f8e7-2d1d-2ed9-4e73-20dffd0e6151', 'MTTFxn', 0)
+on conflict (id) do update set body = excluded.body;
+insert into public.question_options (id, question_id, body, sort_order) values
+  ('8ad43920-a6fa-dbd9-2c17-f4f56fed6412', '8668f8e7-2d1d-2ed9-4e73-20dffd0e6151', 'MTTFx&', 1)
+on conflict (id) do update set body = excluded.body;
+insert into public.question_options (id, question_id, body, sort_order) values
+  ('c154782b-ef51-e8e9-932b-61d93cb2c7da', '8668f8e7-2d1d-2ed9-4e73-20dffd0e6151', 'MTTF（l+；+•••+£）', 2)
+on conflict (id) do update set body = excluded.body;
+insert into public.question_options (id, question_id, body, sort_order) values
+  ('5a73515a-effd-7291-e3ef-f3c67b999098', '8668f8e7-2d1d-2ed9-4e73-20dffd0e6151', 'MTTF（l>〈$x …〈느）', 3)
+on conflict (id) do update set body = excluded.body;
+insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
+  ('8668f8e7-2d1d-2ed9-4e73-20dffd0e6151', 'c154782b-ef51-e8e9-932b-61d93cb2c7da', '③ MTTF（l+；+•••+£）', '정답 ③. 평균동작시간0417:이 지수분포를 따를 경우(병렬계)', array['산업안전기사','2022-2'])
+on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
-insert into public.questions (id,subject_id,type,body,difficulty,number) values
- ('adf3850f-f7c0-bb26-4419-5a5a06e19ca8','11111111-1111-1111-1111-111111111104','mcq','재해원인 분석기법의 하나인 특성요인도의 작성 방법에 대 한 설명으로 틀린 것은?',2,353)
-on conflict (id) do update set body=excluded.body, number=excluded.number;
-insert into public.question_options (id,question_id,body,sort_order) values
- ('3b8936dd-997d-cb9a-e050-affd88d15568','adf3850f-f7c0-bb26-4419-5a5a06e19ca8','큰뼈는 특성이 일어나는 요인이라고 생각되는 것을 크',0)
-on conflict (id) do update set body=excluded.body;
-insert into public.question_options (id,question_id,body,sort_order) values
- ('716dc2ae-b409-86a0-4ba2-43423da325ad','adf3850f-f7c0-bb26-4419-5a5a06e19ca8','등뼈는 원칙적으로 우측에서 좌측으로 향하여 가는 화',1)
-on conflict (id) do update set body=excluded.body;
-insert into public.question_options (id,question_id,body,sort_order) values
- ('b629e800-7d63-1b1f-48f4-304f0ada83ca','adf3850f-f7c0-bb26-4419-5a5a06e19ca8','특성의 결정은 무엇에 대한 특성요인도를 작성할 것인',2)
-on conflict (id) do update set body=excluded.body;
-insert into public.question_options (id,question_id,body,sort_order) values
- ('d6021e41-ea99-fb91-b770-b7c20c9a68d4','adf3850f-f7c0-bb26-4419-5a5a06e19ca8','중뼈는 특성이 일어나는 큰뼈의 요인마다 다시 미세하',3)
-on conflict (id) do update set body=excluded.body;
-insert into public.question_answers (question_id,correct_option_id,answer_text,explanation,concepts) values
- ('adf3850f-f7c0-bb26-4419-5a5a06e19ca8','716dc2ae-b409-86a0-4ba2-43423da325ad','② 등뼈는 원칙적으로 우측에서 좌측으로 향하여 가는 화','정답 ②. 게 원인을 결정하여 기 입한다. 특성요인도 특성과 요인관계를 두ff 루 하여 어골상으로 세분화한 분석법으로 원인과 결과를 연계하여 상호관계를 파악한다. 오른쪽 끝의 박스 안에 앞에서 정 한 특성을 기입하고 왼쪽에서 오른쪽으로 굵은 화살표를 표시한다. tWBI SUBJECT 03 기계 • 기구 및 설비 안전관리',array['산업안전기사','2021-2'])
-on conflict (question_id) do update set correct_option_id=excluded.correct_option_id, answer_text=excluded.answer_text, explanation=excluded.explanation, concepts=excluded.concepts;
+insert into public.questions (id, subject_id, type, body, difficulty, number) values
+  ('edeadc11-3eb4-e77c-c35a-3363f20a9f0e', '11111111-1111-1111-1111-111111111104', 'mcq', '다음 중 와이어로프의 구성요소가 아닌 것은?', 2, 353)
+on conflict (id) do update set body = excluded.body, number = excluded.number;
+insert into public.question_options (id, question_id, body, sort_order) values
+  ('03a7544e-331a-aa99-e5e6-2aab5353b593', 'edeadc11-3eb4-e77c-c35a-3363f20a9f0e', '클립', 0)
+on conflict (id) do update set body = excluded.body;
+insert into public.question_options (id, question_id, body, sort_order) values
+  ('84c1bce0-dae0-3903-2f36-00c1cd0cb16a', 'edeadc11-3eb4-e77c-c35a-3363f20a9f0e', '소선', 1)
+on conflict (id) do update set body = excluded.body;
+insert into public.question_options (id, question_id, body, sort_order) values
+  ('342e35c9-1fca-4e0f-ce19-820130e3c6d9', 'edeadc11-3eb4-e77c-c35a-3363f20a9f0e', '스트랜드', 2)
+on conflict (id) do update set body = excluded.body;
+insert into public.question_options (id, question_id, body, sort_order) values
+  ('f90f48f9-fdd6-551d-eba7-03aa5ead9e01', 'edeadc11-3eb4-e77c-c35a-3363f20a9f0e', '심강', 3)
+on conflict (id) do update set body = excluded.body;
+insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
+  ('edeadc11-3eb4-e77c-c35a-3363f20a9f0e', '03a7544e-331a-aa99-e5e6-2aab5353b593', '① 클립', '정답 ①. 클립은 와이어로프를 고정하는 기구이다. 와이어로프 구성요소 AM, 스트랜드(5(ㅠ370), 심강(2076). 심선', array['산업안전기사','2022-2'])
+on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
-insert into public.questions (id,subject_id,type,body,difficulty,number) values
- ('e3be2f86-9648-b6a9-3449-7a45c8af4d95','11111111-1111-1111-1111-111111111104','mcq','감각저장으로부터 정보를 작업기억으로 전달하기 위한 코 드화 분류에 해당되지 않는 것은?',2,354)
-on conflict (id) do update set body=excluded.body, number=excluded.number;
-insert into public.question_options (id,question_id,body,sort_order) values
- ('bd5a6257-febe-7388-2fb8-30f67d413d41','e3be2f86-9648-b6a9-3449-7a45c8af4d95','시각코드',0)
-on conflict (id) do update set body=excluded.body;
-insert into public.question_options (id,question_id,body,sort_order) values
- ('ca4d23ab-a4e1-b85d-f233-8d19a94d6d62','e3be2f86-9648-b6a9-3449-7a45c8af4d95','촉각코드',1)
-on conflict (id) do update set body=excluded.body;
-insert into public.question_options (id,question_id,body,sort_order) values
- ('3764b7f7-bda6-3f6e-1508-c0c0ec8c5726','e3be2f86-9648-b6a9-3449-7a45c8af4d95','음성코드',2)
-on conflict (id) do update set body=excluded.body;
-insert into public.question_options (id,question_id,body,sort_order) values
- ('dd917ab6-bf72-34aa-3685-fe0257f13b4a','e3be2f86-9648-b6a9-3449-7a45c8af4d95','의미코드',3)
-on conflict (id) do update set body=excluded.body;
-insert into public.question_answers (question_id,correct_option_id,answer_text,explanation,concepts) values
- ('e3be2f86-9648-b6a9-3449-7a45c8af4d95','ca4d23ab-a4e1-b85d-f233-8d19a94d6d62','② 촉각코드','정답 ②. 짜 일반적으로 작업기억의 정보는 시각(Visual), •음성(Phonetic). 의미(Semantic) 코드로 저장된다. 시각 및 음성 코드는 자극의 시각적 또 는 청각적인 표현이며. 이 각각은 반대 유형의 자극에 의하거나 장기기억에 서 내부적으로 발생할 수 있다. 의미코드는 자극에 의해 발생되는 상이나 음 이 아니라 자극 의미의 추상적인 표현으로서 장기기억에서 중요한 요소이다',array['산업안전기사','2021-2'])
-on conflict (question_id) do update set correct_option_id=excluded.correct_option_id, answer_text=excluded.answer_text, explanation=excluded.explanation, concepts=excluded.concepts;
+insert into public.questions (id, subject_id, type, body, difficulty, number) values
+  ('9d43c397-dcf3-d958-8cae-7a915cecdd3f', '11111111-1111-1111-1111-111111111104', 'mcq', '「산업안전보건법령」상 산업용 로봇에 의한 작업 시 안전조 치 사항으로 적절하지 않은 것은?', 2, 354)
+on conflict (id) do update set body = excluded.body, number = excluded.number;
+insert into public.question_options (id, question_id, body, sort_order) values
+  ('b4cc444e-a485-b990-8cfd-05e9665beecd', '9d43c397-dcf3-d958-8cae-7a915cecdd3f', '로봇의 운전으로 인해 근로자가 로봇에 부딪칠 위험이', 0)
+on conflict (id) do update set body = excluded.body;
+insert into public.question_options (id, question_id, body, sort_order) values
+  ('b6415b6a-e1f7-fb98-cd94-c4f0ab657195', '9d43c397-dcf3-d958-8cae-7a915cecdd3f', '작업을 하고 있는 동안 로봇의 기동스위치 등은 작업에', 1)
+on conflict (id) do update set body = excluded.body;
+insert into public.question_options (id, question_id, body, sort_order) values
+  ('8bc3bfee-baa7-bc9d-cbd5-1248d4e8ed73', '9d43c397-dcf3-d958-8cae-7a915cecdd3f', '로봇의 조작방법 및 순서, 작업 중의 매니퓰레이터의', 2)
+on conflict (id) do update set body = excluded.body;
+insert into public.question_options (id, question_id, body, sort_order) values
+  ('3093e104-d62b-9d9b-5cd2-4eb82d98cc5c', '9d43c397-dcf3-d958-8cae-7a915cecdd3f', '작업에 종사하는 근로자가 이상을 발견하면 관리감독', 3)
+on conflict (id) do update set body = excluded.body;
+insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
+  ('9d43c397-dcf3-d958-8cae-7a915cecdd3f', '3093e104-d62b-9d9b-5cd2-4eb82d98cc5c', '④ 작업에 종사하는 근로자가 이상을 발견하면 관리감독', '정답 ④. 자에게 우선 보고하고, 지시가 나올 때까지 작업을 진 행한다. 3 산업용 로봇의 작업 시 작업에 종사하고 있는 근로자 또는 그 근 로자를 감시하는 사람은 이상을 발견하면 즉시 로봇의 운전을 정지시키기 위한 조치를 하여야 한다. 1', array['산업안전기사','2022-2'])
+on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
-insert into public.questions (id,subject_id,type,body,difficulty,number) values
- ('18a79c5a-b660-6995-92a8-b35a81882906','11111111-1111-1111-1111-111111111104','mcq','「산업안전보건법령」상 프레스 등 금형을 부착 • 해체 또는 조정하는 작업을 할 때, 슬라이드가 갑자기 작동함으로써 근로자에게 발생할 우려가 있는 위험을 방지하기 위해 사용 해야 하는 것은?(단, 해당 작업에 종사하는 근로자의 신체 가 위험한계 내에 있는 경우이다.)',2,355)
-on conflict (id) do update set body=excluded.body, number=excluded.number;
-insert into public.question_options (id,question_id,body,sort_order) values
- ('721ec1c8-38d3-e79f-da7a-7a2323ba8fa5','18a79c5a-b660-6995-92a8-b35a81882906','방진구',0)
-on conflict (id) do update set body=excluded.body;
-insert into public.question_options (id,question_id,body,sort_order) values
- ('8ff29067-51df-ddc1-9977-0705383cfb56','18a79c5a-b660-6995-92a8-b35a81882906','안전블록',1)
-on conflict (id) do update set body=excluded.body;
-insert into public.question_options (id,question_id,body,sort_order) values
- ('e9fe5ec4-bc6e-1354-ebfa-dea891e7ee77','18a79c5a-b660-6995-92a8-b35a81882906','시건장치',2)
-on conflict (id) do update set body=excluded.body;
-insert into public.question_options (id,question_id,body,sort_order) values
- ('5ab5e6dc-c556-c3d0-da62-2525dc6abe90','18a79c5a-b660-6995-92a8-b35a81882906','날접촉예방장치',3)
-on conflict (id) do update set body=excluded.body;
-insert into public.question_answers (question_id,correct_option_id,answer_text,explanation,concepts) values
- ('18a79c5a-b660-6995-92a8-b35a81882906','8ff29067-51df-ddc1-9977-0705383cfb56','② 안전블록','정답 ②. 안전블록',array['산업안전기사','2021-2'])
-on conflict (question_id) do update set correct_option_id=excluded.correct_option_id, answer_text=excluded.answer_text, explanation=excluded.explanation, concepts=excluded.concepts;
+insert into public.questions (id, subject_id, type, body, difficulty, number) values
+  ('0f6ec060-8045-fce2-ae17-005c5fd316c6', '11111111-1111-1111-1111-111111111104', 'mcq', '밀링작업 시 안전수칙으로 옳지 않은 것은?', 2, 355)
+on conflict (id) do update set body = excluded.body, number = excluded.number;
+insert into public.question_options (id, question_id, body, sort_order) values
+  ('f810a588-a561-10fd-2790-9d56afd2a253', '0f6ec060-8045-fce2-ae17-005c5fd316c6', '테이블 위에 공구나 기타 물건 등을 올려놓지 않는다.', 0)
+on conflict (id) do update set body = excluded.body;
+insert into public.question_options (id, question_id, body, sort_order) values
+  ('3eb25c98-391c-e084-811a-3a98933d9443', '0f6ec060-8045-fce2-ae17-005c5fd316c6', '제품 치수를 측정할 때는 절삭 공구의 회전을 정지한다.', 1)
+on conflict (id) do update set body = excluded.body;
+insert into public.question_options (id, question_id, body, sort_order) values
+  ('3152f79e-1ceb-5433-dd10-0840b58d2eb4', '0f6ec060-8045-fce2-ae17-005c5fd316c6', '강력 절삭을 할 때는 일감을 바이스에 짧게 물린다.', 2)
+on conflict (id) do update set body = excluded.body;
+insert into public.question_options (id, question_id, body, sort_order) values
+  ('d69fd104-fc48-0997-3727-58ff7cf9c4a9', '0f6ec060-8045-fce2-ae17-005c5fd316c6', '상. 하, 좌. 우 이송장치의 핸들은 사용 후 풀어 둔다.', 3)
+on conflict (id) do update set body = excluded.body;
+insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
+  ('0f6ec060-8045-fce2-ae17-005c5fd316c6', '3152f79e-1ceb-5433-dd10-0840b58d2eb4', '③ 강력 절삭을 할 때는 일감을 바이스에 짧게 물린다.', '정답 ③. 밀링작업 시 강력절삭을 할 때는 일감을 바이스에 깊게 물린다. t', array['산업안전기사','2022-2'])
+on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
-insert into public.questions (id,subject_id,type,body,difficulty,number) values
- ('77ecf93a-9279-dc27-8f87-d14bb0c2b1c9','11111111-1111-1111-1111-111111111104','mcq','다음 중 드릴작업의 안전사항으로 틀린 것은?',2,356)
-on conflict (id) do update set body=excluded.body, number=excluded.number;
-insert into public.question_options (id,question_id,body,sort_order) values
- ('e73b3879-e370-4ae0-d202-a806660e6617','77ecf93a-9279-dc27-8f87-d14bb0c2b1c9','옷소매가 길거나 찢어진 옷은 입지 않는다.',0)
-on conflict (id) do update set body=excluded.body;
-insert into public.question_options (id,question_id,body,sort_order) values
- ('6fdb76fd-64d2-9b45-ea73-b80fc7b760e5','77ecf93a-9279-dc27-8f87-d14bb0c2b1c9','작고, 길이가 긴 물건은 손으로 잡고 뚫는다.',1)
-on conflict (id) do update set body=excluded.body;
-insert into public.question_options (id,question_id,body,sort_order) values
- ('b1ed676b-6f15-5f5b-6c62-84f56366d25e','77ecf93a-9279-dc27-8f87-d14bb0c2b1c9','회전하는 드릴에 걸레 등을 가까이 하지 않는다.',2)
-on conflict (id) do update set body=excluded.body;
-insert into public.question_options (id,question_id,body,sort_order) values
- ('1fda8c0f-2df8-a4f3-f831-6b7533ac5186','77ecf93a-9279-dc27-8f87-d14bb0c2b1c9','스핀들에서 드릴을 뽑아낼 때에는 드릴 아래에 손을 내',3)
-on conflict (id) do update set body=excluded.body;
-insert into public.question_answers (question_id,correct_option_id,answer_text,explanation,concepts) values
- ('77ecf93a-9279-dc27-8f87-d14bb0c2b1c9','6fdb76fd-64d2-9b45-ea73-b80fc7b760e5','② 작고, 길이가 긴 물건은 손으로 잡고 뚫는다.','정답 ②. 밀지 않는다. K9 드릴링 머신의 안전작업수칙 • 일감은 견고하게 고정시켜야 하며 손으로 쥐고 구멍을 뚫는 것은 위험하다. • 작업시작 전 척 렌치(Chuck Wrench)를 반드시 뺀다. • 장갑을 끼고 작업을 하지 않아야 하고. 회전하는 드릴에 걸레 등을 가까 이 하지 않는다. • 구멍을 뚫을 때 관통된 것을 획인하기 위하여 손을 집어넣지 않아야 한다. • 칩은 회전을 중지시킨 후 브러시로 제거하여야 한다',array['산업안전기사','2021-2'])
-on conflict (question_id) do update set correct_option_id=excluded.correct_option_id, answer_text=excluded.answer_text, explanation=excluded.explanation, concepts=excluded.concepts;
+insert into public.questions (id, subject_id, type, body, difficulty, number) values
+  ('c7eaf79b-b5c8-2c7e-5d05-8580cd2f1ca2', '11111111-1111-1111-1111-111111111104', 'mcq', '「산업안전보건법령」상 보일러의 안전한 가동을 위하여 보 일러 규격에 맞는 압력방출장치가 2개 이상 설치된 경우에 최고사용압력 이하에서 1개가 작동되고, 다른 압력방출장 치는 최고 사용압력의 몇 배 이하에서 작동되도록 부착하여 야하는가?', 2, 356)
+on conflict (id) do update set body = excluded.body, number = excluded.number;
+insert into public.question_options (id, question_id, body, sort_order) values
+  ('bbb81c2d-0a5e-3093-22f4-1d60fd46ada9', 'c7eaf79b-b5c8-2c7e-5d05-8580cd2f1ca2', '1.03 배', 0)
+on conflict (id) do update set body = excluded.body;
+insert into public.question_options (id, question_id, body, sort_order) values
+  ('ef7ab3fc-3701-7618-996d-fced0c954f30', 'c7eaf79b-b5c8-2c7e-5d05-8580cd2f1ca2', '1.05 배', 1)
+on conflict (id) do update set body = excluded.body;
+insert into public.question_options (id, question_id, body, sort_order) values
+  ('38b7ffb5-780a-6bee-2ee4-6bb593572a11', 'c7eaf79b-b5c8-2c7e-5d05-8580cd2f1ca2', '1.2 배', 2)
+on conflict (id) do update set body = excluded.body;
+insert into public.question_options (id, question_id, body, sort_order) values
+  ('ec65f2c5-bec9-aa82-a0dd-369c17024b73', 'c7eaf79b-b5c8-2c7e-5d05-8580cd2f1ca2', '1.5 배', 3)
+on conflict (id) do update set body = excluded.body;
+insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
+  ('c7eaf79b-b5c8-2c7e-5d05-8580cd2f1ca2', 'ef7ab3fc-3701-7618-996d-fced0c954f30', '② 1.05 배', '정답 ②. 여야 한다. 다만, 압력방출장치가 2개 이상 설치된 경우에는 최고사용압력 이하에서 1개가 작동되고, 다른 압력방출장치는 최고사용압력 1.05배 이 하에서 작동되도록 부착하여야 한다', array['산업안전기사','2022-2'])
+on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
-insert into public.questions (id,subject_id,type,body,difficulty,number) values
- ('16ce7709-481c-200a-6d20-df790948544b','11111111-1111-1111-1111-111111111104','mcq','「산업안전보건법령」상 양중기의 과부하방지장치에서 요구 하는 일반적인 성능기준으로 가장 적절하지 않은 것은?',2,357)
-on conflict (id) do update set body=excluded.body, number=excluded.number;
-insert into public.question_options (id,question_id,body,sort_order) values
- ('255b34d7-426d-bc5c-5ce9-fa3f706dae03','16ce7709-481c-200a-6d20-df790948544b','과부하방지장치 작동 시 경보음과 경보램프가 작동되',0)
-on conflict (id) do update set body=excluded.body;
-insert into public.question_options (id,question_id,body,sort_order) values
- ('4a92382c-bd21-c7d8-7f4d-c09e124906d1','16ce7709-481c-200a-6d20-df790948544b','외함의 전선 접촉부분은 고무 등으로 밀폐되어 물과 먼',1)
-on conflict (id) do update set body=excluded.body;
-insert into public.question_options (id,question_id,body,sort_order) values
- ('57e6d53d-1272-166a-4dab-9d7da8a5c59e','16ce7709-481c-200a-6d20-df790948544b','과부하방지장치와 타 방호장치는 기능에 서로 장애를',2)
-on conflict (id) do update set body=excluded.body;
-insert into public.question_options (id,question_id,body,sort_order) values
- ('9d4d3df6-dea2-19ae-6c69-bde57c3bfbbc','16ce7709-481c-200a-6d20-df790948544b','방호장치의 기능을 정지 및 제거할 때 양중기의 기능이',3)
-on conflict (id) do update set body=excluded.body;
-insert into public.question_answers (question_id,correct_option_id,answer_text,explanation,concepts) values
- ('16ce7709-481c-200a-6d20-df790948544b','9d4d3df6-dea2-19ae-6c69-bde57c3bfbbc','④ 방호장치의 기능을 정지 및 제거할 때 양중기의 기능이','정답 ④. 동시에 원활하게 작동하는 구조이며 정지해서는 안 된다. 양중기 과부하방지장치의 일반적인 성능기준 방호장치의 기능을 제거 또는 정지할 때 양중기의 기능도 동시에 정지할 수 있는 구조이어야 한다. 뽀I',array['산업안전기사','2021-2'])
-on conflict (question_id) do update set correct_option_id=excluded.correct_option_id, answer_text=excluded.answer_text, explanation=excluded.explanation, concepts=excluded.concepts;
+insert into public.questions (id, subject_id, type, body, difficulty, number) values
+  ('87786c43-2090-0115-57eb-1780f36333bb', '11111111-1111-1111-1111-111111111104', 'mcq', '다음 중「산업안전보건법령」상 안전인증대상 방호장치에 해당하지 않는 것은?', 2, 357)
+on conflict (id) do update set body = excluded.body, number = excluded.number;
+insert into public.question_options (id, question_id, body, sort_order) values
+  ('a4a82454-ab1c-21e8-47eb-08dcee658818', '87786c43-2090-0115-57eb-1780f36333bb', '연삭기 덮개', 0)
+on conflict (id) do update set body = excluded.body;
+insert into public.question_options (id, question_id, body, sort_order) values
+  ('5f8c6c54-de27-9aa7-2b69-fcb11cfd8496', '87786c43-2090-0115-57eb-1780f36333bb', '압력용기 압력방출용 파열판', 1)
+on conflict (id) do update set body = excluded.body;
+insert into public.question_options (id, question_id, body, sort_order) values
+  ('0f7506f8-4ed2-53cb-8a2c-96302299ee86', '87786c43-2090-0115-57eb-1780f36333bb', '압력용기 압력방출용 안전밸브', 2)
+on conflict (id) do update set body = excluded.body;
+insert into public.question_options (id, question_id, body, sort_order) values
+  ('37b189ae-0792-cdff-128e-424c80df02f1', '87786c43-2090-0115-57eb-1780f36333bb', '방폭구조(防爆構造) 전기기계 •기구 및 부품', 3)
+on conflict (id) do update set body = excluded.body;
+insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
+  ('87786c43-2090-0115-57eb-1780f36333bb', 'a4a82454-ab1c-21e8-47eb-08dcee658818', '① 연삭기 덮개', '정답 ①. 연삭기 덮개는 안전인증대상이 아닌 자율안전확인대상 방호장치 이다. E 81', array['산업안전기사','2022-2'])
+on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
-insert into public.questions (id,subject_id,type,body,difficulty,number) values
- ('73cd17fa-0ec0-ee09-463c-034b4fe1e5fe','11111111-1111-1111-1111-111111111104','mcq','「산업안전보건법령」상 로봇의 작동범위 내에서 그 로봇에 관하여 교시 등 작업을 행하는 때 작업시작 전 점검사항으 로 옳은 것은?(단, 로봇의 동력원을 차단하고 행하는 것은 제외)',2,358)
-on conflict (id) do update set body=excluded.body, number=excluded.number;
-insert into public.question_options (id,question_id,body,sort_order) values
- ('b6b33858-a38a-63e6-eb4c-451d20996b70','73cd17fa-0ec0-ee09-463c-034b4fe1e5fe','과부하방지장치의 이상 유무',0)
-on conflict (id) do update set body=excluded.body;
-insert into public.question_options (id,question_id,body,sort_order) values
- ('38839e3e-881e-0cb4-0b23-3b9c97542875','73cd17fa-0ec0-ee09-463c-034b4fe1e5fe','압력제한스위치의 이상 유무',1)
-on conflict (id) do update set body=excluded.body;
-insert into public.question_options (id,question_id,body,sort_order) values
- ('ebf2aafc-6765-a83e-eff7-2db4be4569fb','73cd17fa-0ec0-ee09-463c-034b4fe1e5fe','외부 전선의 피복 또는 외장의 손상 유무',2)
-on conflict (id) do update set body=excluded.body;
-insert into public.question_options (id,question_id,body,sort_order) values
- ('b61a98a5-37a3-2fdf-36c4-313cff79e91e','73cd17fa-0ec0-ee09-463c-034b4fe1e5fe','권과방지장치의 이상유무',3)
-on conflict (id) do update set body=excluded.body;
-insert into public.question_answers (question_id,correct_option_id,answer_text,explanation,concepts) values
- ('73cd17fa-0ec0-ee09-463c-034b4fe1e5fe','ebf2aafc-6765-a83e-eff7-2db4be4569fb','③ 외부 전선의 피복 또는 외장의 손상 유무','정답 ③. 산업용 로봇의 작업시작 전 점검사항 • 외부 전선의 피복 또는 외장의 손상 유무 • 매니퓰레이터(Manipulator) 작동의 이상 유무 • 제동장치 및 비상정지장치의 기능 1',array['산업안전기사','2021-2'])
-on conflict (question_id) do update set correct_option_id=excluded.correct_option_id, answer_text=excluded.answer_text, explanation=excluded.explanation, concepts=excluded.concepts;
+insert into public.questions (id, subject_id, type, body, difficulty, number) values
+  ('caad9238-2cfd-b3dd-4962-7938c5c8b02b', '11111111-1111-1111-1111-111111111104', 'mcq', '「산업안전보건법령」상 강렬한 소음작업에서 데시벨에 따른 노출시간으로 적합하지 않은 것은?', 2, 358)
+on conflict (id) do update set body = excluded.body, number = excluded.number;
+insert into public.question_options (id, question_id, body, sort_order) values
+  ('433afdbe-cb17-d647-7791-9fafb3e544ad', 'caad9238-2cfd-b3dd-4962-7938c5c8b02b', 'l(X)[dB] 이상의 소음이 1일 2시간 이상 발생하는 작업', 0)
+on conflict (id) do update set body = excluded.body;
+insert into public.question_options (id, question_id, body, sort_order) values
+  ('a4d24837-3ab6-35c1-da0d-e13abbedb692', 'caad9238-2cfd-b3dd-4962-7938c5c8b02b', '110[dB] 이상의 소음이 1일 30분 이상 발생하는 작업', 1)
+on conflict (id) do update set body = excluded.body;
+insert into public.question_options (id, question_id, body, sort_order) values
+  ('9613af9d-a85c-7059-dc98-5882fa0a0d10', 'caad9238-2cfd-b3dd-4962-7938c5c8b02b', '115[dB] 이상의 소음이 1일 15분 이상 발생하는 작업', 2)
+on conflict (id) do update set body = excluded.body;
+insert into public.question_options (id, question_id, body, sort_order) values
+  ('dc80dca8-3a6b-017a-9a85-0253c17ef21f', 'caad9238-2cfd-b3dd-4962-7938c5c8b02b', '120[dB] 이상의 소음이 1일 7분 이상 발생하는 작업', 3)
+on conflict (id) do update set body = excluded.body;
+insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
+  ('caad9238-2cfd-b3dd-4962-7938c5c8b02b', 'dc80dca8-3a6b-017a-9a85-0253c17ef21f', '④ 120[dB] 이상의 소음이 1일 7분 이상 발생하는 작업', '정답 ④. 강렬한소음작업 • 90[dB] 이상의 소음이 1일 8시간 이상 발생하는 작업 • 95[dB] 이상의 소음이 1일 4시간 이상 발생하는 작업 • 100[dB] 이상의 소음이 1일 2시간 이상 발생하는 작업 • 105[dB] 이상의 소음이 1일 1시간 이상 발생하는 작업 • 110[dB] 이상의 소음이 1일 30분 이상 발생하는 작업 • 115[dB] 이상의 소음이 1일 15분 이상 발생하는 작업 @1', array['산업안전기사','2022-2'])
+on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
-insert into public.questions (id,subject_id,type,body,difficulty,number) values
- ('52083862-c8df-e49e-0174-57c32e717f2b','11111111-1111-1111-1111-111111111104','mcq','「산업안전보건법령」상 지게차 작업시작 전 점검사항으로 거리가 가장 먼 것은?',2,359)
-on conflict (id) do update set body=excluded.body, number=excluded.number;
-insert into public.question_options (id,question_id,body,sort_order) values
- ('9b5ee9f3-4a1d-69d5-e38a-9fafaeed5502','52083862-c8df-e49e-0174-57c32e717f2b','제동장치 및 조종장치 기능의 이상 유무',0)
-on conflict (id) do update set body=excluded.body;
-insert into public.question_options (id,question_id,body,sort_order) values
- ('43d81af1-51b4-f454-86fc-2378448cb05b','52083862-c8df-e49e-0174-57c32e717f2b','압력방출장치의 작동 이상 유무',1)
-on conflict (id) do update set body=excluded.body;
-insert into public.question_options (id,question_id,body,sort_order) values
- ('999a88c8-2e3f-d366-b9fd-52fdb42c9657','52083862-c8df-e49e-0174-57c32e717f2b','바퀴의 이상유무',2)
-on conflict (id) do update set body=excluded.body;
-insert into public.question_options (id,question_id,body,sort_order) values
- ('1c798629-9a1c-4205-5432-15610483fe45','52083862-c8df-e49e-0174-57c32e717f2b','전조등• 후미등• 방향지시기 및 경보장치 기능의 이상',3)
-on conflict (id) do update set body=excluded.body;
-insert into public.question_answers (question_id,correct_option_id,answer_text,explanation,concepts) values
- ('52083862-c8df-e49e-0174-57c32e717f2b','43d81af1-51b4-f454-86fc-2378448cb05b','② 압력방출장치의 작동 이상 유무','정답 ②. 유무 a 압력방출장치의 기능은 공기압축기를 가동할 때 작업시작 전 점 검사항이다. 지게차 작업시작 전 점검사항 • 제동장치 및 조종장치 기능의 이상 유무 • 하역장치 및 유압장치 기능의 이상 유무 • 바퀴의 이상유무 • 전조등 • 후미등 - 방향지시기 및 경보장치 기능의 이상 유무 E 81',array['산업안전기사','2021-2'])
-on conflict (question_id) do update set correct_option_id=excluded.correct_option_id, answer_text=excluded.answer_text, explanation=excluded.explanation, concepts=excluded.concepts;
+insert into public.questions (id, subject_id, type, body, difficulty, number) values
+  ('0b6531dd-56e3-001d-6d34-f8436bfd97ed', '11111111-1111-1111-1111-111111111104', 'mcq', '「산업안전보건법령」상 연삭기 작업 시 작업자가 안심하고 작업을 할 수 있는 상태는?', 2, 359)
+on conflict (id) do update set body = excluded.body, number = excluded.number;
+insert into public.question_options (id, question_id, body, sort_order) values
+  ('ed817d55-8a42-c108-fa7d-217ace4dc753', '0b6531dd-56e3-001d-6d34-f8436bfd97ed', '탁상용 연삭기에서 숫돌과 작업 받침대의 간격이 5[mm]', 0)
+on conflict (id) do update set body = excluded.body;
+insert into public.question_options (id, question_id, body, sort_order) values
+  ('9973338a-3e31-3588-df69-4a61939cf6b7', '0b6531dd-56e3-001d-6d34-f8436bfd97ed', '덮개 재료의 인장강도는 224[MPa]이다.', 1)
+on conflict (id) do update set body = excluded.body;
+insert into public.question_options (id, question_id, body, sort_order) values
+  ('13fab4ef-9e34-8eed-6d00-f3f63cdb9fbd', '0b6531dd-56e3-001d-6d34-f8436bfd97ed', '숫돌 교체 후 2분 정도 시험운전을 실시하여 해당 기계', 2)
+on conflict (id) do update set body = excluded.body;
+insert into public.question_options (id, question_id, body, sort_order) values
+  ('eefdb54a-6152-1ef3-55d2-3d1646beffa8', '0b6531dd-56e3-001d-6d34-f8436bfd97ed', '작업 시작 전 1분 정도 시험운전을 실시하여 해당 기계', 3)
+on conflict (id) do update set body = excluded.body;
+insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
+  ('0b6531dd-56e3-001d-6d34-f8436bfd97ed', 'eefdb54a-6152-1ef3-55d2-3d1646beffa8', '④ 작업 시작 전 1분 정도 시험운전을 실시하여 해당 기계', '정답 ④. 의 이상 여부를 확인하였다. E3 연삭숫돌을 사용하는 작업의 경우 작업을 시작하기 전에는 1분 이상. 연삭숫돌을 교체한 후에는 3분 이상 시험운전을 하고 해당 기계에 이상이 있는지를 확인하여야 한다. E jl', array['산업안전기사','2022-2'])
+on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
 
-insert into public.questions (id,subject_id,type,body,difficulty,number) values
- ('f381a3b6-6324-72e1-1772-0d0fab02c030','11111111-1111-1111-1111-111111111104','mcq','지락이 생긴 경우 접촉상태에 따라 접촉전압을 제한할 필요 가 있다. 인체의 접촉상태에 따른 허용접촉전압을 나타낸 것으로 다음 중 옳지 않은 것은?',2,360)
-on conflict (id) do update set body=excluded.body, number=excluded.number;
-insert into public.question_options (id,question_id,body,sort_order) values
- ('0ef41d37-7cdf-a658-d0f7-533e432dddf5','f381a3b6-6324-72e1-1772-0d0fab02c030','제1종: 2.5［V］ 이하',0)
-on conflict (id) do update set body=excluded.body;
-insert into public.question_options (id,question_id,body,sort_order) values
- ('2dbfa5a7-2658-c325-8063-31c35174d7fa','f381a3b6-6324-72e1-1772-0d0fab02c030','제2종: 25［V］ 이하',1)
-on conflict (id) do update set body=excluded.body;
-insert into public.question_options (id,question_id,body,sort_order) values
- ('49916f43-52aa-52b9-2fde-134b6d2e5ff7','f381a3b6-6324-72e1-1772-0d0fab02c030','제3종: 35［V］ 이하',2)
-on conflict (id) do update set body=excluded.body;
-insert into public.question_options (id,question_id,body,sort_order) values
- ('d87e516e-cb66-f771-4119-378835ebb974','f381a3b6-6324-72e1-1772-0d0fab02c030','제4종: 제한 없음',3)
-on conflict (id) do update set body=excluded.body;
-insert into public.question_answers (question_id,correct_option_id,answer_text,explanation,concepts) values
- ('f381a3b6-6324-72e1-1772-0d0fab02c030','49916f43-52aa-52b9-2fde-134b6d2e5ff7','③ 제3종: 35［V］ 이하','정답 ③. 허용접촉전압 종별 허용접촉전압 제1 종 Z5[V] 이하 제2종 25[V] 이하 제 3종 50[V] 이하 제 4종 제한',array['산업안전기사','2021-2'])
-on conflict (question_id) do update set correct_option_id=excluded.correct_option_id, answer_text=excluded.answer_text, explanation=excluded.explanation, concepts=excluded.concepts;
+insert into public.questions (id, subject_id, type, body, difficulty, number) values
+  ('161fcaf8-2f43-dbd2-2551-96e47c4858d3', '11111111-1111-1111-1111-111111111104', 'mcq', '「산업안전보건법령」상 프레스기를 사용하여 작업을 할 때 작업시작 전 점검사항으로 틀린 것은?', 2, 360)
+on conflict (id) do update set body = excluded.body, number = excluded.number;
+insert into public.question_options (id, question_id, body, sort_order) values
+  ('0334250e-f4b1-23a9-6d53-71bdbed9f252', '161fcaf8-2f43-dbd2-2551-96e47c4858d3', '클러치 및 브레이크의 기능', 0)
+on conflict (id) do update set body = excluded.body;
+insert into public.question_options (id, question_id, body, sort_order) values
+  ('7ef1c757-33e4-699f-e7de-d5d61f43bd59', '161fcaf8-2f43-dbd2-2551-96e47c4858d3', '압력방출장치의 기능', 1)
+on conflict (id) do update set body = excluded.body;
+insert into public.question_options (id, question_id, body, sort_order) values
+  ('a002429d-6f7b-b157-6eca-46f6e06b70b0', '161fcaf8-2f43-dbd2-2551-96e47c4858d3', '크랭크축 • 플라이휠 • 슬라이드 • 연결봉 및 연결나사의', 2)
+on conflict (id) do update set body = excluded.body;
+insert into public.question_options (id, question_id, body, sort_order) values
+  ('cf32436f-a876-0511-8161-edebb132bfd6', '161fcaf8-2f43-dbd2-2551-96e47c4858d3', '프레스의 금형 및 고정볼트의 상태', 3)
+on conflict (id) do update set body = excluded.body;
+insert into public.question_answers (question_id, correct_option_id, answer_text, explanation, concepts) values
+  ('161fcaf8-2f43-dbd2-2551-96e47c4858d3', '7ef1c757-33e4-699f-e7de-d5d61f43bd59', '② 압력방출장치의 기능', '정답 ②. 압력방출장치의 기능은 공기압축기를 가동할 때 작업시작 전 점 검사항이다. 프레스 등의 작업시작 전 점검사항 •클러치 및 브레이크의 기능 • 크랭크축 • 플라이휠 • 슬라이드 • 연결봉 및 연결 나사의 풀림 여부 • 1행정 1정지기구 • 급정지장치 및 비상정지장치의 기능 • 슬라이드 또는 칼날에 의한 위험방지 기구의 기능 • 프레스의 금형 및 고정 볼트 상태 • 방호장치의 기능 • 전단기의 칼날 및 테이블의 상태 1', array['산업안전기사','2022-2'])
+on conflict (question_id) do update set correct_option_id = excluded.correct_option_id, answer_text = excluded.answer_text, explanation = excluded.explanation, concepts = excluded.concepts;
