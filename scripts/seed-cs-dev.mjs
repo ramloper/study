@@ -2,16 +2,19 @@
  * Seed CS/dev subjects + questions into Supabase.
  *
  *   export NEXT_PUBLIC_SUPABASE_URL=...
- *   export SUPABASE_SERVICE_ROLE_KEY=...
+ *   export SUPABASE_SERVICE_ROLE_KEY=...   # service_role (not anon!)
  *   pnpm seed:cs
  */
-import { createClient } from "@supabase/supabase-js";
 import { createHash } from "node:crypto";
+import { createRequire } from "node:module";
 import { readFileSync, existsSync } from "node:fs";
 import { resolve, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
+// Resolve deps from apps/web (pnpm monorepo)
+const require = createRequire(resolve(root, "apps/web/package.json"));
+const { createClient } = require("@supabase/supabase-js");
 
 function loadEnvLocal() {
   const p = resolve(root, "apps/web/.env.local");
@@ -30,6 +33,24 @@ const key = process.env.SUPABASE_SERVICE_ROLE_KEY?.trim();
 if (!url || !key) {
   console.error("Need NEXT_PUBLIC_SUPABASE_URL + SUPABASE_SERVICE_ROLE_KEY");
   process.exit(1);
+}
+
+// JWT payload role check (anon cannot insert questions under RLS)
+try {
+  const payload = JSON.parse(
+    Buffer.from(key.split(".")[1], "base64url").toString("utf8")
+  );
+  if (payload.role && payload.role !== "service_role") {
+    console.error(`
+[seed:cs] Wrong key role: "${payload.role}"
+
+Settings → API 에서 **service_role** 키를 복사하세요.
+지금 넣은 건 anon 키라 시드 insert가 막힙니다.
+`);
+    process.exit(1);
+  }
+} catch {
+  /* ignore parse errors */
 }
 
 function uid(s) {

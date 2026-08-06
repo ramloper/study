@@ -8,14 +8,16 @@
  *
  * Optional: load from apps/web/.env.local if vars not set.
  */
-import { createClient } from "@supabase/supabase-js";
 import { createHash } from "node:crypto";
+import { createRequire } from "node:module";
 import { readFileSync, existsSync } from "node:fs";
 import { resolve, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const root = resolve(__dirname, "..");
+const require = createRequire(resolve(root, "apps/web/package.json"));
+const { createClient } = require("@supabase/supabase-js");
 
 function loadEnvLocal() {
   const p = resolve(root, "apps/web/.env.local");
@@ -52,6 +54,20 @@ Then:
 Or put SUPABASE_SERVICE_ROLE_KEY in apps/web/.env.local (never commit).
 `);
   process.exit(1);
+}
+
+try {
+  const payload = JSON.parse(
+    Buffer.from(serviceKey.split(".")[1], "base64url").toString("utf8")
+  );
+  if (payload.role && payload.role !== "service_role") {
+    console.error(
+      `[seed:isan] Wrong key role: "${payload.role}" — use service_role, not anon.`
+    );
+    process.exit(1);
+  }
+} catch {
+  /* ignore */
 }
 
 const SUBJECT_ID = "11111111-1111-1111-1111-111111111104";
