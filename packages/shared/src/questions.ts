@@ -1,4 +1,5 @@
 import type { Question } from "./types";
+import { CS_DEV_QUESTIONS } from "./questions-cs-dev";
 import { INDUSTRIAL_SAFETY_QUESTIONS } from "./questions-industrial-safety";
 
 const SEED_QUESTIONS: Question[] = [
@@ -123,9 +124,10 @@ const SEED_QUESTIONS: Question[] = [
   },
 ];
 
-/** Local fallback when Supabase is off — includes industrial safety import */
+/** Local fallback when Supabase is off */
 export const QUESTIONS: Question[] = [
   ...SEED_QUESTIONS,
+  ...CS_DEV_QUESTIONS,
   ...INDUSTRIAL_SAFETY_QUESTIONS,
 ];
 

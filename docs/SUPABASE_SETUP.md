@@ -31,7 +31,19 @@ Supabase Dashboard → **SQL Editor** → New query
 - profiles 자동 생성 트리거
 - subjects / 샘플 문제 시드
 
-## 산업안전기사 대량 시드 (528문항)
+## CS / 개발 시드 (공개 라이선스 + 오리지널)
+
+```bash
+export NEXT_PUBLIC_SUPABASE_URL=...
+export SUPABASE_SERVICE_ROLE_KEY=...
+pnpm seed:cs
+```
+
+- 네트워크 · 운영체제 · DB · 자료구조 · CS 기초 · 프론트엔드  
+- 출처: `content/ATTRIBUTION-CS.md`  
+- 프론트엔드 short: MIT `front-end-interview-handbook`
+
+## 산업안전기사 대량 시드
 
 SQL Editor 에 통짜 파일을 붙이면 **Query is too large** 가 납니다.
 
