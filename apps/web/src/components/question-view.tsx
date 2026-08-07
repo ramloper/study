@@ -37,7 +37,7 @@ export function QuestionView({ questionId }: Props) {
   const [answerOpen, setAnswerOpen] = useState(false);
   const [todayCount, setTodayCount] = useState(0);
 
-  const loadQuestion = useCallback(async (id?: string) => {
+  const loadQuestion = useCallback(async (id?: string, excludeId?: string) => {
     setLoading(true);
     setSelected(-1);
     setShortInput("");
@@ -50,7 +50,7 @@ export function QuestionView({ questionId }: Props) {
       const q =
         id && id !== "next"
           ? await fetchQuestionById(id)
-          : await fetchNextQuestion();
+          : await fetchNextQuestion(excludeId);
       if (!q) {
         setQuestion(null);
         setEmpty(true);
@@ -116,12 +116,14 @@ export function QuestionView({ questionId }: Props) {
   }
 
   function onNext() {
+    const prevId = question?.id;
     if (!question) {
       void loadQuestion("next");
       return;
     }
     router.push("/question/next");
-    void loadQuestion("next");
+    // Always skip current; correct ones stay excluded via attempts/local progress
+    void loadQuestion("next", prevId);
   }
 
   async function onLater() {
@@ -138,10 +140,14 @@ export function QuestionView({ questionId }: Props) {
       <div className="flex flex-1 flex-col items-center justify-center gap-4 p-10 text-center">
         <p className="text-lg font-bold">출제할 문제가 없어요</p>
         <p className="max-w-sm text-sm text-muted-foreground">
-          공부할 주제를 선택했는지, 해당 주제에 문제가 있는지 확인해 주세요.
+          선택한 주제의 문제를 모두 맞췄거나, 주제가 없을 수 있어요. 설정에서
+          주제를 더 켜 보거나 진행 현황을 확인해 주세요.
         </p>
         <div className="flex gap-2">
           <Button onClick={() => router.push("/settings")}>설정으로</Button>
+          <Button variant="outline" onClick={() => router.push("/progress")}>
+            진행 현황
+          </Button>
           <Button variant="outline" onClick={() => router.push("/onboarding")}>
             주제 고르기
           </Button>

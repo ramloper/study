@@ -1,10 +1,10 @@
 import {
   QUESTIONS,
-  getNextQuestion as getLocalNext,
   getQuestionById as getLocalById,
   type Question,
 } from "@study/shared";
 
+import { getCorrectQuestionIds } from "@/lib/progress";
 import { tryCreateClient } from "@/lib/supabase/client";
 import type { Database } from "@/lib/supabase/database.types";
 
@@ -56,16 +56,27 @@ function mapDbQuestion(
 
 export type QuestionExtra = Question & { _optionIds?: string[] };
 
+/** Local: random among not-yet-correct questions. */
+function getLocalNextUnsolved(excludeId?: string): Question | null {
+  const correctIds = getCorrectQuestionIds();
+  const pool = QUESTIONS.filter(
+    (q) => !correctIds.has(q.id) && q.id !== excludeId
+  );
+  if (!pool.length) return null;
+  return pool[Math.floor(Math.random() * pool.length)] ?? null;
+}
+
 /**
- * Fetch next question from enabled subjects. Falls back to local seed if Supabase off.
+ * Fetch next question from enabled subjects.
+ * Skips questions the user has already answered correctly.
+ * Falls back to local seed if Supabase off.
  */
 export async function fetchNextQuestion(
   excludeId?: string
 ): Promise<QuestionExtra | null> {
   const supabase = tryCreateClient();
   if (!supabase) {
-    const q = excludeId ? getLocalNext(excludeId) : getLocalNext();
-    return q ?? null;
+    return getLocalNextUnsolved(excludeId);
   }
 
   const {
@@ -83,30 +94,31 @@ export async function fetchNextQuestion(
   const subjectIds = (enabled ?? []).map((r) => r.subject_id);
   if (subjectIds.length === 0) return null;
 
-  let query = supabase
+  // Questions already solved correctly (any past correct attempt)
+  const { data: correctRows, error: eCorrect } = await supabase
+    .from("attempts")
+    .select("question_id")
+    .eq("user_id", user.id)
+    .eq("is_correct", true);
+
+  if (eCorrect) throw eCorrect;
+
+  const solvedIds = new Set(
+    (correctRows ?? []).map((r) => r.question_id).filter(Boolean)
+  );
+  if (excludeId) solvedIds.add(excludeId);
+
+  // Prefer a random unsolved question among enabled subjects
+  const { data: rows, error: e2 } = await supabase
     .from("questions")
     .select("*")
     .eq("is_active", true)
-    .in("subject_id", subjectIds);
+    .in("subject_id", subjectIds)
+    .limit(500);
 
-  if (excludeId) {
-    query = query.neq("id", excludeId);
-  }
-
-  const { data: rows, error: e2 } = await query.limit(20);
   if (e2) throw e2;
 
-  let pool = rows ?? [];
-  if (!pool.length && excludeId) {
-    const { data: fallback, error: e3 } = await supabase
-      .from("questions")
-      .select("*")
-      .eq("is_active", true)
-      .in("subject_id", subjectIds)
-      .limit(20);
-    if (e3) throw e3;
-    pool = fallback ?? [];
-  }
+  const pool = (rows ?? []).filter((q) => !solvedIds.has(q.id));
   if (!pool.length) return null;
 
   const pick = pool[Math.floor(Math.random() * pool.length)];

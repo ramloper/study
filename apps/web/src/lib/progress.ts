@@ -70,6 +70,15 @@ export function getProgressStats(): ProgressStats {
   };
 }
 
+/** Question ids the user has answered correctly at least once (local). */
+export function getCorrectQuestionIds(): Set<string> {
+  const ids = new Set<string>();
+  for (const r of loadRecords()) {
+    if (r.result === "correct") ids.add(r.questionId);
+  }
+  return ids;
+}
+
 function calcStreak(records: ProgressRecord[]): number {
   if (records.length === 0) return 0;
   const days = new Set(
